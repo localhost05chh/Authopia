@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"
+    />
+    <link rel="stylesheet" href="../../static/css/member/public.css" />
+    <link rel="stylesheet" href="../../static/css/member/login.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body class="h-full">
+<!-- 전체 -->
+<div id="__next">
+    <div class="h-full min-h-screen flex">
+        <!-- 왼쪽 전체 -->
+        <div class="w-[100%] py-[40px] flex flex-col items-center lg:w-[55%] lg:py-[56px]">
+            <!-- 뒤로가기 -->
+            <div class="px-[32px] w-full lg:px-[40px]">
+                <button
+                        type="button"
+                        class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[24px] content_secondary surface_tertiary hover:surface_primary_active active:surface_primary_active disabled:surface_disabled px-[20px] min-w-[88px] disabled:content_disabled"
+                >
+                    <div class="flex items-center justify-center">
+                        <svg viewBox="0 0 17 16" height="16px" widht="16px" class="mr-[4px] shrink-0">
+                            <path
+                                    d="M13.833 8a.667.667 0 0 0-.666-.667H5.72L8.973 4.08a.667.667 0 1 0-.943-.943L3.167 8l4.863 4.863a.665.665 0 0 0 .94-.94L5.72 8.667h7.447A.667.667 0 0 0 13.833 8Z"
+                            ></path>
+                        </svg>
+                        <div>뒤로</div>
+                    </div>
+                </button>
+            </div>
+            <!-- 로그인 전체 -->
+            <section
+                    class="mt-[76px] px-[32px] w-full min-w-[320px] max-w-[400px] flex flex-col items-center lg:mt-[52px] lg:mx-auto"
+            >
+                <!-- 제목 -->
+                <h1 class="font_display_bold_sm">로그인</h1>
+                <div class="w-full">
+                    <!-- 이메일, 비밀번호, 로그인 -->
+                    <form>
+                        <!-- 이메일 -->
+                        <div class="mt-[40px]">
+                            <div>
+                                <p class="font_label_bold_md content_primary mb-[8px]">이메일 (아이디)</p>
+                                <label
+                                        class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled"
+                                >
+                                    <input
+                                            name="email"
+                                            type="text"
+                                            placeholder="example@gmail.com"
+                                            class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
+                                    />
+                                </label>
+                            </div>
+                            <!-- 오류메세지 출력 -->
+                            <div class="none mt-[8px] font_label_regular_sm content_negative">
+                                <div class="mr-auto flex items-center">
+                                    <svg
+                                            viewBox="0 0 25 25"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-[16px] w-[16px] mr-[4px]"
+                                    >
+                                        <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M12.008 22.05c5.523.023 10.019-4.436 10.042-9.959.023-5.523-4.436-10.018-9.959-10.041C6.568 2.027 2.073 6.485 2.05 12.008c-.023 5.523 4.435 10.019 9.958 10.042Zm1.527-6.494a1.5 1.5 0 1 1-3-.013 1.5 1.5 0 0 1 3 .013Zm-1.181-2.505a.5.5 0 0 0 .498-.436l.646-4.997a.5.5 0 0 0-.494-.564l-1.867-.008a.5.5 0 0 0-.499.56l.604 5.002a.5.5 0 0 0 .495.44l.617.003Z"
+                                        ></path></svg
+                                    >필수 항목입니다
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 비밀번호 -->
+                        <div class="mt-[24px]">
+                            <div>
+                                <p class="font_label_bold_md content_primary mb-[8px]">비밀번호</p>
+                                <label
+                                        class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled"
+                                >
+                                    <input
+                                            name="password"
+                                            type="password"
+                                            placeholder="비밀번호 입력"
+                                            class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
+                                    />
+                                </label>
+                            </div>
+                            <!-- 오류메세지 출력 -->
+                            <div class="none mt-[8px] font_label_regular_sm content_negative">
+                                <div class="mr-auto flex items-center">
+                                    <svg
+                                            viewBox="0 0 25 25"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-[16px] w-[16px] mr-[4px]"
+                                    >
+                                        <path
+                                                fill-rule="evenodd"
+                                                clip-rule="evenodd"
+                                                d="M12.008 22.05c5.523.023 10.019-4.436 10.042-9.959.023-5.523-4.436-10.018-9.959-10.041C6.568 2.027 2.073 6.485 2.05 12.008c-.023 5.523 4.435 10.019 9.958 10.042Zm1.527-6.494a1.5 1.5 0 1 1-3-.013 1.5 1.5 0 0 1 3 .013Zm-1.181-2.505a.5.5 0 0 0 .498-.436l.646-4.997a.5.5 0 0 0-.494-.564l-1.867-.008a.5.5 0 0 0-.499.56l.604 5.002a.5.5 0 0 0 .495.44l.617.003Z"
+                                        ></path></svg
+                                    >필수 항목입니다
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 로그인 -->
+                        <div class="mt-[24px]">
+                            <button
+                                    type="submit"
+                                    class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled"
+                            >
+                                로그인
+                            </button>
+                        </div>
+                    </form>
+                    <!-- 게정이 없으신가요 -->
+                    <div class="mt-[28px] flex items-center justify-between">
+                        <hr class="max-w-[96px] flex-grow flex-shrink border_primary" />
+                        <p class="font_body_regular_md content_secondary mx-[23px] lg:mx-[18px]">
+                            계정이 없으신가요?
+                        </p>
+                        <hr class="max-w-[96px] flex-grow flex-shrink border_primary" />
+                    </div>
+                    <!-- 카카오로 시작하기, 이메일로 시작하기 -->
+                    <div class="mt-[20px] flex flex-col gap-y-[12px]">
+                        <!-- 카카오로 시작하기 -->
+                        <button
+                                type="button"
+                                class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_secondary bg-[#FFEA2B] hover:bg-[#FFDE30] active:bg-[#FFDE30] px-[20px] w-full min-w-[88px] disabled:content_disabled"
+                        >
+                            <div class="flex items-center justify-center">
+                                <svg viewBox="0 0 17 16" height="16px" widht="16px" class="mr-[4px] shrink-0">
+                                    <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M8.5 2C4.803 2 1.833 4.306 1.833 7.128a5.026 5.026 0 0 0 3.091 4.339l-.636 2.306c-.03.06 0 .151.06.181.061.061.182.061.243 0l2.697-1.79c.394.061.788.091 1.212.091 3.667 0 6.667-2.306 6.667-5.127C15.167 4.306 12.197 2 8.5 2Z"
+                                    ></path>
+                                </svg>
+                                <div>카카오로 시작하기</div>
+                            </div>
+                        </button>
+                        <!-- 이메일로 시작하기 -->
+                        <button
+                                type="button"
+                                class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[19px] w-full min-w-[88px] disabled:content_disabled"
+                        >
+                            <div class="flex items-center justify-center">
+                                <svg viewBox="0 0 17 16" height="16px" widht="16px" class="mr-[4px] shrink-0">
+                                    <path
+                                            fill-rule="evenodd"
+                                            clip-rule="evenodd"
+                                            d="M3.833 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h9.334a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H3.833Zm1.008 1.924a.533.533 0 1 0-.682.819L8.5 9.361l4.341-3.618a.533.533 0 0 0-.682-.82L8.5 7.974l-3.659-3.05Z"
+                                    ></path>
+                                </svg>
+                                <div>이메일로 시작하기</div>
+                            </div>
+                        </button>
+                    </div>
+                    <!-- 비밀번호 잊으셨나요? 비밀번호찾기 -->
+                    <div class="mt-[20px] flex items-center justify-center">
+                        <p class="mr-[8px] font_body_regular_md content_secondary">
+                            비밀번호를 잊으셨나요?
+                        </p>
+                        <a class="content_accent font_label_bold_lg" href="">비밀번호 찾기</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- 오른쪽 전체 -->
+        <div class="hidden lg:block lg:w-[45%]">
+            <div class="relative h-full surface_tertiary">
+            <span
+                    style="
+                box-sizing: border-box;
+                display: block;
+                overflow: hidden;
+                width: initial;
+                height: initial;
+                background: none;
+                opacity: 1;
+                border: 0px;
+                margin: 0px;
+                padding: 0px;
+                position: absolute;
+                inset: 0px;
+              "
+            >
+              <img
+                      src="https://www.steadio.co/_next/image?url=https%3A%2F%2Fsteadio-asset.s3.ap-northeast-2.amazonaws.com%2Fstatic%2Fimages%2Fintro%2Fsteadio-intro-03.jpg&w=1920&q=75"
+                      sizes="100vw"
+                      style="
+                  position: absolute;
+                  inset: 0px;
+                  box-sizing: border-box;
+                  padding: 0px;
+                  border: none;
+                  margin: auto;
+                  display: block;
+                  width: 0px;
+                  height: 0px;
+                  min-width: 100%;
+                  max-width: 100%;
+                  min-height: 100%;
+                  max-height: 100%;
+                  object-fit: cover;
+                  object-position: center center;
+                "
+              />
+            </span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../../static/js/member/login.js"></script>
+</html>
