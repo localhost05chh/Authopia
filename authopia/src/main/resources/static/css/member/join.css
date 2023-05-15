@@ -1,0 +1,209 @@
+/* 전체 틀 */
+
+body {
+    margin: 0;
+    line-height: inherit;
+}
+
+#__next {
+    min-height: 100%;
+}
+
+/* 왼쪽 전체*/
+.lg\:py-\[56px\] {
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+
+.lg\:w-\[55\%\] {
+    width: 55%;
+}
+
+/* 뒤로 가기 */
+.lg\:px-\[40px\] {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.rounded-\[24px\] {
+    border-radius: 24px;
+}
+
+.font_button_bold_md {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.content_secondary {
+    color: #333334;
+    fill: #333334;
+}
+
+/* 이메일로 시작하기 */
+.lg\:mt-\[52px\] {
+    margin-top: 52px;
+}
+
+.lg\:mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.font_display_bold_sm {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 44px;
+}
+
+.gap-y-\[24px\] {
+    row-gap: 24px;
+}
+
+.grid {
+    display: grid;
+}
+
+/* 이메일(아이디)~비밀번호 확인 */
+.gap-y-\[24px\] {
+    row-gap: 24px;
+}
+
+.font_label_bold_md {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.content_primary {
+    color: #1d1d1e;
+    fill: #1d1d1e;
+}
+
+.border-\[1px\] {
+    border-width: 1px;
+}
+
+.rounded-\[8px\] {
+    border-radius: 8px;
+}
+
+.surface_primary {
+    background-color: #fff;
+}
+
+.outline-none {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.font_body_regular_md {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* 이용약관*/
+.border {
+    border-width: 1px;
+}
+
+/* 이용약관 전체동의 */
+.border-b {
+    border-bottom-width: 1px;
+}
+
+.border_secondary {
+    border-color: #f3f3f4;
+}
+
+.font_label_bold_lg {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.font_body_regular_md {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* 이용약관 선택동의 */
+.gap-y-\[12px\] {
+    row-gap: 12px;
+}
+
+.grid-cols-1 {
+    grid-template-columns: repeat(1,minmax(0,1fr));
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.content_accent {
+    color: #5b44ea;
+    fill: #5b44ea;
+}
+
+
+
+/* 체크 박스 */
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.border_active {
+    border-color: #b9b9bb;
+}
+
+.surface_primary {
+    background-color: #fff;
+}
+
+.content_quaternary_inverse {
+    color: #cccccd;
+    fill: #cccccd;
+}
+
+/* 색 칠해졌을때 색깔 */
+.surface_accent {
+    background-color: #7e69fe;
+}
+
+/* 시작하기 */
+.surface_primary_inverse {
+    background-color: #1d1d1e;
+}
+
+.font_button_bold_md {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.content_primary_inverse {
+    color: #fff;
+    fill: #fff;
+}
+
+
+
+
+/* 오른쪽 전체 */
+.lg\:w-\[45\%\] {
+    width: 45%;
+}
+
+.lg\:block {
+    display: block;
+}
+
+.surface_tertiary {
+    background-color: #f3f3f4;
+}
