@@ -1,0 +1,238 @@
+/* 글쓰기..? */
+
+.tox {
+    box-shadow: none;
+    box-sizing: content-box;
+    color: #222f3e;
+    cursor: auto;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    vertical-align: initial;
+    white-space: normal;
+}
+
+.tox-tinymce {
+    border: 2px solid #eee;
+    border-radius: 10px;
+    box-shadow: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+    overflow: hidden;
+    position: relative;
+    visibility: inherit!important;
+}
+
+.tox :not(svg):not(rect) {
+    box-sizing: inherit;
+    color: inherit;
+    cursor: inherit;
+    direction: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    text-decoration: inherit;
+    text-shadow: inherit;
+    text-transform: inherit;
+    vertical-align: inherit;
+    white-space: inherit;
+}
+
+.tox :not(svg):not(rect) {
+    background: 0 0;
+    border: 0;
+    box-shadow: none;
+    float: none;
+    height: auto;
+    margin: 0;
+    max-width: none;
+    outline: 0;
+    padding: 0;
+    position: static;
+    width: auto;
+}
+
+.tox .tox-editor-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.tox .tox-editor-header {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    z-index: 2;
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header {
+    background-color: #fff;
+    border-bottom: none;
+    box-shadow: 0 2px 2px -2px rgba(34,47,62,.1), 0 8px 8px -4px rgba(34,47,62,.07);
+    padding: 4px 0;
+}
+
+.tox:not(.tox-tinymce-inline) .tox-editor-header:not(.tox-editor-dock-transition) {
+    transition: box-shadow .5s;
+}
+
+.tox .tox-toolbar-overlord {
+    background-color: #fff;
+}
+
+.tox .tox-anchorbar, .tox .tox-toolbar-overlord {
+    grid-column: 1/-1;
+}
+
+.tox .tox-toolbar, .tox .tox-toolbar__overflow, .tox .tox-toolbar__primary {
+    background-attachment: local;
+    background-color: #fff;
+    background-image: repeating-linear-gradient(#e3e3e3 0 1px,transparent 1px 39px);
+    background-position: center top 40px;
+    background-repeat: no-repeat;
+    background-size: calc(100% - 11px * 2) calc(100% - 41px);
+    display: flex;
+    flex: 0 0 auto;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    padding: 0 0;
+    transform: perspective(1px);
+}
+
+.tox.tox-tinymce .tox-toolbar__primary {
+    background: none;
+    border-bottom: 1px solid #f3f3f4;
+}
+
+.tox .tox-toolbar-overlord>.tox-toolbar, .tox .tox-toolbar-overlord>.tox-toolbar__overflow, .tox .tox-toolbar-overlord>.tox-toolbar__primary {
+    background-position: center top 0;
+    background-size: calc(100% - 11px * 2) calc(100% - 0px);
+}
+
+.tox .tox-toolbar-overlord .tox-toolbar:not(.tox-toolbar--scrolling):first-child, .tox .tox-toolbar-overlord .tox-toolbar__primary {
+    background-position: center top 39px;
+}
+
+.tox .tox-toolbar__group {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0;
+    padding: 0 11px 0 12px;
+}
+
+.tox .tox-tbtn {
+    align-items: center;
+    background: 0 0;
+    border: 0;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #222f3e;
+    display: flex;
+    flex: 0 0 auto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    height: 28px;
+    justify-content: center;
+    margin: 6px 1px 5px 0;
+    outline: 0;
+    overflow: hidden;
+    padding: 0;
+    text-transform: none;
+    width: 34px;
+}
+
+.tox .tox-tbtn svg {
+    display: block;
+    fill: #222f3e;
+}
+
+.tox .tox-tbtn:hover {
+    background: #cce2fa;
+    border: 0;
+    box-shadow: none;
+    color: #222f3e;
+}
+
+.tox .tox-tbtn--enabled, .tox .tox-tbtn--enabled:hover {
+    background: #a6ccf7;
+    border: 0;
+    box-shadow: none;
+    color: #222f3e;
+}
+
+.tox .tox-edit-area {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.tox .tox-edit-area::before {
+    border: 2px solid #2d6adf;
+    border-radius: 4px;
+    content: '';
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: opacity .15s;
+    z-index: 1;
+}
+
+.tox .tox-edit-area__iframe {
+    background-color: #fff;
+    border: 0;
+    box-sizing: border-box;
+    flex: 1;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+/*
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+} */
+
+.tox .tox-sidebar {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.tox .tox-sidebar__slider {
+    display: flex;
+    overflow: hidden;
+}
+
+.tox .tox-sidebar--sliding-closed {
+    opacity: 0;
+}
+
+.tox .tox-sidebar__pane-container {
+    display: flex;
+}
+
+.tox .tox-sidebar-wrap {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    min-height: 0;
+}

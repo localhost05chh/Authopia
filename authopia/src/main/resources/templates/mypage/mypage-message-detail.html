@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쪽지 상세보기</title>
+    <link rel="stylesheet" href="../../static/css/mypage/mypage.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+</head>
+<body class="h-full">
+<div id="__next">
+    <div class="flex flex-col h-screen">
+        <!-- 헤더 -->
+        <nav class="sticky top-0 left-0 surface_primary_inverse z-20 w-full h-[56px] px-[16px] shrink-0 flex items-center justify-between lg:px-[32px] lg:h-[58px]">
+            <!-- 로고 -->
+            <div>
+                <div class="flex items-center">
+                    <a href="/">
+                        <!-- 아마 반응형이라 display none -->
+                        <svg viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg" class="lg:hidden w-[31px] content_primary_inverse"><path d="M21.96 15.796h9.232A15.592 15.592 0 0 0 .059 14.55c-.011.116-.019.234-.027.351v.105c-.013.21-.022.423-.022.637v.154h9.957c0-2.987-2.228-5.412-4.978-5.412a4.755 4.755 0 0 0-3.41 1.473c1.051-1.346 2.63-2.203 4.395-2.203 3.165 0 5.725 2.75 5.725 6.142h7.562v-.154c0-5.7-4.31-10.321-9.629-10.321a9.085 9.085 0 0 0-4.62 1.266 10.976 10.976 0 0 1 16.949 9.21v-.003Z"></path></svg>
+                        <!-- 이게 보여지는 로고 -->
+                        <svg viewBox="0 0 115 16" xmlns="http://www.w3.org/2000/svg" class="hidden lg:block w-[96px] content_primary_inverse"><path fill-rule="evenodd" clip-rule="evenodd" d="M98.073 1.695a1.695 1.695 0 1 1 1.695 1.695 1.687 1.687 0 0 1-1.695-1.695Zm2.967 2.863v11.23h-2.539V4.556l2.539.002Zm-7.842 11.23h2.544V.102h-2.544v5.725h-.042a4.791 4.791 0 0 0-3.517-1.483c-2.925 0-5.214 2.332-5.214 5.828 0 3.496 2.29 5.827 5.214 5.827a4.79 4.79 0 0 0 3.517-1.483h.042v1.272Zm-3.054-2.162c-1.737 0-3.093-1.4-3.093-3.454 0-2.056 1.355-3.455 3.093-3.455 1.739 0 3.094 1.4 3.094 3.455s-1.356 3.454-3.094 3.454Zm-45.282 2.373c-3.709 0-6.167-1.867-6.336-4.978h2.925c.317 1.906 1.653 2.584 3.327 2.584 1.843 0 2.986-.847 2.986-1.927 0-1.376-1.604-1.75-3.542-2.202l-.462-.108C41.28 8.774 38.78 7.8 38.78 4.81c0-2.204 1.887-4.492 5.531-4.492 3.221 0 5.68 1.908 6.04 4.768h-2.884c-.296-1.292-1.207-2.374-3.094-2.374-1.674 0-2.839.827-2.839 1.93 0 1.49 1.468 1.83 3.482 2.298l.587.138c2.331.551 4.916 1.42 4.916 4.344 0 2.86-2.31 4.576-5.658 4.576Zm11.59-9.155v5.02c0 1.526.933 1.759 1.675 1.759.405.003.805-.091 1.166-.275v2.288c-.46.18-.948.272-1.441.276-2.14 0-3.942-1.06-3.942-4.108v-4.96h-2.328V4.556h2.33V1.32h2.543v3.236h2.843v2.288h-2.845Zm14.814 5.532h-2.739c-.516 1.113-1.329 1.377-2.516 1.377-1.441 0-2.712-.954-2.903-2.755h8.304c0-4.539-2.648-6.654-5.615-6.654-3.052 0-5.446 2.332-5.446 5.828 0 3.496 2.4 5.827 5.636 5.827 2.268 0 4.532-1.048 5.279-3.623Zm-2.67-3.328h-5.51c.277-1.415 1.42-2.437 2.756-2.437 1.335 0 2.479 1.018 2.754 2.437Zm14.135 6.74h-2.5a17.563 17.563 0 0 1-.063-1.442h-.044C79.107 15.597 77.837 16 76.564 16c-2.246 0-3.877-1.334-3.877-3.496 0-1.674 1.08-3.263 4.068-3.391 1.357-.064 3.327-.085 3.327-.085v-.571c0-1.378-1.144-2.035-2.331-2.035-1.188 0-2.097.657-2.24 1.695h-2.634c.125-2.395 2.098-3.772 4.895-3.772 2.819 0 4.854 1.76 4.854 4.408v3.39c0 2.035.02 2.946.105 3.645Zm-5.234-4.832c-1.59.085-2.183.678-2.183 1.505 0 .953.763 1.44 1.844 1.44 1.59 0 2.924-.975 2.924-2.628v-.423s-1.419.043-2.585.106Zm31.193-6.57c-3.242 0-5.742 2.522-5.742 5.807 0 3.289 2.498 5.805 5.741 5.805 3.243 0 5.744-2.521 5.744-5.805 0-3.285-2.501-5.808-5.743-5.808Zm.004 2.373c1.777 0 3.112 1.42 3.112 3.434 0 2.012-1.336 3.432-3.112 3.432s-3.111-1.419-3.111-3.432c0-2.014 1.334-3.434 3.111-3.434Z"></path><path d="M21.96 15.796h9.232A15.592 15.592 0 0 0 .059 14.55c-.011.116-.019.234-.027.351v.105c-.013.21-.022.423-.022.637v.154h9.957c0-2.987-2.228-5.412-4.978-5.412a4.755 4.755 0 0 0-3.41 1.473c1.051-1.346 2.63-2.203 4.395-2.203 3.165 0 5.725 2.75 5.725 6.142h7.562v-.154c0-5.7-4.31-10.321-9.629-10.321a9.085 9.085 0 0 0-4.62 1.266 10.976 10.976 0 0 1 16.949 9.21v-.003Z"></path></svg>
+                    </a>
+                    <div class="mx-[10px] font_body_regular_md content_primary_inverse">|</div>
+                    <div class="font_body_regular_lg content_primary_inverse flex items-center">
+                        <span>Creator Studio</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 프사 -->
+            <div class="flex items-center justify-end">
+                <div class="relative">
+                    <button class="relative w-[32px] h-[32px] rounded-full surface_primary_active">
+                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- 메인 -->
+        <div class="flex h-full overflow-hidden">
+            <!-- 좌측 메뉴 -->
+            <nav class="surface_secondary border border_primary basis-[260px] relative">
+                <!-- 프로필 -->
+                <div class="pt-[40px] pb-[28px] mx-[32px] border-b border_disabled">
+                    <div class="flex flex-col items-center">
+                        <div class="w-[68px] h-[68px] mb-[12px]">
+                            <div class="relative w-full h-full rounded-full flex items-center justify-center">
+                                    <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                        <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                    </span>
+                                <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
+                            </div>
+                        </div>
+                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center">임희수</h2>
+                        <a href="" target="_blank">
+                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
+                                <div class="flex items-center justify-center">
+                                    <div>내 페이지</div>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="ml-[4px] shrink-0"><path d="M11 7a1 1 0 0 0-1-1H4v14h14v-6a1 1 0 1 0-2 0v4H6V8h4a1 1 0 0 0 1-1Z"></path><path d="M19.01 3.829H20v6.656a1 1 0 1 1-2 0V7.244l-5.293 5.293a1 1 0 0 1-1.414-1.415l5.293-5.292h-3.243a1 1 0 1 1 0-2H19.01Z"></path></svg>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 목록들 -->
+                <ul class="px-[24px] py-[32px]">
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path d="M15.078 3.137H8.6a5.6 5.6 0 0 0-5.6 5.6v6.8a5.6 5.6 0 0 0 5.6 5.6h6.8a5.6 5.6 0 0 0 5.6-5.6V8.944l-1.6 1.6v4.993a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4v-6.8a4 4 0 0 1 4-4h4.878l1.6-1.6Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m20.692 7.116.534-.534a2.567 2.567 0 1 0-3.63-3.63L9.41 11.138l-1.103 3.74a.8.8 0 0 0 .994.993l3.74-1.103 6.52-6.52.005.004 1.13-1.132-.004-.004Zm-2.262 0-6.233 6.233-1.94.572.572-1.94 6.233-6.233 1.368 1.368Zm1.131-1.132-1.367-1.367.533-.534a.967.967 0 0 1 1.368 1.368l-.534.533Z"></path></svg>
+                            <span class="block font_label_bold_xl content_primary">포스트</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.6 0a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM10.6 7.6a2.6 2.6 0 1 1-5.2 0 2.6 2.6 0 0 1 5.2 0Zm-1.4 0a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM8.8 16.4a4.8 4.8 0 0 1 4.8-4.8h4a4.8 4.8 0 0 1 4.8 4.8v2a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8v-2Zm4.8-3.2a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2v-2a3.2 3.2 0 0 0-3.2-3.2h-4Z"></path><path d="M5.6 19.6h1.61c.07.706.507 1.304 1.117 1.6H5.6a2.8 2.8 0 0 1-2.8-2.8v-2a4.8 4.8 0 0 1 4.8-4.8h2.347a4.01 4.01 0 0 0-2.089 1.6H7.6a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">멤버 관리</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path d="M8.892 9.13a.5.5 0 0 0-.862 0l-.576.977a.5.5 0 0 1-.33.236l-1.112.228a.5.5 0 0 0-.266.83l.748.806a.5.5 0 0 1 .13.394l-.12 1.092a.5.5 0 0 0 .697.513l1.06-.462a.5.5 0 0 1 .4 0l1.06.462a.5.5 0 0 0 .697-.513l-.12-1.092a.5.5 0 0 1 .13-.395l.748-.805a.5.5 0 0 0-.267-.83l-1.11-.228a.5.5 0 0 1-.33-.236l-.577-.977ZM18.108 10.3a.7.7 0 0 1-.7.7h-3.732a.7.7 0 1 1 0-1.4h3.732a.7.7 0 0 1 .7.7ZM17.408 14a.7.7 0 1 0 0-1.4h-3.732a.7.7 0 1 0 0 1.4h3.732Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M2.2 8.4A4.4 4.4 0 0 1 6.6 4h10.7a4.4 4.4 0 0 1 4.4 4.4v6.8a4.4 4.4 0 0 1-4.4 4.4H6.6a4.4 4.4 0 0 1-4.4-4.4V8.4Zm4.4-2.8h10.7a2.8 2.8 0 0 1 2.8 2.8v6.8a2.8 2.8 0 0 1-2.8 2.8H6.6a2.8 2.8 0 0 1-2.8-2.8V8.4a2.8 2.8 0 0 1 2.8-2.8Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">구독 관리</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4 4.4H8.8a4.4 4.4 0 0 0-4.4 4.4v6.6a4.4 4.4 0 0 0 4.4 4.4h6.6a4.4 4.4 0 0 0 4.4-4.4V8.8a4.4 4.4 0 0 0-4.4-4.4ZM8.8 2.8a6 6 0 0 0-6 6v6.6a6 6 0 0 0 6 6h6.6a6 6 0 0 0 6-6V8.8a6 6 0 0 0-6-6H8.8Z"></path><path d="M12.2 12.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM12.2 16.4c2.21 0 4-.672 4-1.5s-1.79-1.5-4-1.5-4 .672-4 1.5 1.79 1.5 4 1.5Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">내 페이지</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.123 13.575a1.8 1.8 0 1 0 .113-3.599 1.8 1.8 0 0 0-.113 3.599Zm-.05 1.599a3.4 3.4 0 1 0 .213-6.797 3.4 3.4 0 0 0-.213 6.797Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M6.916 5.077a.543.543 0 0 0-.245.606l.332 1.236c.186.694.03 1.387-.274 1.935-.305.552-.81 1.048-1.497 1.257l-1.225.372a.543.543 0 0 0-.385.529l.034 1.95a.543.543 0 0 0 .402.514l1.24.331c.692.186 1.213.664 1.537 1.203.324.54.501 1.225.339 1.924l-.29 1.249a.543.543 0 0 0 .265.597l1.705.946c.212.117.476.08.647-.091l.905-.906c.508-.508 1.182-.72 1.813-.73.627-.01 1.312.177 1.837.668l.934.874a.543.543 0 0 0 .65.069l1.672-1.004a.543.543 0 0 0 .245-.606l-.332-1.236c-.187-.694-.03-1.387.273-1.935.306-.552.81-1.047 1.497-1.256l1.224-.373a.543.543 0 0 0 .385-.528l-.033-1.95a.543.543 0 0 0-.403-.515l-1.236-.33c-.694-.186-1.216-.664-1.54-1.204-.324-.54-.501-1.226-.339-1.925l.29-1.247a.543.543 0 0 0-.266-.597l-1.705-.946a.543.543 0 0 0-.647.09l-.904.906c-.508.508-1.182.72-1.813.73-.626.01-1.311-.177-1.836-.668l-.935-.874a.543.543 0 0 0-.65-.069L6.916 5.077Zm-1.79 1.02c-.249-.923.146-1.9.966-2.392l1.671-1.003a2.143 2.143 0 0 1 2.567.272l.934.874c.159.148.41.242.719.237.306-.005.551-.106.706-.261l.904-.906a2.143 2.143 0 0 1 2.556-.36l1.704.946a2.143 2.143 0 0 1 1.048 2.359l-.29 1.247c-.049.213-.005.476.153.74.158.262.37.425.58.481l1.237.33a2.143 2.143 0 0 1 1.59 2.034l.033 1.95a2.143 2.143 0 0 1-1.519 2.086l-1.224.372c-.21.064-.414.232-.563.5-.15.27-.184.537-.128.746l.332 1.236c.248.924-.146 1.9-.967 2.393l-1.671 1.003a2.143 2.143 0 0 1-2.566-.271l-.935-.874c-.158-.149-.41-.243-.719-.238-.306.005-.551.107-.706.262l-.905.906a2.143 2.143 0 0 1-2.555.359l-1.705-.946a2.143 2.143 0 0 1-1.048-2.358l.29-1.25c.05-.212.006-.475-.151-.737-.158-.263-.37-.425-.58-.48l-1.239-.332a2.143 2.143 0 0 1-1.589-2.033l-.033-1.95A2.143 2.143 0 0 1 3.54 8.953l1.225-.373c.21-.064.415-.232.563-.5.15-.27.185-.537.128-.746l-.331-1.236Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">기본정보</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center surface_accent_light hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_accent_active"><path d="M6.6 6.3a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0ZM6.6 12.3a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0ZM6.6 18.3a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0ZM9 6.3A1.3 1.3 0 0 1 10.3 5h9.4a1.3 1.3 0 1 1 0 2.6h-9.4A1.3 1.3 0 0 1 9 6.3ZM9 12.3a1.3 1.3 0 0 1 1.3-1.3h9.4a1.3 1.3 0 1 1 0 2.6h-9.4A1.3 1.3 0 0 1 9 12.3ZM9 18.3a1.3 1.3 0 0 1 1.3-1.3h9.4a1.3 1.3 0 1 1 0 2.6h-9.4A1.3 1.3 0 0 1 9 18.3Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">쪽지</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 헬프센터 -->
+                <a href="" target="_blank" class="flex px-[35px] border-t-[1px] border_disabled items-center justify-between w-full absolute bottom-0 h-[52px]">
+                    <div class="flex items-center font_label_bold_lg content_secondary">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="mr-[12px] h-[20px] w-[20px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.973 16.64a6.64 6.64 0 1 0 .055-13.279 6.64 6.64 0 0 0-.055 13.278Zm-.007 1.66A8.3 8.3 0 1 0 10.034 1.7 8.3 8.3 0 0 0 9.966 18.3Z"></path><path d="M8.767 7.09a1.245 1.245 0 1 1 2.49.01 1.245 1.245 0 0 1-2.49-.01ZM9.172 9.582a.415.415 0 0 1 .417-.413l.83.003c.229 0 .414.187.413.417l-.017 4.15a.415.415 0 0 1-.417.412l-.83-.003a.415.415 0 0 1-.413-.417l.017-4.15Z"></path></svg>
+                        헬프센터
+                    </div>
+                    <svg viewBox="0 0 11 12" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] content_quaternary"><path d="M4.834 2.667A.667.667 0 0 0 4.167 2h-4v9.333H9.5v-4a.667.667 0 0 0-1.333 0V10H1.5V3.333h2.667a.667.667 0 0 0 .667-.666Z"></path><path d="M10.173.552h.66V4.99a.667.667 0 0 1-1.333 0V2.828L5.972 6.357a.667.667 0 0 1-.943-.943l3.528-3.528H6.396a.667.667 0 0 1 0-1.334h3.777Z"></path></svg>
+                </a>
+            </nav>
+            <!-- 내용 -->
+            <div class="basis-0 grow shrink-0 overflow-x-auto">
+                <div class="grid grid-cols-12 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto pb-[64px]">
+                    <div class="col-span-full">
+                        <div class="sticky top-0 z-10 surface_primary">
+                            <!-- 제목 -->
+                            <div class="pt-[41px] pb-[16px] border-b-[1px] border_black_opacity col-span-full">
+                                <div class="flex pb-[26px] justify-between">
+                                    <h3 class="font_headline_bold_lg content_primary">쪽지 제목이 들어갑니다.</h3>
+                                    <div class="flex">
+                                        <div class="w-[88px]">
+                                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[16px] w-full false disabled:content_disabled">목록 보기</button>
+                                        </div>
+                                        <div class="w-[88px] ml-[12px]">
+                                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">답장</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center gap-x-[10px] whitespace-nowrap">
+                                        <div>
+                                            <a href="">
+                                                <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 34px; height: 34px; background : rgb(255, 255, 255);">
+                                                    <img src="../../static/image/profile_icon.png" alt="">
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <a class="font_label_bold_md content_secondary" href="">
+                                                    임희수
+                                                </a>
+                                            </div>
+                                            <div class="mt-[2px] flex items-center">
+                                                <div class="font_label_regular_sm content_quaternary flex items-center">
+                                                        <span>
+                                                            2023/05/10
+                                                        </span>
+                                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="mx-[2px] w-[8px] h-[8px] content_disabled">
+                                                        <circle cx="12" cy="12" r="4"></circle>
+                                                    </svg>
+                                                    <span>
+                                                            09:34
+                                                        </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="border-b">
+                                <div class="mt-[24px] mb-[24px] pt-[32px] pb-[32px]">
+                                    <div class="steadio-post steadio-post-detail">
+                                        <p>쪽지 내용이 들어갑니다.</p>
+                                        <p>사진이 있다면 다음과 같이 들어갑니다.</p>
+                                        <div class="image-wrapper">
+                                            <img src="../../static/image/python_icon.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="z-0"></div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</html>
