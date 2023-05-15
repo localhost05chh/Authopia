@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4989e1bf-62fb-4a00-b2d1-d9857b94b2c6" name="Default Changelist" comment="" />
+    <list default="true" id="4989e1bf-62fb-4a00-b2d1-d9857b94b2c6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2PoWRPk36tpvIiXwQ9cnfjNW0ig" />
   <component name="ProjectViewState">
@@ -17,7 +22,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/dependency" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -30,6 +35,8 @@
       <option name="presentableId" value="Default" />
       <updated>1684123905632</updated>
       <workItem from="1684123908203" duration="40000" />
+      <workItem from="1684144861532" duration="132000" />
+      <workItem from="1684145016160" duration="76000" />
     </task>
     <servers />
   </component>
@@ -37,9 +44,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1684123946344">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="479" y="-807" key="FileChooserDialogImpl" timestamp="1684145090462">
+      <screen x="-261" y="-1080" width="1920" height="1032" />
     </state>
+    <state x="479" y="-807" key="FileChooserDialogImpl/0.0.1920.1032/-261.-1080.1920.1032@-261.-1080.1920.1032" timestamp="1684145090462" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1684123946344" />
   </component>
 </project>
