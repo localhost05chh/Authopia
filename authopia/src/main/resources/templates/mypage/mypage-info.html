@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본정보</title>
+    <link rel="stylesheet" href="../../static/css/mypage/mypage.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+</head>
+<body class="h-full">
+<div id="__next">
+    <div class="flex flex-col h-screen">
+        <!-- 헤더 -->
+        <nav class="sticky top-0 left-0 surface_primary_inverse z-20 w-full h-[56px] px-[16px] shrink-0 flex items-center justify-between lg:px-[32px] lg:h-[58px]">
+            <!-- 로고 -->
+            <div>
+                <div class="flex items-center">
+                    <a href="/">
+                        <!-- 아마 반응형이라 display none -->
+                        <svg viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg" class="lg:hidden w-[31px] content_primary_inverse"><path d="M21.96 15.796h9.232A15.592 15.592 0 0 0 .059 14.55c-.011.116-.019.234-.027.351v.105c-.013.21-.022.423-.022.637v.154h9.957c0-2.987-2.228-5.412-4.978-5.412a4.755 4.755 0 0 0-3.41 1.473c1.051-1.346 2.63-2.203 4.395-2.203 3.165 0 5.725 2.75 5.725 6.142h7.562v-.154c0-5.7-4.31-10.321-9.629-10.321a9.085 9.085 0 0 0-4.62 1.266 10.976 10.976 0 0 1 16.949 9.21v-.003Z"></path></svg>
+                        <!-- 이게 보여지는 로고 -->
+                        <svg viewBox="0 0 115 16" xmlns="http://www.w3.org/2000/svg" class="hidden lg:block w-[96px] content_primary_inverse"><path fill-rule="evenodd" clip-rule="evenodd" d="M98.073 1.695a1.695 1.695 0 1 1 1.695 1.695 1.687 1.687 0 0 1-1.695-1.695Zm2.967 2.863v11.23h-2.539V4.556l2.539.002Zm-7.842 11.23h2.544V.102h-2.544v5.725h-.042a4.791 4.791 0 0 0-3.517-1.483c-2.925 0-5.214 2.332-5.214 5.828 0 3.496 2.29 5.827 5.214 5.827a4.79 4.79 0 0 0 3.517-1.483h.042v1.272Zm-3.054-2.162c-1.737 0-3.093-1.4-3.093-3.454 0-2.056 1.355-3.455 3.093-3.455 1.739 0 3.094 1.4 3.094 3.455s-1.356 3.454-3.094 3.454Zm-45.282 2.373c-3.709 0-6.167-1.867-6.336-4.978h2.925c.317 1.906 1.653 2.584 3.327 2.584 1.843 0 2.986-.847 2.986-1.927 0-1.376-1.604-1.75-3.542-2.202l-.462-.108C41.28 8.774 38.78 7.8 38.78 4.81c0-2.204 1.887-4.492 5.531-4.492 3.221 0 5.68 1.908 6.04 4.768h-2.884c-.296-1.292-1.207-2.374-3.094-2.374-1.674 0-2.839.827-2.839 1.93 0 1.49 1.468 1.83 3.482 2.298l.587.138c2.331.551 4.916 1.42 4.916 4.344 0 2.86-2.31 4.576-5.658 4.576Zm11.59-9.155v5.02c0 1.526.933 1.759 1.675 1.759.405.003.805-.091 1.166-.275v2.288c-.46.18-.948.272-1.441.276-2.14 0-3.942-1.06-3.942-4.108v-4.96h-2.328V4.556h2.33V1.32h2.543v3.236h2.843v2.288h-2.845Zm14.814 5.532h-2.739c-.516 1.113-1.329 1.377-2.516 1.377-1.441 0-2.712-.954-2.903-2.755h8.304c0-4.539-2.648-6.654-5.615-6.654-3.052 0-5.446 2.332-5.446 5.828 0 3.496 2.4 5.827 5.636 5.827 2.268 0 4.532-1.048 5.279-3.623Zm-2.67-3.328h-5.51c.277-1.415 1.42-2.437 2.756-2.437 1.335 0 2.479 1.018 2.754 2.437Zm14.135 6.74h-2.5a17.563 17.563 0 0 1-.063-1.442h-.044C79.107 15.597 77.837 16 76.564 16c-2.246 0-3.877-1.334-3.877-3.496 0-1.674 1.08-3.263 4.068-3.391 1.357-.064 3.327-.085 3.327-.085v-.571c0-1.378-1.144-2.035-2.331-2.035-1.188 0-2.097.657-2.24 1.695h-2.634c.125-2.395 2.098-3.772 4.895-3.772 2.819 0 4.854 1.76 4.854 4.408v3.39c0 2.035.02 2.946.105 3.645Zm-5.234-4.832c-1.59.085-2.183.678-2.183 1.505 0 .953.763 1.44 1.844 1.44 1.59 0 2.924-.975 2.924-2.628v-.423s-1.419.043-2.585.106Zm31.193-6.57c-3.242 0-5.742 2.522-5.742 5.807 0 3.289 2.498 5.805 5.741 5.805 3.243 0 5.744-2.521 5.744-5.805 0-3.285-2.501-5.808-5.743-5.808Zm.004 2.373c1.777 0 3.112 1.42 3.112 3.434 0 2.012-1.336 3.432-3.112 3.432s-3.111-1.419-3.111-3.432c0-2.014 1.334-3.434 3.111-3.434Z"></path><path d="M21.96 15.796h9.232A15.592 15.592 0 0 0 .059 14.55c-.011.116-.019.234-.027.351v.105c-.013.21-.022.423-.022.637v.154h9.957c0-2.987-2.228-5.412-4.978-5.412a4.755 4.755 0 0 0-3.41 1.473c1.051-1.346 2.63-2.203 4.395-2.203 3.165 0 5.725 2.75 5.725 6.142h7.562v-.154c0-5.7-4.31-10.321-9.629-10.321a9.085 9.085 0 0 0-4.62 1.266 10.976 10.976 0 0 1 16.949 9.21v-.003Z"></path></svg>
+                    </a>
+                    <div class="mx-[10px] font_body_regular_md content_primary_inverse">|</div>
+                    <div class="font_body_regular_lg content_primary_inverse flex items-center">
+                        <span>Creator Studio</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 프사 -->
+            <div class="flex items-center justify-end">
+                <div class="relative">
+                    <button class="relative w-[32px] h-[32px] rounded-full surface_primary_active">
+                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                            </span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- 메인 -->
+        <div class="flex h-full overflow-hidden">
+            <!-- 좌측 메뉴 -->
+            <nav class="surface_secondary border border_primary basis-[260px] relative">
+                <!-- 프로필 -->
+                <div class="pt-[40px] pb-[28px] mx-[32px] border-b border_disabled">
+                    <div class="flex flex-col items-center">
+                        <div class="w-[68px] h-[68px] mb-[12px]">
+                            <div class="relative w-full h-full rounded-full flex items-center justify-center">
+                                    <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                        <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                    </span>
+                                <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
+                            </div>
+                        </div>
+                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center">임희수</h2>
+                        <a href="" target="_blank">
+                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
+                                <div class="flex items-center justify-center">
+                                    <div>내 페이지</div>
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="ml-[4px] shrink-0"><path d="M11 7a1 1 0 0 0-1-1H4v14h14v-6a1 1 0 1 0-2 0v4H6V8h4a1 1 0 0 0 1-1Z"></path><path d="M19.01 3.829H20v6.656a1 1 0 1 1-2 0V7.244l-5.293 5.293a1 1 0 0 1-1.414-1.415l5.293-5.292h-3.243a1 1 0 1 1 0-2H19.01Z"></path></svg>
+                                </div>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- 목록들 -->
+                <ul class="px-[24px] py-[32px]">
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path d="M15.078 3.137H8.6a5.6 5.6 0 0 0-5.6 5.6v6.8a5.6 5.6 0 0 0 5.6 5.6h6.8a5.6 5.6 0 0 0 5.6-5.6V8.944l-1.6 1.6v4.993a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4v-6.8a4 4 0 0 1 4-4h4.878l1.6-1.6Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m20.692 7.116.534-.534a2.567 2.567 0 1 0-3.63-3.63L9.41 11.138l-1.103 3.74a.8.8 0 0 0 .994.993l3.74-1.103 6.52-6.52.005.004 1.13-1.132-.004-.004Zm-2.262 0-6.233 6.233-1.94.572.572-1.94 6.233-6.233 1.368 1.368Zm1.131-1.132-1.367-1.367.533-.534a.967.967 0 0 1 1.368 1.368l-.534.533Z"></path></svg>
+                            <span class="block font_label_bold_xl content_primary">포스트</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.6 0a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM10.6 7.6a2.6 2.6 0 1 1-5.2 0 2.6 2.6 0 0 1 5.2 0Zm-1.4 0a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM8.8 16.4a4.8 4.8 0 0 1 4.8-4.8h4a4.8 4.8 0 0 1 4.8 4.8v2a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8v-2Zm4.8-3.2a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2v-2a3.2 3.2 0 0 0-3.2-3.2h-4Z"></path><path d="M5.6 19.6h1.61c.07.706.507 1.304 1.117 1.6H5.6a2.8 2.8 0 0 1-2.8-2.8v-2a4.8 4.8 0 0 1 4.8-4.8h2.347a4.01 4.01 0 0 0-2.089 1.6H7.6a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">멤버 관리</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path d="M8.892 9.13a.5.5 0 0 0-.862 0l-.576.977a.5.5 0 0 1-.33.236l-1.112.228a.5.5 0 0 0-.266.83l.748.806a.5.5 0 0 1 .13.394l-.12 1.092a.5.5 0 0 0 .697.513l1.06-.462a.5.5 0 0 1 .4 0l1.06.462a.5.5 0 0 0 .697-.513l-.12-1.092a.5.5 0 0 1 .13-.395l.748-.805a.5.5 0 0 0-.267-.83l-1.11-.228a.5.5 0 0 1-.33-.236l-.577-.977ZM18.108 10.3a.7.7 0 0 1-.7.7h-3.732a.7.7 0 1 1 0-1.4h3.732a.7.7 0 0 1 .7.7ZM17.408 14a.7.7 0 1 0 0-1.4h-3.732a.7.7 0 1 0 0 1.4h3.732Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M2.2 8.4A4.4 4.4 0 0 1 6.6 4h10.7a4.4 4.4 0 0 1 4.4 4.4v6.8a4.4 4.4 0 0 1-4.4 4.4H6.6a4.4 4.4 0 0 1-4.4-4.4V8.4Zm4.4-2.8h10.7a2.8 2.8 0 0 1 2.8 2.8v6.8a2.8 2.8 0 0 1-2.8 2.8H6.6a2.8 2.8 0 0 1-2.8-2.8V8.4a2.8 2.8 0 0 1 2.8-2.8Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">구독 관리</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.4 4.4H8.8a4.4 4.4 0 0 0-4.4 4.4v6.6a4.4 4.4 0 0 0 4.4 4.4h6.6a4.4 4.4 0 0 0 4.4-4.4V8.8a4.4 4.4 0 0 0-4.4-4.4ZM8.8 2.8a6 6 0 0 0-6 6v6.6a6 6 0 0 0 6 6h6.6a6 6 0 0 0 6-6V8.8a6 6 0 0 0-6-6H8.8Z"></path><path d="M12.2 12.5a2.25 2.25 0 1 0 0-4.5 2.25 2.25 0 0 0 0 4.5ZM12.2 16.4c2.21 0 4-.672 4-1.5s-1.79-1.5-4-1.5-4 .672-4 1.5 1.79 1.5 4 1.5Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">내 페이지</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center surface_accent_light hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_accent_active"><path fill-rule="evenodd" clip-rule="evenodd" d="M5.404 5.465a1.45 1.45 0 0 1 .668-1.614l1.815-1.068a1.45 1.45 0 0 1 1.736.199l1.002.953c.366.348.87.505 1.376.501.506-.003 1.004-.169 1.365-.524l.986-.97a1.45 1.45 0 0 1 1.732-.228l1.833 1.038c.564.32.847.973.695 1.603l-.324 1.344c-.119.492-.004 1.006.253 1.442.256.436.65.786 1.137.92l1.333.37a1.45 1.45 0 0 1 1.064 1.386l.018 2.106a1.45 1.45 0 0 1-1.04 1.404l-1.327.39c-.486.144-.872.499-1.12.94-.25.44-.357.957-.23 1.446l.346 1.339a1.45 1.45 0 0 1-.668 1.614l-1.815 1.069a1.45 1.45 0 0 1-1.736-.2l-1.002-.953c-.366-.348-.87-.505-1.376-.501-.507.003-1.005.169-1.366.524l-.986.97a1.45 1.45 0 0 1-1.732.228l-1.833-1.038a1.45 1.45 0 0 1-.695-1.602l.325-1.347c.119-.491.004-1.005-.253-1.44-.256-.435-.649-.785-1.136-.92l-1.335-.369a1.45 1.45 0 0 1-1.064-1.386l-.018-2.106a1.45 1.45 0 0 1 1.04-1.404L4.4 9.19c.486-.143.872-.499 1.12-.94.25-.44.358-.957.23-1.446l-.346-1.339ZM12.2 14.8a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">기본정보</span>
+                        </a>
+                    </li>
+                    <li class="h-[40px] mb-[8px] px-[12px] rounded-[8px] flex items-center false hover:surface_accent_light">
+                        <a href="" class="flex items-center grow">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[24px] w-[24px] mr-[10px] content_secondary"><path d="M5.5 7.8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM5.5 13.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3ZM7 17.7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM10 5.4a1 1 0 0 0 0 2h10a1 1 0 1 0 0-2H10ZM9 12a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H10a1 1 0 0 1-1-1ZM10 16.6a1 1 0 1 0 0 2h10a1 1 0 1 0 0-2H10Z"></path></svg>
+                            <span class="block font_label_bold_xl content_secondary">쪽지</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- 헬프센터 -->
+                <a href="" target="_blank" class="flex px-[35px] border-t-[1px] border_disabled items-center justify-between w-full absolute bottom-0 h-[52px]">
+                    <div class="flex items-center font_label_bold_lg content_secondary">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="mr-[12px] h-[20px] w-[20px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.973 16.64a6.64 6.64 0 1 0 .055-13.279 6.64 6.64 0 0 0-.055 13.278Zm-.007 1.66A8.3 8.3 0 1 0 10.034 1.7 8.3 8.3 0 0 0 9.966 18.3Z"></path><path d="M8.767 7.09a1.245 1.245 0 1 1 2.49.01 1.245 1.245 0 0 1-2.49-.01ZM9.172 9.582a.415.415 0 0 1 .417-.413l.83.003c.229 0 .414.187.413.417l-.017 4.15a.415.415 0 0 1-.417.412l-.83-.003a.415.415 0 0 1-.413-.417l.017-4.15Z"></path></svg>
+                        헬프센터
+                    </div>
+                    <svg viewBox="0 0 11 12" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] content_quaternary"><path d="M4.834 2.667A.667.667 0 0 0 4.167 2h-4v9.333H9.5v-4a.667.667 0 0 0-1.333 0V10H1.5V3.333h2.667a.667.667 0 0 0 .667-.666Z"></path><path d="M10.173.552h.66V4.99a.667.667 0 0 1-1.333 0V2.828L5.972 6.357a.667.667 0 0 1-.943-.943l3.528-3.528H6.396a.667.667 0 0 1 0-1.334h3.777Z"></path></svg>
+                </a>
+            </nav>
+            <!-- 내용 -->
+            <div class="basis-0 grow shrink-0 overflow-x-auto">
+                <div class="grid grid-cols-12 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto pb-[64px]">
+                    <!-- 제목 -->
+                    <div class="pt-[41px] pb-[26px] border-b-[1px] border_black_opacity col-span-full">
+                        <div class="flex justify-between">
+                            <h3 class="font_headline_bold_lg content_primary">기본 정보</h3>
+                            <div class="w-[88px]">
+                                <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">수정</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 카테고리 -->
+                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
+                        <div>
+                            <div class="mb-[7px] flex items-center">
+                                <strong class="font_title_bold_md content_primary mr-[6px]">카테고리</strong>
+                                <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="content_negative w-[8px] h-[8px]">
+                                    <circle cx="4" cy="4" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span class="font_body_regular_md content_secondary">가장 적합한 창작 분야 1개를 선택해주세요.</span>
+                        </div>
+                    </div>
+                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
+                        <div>
+                            <label class="surface_primary rounded-[8px] h-[48px] flex items-center cursor-pointer border border_black_opacity pl-[20px] pr-[16px] focus-within:border-2 focus-within:border_accent_active focus-within:pl-[19px] focus-within:pr-[15px]">
+                                <input id="button-category" type="text" readonly placeholder="카테고리" class="outline-none w-full font_body_regular_md placeholder:content_disabled cursor-pointer surface_primary content_primary" value>
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="ml-[10px] h-[16px] w-[16px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.27 8.42a1.076 1.076 0 0 1 1.587-.13L12 14.832l7.143-6.544a1.076 1.076 0 0 1 1.586.13 1.26 1.26 0 0 1-.122 1.696L12 18l-8.607-7.885A1.26 1.26 0 0 1 3.27 8.42Z"></path></svg>
+                            </label>
+                            <div class="relative flex">
+                                <div id="filter-category" class="absolute top-[8px] z-10 max-h-[192px] overflow-y-auto w-full shadow-menu">
+                                    <ul class="rounded-[8px] p-[8px] surface_primary shadow-menu">
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">글의</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">종류가</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">들어</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">가면</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">될 것</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">같아요</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">근데</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">뭐가</button>
+                                        </li>
+                                        <li tabindex="-1" class="undefinded">
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">있지..?</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                    <!-- URL 등록 -->
+                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
+                        <div>
+                            <div class="mb-[7px] flex items-center">
+                                <strong class="font_title_bold_md content_primary mr-[6px]">URL 등록</strong>
+                                <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="content_negative w-[8px] h-[8px]">
+                                    <circle cx="4" cy="4" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span class="font_body_regular_md content_secondary">크리에이터 페이지에 사용할 URL 주소를 설정해주세요.</span>
+                        </div>
+                    </div>
+                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
+                        <div class="flex gap-x-[12px]">
+                            <div class="flex-grow flex-shrink">
+                                <div>
+                                    <p class="font_label_bold_md content_primary mb-[8px]">steadio.co/creator/</p>
+                                    <label id="label-url" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                        <input id="input-url" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="2자 이상의 URL을 입력해주세요" value="ss00coder">
+                                    </label>
+                                    <div id="warn-url" class="flex mt-[8px] font_label_regular_sm content_negative">
+                                        <div class="mr-auto flex items-center">
+                                            <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] mr-[4px]"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 22.05c5.523.023 10.019-4.436 10.042-9.959.023-5.523-4.436-10.018-9.959-10.041C6.568 2.027 2.073 6.485 2.05 12.008c-.023 5.523 4.435 10.019 9.958 10.042Zm1.527-6.494a1.5 1.5 0 1 1-3-.013 1.5 1.5 0 0 1 3 .013Zm-1.181-2.505a.5.5 0 0 0 .498-.436l.646-4.997a.5.5 0 0 0-.494-.564l-1.867-.008a.5.5 0 0 0-.499.56l.604 5.002a.5.5 0 0 0 .495.44l.617.003Z"></path></svg>
+                                            3~28자의 영문 소문자, 숫자만 입력 가능합니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="basis-[112px] shrink-0 w-[112px] mt-[26px]">
+                                <button id="check-url" type="button" class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_accent hover:surface_accent_active active:surface_accent_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled" disabled>
+                                    중복 확인
+                                </button>
+                                <button id="check-complete" type="button" class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_accent hover:surface_accent_active active:surface_accent_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled">
+                                    <div class="flex items-center justify-center">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="mr-[4px] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M19.702 7.288a1 1 0 0 1 .01 1.414l-8.59 8.723-5.834-5.923a1 1 0 0 1 1.424-1.404l4.41 4.477 7.166-7.277a1 1 0 0 1 1.414-.01Z"></path></svg>
+                                        <div>확인 완료</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                    <!-- 검색 태그 -->
+                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
+                        <div>
+                            <div class="mb-[7px] flex items-center">
+                                <strong class="font_title_bold_md content_primary mr-[6px]">검색 태그</strong>
+                            </div>
+                            <span class="font_body_regular_md content_secondary">태그는 2~10자로 20개까지 생성 가능합니다.</span>
+                        </div>
+                    </div>
+                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
+                        <div>
+                            <div class="mb-[16px] flex gap-x-[12px]">
+                                <div class="w-full">
+                                    <div>
+                                        <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                            <input id="input-search" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="예시) 웹툰, 에세이, 저널리즘">
+                                        </label>
+                                        <div id="warn-search" class="flex mt-[8px] font_label_regular_sm content_quaternary">
+                                            <div class="mr-auto flex items-center">2자 이상 입력해주세요.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-[88px]">
+                                    <button id="button-search" type="button" disabled class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_accent hover:surface_accent_active active:surface_accent_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled">등록</button>
+                                </div>
+                            </div>
+                            <ul class="flex flex-wrap">
+                                <li class="h-[48px] border border_black_opacity rounded-[8px] flex items-center pl-[20px] pr-[12px] mb-[16px] mr-[12px]">
+                                    <span class="font_body_regular_md content_primary mr-[12px]">태그 예시</span>
+                                    <button type="button">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] content_tertiary"><path d="M5.707 5.707a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 1 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414-1.414l-4.95-4.95 4.95-4.95a1 1 0 1 0-1.414-1.414l-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0Z"></path></svg>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                    <!-- 이용자 이름 -->
+                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
+                        <div>
+                            <div class="mb-[7px] flex items-center">
+                                <strong class="font_title_bold_md content_primary mr-[6px]">이용자 이름</strong>
+                                <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="content_negative w-[8px] h-[8px]">
+                                    <circle cx="4" cy="4" r="4"></circle>
+                                </svg>
+                            </div>
+                            <span class="font_body_regular_md content_secondary">크리에이터 페이지에 사용될 이름을 입력해주세요.</span>
+                        </div>
+                    </div>
+                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
+                        <div>
+                            <label id="label-name" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                <input id="input-name" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="이용자 이름 입력" value="임희수">
+                            </label>
+                            <div id="warn-name" class="flex mt-[8px] font_label_regular_sm content_negative">
+                                <div class="mr-auto flex items-center">
+                                    <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] mr-[4px]"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 22.05c5.523.023 10.019-4.436 10.042-9.959.023-5.523-4.436-10.018-9.959-10.041C6.568 2.027 2.073 6.485 2.05 12.008c-.023 5.523 4.435 10.019 9.958 10.042Zm1.527-6.494a1.5 1.5 0 1 1-3-.013 1.5 1.5 0 0 1 3 .013Zm-1.181-2.505a.5.5 0 0 0 .498-.436l.646-4.997a.5.5 0 0 0-.494-.564l-1.867-.008a.5.5 0 0 0-.499.56l.604 5.002a.5.5 0 0 0 .495.44l.617.003Z"></path></svg>
+                                    <span>필수항목입니다.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="z-0"></div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../../static/js/mypage/mypage-info.js"></script>
+</html>
