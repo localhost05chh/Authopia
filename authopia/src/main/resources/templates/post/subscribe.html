@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/post/subscribe.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <title>구독 / 결제</title>
+</head>
+
+<body class="h-full">
+<div id="__next">
+    <div class="surface_primary">
+        <div class="relative max-w-mobile mx-auto mb-[24px] min-h-screen surface_primary">
+            <main class="py-[20px] px-[16px] margin">
+                <div class="mt-[32px]">
+                    <div class="flex flex-col items-center">
+                        <div class="mb-[12px] drop-shadow-[0_3px_8px_rgba(0,0,0,0.1)]">
+                            <div class="div-style relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]"></div>
+                        </div>
+                        <p class="content_primary font_title_bold_lg">
+                            문지기<span class="font_body_regular_lg">의 멤버십</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-[32px]">
+                    <div class="p-[20px] border border_black_opacity rounded-[8px]">
+                        <h5 class="mb-[16px] content_secondary font_title_bold_sm">
+                            멤버십 정보
+                        </h5>
+                        <dl>
+                            <div class="flex justify-between mt-[12px] first:m-0 false">
+                                <dt class="font_label_regular_lg content_quaternary">
+                                    멤버십 등급
+                                </dt>
+                                <dd
+                                        class="font_label_regular_xl content_primary max-w-[220px] text-right flex items-center justify-end grow break-all">
+                                    2023 북클럽 문지기 구독권
+                                </dd>
+                            </div>
+                            <div class="flex justify-between mt-[12px] first:m-0 false">
+                                <dt class="font_label_regular_lg content_quaternary">
+                                    월 결제 금액
+                                </dt>
+                                <dd
+                                        class="font_label_regular_xl content_primary max-w-[220px] text-right flex items-center justify-end grow break-all">
+                                    <div class="flex flex-wrap items-center">
+                                        70,000원
+                                    </div>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+                <div class="mt-[16px]">
+                    <div class="py-[20px] border border_black_opacity rounded-[8px]">
+                        <div class="px-[20px]">
+                            <h5 class="mb-[16px] content_secondary font_label_bold_xl">
+                                결제수단
+                            </h5>
+                            <div class="mb-[12px]">
+                                <label class="hidrelative flex items-center">
+                                    <input type="radio" name="pay-items" class="absolute opacity-0 w-0 h-0"
+                                           value="NAVER_PAY">
+                                    <div id="naverpay"
+                                         class="surface_primary border_active border rounded-full h-[20px] w-[20px] flex items-center justify-center">
+                                        <svg id="naver" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"
+                                             class="hidden h-[12px] w-[12px]">
+                                            <circle cx="4" cy="4" r="4"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-[12px] flex-grow">
+                                        <p class="font_title_bold_md content_secondary">네이버페이</p>
+                                    </div>
+                                </label>
+                                <div style="height: 16px;"></div>
+                                <label class="hidrelative flex items-center">
+                                    <input
+                                            type="radio" name="pay-items" class="absolute opacity-0 w-0 h-0"
+                                            value="CARD">
+                                    <div id="creditcard"
+                                         class="surface_primary border_active border rounded-full h-[20px] w-[20px] flex items-center justify-center">
+                                        <svg id="credit" viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"
+                                             class="hidden h-[12px] w-[12px]">
+                                            <circle cx="4" cy="4" r="4"></circle>
+                                        </svg>
+                                    </div>
+                                    <div class="ml-[12px] flex-grow">
+                                        <p class="font_title_bold_md content_secondary">신용카드</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mx-auto" id="card">
+                            <div
+                                    class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+                                <div class="swiper-wrapper"
+                                     style="transition-duration: 0ms; transform: translate3d(39.8333px, 0px, 0px);">
+                                    <div class="swiper-slide swiper-slide-active"
+                                         style="width: 386.333px; margin-right: 12px;"><button type="button"
+                                                                                               class="py-[22px] surface_secondary border border-dashed border_black_opacity rounded-[8px] flex flex-col items-center justify-center w-full">
+                                        <div
+                                                class="mb-[4px] h-[22px] w-[22px] surface_accent rounded-full flex items-center justify-center">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                                 class="content_primary_inverse h-[10px] w-[10px]">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                      d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z">
+                                                </path>
+                                            </svg></div>
+                                        <p class="content_quaternary font_label_bold_md">카드 등록</p>
+                                    </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-[16px] mb-[146px]">
+                    <div class="p-[20px] border border_black_opacity rounded-[8px]">
+                        <div class="mb-[24px]">
+                            <div class="mb-[16px]"><label class="relative flex items-center w-full false"><input
+                                    type="checkbox" class="absolute opacity-0 w-0 h-0"
+                                    value="recurringPaymentAgreement">
+                                <div id="top-button"
+                                     class="border border_active surface_primary rounded-full h-[20px] w-[20px] flex items-center justify-center">
+                                    <svg id="top-button-shape" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                         class="content_quaternary_inverse h-[12px] w-[12px] content_disabled">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M19.702 7.288a1 1 0 0 1 .01 1.414l-8.59 8.723-5.834-5.923a1 1 0 0 1 1.424-1.404l4.41 4.477 7.166-7.277a1 1 0 0 1 1.414-.01Z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="ml-[12px]">
+                                    <p class="font_title_bold_md content_primary">정기 결제 동의</p>
+                                </div>
+                            </label></div>
+                            <ul class="p-[16px] surface_secondary rounded-[8px] flex flex-col">
+                                <li class="flex mt-[8px] first:m-0"><svg viewBox="0 0 24 24"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         class="h-[16px] w-[16px] mr-[2px] shrink-0 content_disabled">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                </svg>
+                                    <p class="font_body_regular_md content_tertiary">가입된 멤버십의 해지를 요청하지 않으면 멤버십은 매월
+                                        자동으로 갱신되고 결제가 이루어집니다.</p>
+                                </li>
+                                <li class="flex mt-[8px] first:m-0"><svg viewBox="0 0 24 24"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         class="h-[16px] w-[16px] mr-[2px] shrink-0 content_disabled">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                </svg>
+                                    <p class="font_body_regular_md content_tertiary">멤버십에 가입한 날짜가 매월 정기 결제일이 되며, 결제할
+                                        달에 해당 날짜가 없을 경우에는 그 달 말일에 결제가 이루어집니다. (예. 31일)</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mb-[24px]">
+                            <div class="mb-[16px]"><label class="relative flex items-center w-full false"><input
+                                    type="checkbox" class="absolute opacity-0 w-0 h-0" value="noticeAgreement">
+                                <div id="bottom-button"
+                                     class="border border_active surface_primary rounded-full h-[20px] w-[20px] flex items-center justify-center">
+                                    <svg id="buttom-button-shape" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+                                         class="content_quaternary_inverse h-[12px] w-[12px] content_disabled">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                              d="M19.702 7.288a1 1 0 0 1 .01 1.414l-8.59 8.723-5.834-5.923a1 1 0 0 1 1.424-1.404l4.41 4.477 7.166-7.277a1 1 0 0 1 1.414-.01Z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div class="ml-[12px]">
+                                    <p class="font_title_bold_md content_primary">멤버십 가입 유의사항 동의</p>
+                                </div>
+                            </label></div>
+                            <ul class="p-[16px] surface_secondary rounded-[8px] flex flex-col">
+                                <li class="flex mt-[8px] first:m-0"><svg viewBox="0 0 24 24"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         class="h-[16px] w-[16px] mr-[2px] shrink-0 content_disabled">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                </svg>
+                                    <p class="font_body_regular_md content_tertiary">멤버십은 언제든지 해지를 신청할 수 있습니다. 다만 이미
+                                        결제한 멤버십 기간은 다음 달 결제일 전날까지 유지됩니다.</p>
+                                </li>
+                                <li class="flex mt-[8px] first:m-0"><svg viewBox="0 0 24 24"
+                                                                         xmlns="http://www.w3.org/2000/svg"
+                                                                         class="h-[16px] w-[16px] mr-[2px] shrink-0 content_disabled">
+                                    <circle cx="12" cy="12" r="4"></circle>
+                                </svg>
+                                    <p class="font_body_regular_md content_tertiary">멤버십 혜택은 크리에이터의 사정에 의하여 달라질 수
+                                        있습니다.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer
+                    class="fixed bottom-0 left-1/2 -translate-x-1/2 max-w-mobile w-full z-10 p-[16px] shadow-[0px_-1px_10px_rgba(0,0,0,0.08)] rounded-t-[24px] surface_primary">
+                <dl class="mb-[16px] flex flex-col gap-[4px] items-center justify-center">
+                    <div class="flex items-center content_primary">
+                        <dt class="font_label_regular_xl mr-[6px]">월 결제액</dt>
+                        <dd class="font_title_bold_md">&nbsp;70,000원</dd>
+                    </div>
+                    <div class="flex items-center content_tertiary font_label_regular_sm">
+                        <dt>다음 결제일</dt>
+                        <dd>&nbsp;6월 14일</dd>
+                    </div>
+                </dl><button type="button"
+                             class="able relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[24px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled"
+                             disabled="">모든 정보를 확인해주세요.</button>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="subscribe.js"></script>
+</html>
