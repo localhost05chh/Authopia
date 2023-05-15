@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="drawing-setting.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <title>글 작성</title>
+</head>
+
+<body class="h-full">
+<div id="__next">
+    <div class="sticky top-0 z-10">
+        <!-- 해더 -->
+        <!-- <nav></nav> -->
+        <header class="h-[68px] border-b border_primary flex items-center surface_primary">
+            <div class="min-w-desktop-grid mx-auto flex items-center justify-between">
+                <div class="flex items-center content_primary">
+                    <button
+                            class="surface_tertiary w-[32px] h-[32px] mr-[16px] rounded-full flex items-center justify-center">
+                        <svg viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] ">
+                            <path
+                                    d="M13.833 8a.667.667 0 0 0-.666-.667H5.72L8.973 4.08a.667.667 0 1 0-.943-.943L3.167 8l4.863 4.863a.665.665 0 0 0 .94-.94L5.72 8.667h7.447A.667.667 0 0 0 13.833 8Z">
+                            </path>
+                        </svg>
+                    </button>
+                    <h1 class="font_title_bold_lg">포스트 작성하기</h1>
+                </div>
+                <div class="flex items-center">
+                    <div class="mr-[12px]">
+                        <button type="button"
+                                class="button relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">임시저장</button>
+                    </div>
+                    <div>
+                        <button type="button" id="ablebutton"
+                                class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px]  false disabled:content_disabled"
+                                disabled="">게시</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <main class="mt-[48px]">
+        <div class="grid grid-cols-15 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto">
+            <section class="col-span-9">
+                <div class="mb-[14px]">
+                    <div>
+                        <label
+                                class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                            <input type="text" id="input"
+                                   class="change-button input px-[20px] w-full h-[48px] outline-none font_title_bold_md placeholder:font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
+                                   placeholder="제목을 입력해주세요.">
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <div class="mb-[48px]">
+                        <div role="application" class="tox tox-tinymce" aria-disabled="false"
+                             style="visibility: hidden; height: 474px;">
+                                <textarea id="textarea" style="resize: none;"
+                                          class="change-button steadio-post outline-none font_title_bold_md px-[20px] pt-[10px] textarea-type"
+                                          placeholder="내용을 입력해주세요."></textarea>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="col-start-11 col-end-16">
+                <section class="border border_primary rounded-[12px] flex flex-col">
+                    <div
+                            class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
+                        <div class="flex items-center">
+                            <strong class="font_label_bold_xl content_primary">공개
+                                범위
+                            </strong>
+                        </div>
+                    </div>
+                    <div class="px-[20px]">
+                        <ul>
+                            <li class="py-[26px] border-t border_secondary first:border-t-0"><label
+                                    class="hidrelative flex items-center"><input type="radio" name="group"
+                                                                                 class="absolute opacity-0 w-0 h-0" value="PUBLIC" checked="">
+                                <div
+                                        class="surface_primary border_accent_active border rounded-full h-[20px] w-[20px] flex items-center justify-center">
+                                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"
+                                         class="content_accent_active h-[12px] w-[12px]">
+                                        <circle cx="4" cy="4" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <div class="ml-[12px] flex-grow">
+                                    <div class="content_primary font_label_bold_lg">전체 공개</div>
+                                </div>
+                            </label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+                            class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
+                        <div class="flex items-center">
+                            <strong class="font_label_bold_xl content_primary">태그</strong><button type="button"
+                                                                                                  class="ml-[4px]">
+                            <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"
+                                 class="w-[18px] h-[18px] content_quaternary">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M12.008 20.041a8 8 0 1 0 .067-16 8 8 0 0 0-.067 16Zm-.008 2c5.523.023 10.018-4.435 10.041-9.958.023-5.523-4.435-10.019-9.958-10.041C6.56 2.019 2.064 6.477 2.04 12 2.02 17.523 6.477 22.018 12 22.041Z">
+                                </path>
+                                <path
+                                        d="M11.984 13.372c-.528-.002-.974-.436-.888-.957.116-.702.408-1.305 1.088-1.753.574-.387 1.011-.768 1.02-1.363-.004-.594-.45-.993-1.01-.988-.283-.005-.552.1-.75.295-.348.343-.712.793-1.2.79-.655-.002-1.214-.559-.978-1.17.46-1.19 1.614-1.739 2.948-1.733 1.886.007 3.242.97 3.241 2.706-.011 1.156-.593 1.857-1.467 2.4-.388.236-.67.511-.843.852-.24.47-.633.923-1.16.92ZM12.02 17.492a1.5 1.5 0 1 0 .013-3 1.5 1.5 0 0 0-.012 3Z">
+                                </path>
+                            </svg>
+                        </button>
+                        </div>
+                    </div>
+                    <div class="px-[20px]">
+                        <div class="mb-[16px] flex gap-x-[12px]">
+                            <div class="w-full mt-[24px]">
+                                <div>
+                                    <label
+                                            class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled"><input
+                                            type="text"
+                                            class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
+                                            placeholder="포스트의 키워드를 태그로 입력하세요." value=""></label>
+                                    <div class="flex mt-[8px] font_label_regular_sm content_quaternary">
+                                        <div class="mr-auto flex items-center">최대 10개, 1개당 20자까지 입력할 수 있습니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="flex flex-wrap"></ul>
+                    </div>
+                    <div
+                            class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
+                        <div class="flex items-center">
+                            <strong class="font_label_bold_xl content_primary">파일
+                                첨부</strong>
+                            <button type="button" class="ml-[4px]">
+                                <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"
+                                     class="w-[18px] h-[18px] content_quaternary">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M12.008 20.041a8 8 0 1 0 .067-16 8 8 0 0 0-.067 16Zm-.008 2c5.523.023 10.018-4.435 10.041-9.958.023-5.523-4.435-10.019-9.958-10.041C6.56 2.019 2.064 6.477 2.04 12 2.02 17.523 6.477 22.018 12 22.041Z">
+                                    </path>
+                                    <path
+                                            d="M11.984 13.372c-.528-.002-.974-.436-.888-.957.116-.702.408-1.305 1.088-1.753.574-.387 1.011-.768 1.02-1.363-.004-.594-.45-.993-1.01-.988-.283-.005-.552.1-.75.295-.348.343-.712.793-1.2.79-.655-.002-1.214-.559-.978-1.17.46-1.19 1.614-1.739 2.948-1.733 1.886.007 3.242.97 3.241 2.706-.011 1.156-.593 1.857-1.467 2.4-.388.236-.67.511-.843.852-.24.47-.633.923-1.16.92ZM12.02 17.492a1.5 1.5 0 1 0 .013-3 1.5 1.5 0 0 0-.012 3Z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <button type="button"
+                                class="button relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">업로드</button>
+                    </div>
+                    <div class="px-[20px]">
+                        <div class="h-[88px] flex justify-center items-center"><span
+                                class="content_disabled font_body_regular_md">첨부된 파일이 없습니다.</span></div>
+                    </div>
+                    <div
+                            class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
+                        <div class="flex items-center">
+                            <strong class="font_label_bold_xl content_primary">음원
+                                첨부
+                            </strong>
+                            <button type="button" class="ml-[4px]">
+                                <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg"
+                                     class="w-[18px] h-[18px] content_quaternary">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M12.008 20.041a8 8 0 1 0 .067-16 8 8 0 0 0-.067 16Zm-.008 2c5.523.023 10.018-4.435 10.041-9.958.023-5.523-4.435-10.019-9.958-10.041C6.56 2.019 2.064 6.477 2.04 12 2.02 17.523 6.477 22.018 12 22.041Z">
+                                    </path>
+                                    <path
+                                            d="M11.984 13.372c-.528-.002-.974-.436-.888-.957.116-.702.408-1.305 1.088-1.753.574-.387 1.011-.768 1.02-1.363-.004-.594-.45-.993-1.01-.988-.283-.005-.552.1-.75.295-.348.343-.712.793-1.2.79-.655-.002-1.214-.559-.978-1.17.46-1.19 1.614-1.739 2.948-1.733 1.886.007 3.242.97 3.241 2.706-.011 1.156-.593 1.857-1.467 2.4-.388.236-.67.511-.843.852-.24.47-.633.923-1.16.92ZM12.02 17.492a1.5 1.5 0 1 0 .013-3 1.5 1.5 0 0 0-.012 3Z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </div>
+                        <button type="button"
+                                class="button relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">업로드</button>
+                    </div>
+                    <div class="px-[20px]">
+                        <div class="h-[88px] flex justify-center items-center"><span
+                                class="content_disabled font_body_regular_md">첨부된 음원이 없습니다.</span></div>
+                    </div>
+                </section>
+            </section>
+        </div>
+    </main>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="drawing-setting.js"></script>
+
+</html>
