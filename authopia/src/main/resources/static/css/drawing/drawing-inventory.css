@@ -1,0 +1,710 @@
+@charset "utf-8";
+
+html {
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    tab-size: 4;
+    font-family: Pretendard,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+}
+
+*, :after, :before {
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+}
+
+body {
+    margin: 0;
+    line-height: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+audio, canvas, embed, iframe, img, object, svg, video {
+    display: block;
+}
+
+menu, ol, ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre {
+    margin: 0;
+}
+
+a {
+    color: #1d1d1e;
+}
+
+.h-full {
+    height: 100%;
+}
+
+#__next {
+    min-height: 100%;
+}
+
+/* 중단부 main */
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.px-\[16px\] {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* @media (min-width: 1280px) {
+.xl\:px-0  {
+    padding-left: 0;
+    padding-right: 0;
+    }
+} */
+
+.xl\:px-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.max-w-main {
+    max-width: 720px;
+}
+
+.min-w-\[350px\] {
+    min-width: 350px;
+}
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.relative {
+    position: relative;
+}
+
+.surface_primary {
+    background-color: #fff;
+}
+
+/* 중단부 div */
+/* @media (min-width: 768px) {
+.md\:pt-\[50px\] {
+    padding-top: 50px;
+    }
+} */
+
+.md\:pt-\[50px\] {
+    padding-top: 50px;
+}
+
+.pb-\[14px\] {
+    padding-bottom: 14px;
+}
+
+.pt-\[26px\] {
+    padding-top: 26px;
+}
+
+.border-b-\[1px\] {
+    border-bottom-width: 1px;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+/* 상단바 */
+.items-center {
+    align-items: center;
+}
+
+/* 최신글  */
+.first\:pl-\[0\]:first-child {
+    padding-left: 0;
+}
+
+.px-\[12px\] {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+/* imput태그 */
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.right-0 {
+    right: 0;
+}
+
+.left-0 {
+    left: 0;
+}
+
+.top-0 {
+    top: 0;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.absolute {
+    position: absolute;
+}
+
+/* 최신글 span */
+.font_label_bold_xl {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.content_primary {
+    color: #1d1d1e;
+    fill: #1d1d1e;
+}
+
+.border-l-\[2px\] {
+    border-left-width: 2px;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.grow-0 {
+    flex-grow: 0;
+}
+
+.w-\[2px\] {
+    width: 2px;
+}
+
+.h-\[16px\] {
+    height: 16px;
+}
+
+/* 인기글 span */
+
+.font_label_regular_xl {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.content_quaternary {
+    color: #8a8a8b;
+    fill: #8a8a8b;
+}
+
+/* 필터 css */
+
+[type=button], [type=reset], [type=submit], button {
+    background-color: transparent;
+    background-image: none;
+}
+
+[role=button], button {
+    cursor: pointer;
+}
+
+button, select {
+    text-transform: none;
+}
+
+.gap-\[6px\] {
+    gap: 6px;
+}
+
+.w-\[24px\] {
+    width: 24px;
+}
+
+.h-\[24px\] {
+    height: 24px;
+}
+
+.content_tertiary {
+    color: #666667;
+    fill: #666667;
+}
+
+.content_secondary {
+    color: #333334;
+    fill: #333334;
+}
+/* 그림 목록 부분 */
+.list {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.iKBokR .image-wrapper img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.jfWeNA {
+    width: 50%;
+    padding: 20px 10px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+.iKBokR {
+    margin: 0px 0px 56px;
+    position: relative;
+}
+
+.iKBokR .link-wrapper {
+    display: block;
+}
+
+.iKBokR .image-wrapper {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.kfeTrp {
+    padding: 0px;
+}
+
+.iKBokR dl {
+    min-height: 138px;
+    padding: 16px 0px 0px;
+    margin-bottom: 12px;
+}
+
+.iKBokR dl {
+    min-height: 80px;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(61, 61, 61);
+    overflow: hidden;
+}
+
+.iKBokR dl dd.project-sub-info {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: -0.015em;
+    color: rgb(61, 61, 61);
+    padding: 0px 0px 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.iKBokR dl dd {
+    margin: 0px;
+}
+
+.iKBokR dl dt {
+    min-height: auto;
+    margin: 0px 0px 8px;
+    font-size: 16px !important;
+    line-height: 22px !important;
+}
+
+.iKBokR dl dt a:link, .iKBokR dl dt a:visited {
+    text-decoration: none;
+    color: rgb(61, 61, 61);
+}
+
+.iKBokR dl dd.project-desc {
+    display: -webkit-box;
+    max-height: initial;
+}
+
+.iKBokR dl dd.project-desc {
+    max-height: initial;
+}
+
+.iKBokR dl dd.project-desc {
+    width: 93%;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    max-height: 48px;
+    word-break: keep-all;
+    color: rgb(158, 158, 158);
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.iKBokR dl dd {
+    margin: 0px;
+    padding: 0px;
+}
+
+/* 목록 부분 */
+.xl\:mt-\[28px\] {
+    margin-top: 28px;
+}
+
+.gap-y-4 {
+    row-gap: 1rem;
+}
+
+.gap-x-9 {
+    column-gap: 2.25rem;
+}
+
+.grid {
+    display: grid;
+}
+
+.border-t {
+    border-top-width: 1px;
+}
+
+/* 목록 li태그 */
+.first\:pt-\[8px\]:first-child {
+    padding-top: 8px;
+}
+
+.first\:border-0:first-child {
+    border-width: 0;
+}
+
+.pb-\[0px\] {
+    padding-bottom: 0;
+}
+
+.py-\[20px\] {
+    padding-top: 20px;
+}
+
+.border_secondary {
+    border-color: #f3f3f4;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.block {
+    display: block;
+}
+
+.gap-x-\[16px\] {
+    column-gap: 16px;
+}
+
+.xl\:h-auto {
+    height: auto;
+}
+
+.break-all {
+    word-break: break-all;
+}
+
+/* 제목 */
+.xl\:font_title_bold_lg {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.text-ellipsis-1, .text-ellipsis-2 {
+    display: -webkit-box;
+    word-break: break-word;
+    word-wrap: break-word;
+    -webkit-box-orient: vertical;
+}
+
+.text-ellipsis-1 {
+    -webkit-line-clamp: 1;
+}
+
+.content_secondary {
+    color: #333334;
+    fill: #333334;
+}
+
+/* 내용 */
+.xl\:mt-\[6px\] {
+    margin-top: 6px;
+}
+
+.xl\:text-ellipsis-2 {
+    display: -webkit-box;
+    word-break: break-word;
+    word-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.mb-\[18px\] {
+    margin-bottom: 18px;
+}
+
+.font_label_regular_lg {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/* 섬네일 */
+.md\:w-\[102px\] {
+    width: 102px;
+}
+
+.md\:h-\[102px\] {
+    height: 102px;
+}
+
+.rounded-\[8px\] {
+    border-radius: 8px;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+/* 프로필 */
+.mt-\[12px\] {
+    margin-top: 12px;
+}
+
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.gap-x-\[2px\] {
+    column-gap: 2px;
+}
+
+.ml-\[6px\] {
+    margin-left: 6px;
+}
+
+.font_label_regular_md {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+}
+/* 작성자 정보 */
+
+.lg\:max-w-full {
+    max-width: 100%;
+}
+
+.line-clamp-1, .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.line-clamp-1 {
+    -webkit-line-clamp: 1;
+}
+
+.w-\[8px\] {
+    width: 8px;
+}
+
+.h-\[8px\] {
+    height: 8px;
+}
+
+.content_disabled {
+    color: #b9b9bb;
+    fill: #b9b9bb;
+}
+
+/* 필터 */
+.modal {
+    background: rgba(0,0,0,.38);
+    display: none;
+}
+.-translate-x-1\/2, .translate-x-\[-50\%\], .translate-y-\[3\%\] {
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.-translate-x-1\/2, .translate-x-\[-50\%\] {
+    --tw-translate-x: -50%;
+}
+
+.z-20 {
+    z-index: 20;
+}
+
+.left-\[50\%\] {
+    left: 50%;
+}
+
+.top-\[0\] {
+    top: 0;
+}
+
+.bottom-\[0\] {
+    bottom: 0;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.pt-\[27px\] {
+    padding-top: 27px;
+}
+
+.px-\[16px\] {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.rounded-t-\[24px\] {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+
+/* @media (min-width: 768px) */
+.md\:max-w-\[351px\] {
+    max-width: 351px;
+}
+
+.pb-\[16px\] {
+    padding-bottom: 16px;
+}
+
+.min-w-\[328px\] {
+    min-width: 328px;
+}
+
+.font_title_bold_lg {
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+.gap-y-\[10px\] {
+    row-gap: 10px;
+}
+
+.gap-x-\[8px\] {
+    column-gap: 8px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* 카테고리 버튼 */
+.py-\[9px\] {
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+.px-\[12px\] {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.border-\[1px\] {
+    border-width: 1px;
+}
+
+.border_accent_active {
+    border-color: #7e69fe;
+}
+
+.rounded-\[33px\] {
+    border-radius: 33px;
+}
+
+.font_label_bold_lg {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+/* 적용 버튼 */
+.px-\[20px\] {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.rounded-\[24px\] {
+    border-radius: 24px;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.min-w-\[88px\] {
+    min-width: 88px;
+}
+
+.h-\[48px\] {
+    height: 48px;
+}
+
+.font_button_bold_md {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.content_primary_inverse {
+    color: #fff;
+    fill: #fff;
+}
+
+.surface_primary_inverse {
+    background-color: #1d1d1e;
+}
