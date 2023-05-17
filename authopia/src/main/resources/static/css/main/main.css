@@ -708,6 +708,14 @@ textarea {
 .relative {
     position: relative;
 }
+.newswiper{
+    margin: 0px 26px 0;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
 .md\:mb-\[60px\] {
     margin-bottom: 60px;
 }
