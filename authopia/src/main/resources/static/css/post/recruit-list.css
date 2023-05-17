@@ -22,7 +22,16 @@ html {
     --tw-skew-y: 0;
     --tw-scale-x: 1;
     --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
     --tw-scroll-snap-strictness: proximity;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
     --tw-ring-offset-width: 0px;
     --tw-ring-offset-color: #fff;
     --tw-ring-color: rgba(59,130,246,.5);
@@ -30,6 +39,24 @@ html {
     --tw-ring-shadow: 0 0 #0000;
     --tw-shadow: 0 0 #0000;
     --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
 }
 
 body {
@@ -343,6 +370,55 @@ button, select {
 .break-all {
     word-break: break-all;
 }
+/* 멤버 공개 */
+.py-\[4px\] {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.px-\[6px\] {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.mb-\[8px\] {
+    margin-bottom: 8px;
+}
+
+.surface_accent_light {
+    background-color: #f2f0fc;
+}
+
+.w-fit {
+    width: fit-content;
+}
+
+.rounded-\[4px\] {
+    border-radius: 4px;
+}
+
+.w-\[12px\] {
+    width: 12px;
+}
+
+.h-\[12px\] {
+    height: 12px;
+}
+
+.mr-\[2px\] {
+    margin-right: 2px;
+}
+
+.content_accent {
+    color: #5b44ea;
+    fill: #5b44ea;
+}
+
+.font_label_medium_sm {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+}
 
 /* 제목 */
 .xl\:font_title_bold_lg {
@@ -407,10 +483,44 @@ button, select {
     flex-shrink: 0;
 }
 
+/* 잠금 섬네일 */
+.rounded-full {
+    border-radius: 9999px;
+}
+
+.-translate-y-1\/2, .translate-y-\[-50\%\] {
+    --tw-translate-y: -50%;
+}
+
+.-translate-x-1\/2, .translate-x-\[-50\%\] {
+    --tw-translate-x: -50%;
+}
+
+.w-\[32px\] {
+    width: 32px;
+}
+
+.h-\[32px\] {
+    height: 32px;
+}
+
+.top-1\/2, .top-\[50\%\] {
+    top: 50%;
+}
+
+.left-1\/2 {
+    left: 50%;
+}
+
+.dimmed_40 {
+    background-color: rgba(0,0,0,.4);
+}
 /* 프로필 */
 .mt-\[12px\] {
     margin-top: 12px;
 }
+
+
 
 .rounded-full {
     border-radius: 9999px;
@@ -506,10 +616,10 @@ button, select {
 }
 
 /* @media (min-width: 768px) */
-/*.md:px-0 {*/
-/*    padding-left: 0;*/
-/*    padding-right: 0;*/
-/*}*/
+.md\.min:px-0 {
+    padding-left: 0;
+    padding-right: 0;
+}
 
 /* @media (min-width: 768px) */
 .md\:max-w-\[351px\] {
