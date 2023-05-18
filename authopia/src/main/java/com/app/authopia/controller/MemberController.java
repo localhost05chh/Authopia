@@ -3,11 +3,8 @@ package com.app.authopia.controller;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -15,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 @Controller
-@Slf4j
 @RequiredArgsConstructor
 @RequestMapping("/member/*")
 public class MemberController {
