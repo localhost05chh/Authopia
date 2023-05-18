@@ -1,4 +1,4 @@
-package com.example.app.config;
+package com.app.authopia.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
