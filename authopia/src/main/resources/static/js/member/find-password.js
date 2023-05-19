@@ -1,4 +1,4 @@
-const $email = $('input[name=email]');
+const $email = $('input[name=memberEmail]');
 const $div = $('div.page');
 
 $email.on('blur', function () {
@@ -18,4 +18,5 @@ $email.on('blur', function () {
 function send() {
     $div.eq(0).addClass('none');
     $div.eq(1).removeClass('none');
+    document.findPassword.submit();
 }

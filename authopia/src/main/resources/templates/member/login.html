@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full">
+<html lang="en" class="h-full" xmlns:th="http://www.thymeleag.org">
 <head>
     <link
             rel="stylesheet"
@@ -43,7 +43,7 @@
                 <h1 class="font_display_bold_sm">로그인</h1>
                 <div class="w-full">
                     <!-- 이메일, 비밀번호, 로그인 -->
-                    <form>
+                    <form name="login" th:action="@{/member/login}" method="post" th:object="${memberVO}">
                         <!-- 이메일 -->
                         <div class="mt-[40px]">
                             <div>
@@ -52,7 +52,7 @@
                                         class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled"
                                 >
                                     <input
-                                            name="email"
+                                            th:field="*{memberEmail}"
                                             type="text"
                                             placeholder="example@gmail.com"
                                             class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
@@ -84,7 +84,7 @@
                                         class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled"
                                 >
                                     <input
-                                            name="password"
+                                            th:field="*{memberPassword}"
                                             type="password"
                                             placeholder="비밀번호 입력"
                                             class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
@@ -111,7 +111,8 @@
                         <!-- 로그인 -->
                         <div class="mt-[24px]">
                             <button
-                                    type="submit"
+                                    type="button"
+                                    onclick="send()"
                                     class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled"
                             >
                                 로그인
@@ -221,4 +222,11 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="/js/member/login.js"></script>
+<script th:inline="javascript">
+    let check = [[${login}]];
+    console.log(check);
+    if(check){
+        alert("아이디 또는 비밀번호를 확인해주세요.");
+    }
+</script>
 </html>
