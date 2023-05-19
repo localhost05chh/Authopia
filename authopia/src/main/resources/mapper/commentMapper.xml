@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.authopia.mapper.CommentMapper">
+    <!-- 댓글 목록 -->
+    <select id="selectAll" resultType="CommentDTO">
+        SELECT C.ID, MEMBER_ID, POST_ID, COMMENT_CONTENT, COMMENT_REGISTER_DATE, COMMENT_UPDATE_DATE, MEMBER_NAME
+        FROM TBL_MEMBER M JOIN TBL_COMMENT C
+        ON M.ID = C.MEMBER_ID AND POST_ID = #{id}
+    </select>
+
+    <!-- 댓글 작성 -->
+    <insert id="insert">
+        INSERT INTO TBL_COMMENT (ID, MEMBER_ID, POST_ID, COMMENT_CONTENT)
+        VALUES(SEQ_COMMENT.NEXTVAL,#{memberId}, #{postId}, #{commentContent})
+    </insert>
+
+    <!-- 댓글 수정 -->
+    <update id="update">
+        UPDATE TBL_COMMENT
+        SET COMMENT_CONTENT = #{commentContent}, COMMENT_UPDATE_DATE = SYSDATE
+        WHERE ID = #{id}
+    </update>
+
+    <!-- 댓글 삭제-->
+    <delete id="delete">
+        DELETE FROM TBL_COMMENT WHERE ID = #{id}
+    </delete>
+
+    <!--게시글의 댓글 전체 삭제 -->
+    <delete id="deleteAll">
+        DELETE FROM TBL_COMMENT WHERE POST_ID = #{postId}
+    </delete>
+</mapper>
