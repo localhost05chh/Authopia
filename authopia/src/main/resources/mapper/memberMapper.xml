@@ -20,4 +20,11 @@
         SELECT ID FROM TBL_MEMBER
         WHERE MEMBER_EMAIL = #{memberEmail} AND MEMBER_PASSWORD = #{memberPassword}
     </select>
+
+    <!--비밀번호 재설정-->
+    <update id="updatePassword">
+        UPDATE TBL_MEMBER
+        SET MEMBER_PASSWORD = #{memberPassword}
+        WHERE MEMBER_EMAIL = #{memberEmail}
+	</update>
 </mapper>

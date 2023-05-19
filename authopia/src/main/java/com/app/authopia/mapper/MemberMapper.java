@@ -17,4 +17,7 @@ public interface MemberMapper {
 
     // 로그인
     public Optional<Long> selectByMemberEmailAndMemberPassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
+
+    // 비밀번호 재설정
+    public void updatePassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
 }

@@ -33,8 +33,13 @@ public class MemberDAOTests {
     }
 
     @Test
-    public void findByMemberEmailAndMemberPassword(){
+    public void findByMemberEmailAndMemberPasswordTest(){
         Optional<Long> foundId = memberDAO.findByMemberEmailAndMemberPassword("gmatn97@naver.com", "12345");
         assertThat(foundId.isPresent()).isEqualTo(true);
+    }
+
+    @Test
+    public void setPasswordTest(){
+        memberDAO.setPassword("gmatn97@naver.com","1234512345");
     }
 }

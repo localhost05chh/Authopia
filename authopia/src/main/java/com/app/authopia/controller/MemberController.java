@@ -48,6 +48,20 @@ public class MemberController {
     @GetMapping("find-password")
     public void goToFindPasswordForm(){;}
 
+    @PostMapping("find-password")
+    public void sendFindPasswordEmail(){
+        
+    }
+
+    // 비밀번호 재설정
+    @GetMapping("setting-password")
+    public void goToSettingPasswordForm(){;}
+
+    @PostMapping("setting-password")
+    public void modifyPassword(String memberEmail, String memberPassword){
+        memberService.modifyPassword(memberEmail, memberPassword);
+    }
+
     // 로그아웃
     @GetMapping("logout")
     public RedirectView logout(HttpSession session){
