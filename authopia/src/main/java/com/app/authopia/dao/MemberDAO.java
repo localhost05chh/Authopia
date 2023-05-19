@@ -3,6 +3,7 @@ package com.app.authopia.dao;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -25,5 +26,10 @@ public class MemberDAO {
     // 로그인
     public Optional<Long> findByMemberEmailAndMemberPassword(String memberEmail, String memberPassword){
         return memberMapper.selectByMemberEmailAndMemberPassword(memberEmail, memberPassword);
+    };
+
+    // 비밀번호 재설정
+    public void setPassword(String memberEmail, String memberPassword){
+        memberMapper.updatePassword(memberEmail, memberPassword);
     };
 }

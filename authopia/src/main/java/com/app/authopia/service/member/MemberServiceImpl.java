@@ -26,4 +26,9 @@ public class MemberServiceImpl implements MemberService {
     public Optional<Long> login(String memberEmail, String memberPassword) {
         return memberDAO.findByMemberEmailAndMemberPassword(memberEmail, memberPassword);
     }
+
+    @Override
+    public void modifyPassword(String memberEmail, String memberPassword) {
+        memberDAO.setPassword(memberEmail, memberPassword);
+    }
 }

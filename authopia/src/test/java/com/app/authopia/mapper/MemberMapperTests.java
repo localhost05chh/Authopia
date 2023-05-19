@@ -37,4 +37,9 @@ public class MemberMapperTests {
         Optional<Long> foundId = memberMapper.selectByMemberEmailAndMemberPassword("gmatn96@naver.com", "1234");
         assertThat(foundId.isPresent()).isEqualTo(true);
     }
+
+    @Test
+    public void updatePasswordTest(){
+        memberMapper.updatePassword("gmatn96@naver.com", "12341234");
+    }
 }

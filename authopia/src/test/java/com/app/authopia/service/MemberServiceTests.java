@@ -28,14 +28,20 @@ public class MemberServiceTests {
     }
 
     @Test
-    public void findByMemberEmailTest(){
+    public void checkEmailTest(){
         Optional<MemberVO> foundMember = memberService.checkEmail("gmatn98@naver.com");
         Assertions.assertThat(foundMember.isPresent()).isEqualTo(true);
     }
 
     @Test
-    public void findByMemberEmailAndMemberPassword(){
+    public void loginTest(){
         Optional<Long> foundId = memberService.login("gmatn98@naver.com", "123456");
         assertThat(foundId.isPresent()).isEqualTo(true);
     }
+
+    @Test
+    public void modifyPasswordTest(){
+        memberService.modifyPassword("gmatn98@naver.com", "123456123456");
+    }
 }
+
