@@ -5,5 +5,7 @@
         <typeAlias type="com.app.authopia.domain.vo.MemberVO" alias="memberVO"/>
         <typeAlias type="com.app.authopia.domain.vo.PostVO" alias="postVO"/>
         <typeAlias type="com.app.authopia.domain.dto.PostDTO" alias="postDTO"/>
+        <typeAlias type="com.app.authopia.domain.vo.CommentVO" alias="CommentVO"/>
+        <typeAlias type="com.app.authopia.domain.dto.CommentDTO" alias="CommentDTO"/>
     </typeAliases>
 </configuration>

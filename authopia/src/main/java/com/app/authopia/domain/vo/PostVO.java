@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Data
 @NoArgsConstructor
-public class PostVO{
+public class PostVO {
     private Long id;
     private Long memberId;
     private String postType;
