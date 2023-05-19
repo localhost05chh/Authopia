@@ -25,6 +25,12 @@ public class MemberController {
     private final MemberService memberService;
 
     // 이메일 중복검사
+    @GetMapping("check-email/{memberEmail}")
+    @ResponseBody
+    public boolean checkEmail(@PathVariable String memberEmail){
+        return memberService.checkEmail(memberEmail).isPresent();
+    }
+
 
     // 회원가입
     @GetMapping("join")
@@ -47,20 +53,20 @@ public class MemberController {
             session.setAttribute("id", foundMember.get());
             return new RedirectView("/main/main");
         }
-        redirectAttributes.addFlashAttribute("login", "fail");
+        redirectAttributes.addFlashAttribute("login", "false");
         return new RedirectView("/member/login");
     }
 
     // 비밀번호 찾기
     @GetMapping("find-password")
-    public void goToFindPasswordForm(){;}
+    public void goToFindPasswordForm(MemberVO memberVO){;}
 
     @PostMapping("find-password")
-    public void sendFindPasswordEmail(String memberEmail, HttpSession session){
+    public void sendFindPasswordEmail(String memberEmail, HttpSession httpSession){
         Optional<MemberVO> foundMember = memberService.checkEmail(memberEmail);
         if(foundMember.isPresent()){
             // 메일보내기 api
-            session.setAttribute("memberEmail", memberEmail);
+            httpSession.setAttribute("memberEmail", memberEmail);
             //메일 보내기 시작
             // 메일 인코딩
             String path ="http://localhost:10000/member/setting-password";
@@ -74,7 +80,7 @@ public class MemberController {
             String toEmail = memberEmail; // 콤마(,)로 여러개 나열
 
             final String username = "ss00.coder@gmail.com"; //구글 계정 이름
-            final String password = "erobvfxdhhlucvgk";
+            final String password = "smglavghwuxpueoo";
 
             // 메일에 출력할 텍스트
             String html = null;
@@ -98,9 +104,9 @@ public class MemberController {
                     }
                 };
                 // 메일 세션 생성
-                Session sessionE = Session.getDefaultInstance(props, auth);
+                Session session = Session.getDefaultInstance(props, auth);
                 // 메일 송/수신 옵션 설정
-                Message message = new MimeMessage(sessionE);
+                Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(fromEmail, fromUsername));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
                 message.setSubject(subject);
@@ -128,8 +134,11 @@ public class MemberController {
     public void goToSettingPasswordForm(){;}
 
     @PostMapping("setting-password")
-    public void modifyPassword(String memberEmail, String memberPassword){
+    public RedirectView modifyPassword(String memberPassword, HttpSession session){
+        String memberEmail = (String) session.getAttribute("memberEmail");
         memberService.modifyPassword(memberEmail, memberPassword);
+        session.invalidate();
+        return new RedirectView("/member/login");
     }
 
     // 로그아웃
