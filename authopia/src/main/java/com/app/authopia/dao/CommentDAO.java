@@ -10,7 +10,7 @@ import java.util.List;
 
 @Repository
 @RequiredArgsConstructor
-public class commentDAO {
+public class CommentDAO {
     private final CommentMapper commentMapper;
 
     //      댓글 목록
