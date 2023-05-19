@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleag.org">
 
 <head>
     <meta charset="UTF-8">
@@ -10,42 +10,9 @@
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <title>글 작성</title>
 </head>
-
 <body class="h-full">
 <div id="__next">
-    <div class="sticky top-0 z-10">
-        <!-- 해더 -->
-        <!-- <nav></nav> -->
-
-        <!-- 상단부분 -->
-        <header class="h-[68px] border-b border_primary flex items-center surface_primary">
-            <div class="min-w-desktop-grid mx-auto flex items-center justify-between">
-                <div class="flex items-center content_primary">
-                    <button
-                            class="surface_tertiary w-[32px] h-[32px] mr-[16px] rounded-full flex items-center justify-center">
-                        <svg viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] ">
-                            <path
-                                    d="M13.833 8a.667.667 0 0 0-.666-.667H5.72L8.973 4.08a.667.667 0 1 0-.943-.943L3.167 8l4.863 4.863a.665.665 0 0 0 .94-.94L5.72 8.667h7.447A.667.667 0 0 0 13.833 8Z">
-                            </path>
-                        </svg>
-                    </button>
-                    <h1 class="font_title_bold_lg">포스트 작성하기</h1>
-                </div>
-                <div class="flex items-center">
-                    <div class="mr-[12px]">
-                        <button type="button"
-                                class="button relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">임시저장</button>
-                    </div>
-                    <div>
-                        <button type="button" id="ablebutton"
-                                class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px]  false disabled:content_disabled"
-                                disabled="">게시</button>
-                    </div>
-                </div>
-            </div>
-        </header>
-    </div>
-
+    <div th:replace="~{/fix/header :: #public-header}"></div>
     <main class="mt-[48px]">
         <div class="grid grid-cols-15 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto">
             <section class="col-span-9">
