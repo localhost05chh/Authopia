@@ -87,7 +87,7 @@ $findPassword.on('blur change keyup paste', function () {
         $(this).parent().addClass('border_negative_active');
         $(this).parent().next().removeClass('none');
         $(this).parent().next().addClass('flex');
-        $("#warn-email").text("비밀번호가 일치하지 않습니다.");
+        $("#warn-password").text("비밀번호가 일치하지 않습니다.");
         joinCheck[3] = false;
     } else {
         $(this).parent().removeClass('border_negative_active');

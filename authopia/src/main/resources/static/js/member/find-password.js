@@ -16,7 +16,7 @@ $email.on('blur', function () {
 });
 
 function send() {
-    $div.eq(0).addClass('none');
-    $div.eq(1).removeClass('none');
+    // $div.eq(0).addClass('none');
+    // $div.eq(1).removeClass('none');
     document.findPassword.submit();
 }

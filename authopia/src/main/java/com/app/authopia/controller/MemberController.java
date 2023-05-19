@@ -62,11 +62,11 @@ public class MemberController {
     public void goToFindPasswordForm(MemberVO memberVO){;}
 
     @PostMapping("find-password")
-    public void sendFindPasswordEmail(String memberEmail, HttpSession httpSession){
+    public String sendFindPasswordEmail(String memberEmail, HttpSession session){
         Optional<MemberVO> foundMember = memberService.checkEmail(memberEmail);
         if(foundMember.isPresent()){
             // 메일보내기 api
-            httpSession.setAttribute("memberEmail", memberEmail);
+            session.setAttribute("memberEmail", memberEmail);
             //메일 보내기 시작
             // 메일 인코딩
             String path ="http://localhost:10000/member/setting-password";
@@ -86,7 +86,7 @@ public class MemberController {
             String html = null;
             StringBuffer sb = new StringBuffer();
             sb.append("<h3>비밀번호 재설정 페이지 링크입니다</h3>\n");
-            sb.append("<h4>" + path+ "</h4>");
+            sb.append("<a href=" + path + "> 클릭 </a>");
             html = sb.toString();
             // 메일 옵션 설정
             Properties props = new Properties();
@@ -104,9 +104,9 @@ public class MemberController {
                     }
                 };
                 // 메일 세션 생성
-                Session session = Session.getDefaultInstance(props, auth);
+                Session sessionE = Session.getDefaultInstance(props, auth);
                 // 메일 송/수신 옵션 설정
-                Message message = new MimeMessage(session);
+                Message message = new MimeMessage(sessionE);
                 message.setFrom(new InternetAddress(fromEmail, fromUsername));
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
                 message.setSubject(subject);
@@ -126,12 +126,14 @@ public class MemberController {
                 e.printStackTrace();
             }
             //메일보내기 끝
+            return "member/find-password2";
         }
+        return "member/find-password";
     }
 
     // 비밀번호 재설정
     @GetMapping("setting-password")
-    public void goToSettingPasswordForm(){;}
+    public void goToSettingPasswordForm(MemberVO memberVO){;}
 
     @PostMapping("setting-password")
     public RedirectView modifyPassword(String memberPassword, HttpSession session){
