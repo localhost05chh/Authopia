@@ -2,6 +2,7 @@ package com.app.authopia.service.member;
 
 
 import com.app.authopia.domain.vo.MemberVO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.Optional;
 
@@ -14,4 +15,7 @@ public interface MemberService {
 
     //    로그인
     public Optional<Long> login(String memberEmail, String memberPassword);
+
+    // 비밀번호 재설정
+    public void modifyPassword(String memberEmail, String memberPassword);
 }
