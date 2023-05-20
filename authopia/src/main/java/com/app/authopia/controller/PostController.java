@@ -19,11 +19,13 @@ import org.springframework.web.servlet.view.RedirectView;
 public class PostController{
     private final PostService postService;
 
+    //      게시글 목록
     @GetMapping("list")
     public void list(Model model){
         model.addAttribute("posts", postService.getList());
     }
 
+    //      게시글 추가
     @GetMapping("write")
     public void goToWrite(PostVO postVO){;}
 
@@ -33,6 +35,7 @@ public class PostController{
         return new RedirectView("/post/list");
     }
 
+    //      게시글 조회, 수정
     @GetMapping(value = {"read","modify"})
     public void read(Long id, Model model){
         model.addAttribute("post", postService.read(id));
