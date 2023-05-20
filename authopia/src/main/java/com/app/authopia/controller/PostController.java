@@ -32,7 +32,7 @@ public class PostController{
     @PostMapping("write")
     public RedirectView write(PostVO postVO){
         postService.write(postVO);
-        return new RedirectView("/writing-post/recruit-list");
+        return new RedirectView("/post/recruit-list");
     }
 
     //      게시글 조회, 수정
@@ -45,13 +45,13 @@ public class PostController{
     public RedirectView modify(PostVO postVO, RedirectAttributes redirectAttributes){
         postService.modify(postVO);
         redirectAttributes.addAttribute("id", postVO.getId());
-        return new RedirectView("/writing-post/view-detail");
+        return new RedirectView("/post/view-detail");
     }
 
     @PostMapping("remove")
     public RedirectView remove(Long id){
         postService.remove(id);
-        return new RedirectView("/writing-post/recruit-list");
+        return new RedirectView("/post/recruit-list");
     }
 
 //    복구는 필요한사람이 작성해주세용!!
