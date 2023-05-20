@@ -42,4 +42,9 @@ public class MemberMapperTests {
     public void updatePasswordTest(){
         memberMapper.updatePassword("gmatn96@naver.com", "12341234");
     }
+
+    @Test
+    public void updateMemberIsRemainingTest(){
+        memberMapper.updateMemberIsRemaining(1L);
+    }
 }

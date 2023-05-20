@@ -139,4 +139,11 @@ public class MemberController {
         return new RedirectView("/member/login");
     }
 
+    // 회원탈퇴
+    @GetMapping("delete-member")
+    public RedirectView deleteMember(HttpSession session){
+        session.invalidate();
+        return  new RedirectView("/member/login");
+    }
+
 }
