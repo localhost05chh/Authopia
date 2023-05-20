@@ -15,7 +15,7 @@ public interface CommentMapper {
     public void insert(CommentVO commentVO);
 
 //      댓글 수정
-    public void update(CommentVO commentVO);
+    public void update(CommentDTO commentDTO);
 
 //      댓글 삭제
     public void delete(Long id);
