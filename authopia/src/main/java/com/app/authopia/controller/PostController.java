@@ -45,7 +45,7 @@ public class PostController{
     public RedirectView modify(PostVO postVO, RedirectAttributes redirectAttributes){
         postService.modify(postVO);
         redirectAttributes.addAttribute("id", postVO.getId());
-        return new RedirectView("/post/view-detail");
+        return new RedirectView("/post/detail");
     }
 
     @PostMapping("remove")
