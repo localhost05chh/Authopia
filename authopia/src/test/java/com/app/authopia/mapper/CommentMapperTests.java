@@ -39,10 +39,10 @@ public class CommentMapperTests {
     //    댓글 수정
     @Test
     public void updateTest() {
-        CommentVO commentVO = new CommentVO();
-        commentVO.setId(3L);
-        commentVO.setCommentContent("수정되었습니다");
-        commentMapper.update(commentVO);
+        CommentDTO commentDTO = new CommentDTO();
+        commentDTO.setId(3L);
+        commentDTO.setCommentContent("수정되었습니다");
+        commentMapper.update(commentDTO);
     }
 
     //      댓글 삭제
