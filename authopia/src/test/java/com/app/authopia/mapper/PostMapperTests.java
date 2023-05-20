@@ -22,7 +22,7 @@ public class PostMapperTests {
         PostVO postVO = new PostVO();
         postVO.setMemberId(1L);
         postVO.setPostType("작품");
-        postVO.setPostName("제목3");
+        postVO.setPostName("제목11");
         postVO.setPostContent("안녕하세요");
         postMapper.insert(postVO);
     }
