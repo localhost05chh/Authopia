@@ -1,5 +1,6 @@
 package com.app.authopia.dao;
 
+import com.app.authopia.domain.dto.CommentDTO;
 import com.app.authopia.domain.vo.CommentVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -35,10 +36,10 @@ public class CommentDAOTests {
     //    댓글 수정
     @Test
     public void setCommentTest() {
-        CommentVO commentVO = new CommentVO();
-        commentVO.setId(3L);
-        commentVO.setCommentContent("수정되었습니다");
-        commentDAO.setComment(commentVO);
+        CommentDTO commentDTO = new CommentDTO();
+        commentDTO.setId(3L);
+        commentDTO.setCommentContent("수정되었습니다");
+        commentDAO.setComment(commentDTO);
     }
 
     //      댓글 삭제
