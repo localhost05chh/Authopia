@@ -2,7 +2,6 @@ package com.app.authopia.service.post;
 
 
 import com.app.authopia.domain.dto.PostDTO;
-import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.domain.vo.PostVO;
 
 import java.util.List;
@@ -32,6 +31,7 @@ public interface PostService {
         postDTO.setId(postVO.getId());
         postDTO.setMemberId(postVO.getMemberId());
         postDTO.setPostName(postVO.getPostName());
+        postDTO.setPostType(postVO.getPostType());
         postDTO.setPostViewCount(postVO.getPostViewCount());
         postDTO.setPostRecommend(postVO.getPostRecommend());
         postDTO.setPostRegisterDate(postVO.getPostRegisterDate());
