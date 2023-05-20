@@ -264,8 +264,23 @@ a {
 .w-full {
     width: 100%;
 }
+.w-\[128px\] {
+    width: 128px;
+}
+.w-\[24px\] {
+    width: 24px;
+}
 .h-\[40px\] {
     height: 40px;
+}
+.h-\[36px\] {
+    height: 36px;
+}
+.h-\[30px\] {
+    height: 30px;
+}
+.h-\[24px\] {
+    height: 24px;
 }
 .flex {
     display: flex;
@@ -329,8 +344,8 @@ button {
     background-color: buttonface;
     margin: 0em;
     padding: 1px 6px;
-    border-width: 2px;
-    border-style: outset;
+    /*border-width: 2px;*/
+    /*border-style: outset;*/
     /*border-color: buttonborder;*/
     border-image: initial;
 }
@@ -339,6 +354,10 @@ button {
 .mt-\[20px\] {
     margin-top: 20px;
 }
+.ml-\[20px\] {
+    margin-left: 20px;
+}
+
 .content_quaternary {
     color: #8a8a8b;
     fill: #8a8a8b;
