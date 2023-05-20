@@ -18,4 +18,8 @@ public interface MemberService {
 
     // 비밀번호 재설정
     public void modifyPassword(String memberEmail, String memberPassword);
+
+    // 회원 탈퇴
+    public void deleteMember(Long id);
+
 }

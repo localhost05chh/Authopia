@@ -31,4 +31,9 @@ public class MemberServiceImpl implements MemberService {
     public void modifyPassword(String memberEmail, String memberPassword) {
         memberDAO.setPassword(memberEmail, memberPassword);
     }
+
+    @Override
+    public void deleteMember(Long id) {
+        memberDAO.cancelMember(id);
+    }
 }

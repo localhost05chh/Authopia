@@ -27,4 +27,11 @@
         SET MEMBER_PASSWORD = #{memberPassword}
         WHERE MEMBER_EMAIL = #{memberEmail}
 	</update>
+
+    <!--회원 탈퇴-->
+    <update id="updateMemberIsRemaining">
+        UPDATE TBL_MEMBER
+        SET MEMBER_IS_REMAINING = 0
+        WHERE ID = #{id}
+    </update>
 </mapper>

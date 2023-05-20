@@ -32,4 +32,9 @@ public class MemberDAO {
     public void setPassword(String memberEmail, String memberPassword){
         memberMapper.updatePassword(memberEmail, memberPassword);
     };
+
+    // 회원 탈퇴
+    public void cancelMember(Long id){
+        memberMapper.updateMemberIsRemaining(id);
+    }
 }
