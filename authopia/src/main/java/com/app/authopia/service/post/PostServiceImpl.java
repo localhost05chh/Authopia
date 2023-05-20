@@ -1,4 +1,4 @@
-package com.app.authopia.service.post.writingPost;
+package com.app.authopia.service.post;
 
 import com.app.authopia.dao.PostDAO;
 import com.app.authopia.domain.dto.PostDTO;
