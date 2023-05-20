@@ -1,6 +1,8 @@
 package com.app.authopia.controller;
 
+import com.app.authopia.dao.PostDAO;
 import com.app.authopia.domain.vo.PostVO;
+import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -27,7 +29,7 @@ public class PostController{
 
     //      게시글 추가
     @GetMapping("write")
-    public void goToWrite(PostVO postVO){;}
+    public void goToWrite(PostVO postVO, Model model){;}
 
     @PostMapping("write")
     public RedirectView write(PostVO postVO){
@@ -36,9 +38,9 @@ public class PostController{
     }
 
     //      게시글 조회, 수정
-    @GetMapping(value = {"read","modify"})
+    @GetMapping(value = {"detail", "modify"})
     public void read(Long id, Model model){
-        model.addAttribute("post", postService.read(id));
+        model.addAttribute("post",postService.read(id));
     }
 
     @PostMapping("modify")
