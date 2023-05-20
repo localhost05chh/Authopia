@@ -21,7 +21,7 @@ public class PostController{
 
     //      게시글 목록
     @GetMapping("list")
-    public void list(Model model){
+    public void gotoList(Model model){
         model.addAttribute("posts", postService.getList());
     }
 
@@ -32,7 +32,7 @@ public class PostController{
     @PostMapping("write")
     public RedirectView write(PostVO postVO){
         postService.write(postVO);
-        return new RedirectView("/post/list");
+        return new RedirectView("/writing-post/recruit-list");
     }
 
     //      게시글 조회, 수정
@@ -45,13 +45,13 @@ public class PostController{
     public RedirectView modify(PostVO postVO, RedirectAttributes redirectAttributes){
         postService.modify(postVO);
         redirectAttributes.addAttribute("id", postVO.getId());
-        return new RedirectView("/post/read");
+        return new RedirectView("/writing-post/view-detail");
     }
 
     @PostMapping("remove")
     public RedirectView remove(Long id){
         postService.remove(id);
-        return new RedirectView("/post/list");
+        return new RedirectView("/writing-post/recruit-list");
     }
 
 //    복구는 필요한사람이 작성해주세용!!
