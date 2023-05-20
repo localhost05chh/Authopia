@@ -1,17 +1,28 @@
 package com.app.authopia.service.member;
 
+import com.app.authopia.dao.MemberDAO;
+import com.app.authopia.domain.vo.MemberVO;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import netscape.javascript.JSObject;
+import org.springframework.boot.configurationprocessor.json.JSONObject;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class KakaoService {
+    private final MemberDAO memberDAO;
+
     public String getKaKaoAccessToken(String code){
         String access_Token="";
         String refresh_Token ="";
@@ -67,9 +78,10 @@ public class KakaoService {
         return access_Token;
     }
 
-    public void getKakaoInfo(String token) throws Exception {
+    public String getKakaoInfo(String token) throws Exception {
 
         String reqURL = "https://kapi.kakao.com/v2/user/me";
+        JSONObject resultJSON = new JSONObject();
 
         //access_token을 이용하여 사용자 정보 조회
         try {
@@ -98,21 +110,37 @@ public class KakaoService {
             JsonParser parser = new JsonParser();
             JsonElement element = parser.parse(result);
 
-            int id = element.getAsJsonObject().get("id").getAsInt();
+            String id = element.getAsJsonObject().get("id").getAsString();
             boolean hasEmail = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("has_email").getAsBoolean();
             String email = "";
+            String name = "";
             if(hasEmail){
                 email = element.getAsJsonObject().get("kakao_account").getAsJsonObject().get("email").getAsString();
+                name = element.getAsJsonObject().get("properties").getAsJsonObject().get("nickname").getAsString();
             }
 
             log.info("id : " + id);
             log.info("email : " + email);
+            log.info("name : " + name);
+
+            resultJSON.put("id", id);
+            resultJSON.put("email", email);
+            resultJSON.put("name", name);
 
             br.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return resultJSON.toString();
+    }
+
+    public void joinKakao(MemberVO memberVO) {
+        memberDAO.saveByKakao(memberVO);
+    }
+
+    public Optional<Long> loginKakao(String memberEmail, String memberKakaoLogin) {
+        return memberDAO.findByMemberEmailAndMemberKakaoLogin(memberEmail, memberKakaoLogin);
     }
 
     public void logoutKakao(String token){

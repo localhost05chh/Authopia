@@ -141,6 +141,8 @@ $checkboxes.on('click', function () {
     }
 });
 
+
+
 function send(){
     $email.trigger("blur");
     $name.trigger("blur");
