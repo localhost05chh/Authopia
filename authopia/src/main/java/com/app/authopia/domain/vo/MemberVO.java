@@ -18,4 +18,5 @@ public class MemberVO {
     private String memberIntroduce;
     private String memberCategory;
     private String memberUrl;
+    private String memberKakaoLogin;
 }
