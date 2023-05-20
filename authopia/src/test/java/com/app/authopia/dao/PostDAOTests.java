@@ -17,32 +17,32 @@ public class PostDAOTests {
     private PostDAO postDAO;
 
     @Test
-    public void insertTest(){
+    public void saveTest(){
         PostVO postVO = new PostVO();
         postVO.setMemberId(1L);
         postVO.setPostType("작품");
-        postVO.setPostName("제목3");
+        postVO.setPostName("제목4");
         postVO.setPostContent("안녕하세요");
         postDAO.save(postVO);
     }
 
     //      게시글 목록 테스트
     @Test
-    public void selectAllTest(){
-        assertThat(postDAO.findAll()).hasSize(3);
+    public void findAllTest(){
+        assertThat(postDAO.findAll()).hasSize(4);
     }
 
     //      게시글 조회 테스트
     @Test
-    public void selectTest(){
+    public void findByIdTest(){
         postDAO.findById(2L).map(PostDTO::getPostContent).ifPresent(log::info);
     }
 
     //      게시글 수정 테스트
     @Test
-    public void updateTest(){
-        postDAO.findById(3L).ifPresent(postDTO -> {
-            postDTO.setPostContent("수정해따!!!");
+    public void setPostDTOTest(){
+        postDAO.findById(2L).ifPresent(postDTO -> {
+            postDTO.setPostContent("현호야 공부좀 하자");
             postDAO.setPostDTO(postDTO);
         });
     }

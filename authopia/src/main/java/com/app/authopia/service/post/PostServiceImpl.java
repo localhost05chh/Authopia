@@ -42,7 +42,7 @@ public class PostServiceImpl implements PostService {
     //      게시글 삭제
     @Override
     public void remove(Long id){
-
+        postDAO.delete(id);
     }
 
     //      게시글 복구
