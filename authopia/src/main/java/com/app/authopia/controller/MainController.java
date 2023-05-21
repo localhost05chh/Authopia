@@ -11,12 +11,12 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/main")
 public class MainController {
 
-    @GetMapping("main")
-    public void goToMain(HttpSession session, Model model){
+    @GetMapping("/main")
+    public String goToMain(HttpSession session, Model model){
         Long memberId = (Long) session.getAttribute("id");
         model.addAttribute("memberId", memberId);
+        return "/main/main";
     }
 }

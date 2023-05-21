@@ -43,7 +43,7 @@ public class KakaoController {
         }
         Optional<Long> foundMember = kakaoService.loginKakao(email, id);
         session.setAttribute("id", foundMember.get());
-        return new RedirectView("/main/main");
+        return new RedirectView("/main");
     }
 
     @GetMapping("/logout")
