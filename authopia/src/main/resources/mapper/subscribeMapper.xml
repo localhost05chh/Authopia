@@ -10,10 +10,10 @@
     </select>
 
 <!--    구독 해지-->
-    <select id="delete">
-        update TBL_SUBSCRIBE
-        SET
-        WHERE ID = #{id}
-    </select>
+<!--    <select id="delete">-->
+<!--        update TBL_SUBSCRIBE-->
+<!--        SET-->
+<!--        WHERE ID = #{id}-->
+<!--    </select>-->
 
 </mapper>
