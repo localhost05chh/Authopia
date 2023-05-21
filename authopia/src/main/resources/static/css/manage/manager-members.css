@@ -278,10 +278,6 @@ menu, ol, ul {
     background-color: #fff;
 }
 
-.div3 {
-    padding-top: 40px;
-}
-
 .justify-between {
     justify-content: space-between;
 }
@@ -461,6 +457,15 @@ button, select {
 .text-left {
     text-align: left;
 }
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .w-280 {
     width: 280px;
 }
@@ -679,10 +684,6 @@ button, select {
 .rounded-8 {
     border-radius: 8px;
 }
-
-.text-left {
-    text-align: left;
-}
 .px-20 {
     padding-left: 20px;
     padding-right: 20px;
@@ -741,18 +742,159 @@ button, select {
     margin-left: auto;
 }
 
-.selected-label {
-    margin-right: 15px;
-    align-items: center;
+.py-10 {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
-.font-label-regular-md{
+.pt-40 {
+    padding-top: 40px;
+}
+
+h1 {
+    margin: 0;
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.font_headline_bold_lg {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 40px;
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.border {
+    border-width: 1px;
+}
+.rounded-20 {
+    border-radius: 20px;
+}
+.h-40 {
+    height: 40px;
+}
+
+.border-black-opacity {
+    border-color: rgba(0,0,0,.1);
+}
+
+*, :after, :before {
+    box-sizing: border-box;
+    border: 0 solid #e5e7eb;
+}
+
+label {
+    cursor: default;
+}
+
+.content-none {
+    --tw-content: none;
+    content: var(--tw-content);
+}
+.outline-none {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+.w-full {
+    width: 100%;
+}
+.font_body_regular_md {
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
 }
+.content_secondary {
+    color: #333334;
+    fill: #333334;
+}
+[type=search] {
+    outline-offset: -2px;
+}
 
-.content-quarternary {
-    color: #8a8a8b;
-    fill: #8a8a8b;
+.w-240 {
+    width: 240px;
+}
+
+.ml-10   {
+    margin-left: 10px;
+}
+
+[type=button], [type=reset], [type=submit], button {
+    background-color: transparent;
+    background-image: none;
+}
+
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.w-20 {
+    width: 20px;
+}
+
+.h-20 {
+    height: 20px;
+}
+.content-primary {
+    color: #1d1d1e;
+    fill: #1d1d1e;
+}
+svg {
+    display: block;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.shrink-0 {
+    flex-shrink: 0;
+}
+
+.font-label-medium-md {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.w-name {
+    width: 76px;
+}
+
+.w-mail {
+    width: 256px;
+}
+
+.w-category {
+    width: 92px;
+}
+
+.w-date {
+    width: 200px;
+}
+
+.w-withdraw {
+    width: 50px;
+}
+
+.w-pagelink {
+    width: 176px;
 }
