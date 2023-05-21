@@ -51,23 +51,11 @@ public class MemberController {
         final Optional<Long> foundMember = memberService.login(memberEmail, memberPassword);
         if(foundMember.isPresent()){
             session.setAttribute("id", foundMember.get());
-            return new RedirectView("/main/main");
+            return new RedirectView("/main");
         }
         redirectAttributes.addFlashAttribute("login", "false");
         return new RedirectView("/member/login");
     }
-
-    // 카카오 로그인
-//    @PostMapping("login-kakao")
-//    public RedirectView loginKakao(String memberEmail, String memberKakaoLogin, HttpSession session, RedirectAttributes redirectAttributes){
-//        final Optional<Long> foundMember = memberService.login(memberEmail, member);
-//        if(foundMember.isPresent()){
-//            session.setAttribute("id", foundMember.get());
-//            return new RedirectView("/main/main");
-//        }
-//        redirectAttributes.addFlashAttribute("login", "false");
-//        return new RedirectView("/member/login");
-//    }
 
     // 비밀번호 찾기
     @GetMapping("find-password")
