@@ -20,10 +20,19 @@ public class MemberMapperTests {
     @Test
     public void insertTest(){
         MemberVO memberVO = new MemberVO();
-        memberVO.setMemberEmail("gmatn96@naver.com");
+        memberVO.setMemberEmail("gmatn97@naver.com");
         memberVO.setMemberPassword("1234");
         memberVO.setMemberName("임희수");
         memberMapper.insert(memberVO);
+    }
+
+    @Test
+    public void insetByKakaoTest(){
+        MemberVO memberVO = new MemberVO();
+        memberVO.setMemberEmail("gmatn98@naver.com");
+        memberVO.setMemberName("임희수");
+        memberVO.setMemberKakaoLogin("1234");
+        memberMapper.insertByKakao(memberVO);
     }
 
     @Test
@@ -35,6 +44,12 @@ public class MemberMapperTests {
     @Test
     public void selectByMemberEmailAndMemberPasswordTest(){
         Optional<Long> foundId = memberMapper.selectByMemberEmailAndMemberPassword("gmatn96@naver.com", "1234");
+        assertThat(foundId.isPresent()).isEqualTo(true);
+    }
+
+    @Test
+    public void selectByMemberEmailAndMemberKakaoLoginTest(){
+        Optional<Long> foundId = memberMapper.selectByMemberEmailAndMemberKakaoLogin("gmatn98@naver.com", "1234");
         assertThat(foundId.isPresent()).isEqualTo(true);
     }
 

@@ -21,6 +21,19 @@ $email.on("blur change keyup paste", function(){
     }
 })
 
+function send(){
+    $email.trigger("blur");
+    $password.trigger("blur");
+
+    if(loginCheck.filter(check => check).length != 2){
+        alert("모두 기입하세요.")
+        return;
+    }
+
+    document.login.submit();
+
+}
+
 /* 비밀번호 오류 */
 $password.on("blur change keyup paste", function(){
     if ($(this).val().length == 0) {
@@ -38,15 +51,3 @@ $password.on("blur change keyup paste", function(){
         loginCheck[1] = true;
     }
 })
-
-function send(){
-    $email.trigger("blur");
-    $password.trigger("blur");
-
-    if(loginCheck.filter(check => check).length != 2){
-        alert("모두 기입하세요.")
-        return;
-    }
-
-    document.login.submit();
-}

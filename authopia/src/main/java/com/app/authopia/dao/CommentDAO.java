@@ -24,8 +24,8 @@ public class CommentDAO {
     }
 
     //      댓글 수정
-    public void setComment(CommentVO commentVO){
-        commentMapper.update(commentVO);
+    public void setComment(CommentDTO commentDTO){
+        commentMapper.update(commentDTO);
     }
 
     //      댓글 삭제

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full" xmlns:th="http://www.thymeleag.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/css/post/author-porfile.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <title>작가 프로필 페이지</title>
+</head>
+
+<body class="h-full">
+<div>
+    <!-- 해더 -->
+    <div></div>
+
+    <!-- 상단부분 -->
+    <div>
+        <div class="w-full h-[148px] relative surface_primary">
+                <span class="top-background">
+                    <!-- 배경 이미지 -->
+                    <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fcover_default.png%3Fauto%3Dformat%252Ccompress%26h%3D1184%26lossless%3Dtrue%26w%3D3200&w=1920&q=75"
+                         alt="" class="background-style">
+                </span>
+            <div class="absolute w-full h-full bg-[rgba(0,0,0,0.2)]"></div>
+        </div>
+
+        <!-- 프로필 -->
+        <div class="relative max-w-mobile mx-auto mt-[-44px]">
+            <div>
+                <div class="px-[16px]">
+                    <div class="flex flex-wrap flex-col items-center relative pt-[105px]">
+                        <div
+                                class="w-[88px] h-[88px] mb-[16px] border-[4px] absolute top-0 border_white box-border rounded-[50%] drop-shadow-[0px_4px_10px_rgba(0,0,0,0.08)] profile-image">
+                        </div>
+                        <div class="flex flex-col max-w-[404px]">
+                            <p class="font_headline_bold_sm mb-[6px] text-center">작가 이름</p>
+                            <div class="flex justify-center items-center mb-[12px]">
+                                    <span class="font_label_regular_md text-center">
+                                        <strong class="font_label_bold_lg">1</strong> 관심
+                                    </span>
+                            </div>
+                            <p class="text-center font_label_regular_xl content_quaternary px-[24px] break-all">소개글
+                                작성</p>
+                        </div>
+                        <div class="flex flex-row mt-[12px] gap-[8px]">
+                            <div class="relative flex font_label_bold_lg h-[40px] mx-auto">
+                                <button type="button"
+                                        class="flex justify-center items-center w-full h-full font-bold rounded-full px-[16px] surface_primary border-[1px] border_black_opacity">
+                                    <div class="flex items-center justify-center">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="mr-[4px] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path></svg>
+                                        <div>관심</div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 글 & 그림 선택 메뉴-->
+    <main class="flex flex-col relative max-w-main min-w-screen min-w-[320px] w-full mx-auto surface_primary">
+        <div class="flex justify-around">
+            <button
+                    class="flex items-center justify-center w-full h-[43px] font_label_bold_xl relative border-b-[1px] border_primary box-border content_primary">
+                글
+                <span
+                        class="flex absolute bottom-[-1px] left-[0] w-full h-[1.6px] transform surface_secondary_inverse"></span>
+            </button>
+            <button
+                    class="flex items-center justify-center w-full h-[43px] font_label_bold_xl relative border-b-[1px] border_primary box-border content_disabled">
+                그림
+            </button>
+        </div>
+        <div style="height: 16px;"></div>
+        <div>
+            <div class="w-full mb-[20px] flex justify-between items-center">
+                <div class="flex gap-[2px] font_label_medium_lg content_secondary">
+                    내 글 <span>1</span>
+                </div>
+            </div>
+
+            <!-- 반복되는 글 -->
+            <ul class="flex flex-col gap-y-[12px]">
+                <ul class="flex flex-col col-span-full mt-[8px]">
+                    <li class="py-[20px] border-t first:pt-[8px] first:border-0 border_secondary">
+                        <div>
+                            <button type="button" class="block text-left w-full">
+                                <div class="flex gap-x-[16px]">
+                                    <div class="w-full h-[73px] xl:h-auto break-all">
+                                        <h2
+                                                class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
+                                            제목
+                                        </h2>
+                                        <p class="mt-[4px] mb-[18px] xl:mt-[6px] overflow-hidden font_label_regular_lg content_quaternary text-ellipsis-1 xl:text-ellipsis-2">
+                                            내용이 출력되는 곳 입니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center mt-[12px]">
+                                    <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] profile-image-style"></div>
+                                    <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
+                                        <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">작가 이름</span>
+                                        <span class="shrink-0 content_quaternary">｜ 8시간전 ｜ 조회수 1</span>
+
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </main>
+</div>
+</body>
+
+</html>
