@@ -59,6 +59,16 @@ public class MemberMapperTests {
     }
 
     @Test
+    public void selectMemberInfo(){
+        Optional<MemberVO> foundMemberInfo = memberMapper.selectMemberInfo(1L);
+        assertThat(foundMemberInfo.isPresent()).isEqualTo(true);
+    }
+//    @Test
+//    public void updateMemberInfo(){
+//        memberMapper.selectMemberInfo(1L, "섭섭", "나도 작가할래", "뭐든지 해보고 싶어서 가입했어요", "");
+//    }
+
+    @Test
     public void updateMemberIsRemainingTest(){
         memberMapper.updateMemberIsRemaining(1L);
     }

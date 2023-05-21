@@ -48,6 +48,13 @@
         WHERE ID = #{id}
     </select>
 
+    <!--회원 정보 수정-->
+    <update id="updateMemberInfo">
+        UPDATE TBL_MEMBER
+        SET MEMBER_NAME = #{memberName}, MEMBER_BRIEF_INTRODUCE = #{memberBriefIntroduce}, MEMBER_INTRODUCE = #{memberIntroduce}, MEMBER_CATEGORY = #{memberCategory}, MEMBER_URL = #{memberUrl}
+        WHERE ID = #{id}
+    </update>
+
     <!--회원 탈퇴-->
     <update id="updateMemberIsRemaining">
         UPDATE TBL_MEMBER
