@@ -1,6 +1,7 @@
 package com.app.authopia.mapper;
 
 import com.app.authopia.domain.dto.PostDTO;
+import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,7 +11,7 @@ import java.util.Optional;
 @Mapper
 public interface PostMapper {
 //      게시글 목록
-    public List<PostDTO> selectAll();
+    public List<PostDTO> selectAll(PostType postType);
 
 //      게시글 추가
     public void insert(PostVO postVO);

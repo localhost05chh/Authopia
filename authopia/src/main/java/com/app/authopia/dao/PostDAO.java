@@ -1,6 +1,7 @@
 package com.app.authopia.dao;
 
 import com.app.authopia.domain.dto.PostDTO;
+import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.mapper.PostMapper;
 import lombok.RequiredArgsConstructor;
@@ -15,8 +16,8 @@ public class PostDAO{
     private final PostMapper postMapper;
 
     //      게시글 목록
-    public List<PostDTO> findAll(){
-        return postMapper.selectAll();
+    public List<PostDTO> findAll(PostType postType){
+        return postMapper.selectAll(postType);
     }
     //      게시글 추가
     public void save(PostVO postVO){

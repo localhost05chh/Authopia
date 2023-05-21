@@ -2,6 +2,7 @@ package com.app.authopia.service.post;
 
 import com.app.authopia.dao.PostDAO;
 import com.app.authopia.domain.dto.PostDTO;
+import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,8 @@ public class PostServiceImpl implements PostService {
 
     //      게시글 목록
     @Override
-    public List<PostDTO> getList(){
-        return postDAO.findAll();
+    public List<PostDTO> getList(PostType postType){
+        return postDAO.findAll(postType);
     }
 
     //      게시글 추가
