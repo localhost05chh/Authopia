@@ -1,6 +1,7 @@
 package com.app.authopia.controller;
 
 import com.app.authopia.dao.PostDAO;
+import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
@@ -11,8 +12,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 @Slf4j
@@ -23,8 +27,10 @@ public class PostController{
 
     //      게시글 목록
     @GetMapping("list")
-    public void gotoList(Model model){
-        model.addAttribute("posts", postService.getList());
+    public void gotoList(Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order){
+        postType.setType(type);
+        postType.setOrder(order);
+        model.addAttribute("posts", postService.getList(postType));
     }
 
     //      게시글 추가

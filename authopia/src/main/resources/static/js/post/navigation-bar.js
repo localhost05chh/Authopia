@@ -7,13 +7,39 @@ window.addEventListener("scroll", () => {
     }
 });
 
-$(".style__CategoryWrapper-zxsodr-18").on("click", function() {
-    var $this = $(this);
-    $(".style__CategoryWrapper-zxsodr-18").removeClass("eWDpEZ").addClass("ehJwom");
-    if ($(".eWDpEZ").is($this)) {
-        return
+//원본
+// $(".fAzCXd a").on("click", function() {
+//
+//     $(".fAzCXd a").removeClass("eWDpEZ").addClass("ehJwom");
+//     if ($(".eWDpEZ").is($(this))) {
+//         return
+//     }
+//     else {
+//         $(this).removeClass("ehJwom").addClass("eWDpEZ");
+//     }
+// });
+
+//진혁이가 만든거
+function searchParam(key) {
+    return new URLSearchParams(location.search).get(key);
+};
+
+$(document).ready(function () {
+    let type = searchParam('type');
+    $(".fAzCXd a").removeClass("eWDpEZ").addClass("ehJwom");
+    if (type == null) {
+        $(".writing").removeClass("ehJwom").addClass("eWDpEZ");
+    } else {
+        $("." + type).removeClass("ehJwom").addClass("eWDpEZ");
     }
-    else {
-        $this.removeClass("ehJwom").addClass("eWDpEZ");
+})
+
+$(".fAzCXd a").on("click", function (e) {
+    e.preventDefault();
+    let type = this.classList[0];
+    if (type == "main") {
+        location.href = `/main`;
+    } else {
+        location.href = `/post/list?type=${type}`;
     }
 });

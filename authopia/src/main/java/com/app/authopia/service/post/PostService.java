@@ -2,6 +2,7 @@ package com.app.authopia.service.post;
 
 
 import com.app.authopia.domain.dto.PostDTO;
+import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.Optional;
 
 public interface PostService {
     //      게시글 목록
-    public List<PostDTO> getList();
+    public List<PostDTO> getList(PostType postType);
 
     //      게시글 추가
     public void write(PostVO postVO);

@@ -64,11 +64,11 @@
             <div class="style__SearchBar-zxsodr-14 dQdWsU">
                 <div class="style__CategorySection-zxsodr-13 fAzCXd">
                     <!-- 카테고리 종류 -->
-                    <a class="ehJwom main style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li">홈</a>
-                    <a class="ehJwom writing style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li">작품</a>
-                    <a class="ehJwom drawing style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li">그림</a>
-                    <a class="ehJwom free style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li">자유</a>
-                    <a class="ehJwom recruit style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li">모집</a>
+                    <a class="main style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li ehJwom">홈</a>
+                    <a class="writing style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li ehJwom">작품</a>
+                    <a class="drawing style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li ehJwom">그림</a>
+                    <a class="free style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li ehJwom">자유</a>
+                    <a class="recruit style__CategoryWrapper-zxsodr-18 effect_hover font_label_bold_li ehJwom">모집</a>
                 </div>
                 <!-- 검색 -->
                 <div class="style__SearchInputWrapper-zxsodr-15 hbYMFx">
@@ -90,14 +90,14 @@
                     <div class="new flex items-center">
                         <label class="relative px-[12px] first:pl-[0]">
                             <input type="radio" value="time" class="absolute top-0 left-0 bottom-0 right-0 opacity-0 cursor-pointer">
-                            <span class="font_label_bold_xl content_primary">최신글</span>
+                            <a class="font_label_bold_xl content_primary">최신글</a>
                         </label>
                     </div>
                     <div class="trand flex items-center">
                         <span class="flex grow-0 w-[2px] h-[16px] overflow-hidden border-l-[2px] border_primary"></span>
                         <label class="relative px-[12px] first:pl-[0]">
                             <input type="radio" value="popular" class="absolute top-0 left-0 bottom-0 right-0 opacity-0 cursor-pointer">
-                            <span class="font_label_regular_xl content_quaternary">인기글</span>
+                            <a class="font_label_regular_xl content_quaternary">인기글</a>
                         </label>
                     </div>
                 </div>
@@ -213,9 +213,9 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="/js/post/list.js"></script>
-<script src="/js/post/navigation-bar.js"></script>
 <script th:inline="javascript">
     let posts = [[${posts}]];
 </script>
+<script src="/js/post/navigation-bar.js"></script>
 <script src="/js/post/get-list.js"></script>
 </html>
