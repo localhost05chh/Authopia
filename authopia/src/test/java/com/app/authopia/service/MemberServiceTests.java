@@ -43,5 +43,18 @@ public class MemberServiceTests {
     public void modifyPasswordTest(){
         memberService.modifyPassword("gmatn98@naver.com", "123456123456");
     }
+
+    @Test
+    public void getMemberInfoTest(){
+        Optional<MemberVO> foundMemberInfo = memberService.getMemberInfo(1L);
+        assertThat(foundMemberInfo.isPresent()).isEqualTo(true);
+    }
+
+    @Test
+    public void deleteMember(){
+        memberService.deleteMember(1L);
+    }
+
+
 }
 

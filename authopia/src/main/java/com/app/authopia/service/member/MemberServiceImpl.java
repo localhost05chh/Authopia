@@ -33,6 +33,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public Optional<MemberVO> getMemberInfo(Long id) {
+        return memberDAO.findByMemberId(id);
+    }
+
+    @Override
     public void deleteMember(Long id) {
         memberDAO.cancelMember(id);
     }

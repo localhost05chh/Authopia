@@ -42,4 +42,16 @@ public class MemberDAOTests {
     public void setPasswordTest(){
         memberDAO.setPassword("gmatn97@naver.com","1234512345");
     }
+
+    @Test
+    public void findByMemberIdTest(){
+        Optional<MemberVO> foundMemberInfo = memberDAO.findByMemberId(1L);
+        assertThat(foundMemberInfo.isPresent()).isEqualTo(true);
+    }
+
+    @Test
+    public void cancelMemberTest(){
+        memberDAO.cancelMember(1L);
+    }
+
 }
