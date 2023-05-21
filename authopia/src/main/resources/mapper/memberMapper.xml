@@ -28,6 +28,13 @@
         WHERE MEMBER_EMAIL = #{memberEmail}
 	</update>
 
+    <!--회원 조회-->
+    <select id="selectMemberInfo" resultType="memberVO">
+        SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_REGISTER_DATE, MEMBER_IS_REMAINING, MEMBER_BRIEF_INTRODUCE, MEMBER_INTRODUCE, MEMBER_CATEGORY, MEMBER_URL
+        FROM TBL_MEMBER
+        WHERE ID = #{id}
+    </select>
+
     <!--회원 탈퇴-->
     <update id="updateMemberIsRemaining">
         UPDATE TBL_MEMBER

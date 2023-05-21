@@ -21,6 +21,9 @@ public interface MemberMapper {
     // 비밀번호 재설정
     public void updatePassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
 
+    // 회원 조회
+    public Optional<MemberVO> selectMemberInfo(Long id);
+
     // 회원 탈퇴
     public void updateMemberIsRemaining(Long id);
 }

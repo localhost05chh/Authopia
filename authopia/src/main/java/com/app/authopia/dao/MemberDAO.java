@@ -33,8 +33,13 @@ public class MemberDAO {
         memberMapper.updatePassword(memberEmail, memberPassword);
     };
 
+    // 회원 조회
+
+
     // 회원 탈퇴
     public void cancelMember(Long id){
         memberMapper.updateMemberIsRemaining(id);
     }
+
+
 }
