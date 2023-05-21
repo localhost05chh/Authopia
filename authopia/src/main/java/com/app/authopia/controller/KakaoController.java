@@ -46,15 +46,11 @@ public class KakaoController {
         return new RedirectView("/main/main");
     }
 
-    @PostMapping("/login")
-    public void kakaologin(@RequestParam Map<String, Object> result, HttpSession session) throws Exception{
-
-    }
-
     @GetMapping("/logout")
-    public void kakaoLogout(HttpSession session){
+    public RedirectView kakaoLogout(HttpSession session){
         log.info("logout");
-        kakaoService.logoutKakao((String)session.getAttribute("token"));
-        session.invalidate();
+        String token = (String)session.getAttribute("token");
+        if(token!=null){kakaoService.logoutKakao(token);}
+        return new RedirectView("/member/logout");
     }
 }

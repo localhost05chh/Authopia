@@ -48,7 +48,7 @@
                 <!--로그아웃-->
                 <div th:unless="${memberId eq null}">
                     <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] false disabled:content_disabled">
-                        <a href="/member/logout">로그아웃</a>
+                        <a href="/logout">로그아웃</a>
                     </button>
                 </div>
                 <div class="relative login-profile" th:unless="${memberId eq null}">
