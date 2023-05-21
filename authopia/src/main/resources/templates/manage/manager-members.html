@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자 페이지</title>
+</head>
+<link rel="stylesheet" href="../../static/css/manage/manager-members.css">
+<body class="h-full"><div class="flex flex-col h-screen">
+    <div class="flex h-full overflow-hidden">
+        <nav class="surface-secondary border border-primary basis relative">
+            <div class="div1 border-b border-disabled">
+                <div class="flex flex-col items-center">
+                    <div class="div2">
+                        <div class="relative w-full h-full rounded-full flex items-center justify-center">
+                            <span class="profile-pic-span">
+                                <img alt="관리지 이미지" sizes="100vw" src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2Ff17ae0b2-1fc7-4b85-b899-8b00e802d5d1%2FprofileImage%2F97c6a3ab-e9b7-4eac-85f8-87662b165918.JPG%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=2048&q=75" decoding="async" data-nimg="fill" class="rounded-full">
+                            </span>
+                            <div class="absolute top-0 left-0 w-full h-full border border-black-opacity rounded-full"></div>
+                        </div>
+                    </div>
+                    <h2 class="content-primary h2-1 font-title-bold-md text-center">관리자</h2>
+                </div>
+            </div>
+            <ul class="ul1">
+                <li class="list flex items-center surface-accent-light hover:surface-accent-light">
+                    <a href="./manager-page.html" class="flex items-center grow">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg1 content-secondary">
+                            <path d="M15.078 3.137H8.6a5.6 5.6 0 0 0-5.6 5.6v6.8a5.6 5.6 0 0 0 5.6 5.6h6.8a5.6 5.6 0 0 0 5.6-5.6V8.944l-1.6 1.6v4.993a4 4 0 0 1-4 4H8.6a4 4 0 0 1-4-4v-6.8a4 4 0 0 1 4-4h4.878l1.6-1.6Z"></path><path fill-rule="evenodd" clip-rule="evenodd" d="m20.692 7.116.534-.534a2.567 2.567 0 1 0-3.63-3.63L9.41 11.138l-1.103 3.74a.8.8 0 0 0 .994.993l3.74-1.103 6.52-6.52.005.004 1.13-1.132-.004-.004Zm-2.262 0-6.233 6.233-1.94.572.572-1.94 6.233-6.233 1.368 1.368Zm1.131-1.132-1.367-1.367.533-.534a.967.967 0 0 1 1.368 1.368l-.534.533Z"></path>
+                        </svg>
+                        <span class="block font-label-bold-xl content-primary">모든 포스트 관리</span>
+                    </a>
+                </li>
+                <li class="list flex items-center surface-accent-light hover:surface-accent-light">
+                    <a href="" class="flex items-center grow">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg1 content-accent-active">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.6 0a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM10.6 7.6a2.6 2.6 0 1 1-5.2 0 2.6 2.6 0 0 1 5.2 0Zm-1.4 0a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM8.8 16.4a4.8 4.8 0 0 1 4.8-4.8h4a4.8 4.8 0 0 1 4.8 4.8v2a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8v-2Zm4.8-3.2a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2v-2a3.2 3.2 0 0 0-3.2-3.2h-4Z"></path>
+                            <path d="M5.6 19.6h1.61c.07.706.507 1.304 1.117 1.6H5.6a2.8 2.8 0 0 1-2.8-2.8v-2a4.8 4.8 0 0 1 4.8-4.8h2.347a4.01 4.01 0 0 0-2.089 1.6H7.6a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2Z"></path>
+                        </svg>
+                        <span class="block font-label-bold-xl content-primary">회원 관리</span>
+                    </a>
+                </li>
+                <li class="list flex items-center surface-accent-light hover:surface-accent-light">
+                    <a href="" class="flex items-center grow">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg1 content-secondary">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.6 0a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM10.6 7.6a2.6 2.6 0 1 1-5.2 0 2.6 2.6 0 0 1 5.2 0Zm-1.4 0a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM8.8 16.4a4.8 4.8 0 0 1 4.8-4.8h4a4.8 4.8 0 0 1 4.8 4.8v2a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8v-2Zm4.8-3.2a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2v-2a3.2 3.2 0 0 0-3.2-3.2h-4Z"></path>
+                            <path d="M5.6 19.6h1.61c.07.706.507 1.304 1.117 1.6H5.6a2.8 2.8 0 0 1-2.8-2.8v-2a4.8 4.8 0 0 1 4.8-4.8h2.347a4.01 4.01 0 0 0-2.089 1.6H7.6a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2Z"></path>
+                        </svg>
+                        <span class="block font-label-bold-xl content-primary">댓글 관리</span>
+                    </a>
+                </li>
+                <li class="list flex items-center surface-accent-light hover:surface-accent-light">
+                    <a href="" class="flex items-center grow">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg1 content-secondary">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.6 0a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM10.6 7.6a2.6 2.6 0 1 1-5.2 0 2.6 2.6 0 0 1 5.2 0Zm-1.4 0a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM8.8 16.4a4.8 4.8 0 0 1 4.8-4.8h4a4.8 4.8 0 0 1 4.8 4.8v2a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8v-2Zm4.8-3.2a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2v-2a3.2 3.2 0 0 0-3.2-3.2h-4Z"></path>
+                            <path d="M5.6 19.6h1.61c.07.706.507 1.304 1.117 1.6H5.6a2.8 2.8 0 0 1-2.8-2.8v-2a4.8 4.8 0 0 1 4.8-4.8h2.347a4.01 4.01 0 0 0-2.089 1.6H7.6a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2Z"></path>
+                        </svg>
+                        <span class="block font-label-bold-xl content-primary">글 관리</span>
+                    </a>
+                </li>
+                <li class="list flex items-center surface-accent-light hover:surface-accent-light">
+                    <a href="" class="flex items-center grow">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg1 content-secondary">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19 6.7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-1.6 0a1.9 1.9 0 1 1-3.8 0 1.9 1.9 0 0 1 3.8 0ZM10.6 7.6a2.6 2.6 0 1 1-5.2 0 2.6 2.6 0 0 1 5.2 0Zm-1.4 0a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0ZM8.8 16.4a4.8 4.8 0 0 1 4.8-4.8h4a4.8 4.8 0 0 1 4.8 4.8v2a2.8 2.8 0 0 1-2.8 2.8h-8a2.8 2.8 0 0 1-2.8-2.8v-2Zm4.8-3.2a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2h8a1.2 1.2 0 0 0 1.2-1.2v-2a3.2 3.2 0 0 0-3.2-3.2h-4Z"></path>
+                            <path d="M5.6 19.6h1.61c.07.706.507 1.304 1.117 1.6H5.6a2.8 2.8 0 0 1-2.8-2.8v-2a4.8 4.8 0 0 1 4.8-4.8h2.347a4.01 4.01 0 0 0-2.089 1.6H7.6a3.2 3.2 0 0 0-3.2 3.2v2a1.2 1.2 0 0 0 1.2 1.2Z"></path>
+                        </svg>
+                        <span class="block font-label-bold-xl content-primary">그림 관리</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="basis-0 grow shrink-0 overflow-x-auto">
+            <div class="grid grid-cols-12 main-div mx-auto">
+                <div class="col-span-full">
+                    <div class="sticky top-0 z-10 surface-primary">
+                        <header class="pt-40 flex items-center justify-between">
+                            <h1 class="font-headline-bold-lg content-primary">멤버 관리</h1>
+                            <div class="w-240">
+                                <label for="" class="w-full px-20 py-10 h-40 border border-black-opacity focus-within:border-2 focus-within:border-accent focus-within:border-accent focus-within:px-19 rounded-20 flex items-center justify-between">
+                                    <input type="search" class="outline-none content-secondary font-body-regular-md content-none w-full" placeholder="멤버 검색">
+                                    <button type="button" class="search ml-10">
+                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-20 h-20 content-primary">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M15.83 16.561a7.8 7.8 0 1 1 1.233-1.312l3.465 3.465a.9.9 0 1 1-1.272 1.273L15.83 16.56Zm1.13-5.961a6.16 6.16 0 1 1-12.32 0 6.16 6.16 0 0 1 12.32 0Z"></path>
+                                        </svg>
+                                    </button>
+                                </label>
+                            </div>
+                        </header>
+                        <div class="mt-20 border-y border-primary px-8 py-9 flex items-center gap-x-24">
+                            <div class="shrink-0 flex items-center font-label-medium-md content-primary justify-start w-name">이름</div>
+                            <div class="shrink-0 flex items-center font-label-medium-md content-primary justify-start w-mail">이메일</div>
+                            <div class="shrink-0 flex items-center font-label-medium-md content-primary justify-start w-category">카테고리</div>
+                            <div class="shrink-0 flex items-center font-label-medium-md content-primary justify-start w-date">가입 날짜</div>
+                            <div class="shrink-0 flex items-center font-label-medium-md content-primary justify-center w-withdraw">상태</div>
+                            <div class="shrink-0 flex items-center font-label-medium-md content-primary justify-end w-pagelink">페이지</div>
+                        </div>
+                    </div>
+                    <ul class="members flex flex-col col-span-full mt-8">
+                        <li class="px-8 py-16 flex items-center border-b border-secondary hover:surface-secondary">
+                            <div class="text-left w-name block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">홍길동</p>
+                            </div>
+                            <div class="text-left w-mail block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">gildong-hong.gmail.com</p>
+                            </div>
+                            <div class="text-left w-category block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">에세이</p>
+                            </div>
+                            <div class="text-left w-date block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">2020-03-02</p>
+                            </div>
+                            <div class="text-center w-withdraw block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">휴면</p>
+                            </div>
+                            <div class="text-right w-pagelink block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">없음</p>
+                            </div>
+                        </li>
+                        <li class="px-8 py-16 flex items-center border-b border-secondary hover:surface-secondary">
+                            <div class="text-left w-name block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">차은우</p>
+                            </div>
+                            <div class="text-left w-mail block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">eunwoo.gmail.com</p>
+                            </div>
+                            <div class="text-left w-category block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">에세이</p>
+                            </div>
+                            <div class="text-left w-date block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">2020-03-02</p>
+                            </div>
+                            <div class="text-center w-withdraw block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">휴면</p>
+                            </div>
+                            <div class="text-right w-pagelink block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">없음</p>
+                            </div>
+                        </li>
+                        <li class="px-8 py-16 flex items-center border-b border-secondary hover:surface-secondary">
+                            <div class="text-left w-name block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">한소희</p>
+                            </div>
+                            <div class="text-left w-mail block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">sohee.gmail.com</p>
+                            </div>
+                            <div class="text-left w-category block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">에세이</p>
+                            </div>
+                            <div class="text-left w-date block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">2020-03-02</p>
+                            </div>
+                            <div class="text-center w-withdraw block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">휴면</p>
+                            </div>
+                            <div class="text-right w-pagelink block">
+                                <p class="font-label-medium-xl text-ellipsis overflow-hidden whitespace-nowrap">없음</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="col-span-full mx-auto mt-40 mb-104 flex justify-center">
+                        <ul class="flex">
+                            <li>
+                                <button type="button" class="w-32 h-32 flex items-center justify-center content-primary border rounded-full border-primary opacity-30" disabled="">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M15.58 3.27c.504.405.563 1.115.13 1.587L9.168 12l6.543 7.143a1.076 1.076 0 0 1-.13 1.586 1.26 1.26 0 0 1-1.695-.122L6 12l7.885-8.607a1.26 1.26 0 0 1 1.695-.122Z"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                            <li class="ml-16">
+                                <button type="button" class="w-32 h-32 rounded-full flex items-center justify-center content-primary surface-tertiary">
+                                    <span class="content-primary font-label-bold-lg">1</span>
+                                </button>
+                            </li>
+                            <li class="ml-16">
+                                <button type="button" class="w-32 h-32 flex items-center justify-center content-primary border rounded-full border-primary opacity-30" disabled="">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-16 w-16">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.42 20.73a1.076 1.076 0 0 1-.13-1.587L14.832 12 8.289 4.857a1.076 1.076 0 0 1 .13-1.586 1.26 1.26 0 0 1 1.696.122L18 12l-7.885 8.607a1.26 1.26 0 0 1-1.695.122Z"></path>
+                                    </svg>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></body>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="../../static/js/manage/manager-members.js"></script>
+</html>
