@@ -38,7 +38,7 @@ $(".fAzCXd a").on("click", function (e) {
     e.preventDefault();
     let type = this.classList[0];
     if (type == "main") {
-        location.href = `/main`;
+        location.href = `/main/main`;
     } else {
         location.href = `/post/list?type=${type}`;
     }
