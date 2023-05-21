@@ -154,3 +154,17 @@ $category_next.on("click", function() {
         $category_next.css("display", "none");   //앞으로가기 버튼 안보이게하고
     }
 });
+
+/* 카테고리 탭 클릭 이벤트 */
+const $category_buttons = $(".category-button");
+
+$category_buttons.each((i, category_button) => {
+    let $category_button = $(category_button);
+
+    $category_button.on("click", () => {
+        $category_buttons.removeClass("category-active");
+        $category_buttons.addClass("category");
+        $category_button.addClass("category-active");
+        $category_button.removeClass("category");
+    })
+});
