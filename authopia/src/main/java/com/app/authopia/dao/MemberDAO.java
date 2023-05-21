@@ -23,9 +23,17 @@ public class MemberDAO {
         memberMapper.insert(memberVO);
     };
 
+    // 카카오 회원가입
+    public void saveByKakao(MemberVO memberVO){ memberMapper.insertByKakao(memberVO); };
+
     // 로그인
     public Optional<Long> findByMemberEmailAndMemberPassword(String memberEmail, String memberPassword){
         return memberMapper.selectByMemberEmailAndMemberPassword(memberEmail, memberPassword);
+    };
+
+    // 카카오 로그인
+    public Optional<Long> findByMemberEmailAndMemberKakaoLogin(String memberEmail, String memberKakaoLogin){
+        return memberMapper.selectByMemberEmailAndMemberKakaoLogin(memberEmail, memberKakaoLogin);
     };
 
     // 비밀번호 재설정
@@ -33,8 +41,15 @@ public class MemberDAO {
         memberMapper.updatePassword(memberEmail, memberPassword);
     };
 
+    // 회원 조회
+//    public Optional<MemberVO> findByMemberId(Long Id){
+//        memberMapper
+//    }
+
     // 회원 탈퇴
     public void cancelMember(Long id){
         memberMapper.updateMemberIsRemaining(id);
     }
+
+
 }

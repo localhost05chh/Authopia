@@ -18,6 +18,10 @@ body {
     padding-top: 24px;
 }
 
+.mb-\[56px\] {
+    margin-bottom: 56px;
+}
+
 .items-start {
     align-items: flex-start;
 }

@@ -15,11 +15,20 @@ public interface MemberMapper {
     // 회원가입
     public void insert(MemberVO memberVO);
 
+    // 카카오 회원가입
+    public void insertByKakao(MemberVO memberVO);
+
     // 로그인
     public Optional<Long> selectByMemberEmailAndMemberPassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
 
+    // 카카오 로그인
+    public Optional<Long> selectByMemberEmailAndMemberKakaoLogin(@Param("memberEmail") String memberEmail, @Param("memberKakaoLogin") String memberKakaoLogin);
+
     // 비밀번호 재설정
     public void updatePassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
+
+    // 회원 조회
+    public Optional<MemberVO> selectMemberInfo(Long id);
 
     // 회원 탈퇴
     public void updateMemberIsRemaining(Long id);
