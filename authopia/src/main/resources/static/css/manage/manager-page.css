@@ -643,3 +643,100 @@ button, select {
 .h-32 {
     height: 32px;
 }
+
+.max-w-280 {
+    max-width: 280px;
+}
+
+.min-w-120 {
+    min-width: 120px;
+}
+.z-10 {
+    z-index: 10;
+}
+.top-42 {
+    top: 42px;
+}
+.right-0 {
+    right: 0;
+}
+.absolute {
+    position: absolute;
+}
+
+.shadow-menu {
+    --tw-shadow: 0px 1px 0px rgba(0,0,0,.08),0px 2px 6px rgba(0,0,0,.16);
+    --tw-shadow-colored: 0px 1px 0px var(--tw-shadow-color),0px 2px 6px var(--tw-shadow-color);
+}
+
+.shadow-menu {
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
+
+.p-8 {
+    padding: 8px;
+}
+.rounded-8 {
+    border-radius: 8px;
+}
+
+.text-left {
+    text-align: left;
+}
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.py-12 {
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.rounded-8 {
+    border-radius: 8px;
+}
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+.text-ellipsis {
+    text-overflow: ellipsis;
+}
+.overflow-hidden {
+    overflow: hidden;
+}
+.w-full {
+    width: 100%;
+}
+.font-label-regular-lg {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.hidden-view-menu, .hidden-sort-menu {
+    display: none;
+    z-index: 10;
+}
+
+.w-20 {
+    width: 20px;
+}
+
+.h-20 {
+    height: 20px;
+}
+
+.w-40 {
+    width: 40px;
+}
+
+.h-40 {
+    height: 40px;
+}
+
+.gap-x-12 {
+    column-gap: 12px;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
