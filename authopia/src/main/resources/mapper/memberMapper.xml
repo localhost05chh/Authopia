@@ -41,6 +41,20 @@
         WHERE MEMBER_EMAIL = #{memberEmail}
 	</update>
 
+    <!--회원 조회-->
+    <select id="selectMemberInfo" resultType="memberVO">
+        SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_REGISTER_DATE, MEMBER_IS_REMAINING, MEMBER_BRIEF_INTRODUCE, MEMBER_INTRODUCE, MEMBER_CATEGORY, MEMBER_URL
+        FROM TBL_MEMBER
+        WHERE ID = #{id}
+    </select>
+
+    <!--회원 정보 수정-->
+    <update id="updateMemberInfo">
+        UPDATE TBL_MEMBER
+        SET MEMBER_NAME = #{memberName}, MEMBER_BRIEF_INTRODUCE = #{memberBriefIntroduce}, MEMBER_INTRODUCE = #{memberIntroduce}, MEMBER_CATEGORY = #{memberCategory}, MEMBER_URL = #{memberUrl}
+        WHERE ID = #{id}
+    </update>
+
     <!--회원 탈퇴-->
     <update id="updateMemberIsRemaining">
         UPDATE TBL_MEMBER
