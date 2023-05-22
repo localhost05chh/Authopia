@@ -1,9 +1,11 @@
 package com.app.authopia.controller;
 
 import com.app.authopia.domain.vo.MemberVO;
+import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -152,7 +154,17 @@ public class MemberController {
 
     // 회원 조회
     // 회원 정보 수정
-    
+    @GetMapping("info")
+    public void modifyMemberInfo(Long id, Model model){
+        model.addAttribute("member", memberService.getMemberInfo(id));
+    }
+
+    // 회원 정보 수정 완료
+    @PostMapping("info")
+    public RedirectView modifyMemberInfo(MemberVO memberVO, RedirectAttributes redirectAttributes){
+        memberService.modifyMemberInfo(memberVO);
+        return new RedirectView("/member/info");
+    }
 
 
     // 회원 탈퇴
