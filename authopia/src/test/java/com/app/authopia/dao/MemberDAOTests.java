@@ -42,4 +42,22 @@ public class MemberDAOTests {
     public void setPasswordTest(){
         memberDAO.setPassword("gmatn97@naver.com","1234512345");
     }
+
+    @Test
+    public void selectAllTest(){
+        assertThat(memberDAO.findAll()).hasSize(13);
+        memberDAO.findAll().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void findByMemberIdTest(){
+        Optional<MemberVO> foundMemberInfo = memberDAO.findByMemberId(1L);
+        assertThat(foundMemberInfo.isPresent()).isEqualTo(true);
+    }
+
+    @Test
+    public void cancelMemberTest(){
+        memberDAO.cancelMember(1L);
+    }
+
 }

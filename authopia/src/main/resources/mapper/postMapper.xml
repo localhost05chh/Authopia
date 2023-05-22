@@ -55,5 +55,27 @@
         WHERE ID = #{id}
     </select>
 
+    <!-- 메인페이지에서 최신 인기 포스트 조회 -->
+    <select id="selectMain" resultType="postDTO">
+        SELECT R, P.ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT, MEMBER_NAME
+        FROM
+            (
+            SELECT ROWNUM R, P.ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT, MEMBER_NAME
+            FROM TBL_MEMBER M JOIN
+                (
+                SELECT ROWNUM, ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT
+                FROM
+                    (
+                    SELECT ROWNUM, ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT
+                    FROM TBL_POST
+        <![CDATA[
+                    WHERE POST_TYPE = 'post' AND ROWNUM <= 20 AND POST_IS_BLINDED = 0
+                    ORDER BY ID DESC
+                    )
+                ORDER BY POST_VIEW_COUNT DESC
+                ) P ON M.ID = P.MEMBER_ID AND ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+            ) P WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
+        ]]>
+    </select>
 
 </mapper>

@@ -1,9 +1,11 @@
 package com.app.authopia.mapper;
 
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,4 +29,7 @@ public interface PostMapper {
 
 //      게시글 복구
     public void restore(Long id);
+
+    // 메인페이지에서 최신 인기 포스트 조회
+    public List<PostDTO> selectMain(@Param("pagination") Pagination pagination);
 }

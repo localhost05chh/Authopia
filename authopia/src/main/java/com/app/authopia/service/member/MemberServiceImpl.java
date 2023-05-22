@@ -5,6 +5,7 @@ import com.app.authopia.domain.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,6 +31,16 @@ public class MemberServiceImpl implements MemberService {
     @Override
     public void modifyPassword(String memberEmail, String memberPassword) {
         memberDAO.setPassword(memberEmail, memberPassword);
+    }
+
+    @Override
+    public List<MemberVO> getNewMember() {
+        return memberDAO.findAll();
+    }
+
+    @Override
+    public Optional<MemberVO> getMemberInfo(Long id) {
+        return memberDAO.findByMemberId(id);
     }
 
     @Override

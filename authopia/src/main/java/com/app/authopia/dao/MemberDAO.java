@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -41,15 +42,19 @@ public class MemberDAO {
         memberMapper.updatePassword(memberEmail, memberPassword);
     };
 
+    // 메인에서 회원 목록 조회
+    public List<MemberVO> findAll(){
+        return memberMapper.selectAll();
+    }
+
     // 회원 조회
-//    public Optional<MemberVO> findByMemberId(Long Id){
-//        memberMapper
-//    }
+    public Optional<MemberVO> findByMemberId(Long id){
+        return memberMapper.selectMemberInfo(id);
+    };
 
     // 회원 탈퇴
     public void cancelMember(Long id){
         memberMapper.updateMemberIsRemaining(id);
-    }
-
+    };
 
 }

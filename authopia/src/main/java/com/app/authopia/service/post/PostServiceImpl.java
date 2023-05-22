@@ -1,6 +1,7 @@
 package com.app.authopia.service.post;
 
 import com.app.authopia.dao.PostDAO;
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
@@ -50,5 +51,10 @@ public class PostServiceImpl implements PostService {
     @Override
     public void restore(Long id){
 
+    }
+
+    @Override
+    public List<PostDTO> getListMain(Pagination pagination) {
+        return postDAO.findPostMain(pagination);
     }
 }

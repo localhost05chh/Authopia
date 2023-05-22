@@ -1,10 +1,12 @@
 package com.app.authopia.dao;
 
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.mapper.PostMapper;
 import lombok.RequiredArgsConstructor;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -38,5 +40,10 @@ public class PostDAO{
     //      게시글 복구
     public void restore(Long id){
         postMapper.restore(id);
+    }
+
+    // 메인페이지에서 최신 인기 포스트 조회
+    public List<PostDTO> findPostMain(Pagination pagination){
+        return postMapper.selectMain(pagination);
     }
 }

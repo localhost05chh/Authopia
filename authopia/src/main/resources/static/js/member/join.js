@@ -150,7 +150,8 @@ function send(){
     $findPassword.trigger("blur");
 
     if(joinCheck.filter(check => check).length != 4){
-        alert("모두 기입하세요.")
+        let modalMessage = "<span>모든 항목을 기입하셔야</span><span>회원가입이 완료됩니다!</span>";
+        showWarnModal(modalMessage);
         return;
     }
 
