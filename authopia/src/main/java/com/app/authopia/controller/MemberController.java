@@ -161,6 +161,15 @@ public class MemberController {
         return "mypage/mypage-info";
     }
 
+
+    // 회원 페이지 수정
+    @GetMapping("member-page")
+    public String modifyMemberPage(HttpSession session, Model model){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        return "mypage/mypage-setting";
+    }
+
     // 회원 정보 수정 완료
     @PostMapping("info")
     public RedirectView modifyMemberInfo(MemberVO memberVO, RedirectAttributes redirectAttributes){
@@ -171,7 +180,9 @@ public class MemberController {
 
     // 회원 탈퇴
     @GetMapping("delete-member")
-    public RedirectView deleteMember(HttpSession session){
+    public RedirectView deleteMember(HttpSession session, Model model){
+        Long memberId = (Long)session.getAttribute("id");
+        memberService.deleteMember(memberId);
         session.invalidate();
         return new RedirectView("/member/login");
     }

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>내 페이지</title>
-    <link rel="stylesheet" href="../../static/css/mypage/mypage.css">
-    <link rel="stylesheet" href="../../static/css/mypage/mypage-setting.css">
+    <link rel="stylesheet" href="/css/mypage/mypage.css">
+    <link rel="stylesheet" href="/css/mypage/mypage-setting.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 </head>
 <body class="h-full">
@@ -34,7 +34,7 @@
                 <div class="relative">
                     <button class="relative w-[32px] h-[32px] rounded-full surface_primary_active">
                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                             </span>
                     </button>
                 </div>
@@ -50,12 +50,12 @@
                         <div class="w-[68px] h-[68px] mb-[12px]">
                             <div class="relative w-full h-full rounded-full flex items-center justify-center">
                                     <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                        <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                        <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                                     </span>
                                 <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
                             </div>
                         </div>
-                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center">임희수</h2>
+                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center" th:text="${member.memberName}"></h2>
                         <a href="" target="_blank">
                             <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
                                 <div class="flex items-center justify-center">
@@ -162,7 +162,7 @@
                         <div class="flex">
                             <div class="relative min-w-[96px] h-[96px] mr-[32px] flex items-center justify-center">
                                     <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                        <img id="profile-preview" src="../../static/image/profile_icon.png" alt="" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                        <img id="profile-preview" src="/image/profile_icon.png" alt="" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                                     </span>
                             </div>
                             <div class="flex flex-col">
@@ -320,43 +320,43 @@
                     </div>
                     <hr class="w-full col-span-full border_secondary border-t-[1px]">
                     <!-- sns 계정 -->
-                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
-                        <div>
-                            <div class="mb-[7px] flex items-center">
-                                <strong class="font_title_bold_md content_primary mr-[6px]">SNS 계정</strong>
-                            </div>
-                            <span class="font_body_regular_md content_secondary">기존의 내 팔로워들이 공식 페이지임을 확인할 수 있도록 SNS 계정 주소를 입력해주세요.</span>
-                        </div>
-                    </div>
-                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
-                        <div class="flex flex-col justify-between gap-y-[16px]">
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Instagram</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Twitter</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Youtube</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Facebook</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
+<!--                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">-->
+<!--                        <div>-->
+<!--                            <div class="mb-[7px] flex items-center">-->
+<!--                                <strong class="font_title_bold_md content_primary mr-[6px]">SNS 계정</strong>-->
+<!--                            </div>-->
+<!--                            <span class="font_body_regular_md content_secondary">기존의 내 팔로워들이 공식 페이지임을 확인할 수 있도록 SNS 계정 주소를 입력해주세요.</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">-->
+<!--                        <div class="flex flex-col justify-between gap-y-[16px]">-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Instagram</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Twitter</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Youtube</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Facebook</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <hr class="w-full col-span-full border_secondary border-t-[1px]">-->
                     <!-- 링크 -->
                     <!-- <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
                         <div>
@@ -414,5 +414,5 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/mypage/mypage-setting.js"></script>
+<script src="/js/mypage/mypage-setting.js"></script>
 </html>

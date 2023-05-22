@@ -105,7 +105,7 @@
                     </li>
                 </ul>
                 <!-- 계정 탈퇴 -->
-                <a href="" target="_blank" class="flex px-[35px] border-t-[1px] border_disabled items-center justify-between w-full absolute bottom-0 h-[52px]">
+                <a href="/member/delete-member" target="_blank" class="flex px-[35px] border-t-[1px] border_disabled items-center justify-between w-full absolute bottom-0 h-[52px]">
                     <div class="flex items-center font_label_bold_lg content_secondary">
                         <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="mr-[12px] h-[20px] w-[20px] content_secondary"><path fill-rule="evenodd" clip-rule="evenodd" d="M9.973 16.64a6.64 6.64 0 1 0 .055-13.279 6.64 6.64 0 0 0-.055 13.278Zm-.007 1.66A8.3 8.3 0 1 0 10.034 1.7 8.3 8.3 0 0 0 9.966 18.3Z"></path><path d="M8.767 7.09a1.245 1.245 0 1 1 2.49.01 1.245 1.245 0 0 1-2.49-.01ZM9.172 9.582a.415.415 0 0 1 .417-.413l.83.003c.229 0 .414.187.413.417l-.017 4.15a.415.415 0 0 1-.417.412l-.83-.003a.415.415 0 0 1-.413-.417l.017-4.15Z"></path></svg>
                         계정 탈퇴
@@ -176,7 +176,7 @@
                                 <div>
                                     <p class="font_label_bold_md content_primary mb-[8px]">steadio.co/creator/</p>
                                     <label id="label-url" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                        <input id="input-url" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="2자 이상의 URL을 입력해주세요" value="ss00coder">
+                                        <input id="input-url" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="2자 이상의 URL을 입력해주세요" th:value="${member.memberUrl}">
                                     </label>
                                     <div id="warn-url" class="flex mt-[8px] font_label_regular_sm content_negative">
                                         <div class="mr-auto flex items-center">
@@ -252,7 +252,7 @@
                     <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
                         <div>
                             <label id="label-name" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                <input id="input-name" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="이용자 이름 입력" value="임희수">
+                                <input id="input-name" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="이용자 이름 입력" th:value="${member.memberName}">
                             </label>
                             <div id="warn-name" class="flex mt-[8px] font_label_regular_sm content_negative">
                                 <div class="mr-auto flex items-center">
