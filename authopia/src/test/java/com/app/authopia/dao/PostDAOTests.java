@@ -1,5 +1,6 @@
 package com.app.authopia.dao;
 
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.vo.PostVO;
 import lombok.extern.slf4j.Slf4j;
@@ -57,5 +58,13 @@ public class PostDAOTests {
     @Test
     public void restoreTest(){
         postDAO.restore(2l);
+    }
+
+    @Test
+    public void findPostMainTest(){
+        Pagination pagination = new Pagination();
+        pagination.setPage(1); //화면에서 전달받은 페이지
+//        assertThat(postMapper.selectMain(pagination)).hasSize(4);
+        postDAO.findPostMain(pagination).stream().map(PostDTO::toString).forEach(log::info);
     }
 }
