@@ -44,6 +44,12 @@ public class MemberDAOTests {
     }
 
     @Test
+    public void selectAllTest(){
+        assertThat(memberDAO.findAll()).hasSize(13);
+        memberDAO.findAll().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
     public void findByMemberIdTest(){
         Optional<MemberVO> foundMemberInfo = memberDAO.findByMemberId(1L);
         assertThat(foundMemberInfo.isPresent()).isEqualTo(true);
