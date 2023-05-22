@@ -65,6 +65,27 @@
         ORDER BY SUBSCRIBER_NUMBER DESC
     </select>
 
+    <!--메인에서 회원 전체 조회-->
+    <select id="selectAllMember" resultType="memberVO">
+        SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_REGISTER_DATE, MEMBER_IS_REMAINING, MEMBER_BRIEF_INTRODUCE, MEMBER_INTRODUCE, MEMBER_CATEGORY, MEMBER_URL
+        FROM TBL_MEMBER
+    </select>
+
+    <!--메인에서 회원 카테고리별 조회-->
+    <select id="selectMemberByCategory" resultType="memberVO">
+        SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_REGISTER_DATE, MEMBER_IS_REMAINING, MEMBER_BRIEF_INTRODUCE, MEMBER_INTRODUCE, MEMBER_CATEGORY, MEMBER_URL
+        FROM TBL_MEMBER
+        WHERE MEMBER_CATEGORY =
+        <choose>
+            <when test="category == 'writing'">
+                'writing'
+            </when>
+            <otherwise>
+                'drawing'
+            </otherwise>
+        </choose>
+    </select>
+
     <!--회원 조회-->
     <select id="selectMemberInfo" resultType="memberVO">
         SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_REGISTER_DATE, MEMBER_IS_REMAINING, MEMBER_BRIEF_INTRODUCE, MEMBER_INTRODUCE, MEMBER_CATEGORY, MEMBER_URL

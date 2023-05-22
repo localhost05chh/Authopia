@@ -57,6 +57,16 @@ public class MemberServiceTests {
     }
 
     @Test
+    public void findAllMemberTest(){
+        memberService.getAllMember().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void findMemberByCategoryTest(){
+        memberService.getMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
     public void getMemberInfoTest(){
         Optional<MemberVO> foundMemberInfo = memberService.getMemberInfo(1L);
         assertThat(foundMemberInfo.isPresent()).isEqualTo(true);

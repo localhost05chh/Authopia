@@ -66,8 +66,18 @@ public class MemberMapperTests {
 
     @Test
     public void selectPopularTest(){
-//        assertThat(memberMapper.selectPopular()).hasSize(14);
+        assertThat(memberMapper.selectPopular()).hasSize(14);
         memberMapper.selectPopular().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void selectAllMemberTest(){
+        memberMapper.selectAllMember().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void selectMemberByCategoryTest(){
+        memberMapper.selectMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
     }
 
     @Test

@@ -52,6 +52,16 @@ public class MemberDAO {
         return memberMapper.selectPopular();
     }
 
+    // 메인에서 회원 전체 조회
+    public List<MemberVO> findAllMember(){
+        return memberMapper.selectAllMember();
+    }
+
+    // 메인에서 회원 카테고리별 조회
+    public List<MemberVO> findMemberByCategory(String category){
+        return memberMapper.selectMemberByCategory(category);
+    }
+
     // 회원 조회
     public Optional<MemberVO> findByMemberId(Long id){
         return memberMapper.selectMemberInfo(id);

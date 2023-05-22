@@ -26,6 +26,12 @@ public interface MemberService {
     // 메인에서 인기 회원 목록 조회
     public List<MemberVO> getPopularMember();
 
+    // 메인에서 회원 전체 조회
+    public List<MemberVO> getAllMember();
+
+    // 메인에서 회원 카테고리별 조회
+    public List<MemberVO> getMemberByCategory(String category);
+
     // 회원 조회
     public Optional<MemberVO> getMemberInfo(Long id);
 
