@@ -26,19 +26,26 @@ function searchParam(key) {
 
 $(document).ready(function () {
     let type = searchParam('type');
+    let href = window.location.href
+    console.log(type);
     $(".fAzCXd a").removeClass("eWDpEZ").addClass("ehJwom");
-    if (type == null) {
-        $(".writing").removeClass("ehJwom").addClass("eWDpEZ");
-    } else {
-        $("." + type).removeClass("ehJwom").addClass("eWDpEZ");
+    if(href.split('/')[3]=='main'){
+        $(".main").removeClass("ehJwom").addClass("eWDpEZ");
+    }else if(href.split('/')[3]=='post'){
+        if (type == null) {
+            $(".writing").removeClass("ehJwom").addClass("eWDpEZ");
+        } else {
+            $("." + type).removeClass("ehJwom").addClass("eWDpEZ");
+        }
     }
+
 })
 
 $(".fAzCXd a").on("click", function (e) {
     e.preventDefault();
     let type = this.classList[0];
     if (type == "main") {
-        location.href = `/main/main`;
+        location.href = `/main`;
     } else {
         location.href = `/post/list?type=${type}`;
     }
