@@ -26,7 +26,8 @@ function send(){
     $password.trigger("blur");
 
     if(loginCheck.filter(check => check).length != 2){
-        alert("모두 기입하세요.")
+        let modalMessage = "<span>모든 항목을 기입하셔야</span><span>로그인이 완료됩니다!</span>";
+        showWarnModal(modalMessage);
         return;
     }
 
