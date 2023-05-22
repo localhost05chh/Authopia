@@ -45,6 +45,12 @@ public class MemberServiceTests {
     }
 
     @Test
+    public void selectAllTest(){
+        assertThat(memberService.getNewMember()).hasSize(13);
+        memberService.getNewMember().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
     public void getMemberInfoTest(){
         Optional<MemberVO> foundMemberInfo = memberService.getMemberInfo(1L);
         assertThat(foundMemberInfo.isPresent()).isEqualTo(true);

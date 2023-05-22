@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
 import java.util.Optional;
 
 @Mapper
@@ -27,7 +28,10 @@ public interface MemberMapper {
     // 비밀번호 재설정
     public void updatePassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
 
-    // 회원 조회
+    // 메인에서 회원 목록 조회
+    public List<MemberVO> selectAll();
+
+   // 회원 조회
     public Optional<MemberVO> selectMemberInfo(Long id);
 
     // 회원 탈퇴
