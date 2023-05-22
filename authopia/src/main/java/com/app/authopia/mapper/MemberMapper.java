@@ -37,6 +37,9 @@ public interface MemberMapper {
    // 회원 조회
     public Optional<MemberVO> selectMemberInfo(Long id);
 
+    // 회원 정보 수정
+    public void updateMemberInfo(MemberVO memberVO);
+
     // 회원 탈퇴
     public void updateMemberIsRemaining(Long id);
 }

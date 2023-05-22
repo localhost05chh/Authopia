@@ -49,6 +49,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public void modifyMemberInfo(MemberVO memberVO) {
+        memberDAO.setMemberInfo(memberVO);
+    }
+
+    @Override
     public void deleteMember(Long id) {
         memberDAO.cancelMember(id);
     }

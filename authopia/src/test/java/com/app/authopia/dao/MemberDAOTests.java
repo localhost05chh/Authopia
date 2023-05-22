@@ -62,6 +62,18 @@ public class MemberDAOTests {
     }
 
     @Test
+    public void updateMemberInfo(){
+        memberDAO.findByMemberId(1L).ifPresent(memberVO -> {
+            memberVO.setMemberName("섭섭");
+            memberVO.setMemberCategory("글");
+            memberVO.setMemberBriefIntroduce("나도 작가할래");
+            memberVO.setMemberIntroduce("뭐든지 해보고 싶어서 가입했어요");
+            memberVO.setMemberUrl("dev-Sub");
+            memberDAO.setMemberInfo(memberVO);
+        });
+    }
+
+    @Test
     public void cancelMemberTest(){
         memberDAO.cancelMember(1L);
     }
