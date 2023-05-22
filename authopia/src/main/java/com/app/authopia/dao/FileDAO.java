@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
@@ -27,4 +28,9 @@ public class FileDAO {
 
     //    파일 조회
     public List<FileVO> findAllFile(Long postId){ return fileMapper.selectAllFile(postId); }
+
+    // 프로필 사진 조회
+    public Optional<FileVO> findProfileImage(Long memberId){
+        return fileMapper.selectProfileImage(memberId);
+    }
 }

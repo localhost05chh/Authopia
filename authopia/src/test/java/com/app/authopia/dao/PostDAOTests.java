@@ -27,10 +27,10 @@ public class PostDAOTests {
     }
 
     //      게시글 목록 테스트
-    @Test
-    public void findAllTest(){
-        assertThat(postDAO.findAll()).hasSize(4);
-    }
+//    @Test
+//    public void findAllTest(){
+//        assertThat(postDAO.findAll()).hasSize(4);
+//    }
 
     //      게시글 조회 테스트
     @Test

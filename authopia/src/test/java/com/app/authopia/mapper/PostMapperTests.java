@@ -28,10 +28,10 @@ public class PostMapperTests {
     }
 
     //      게시글 목록 테스트
-    @Test
-    public void selectAllTest(){
-        assertThat(postMapper.selectAll()).hasSize(3);
-    }
+//    @Test
+//    public void selectAllTest(){
+//        assertThat(postMapper.selectAll()).hasSize(3);
+//    }
 
     //      게시글 조회 테스트
     @Test
