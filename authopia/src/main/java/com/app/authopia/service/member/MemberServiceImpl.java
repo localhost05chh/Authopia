@@ -39,6 +39,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public List<MemberVO> getPopularMember() {
+        return memberDAO.findPopular();
+    }
+
+    @Override
     public Optional<MemberVO> getMemberInfo(Long id) {
         return memberDAO.findByMemberId(id);
     }

@@ -65,6 +65,12 @@ public class MemberMapperTests {
     }
 
     @Test
+    public void selectPopularTest(){
+//        assertThat(memberMapper.selectPopular()).hasSize(14);
+        memberMapper.selectPopular().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
     public void selectMemberInfo(){
         Optional<MemberVO> foundMemberInfo = memberMapper.selectMemberInfo(1L);
         assertThat(foundMemberInfo.isPresent()).isEqualTo(true);

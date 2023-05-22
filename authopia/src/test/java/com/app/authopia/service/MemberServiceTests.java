@@ -45,9 +45,15 @@ public class MemberServiceTests {
     }
 
     @Test
-    public void selectAllTest(){
+    public void getNewMemberTest(){
         assertThat(memberService.getNewMember()).hasSize(13);
         memberService.getNewMember().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void getPopularMemberTest(){
+        assertThat(memberService.getPopularMember()).hasSize(14);
+        memberService.getPopularMember().stream().map(MemberVO::toString).forEach(log::info);
     }
 
     @Test
