@@ -44,9 +44,15 @@ public class MemberDAOTests {
     }
 
     @Test
-    public void selectAllTest(){
+    public void findAllTest(){
         assertThat(memberDAO.findAll()).hasSize(13);
         memberDAO.findAll().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void findPopularTest(){
+        assertThat(memberDAO.findPopular()).hasSize(14);
+        memberDAO.findPopular().stream().map(MemberVO::toString).forEach(log::info);
     }
 
     @Test
