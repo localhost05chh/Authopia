@@ -56,6 +56,16 @@ public class MemberDAOTests {
     }
 
     @Test
+    public void findAllMemberTest(){
+        memberDAO.findAllMember().stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
+    public void findMemberByCategoryTest(){
+        memberDAO.findMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
+    }
+
+    @Test
     public void findByMemberIdTest(){
         Optional<MemberVO> foundMemberInfo = memberDAO.findByMemberId(1L);
         assertThat(foundMemberInfo.isPresent()).isEqualTo(true);

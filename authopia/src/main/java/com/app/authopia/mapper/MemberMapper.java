@@ -34,6 +34,12 @@ public interface MemberMapper {
     // 메인에서 인기 회원 목록 조회
     public List<MemberVO> selectPopular();
 
+    // 메인에서 회원 전체 조회
+    public List<MemberVO> selectAllMember();
+
+    // 메인에서 회원 카테고리별 조회
+    public List<MemberVO> selectMemberByCategory(@Param("category") String category);
+
    // 회원 조회
     public Optional<MemberVO> selectMemberInfo(Long id);
 
