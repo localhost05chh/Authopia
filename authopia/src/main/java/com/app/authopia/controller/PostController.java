@@ -1,6 +1,7 @@
 package com.app.authopia.controller;
 
 import com.app.authopia.dao.PostDAO;
+import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
@@ -27,32 +28,34 @@ public class PostController{
 
     //      게시글 목록
     @GetMapping("list")
-    public void gotoList(Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order){
+    public void gotoList(Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
         postType.setType(type);
         postType.setOrder(order);
+        postType.setKeyword(keyword);
+        System.out.println(postType.getKeyword());
         model.addAttribute("posts", postService.getList(postType));
     }
 
     //      게시글 추가
     @GetMapping("write")
-    public void goToWrite(PostVO postVO, Model model){;}
+    public void goToWrite(PostDTO postDTO, Model model){;}
 
     @PostMapping("write")
-    public RedirectView write(PostVO postVO){
-        postService.write(postVO);
+    public RedirectView write(PostDTO postDTO){
+        postService.write(postDTO);
         return new RedirectView("/post/list");
     }
 
     //      게시글 조회, 수정
     @GetMapping(value = {"detail", "modify"})
     public void read(Long id, Model model){
-        model.addAttribute("post",postService.read(id));
+//        model.addAttribute("post",postService.read(id));
     }
 
     @PostMapping("modify")
-    public RedirectView modify(PostVO postVO, RedirectAttributes redirectAttributes){
-        postService.modify(postVO);
-        redirectAttributes.addAttribute("id", postVO.getId());
+    public RedirectView modify(PostDTO postDTO, RedirectAttributes redirectAttributes){
+        postService.modify(postDTO);
+        redirectAttributes.addAttribute("id", postDTO.getId());
         return new RedirectView("/post/detail");
     }
 

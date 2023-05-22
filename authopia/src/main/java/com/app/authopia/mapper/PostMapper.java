@@ -16,7 +16,7 @@ public interface PostMapper {
     public List<PostDTO> selectAll(PostType postType);
 
 //      게시글 추가
-    public void insert(PostVO postVO);
+    public void insert(PostDTO postDTO);
 
 //      게시글 조회
     public Optional<PostDTO> select(Long id);

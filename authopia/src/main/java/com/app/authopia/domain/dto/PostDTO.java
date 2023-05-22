@@ -1,8 +1,13 @@
 package com.app.authopia.domain.dto;
 
+import com.app.authopia.domain.vo.FileVO;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 @Data
@@ -18,4 +23,7 @@ public class PostDTO {
     private String postContent;
     private Boolean postIsBlinded;
     private String memberName;
+    private List<FileVO> postFiles = new ArrayList<>();
+    private FileVO memberFiles = new FileVO();
+    private List<Long> fileIdsForDelete = new ArrayList<>();
 }

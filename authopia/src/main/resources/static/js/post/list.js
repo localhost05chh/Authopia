@@ -43,3 +43,18 @@ $(".trand").click(function () {
         location.href = `/post/list?&type=${type}&order=trand`;
     }
 });
+
+function addFunc(){
+    let keyword = $("#input_search").val();
+    let type = searchParam('type');
+    let order = searchParam('order');
+    if(type == null){
+        location.href = `/post/list?&type=writing&order=new&keyword=${keyword}`;
+    }else{
+        if(order == null){
+            location.href = `/post/list?&type=${type}&order=new&keyword=${keyword}`;
+        }else{
+            location.href = `/post/list?&type=${type}&order=${order}&keyword=${keyword}`;
+        }
+    }
+}
