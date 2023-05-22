@@ -23,7 +23,7 @@
             <main
                     class="flex flex-col relative max-w-main min-w-screen min-w-[320px] w-full mx-auto surface_primary">
                 <!-- 상단 제목 -->
-                <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]">제목</h3>
+                <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]" th:text="${posts.postName}"></h3>
 
                 <!-- 프로필 메뉴 -->
                 <div class="flex items-center justify-between">
@@ -37,13 +37,13 @@
                         </div>
                         <div>
                             <div>
-                                <a href="" class="font_label_bold_md content_secondary">닉네임</a>
+                                <a href="" class="font_label_bold_md content_secondary" th:text="${posts.memberName}"></a>
                             </div>
                             <div class="mt-[2px] flex items-center">
                                 <a href="" class="font_label_regular_sm content_quaternary flex items-center">
-                                    <span>3시간 전</span>
+                                    <span th:text="elapsedTime(post.postRegisterDate)"></span>
                                     <span> ｜ </span>
-                                    <span>조회수 9</span>
+                                    <span>조회수 <th:block th:text="${posts.postViewCount}"></th:block></span>
                                 </a>
                             </div>
                         </div>
@@ -53,7 +53,7 @@
                 <!-- 중간 내용 부분 -->
                 <div class="mt-[24px] pt-[32px] border-t border_secondary">
                     <div class="steadio-post steadio-post-detail">
-                        <p>내용이 없습니다.</p>
+                        <p th:text="${posts.postContent}"></p>
                     </div>
                     <div class="md:w-[380px]">
                         <div style="height: 32px;"></div>
@@ -168,9 +168,12 @@
                 </div>
             </main>
         </div>
+
+        <footer th:replace="~{/footer/footer :: #post-footer}"></footer>
     </div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="js/post/view-post.js"></script>
+<script src="js/"></script>
 </html>
