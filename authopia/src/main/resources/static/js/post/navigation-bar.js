@@ -27,7 +27,6 @@ function searchParam(key) {
 $(document).ready(function () {
     let type = searchParam('type');
     let href = window.location.href
-    console.log(type);
     $(".fAzCXd a").removeClass("eWDpEZ").addClass("ehJwom");
     if(href.split('/')[3]=='main'){
         $(".main").removeClass("ehJwom").addClass("eWDpEZ");
