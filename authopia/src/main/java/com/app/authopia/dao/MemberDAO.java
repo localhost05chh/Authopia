@@ -42,14 +42,13 @@ public class MemberDAO {
     };
 
     // 회원 조회
-//    public Optional<MemberVO> findByMemberId(Long Id){
-//        memberMapper
-//    }
+    public Optional<MemberVO> findByMemberId(Long id){
+        return memberMapper.selectMemberInfo(id);
+    };
 
     // 회원 탈퇴
     public void cancelMember(Long id){
         memberMapper.updateMemberIsRemaining(id);
-    }
-
+    };
 
 }
