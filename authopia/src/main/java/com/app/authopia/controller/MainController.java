@@ -32,15 +32,28 @@ public class MainController {
         model.addAttribute("recommendPost1", postService.read(72l).get());
         model.addAttribute("recommendPost2", postService.read(73l).get());
         model.addAttribute("newMembers", memberService.getNewMember());
+        model.addAttribute("allMembers", memberService.getAllMember());
 
         return "/main/main";
     }
 
-    @GetMapping("/main/{page}")
+    @GetMapping("/main/post/{page}")
     @ResponseBody
     public List<PostDTO> mainPost(@PathVariable int page){
         Pagination pagination = new Pagination();
         pagination.setPage(page);
         return postService.getListMain(pagination);
+    }
+
+    @GetMapping("/main/category/{category}")
+    @ResponseBody
+    public List<MemberVO> mainMember(@PathVariable String category){
+        return memberService.getMemberByCategory(category);
+    }
+
+    @GetMapping("/main/all")
+    @ResponseBody
+    public List<MemberVO> mainallMember(){
+        return memberService.getAllMember();
     }
 }
