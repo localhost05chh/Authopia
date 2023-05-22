@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.app.authopia.mapper.FileMapper">
+
+    <!-- 파일  조회 -->
+    <select id="selectAllFile" resultType="fileVO">
+        SELECT ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, POST_ID, FILE_TYPE
+        FROM TBL_FILE
+        WHERE POST_ID = #{postId}
+    </select>
+
+    <!--  파일 추가  -->
+    <insert id="insertFile">
+        INSERT INTO TBL_FILE
+        (ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, POST_ID, FILE_TYPE)
+        VALUES(SEQ_FILE.NEXTVAL, #{filePath}, #{fileUuid}, #{fileName}, #{fileSize}, #{postId}, #{fileType})
+    </insert>
+
+    <!-- 파일 삭제 -->
+    <delete id="deleteFile">
+        DELETE FROM TBL_FILE WHERE ID = #{id}
+    </delete>
+
+    <!-- 게시글의 파일 전체 삭제 -->
+    <delete id="deleteAllFile">
+        DELETE FROM TBL_FILE WHERE POST_ID = #{postId}
+    </delete>
+
     <!--프로필 사진 조회-->
     <select id="selectProfileImage" resultType="fileVO">
         SELECT ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, MEMBER_ID, FILE_TYPE

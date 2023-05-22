@@ -6,11 +6,11 @@ function elapsedTime(date) {
     const diff = (end - start) / 1000;
 
     const times = [
-        { name: '년', milliSeconds: 60 * 60 * 24 * 365 },
-        { name: '개월', milliSeconds: 60 * 60 * 24 * 30 },
-        { name: '일', milliSeconds: 60 * 60 * 24 },
-        { name: '시간', milliSeconds: 60 * 60 },
-        { name: '분', milliSeconds: 60 },
+        {name: '년', milliSeconds: 60 * 60 * 24 * 365},
+        {name: '개월', milliSeconds: 60 * 60 * 24 * 30},
+        {name: '일', milliSeconds: 60 * 60 * 24},
+        {name: '시간', milliSeconds: 60 * 60},
+        {name: '분', milliSeconds: 60},
     ];
 
     for (const value of times) {
@@ -24,11 +24,10 @@ function elapsedTime(date) {
 }
 
 
-
 //게시판 li태그 뿌리기
-$(document).ready(function(){
+$(document).ready(function () {
     const $ul = $("#content-wrap");
-
+    console.log(posts);
     let text = "";
     posts.forEach(post => {
         text += `
@@ -49,7 +48,13 @@ $(document).ready(function(){
                                     <!-- 섬네일 (없을때는 div가 없어짐) -->
                                     <div class="shrink-0 relative w-[72px] md:w-[102px] h-[72px] md:h-[102px] rounded-[8px]">
                                         <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                            <img alt src="../../static/image/testThumbnail.png" decoding="async" data-nimg="fill" class="rounded-[8px]" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+`
+        post.postFiles.forEach(file => {
+            if (file.fileType == "REPRESENTATIVE") {
+                text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" class="rounded-[8px]" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
+            }
+        })
+        text += `
                                         </span>
                                     </div>
                                 </div>
@@ -63,7 +68,7 @@ $(document).ready(function(){
                                             <circle cx="12" cy="12" r="4"></circle>
                                         </svg>
                                         <!-- 작성 시간 -->
-                                        <span class="shrink-0 content_quaternary">` + elapsedTime(post.postRegisterDate) +` </span>
+                                        <span class="shrink-0 content_quaternary">` + elapsedTime(post.postRegisterDate) + ` </span>
                                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
                                             <circle cx="12" cy="12" r="4"></circle>
                                         </svg>

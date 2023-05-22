@@ -37,7 +37,6 @@ $(document).ready(function () {
             $("." + type).removeClass("ehJwom").addClass("eWDpEZ");
         }
     }
-
 })
 
 $(".fAzCXd a").on("click", function (e) {

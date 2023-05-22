@@ -22,8 +22,8 @@ public class PostDAO{
         return postMapper.selectAll(postType);
     }
     //      게시글 추가
-    public void save(PostVO postVO){
-        postMapper.insert(postVO);
+    public void save(PostDTO postDTO){
+        postMapper.insert(postDTO);
     }
     //      게시글 조회
     public Optional<PostDTO> findById(Long id){

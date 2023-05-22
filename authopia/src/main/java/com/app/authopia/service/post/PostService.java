@@ -15,13 +15,13 @@ public interface PostService {
     public List<PostDTO> getList(PostType postType);
 
     //      게시글 추가
-    public void write(PostVO postVO);
+    public void write(PostDTO postDTO);
 
     //      게시글 조회
     public Optional<PostDTO> read(Long id);
 
     //      게시글 수정
-    public void modify(PostVO postVO);
+    public void modify(PostDTO postDTO);
 
     //      게시글 삭제
     public void remove(Long id);
