@@ -1,5 +1,6 @@
 package com.app.authopia.mapper;
 
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.vo.PostVO;
 import lombok.extern.slf4j.Slf4j;
@@ -58,6 +59,14 @@ public class PostMapperTests {
     @Test
     public void restoreTest(){
         postMapper.restore(2l);
+    }
+
+    @Test
+    public void selectMainTest(){
+        Pagination pagination = new Pagination();
+        pagination.setPage(2); //화면에서 전달받은 페이지
+//        assertThat(postMapper.selectMain(pagination)).hasSize(4);
+        postMapper.selectMain(pagination).stream().map(PostDTO::toString).forEach(log::info);
     }
 
 }
