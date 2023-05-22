@@ -4,6 +4,7 @@ import com.app.authopia.domain.vo.FileVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Optional;
 
 @Mapper
 public interface FileMapper {
@@ -18,4 +19,7 @@ public interface FileMapper {
 
     //    파일 조회
     public List<FileVO> selectAllFile(Long postId);
+
+    // 프로필 사진 조회
+    public Optional<FileVO> selectProfileImage(Long memberId);
 }
