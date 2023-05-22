@@ -59,7 +59,7 @@ $("button.paging").on("click", function(){
     $("span.page").text(page);
 
     $.ajax({
-        url: `/main/${page}`,
+        url: `/main/post/${page}`,
         success: function(result){
             showPost(result);
         }
