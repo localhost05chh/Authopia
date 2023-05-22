@@ -8,6 +8,7 @@
     />
     <link rel="stylesheet" href="/css/member/public.css" />
     <link rel="stylesheet" href="/css/member/login.css" />
+    <link rel="stylesheet" href="/css/modal/modal.css" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,6 +19,11 @@
 <body class="h-full">
 <!-- 전체 -->
 <div id="__next">
+    <div class="modal">
+        <div class="warn-modal">
+            <div id="content-wrap"></div>
+        </div>
+    </div>
     <div class="h-full min-h-screen flex">
         <!-- 왼쪽 전체 -->
         <div class="w-[100%] py-[40px] flex flex-col items-center lg:w-[55%] lg:py-[56px]">
@@ -224,12 +230,14 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/modal/modal.js"></script>
 <script src="/js/member/login.js"></script>
 <script th:inline="javascript">
     let check = [[${login}]];
     console.log(check);
     if(check){
-        alert("아이디 또는 비밀번호를 확인해주세요.");
+        let modalMessage = "<span>아이디 또는 비밀번호를 확인해주세요.</span>";
+        showWarnModal(modalMessage);
     }
 </script>
 </html>
