@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleag.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>기본정보</title>
-    <link rel="stylesheet" href="../../static/css/mypage/mypage.css">
+    <link rel="stylesheet" href="/css/mypage/mypage.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
 </head>
 <body class="h-full">
@@ -54,7 +54,7 @@
                                 <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
                             </div>
                         </div>
-                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center">임희수</h2>
+                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center" th:text = "${member.memberName}"></h2>
                         <a href="" target="_blank">
                             <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
                                 <div class="flex items-center justify-center">
@@ -147,31 +147,10 @@
                                 <div id="filter-category" class="absolute top-[8px] z-10 max-h-[192px] overflow-y-auto w-full shadow-menu">
                                     <ul class="rounded-[8px] p-[8px] surface_primary shadow-menu">
                                         <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">글의</button>
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">소설</button>
                                         </li>
                                         <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">종류가</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">들어</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">가면</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">될 것</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">같아요</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">근데</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">뭐가</button>
-                                        </li>
-                                        <li tabindex="-1" class="undefinded">
-                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">있지..?</button>
+                                            <button type="button" class="w-full py-[12px] px-[20px] rounded-[8px] text-left content_primary font_label_regular_lg surface_primary hover:surface_tertiary text-ellipsis overflow-hidden whitespace-nowrap">일러스트</button>
                                         </li>
                                     </ul>
                                 </div>
@@ -291,5 +270,5 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/mypage/mypage-info.js"></script>
+<script src="/js/mypage/mypage-info.js"></script>
 </html>

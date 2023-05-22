@@ -154,9 +154,11 @@ public class MemberController {
 
     // 회원 조회
     // 회원 정보 수정
-    @GetMapping("info")
-    public void modifyMemberInfo(Long id, Model model){
-        model.addAttribute("member", memberService.getMemberInfo(id));
+    @GetMapping("member-info")
+    public String modifyMemberInfo(HttpSession session, Model model){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        return "mypage/mypage-info";
     }
 
     // 회원 정보 수정 완료
@@ -171,7 +173,7 @@ public class MemberController {
     @GetMapping("delete-member")
     public RedirectView deleteMember(HttpSession session){
         session.invalidate();
-        return  new RedirectView("/member/login");
+        return new RedirectView("/member/login");
     }
 
 }
