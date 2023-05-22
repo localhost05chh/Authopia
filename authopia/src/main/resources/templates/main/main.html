@@ -19,7 +19,7 @@
     <!-- 헤더 -->
     <nav class="sticky top-0 left-0 surface_primary z-20 w-full h-[56px] px-[16px] shrink-0 flex items-center justify-between lg:px-[32px] lg:h-[58px]">
         <div>
-            <a href="/">
+            <a href="/main">
                 <img src="/image/logo.png" alt="" class="w-[128px] h-[30px] content_secondary">
                 <!--<svg viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg" class="lg:hidden w-[31px] h-[16px] content_primary">
                     <path d="M21.96 15.796h9.232A15.592 15.592 0 0 0 .059 14.55c-.011.116-.019.234-.027.351v.105c-.013.21-.022.423-.022.637v.154h9.957c0-2.987-2.228-5.412-4.978-5.412a4.755 4.755 0 0 0-3.41 1.473c1.051-1.346 2.63-2.203 4.395-2.203 3.165 0 5.725 2.75 5.725 6.142h7.562v-.154c0-5.7-4.31-10.321-9.629-10.321a9.085 9.085 0 0 0-4.62 1.266 10.976 10.976 0 0 1 16.949 9.21v-.003Z"></path>
@@ -32,13 +32,13 @@
         </div>
         <div class="flex items-center justify-end">
             <div class="flex items-center gap-x-[16px]">
-                <button type="button">
+                <!--<button type="button">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px]">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.83 16.561a7.8 7.8 0 1 1 1.233-1.312l3.465 3.465a.9.9 0 1 1-1.272 1.273L15.83 16.56Zm1.13-5.961a6.16 6.16 0 1 1-12.32 0 6.16 6.16 0 0 1 12.32 0Z"></path>
                     </svg>
-                </button>
+                </button>-->
                 <!--요금제-->
-                <a class="font_label_bold_lg content_secondary hover:content_accent" href="/plans">요금제</a>
+                <!--<a class="font_label_bold_lg content_secondary hover:content_accent" href="/plans">요금제</a>-->
                 <!--로그인-->
                 <div th:if="${memberId eq null}">
                     <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] false disabled:content_disabled">
@@ -131,7 +131,7 @@
                 </div>
                 <div class="3 swiper-slide" data-swiper-slide-index="3" style="width: 559.333px">
                     <button type="button" class="relative block md:w-[550px] md:h-[336px] w-full min-w-[320px] min-h-[195px] text-left md:rounded-[16px] overflow-hidden transition-all duration-500 opacity-[0.3]">
-                        <img src="https://steadio.imgix.net/main_banners/steadio_banner.jpg?auto=format%2Ccompress&amp;h=672&amp;lossless=true&amp;w=1100&amp;fit=crop" alt="따라만 오세요 스테디오 가이드" class="w-full"/>
+                        <img src="/image/main-banner.png" alt="따라만 오세요 스테디오 가이드" class="w-full"/>
                         <div class="absolute top-[20px] md:top-[40px] left-[20px] md:left-[32px] md:max-w-[240px]">
                             <div class="overflow-hidden mb-[8px] md:mb-[12px]">
                                 <p class="font_body_regular_sm md:font_body_regular_lg text-white_opacity_80 line-clamp-1" style="color: rgb(255, 255, 255)">
@@ -227,7 +227,7 @@
                 </div>
                 <div class="3 swiper-slide" data-swiper-slide-index="3" style="width: 559.333px">
                     <button type="button" class="relative block md:w-[550px] md:h-[336px] w-full min-w-[320px] min-h-[195px] text-left md:rounded-[16px] overflow-hidden transition-all duration-500 opacity-[0.3]">
-                        <img src="https://steadio.imgix.net/main_banners/steadio_banner.jpg?auto=format%2Ccompress&amp;h=672&amp;lossless=true&amp;w=1100&amp;fit=crop" alt="따라만 오세요 스테디오 가이드" class="w-full"/>
+                        <img src="/image/main-banner.png" alt="따라만 오세요 스테디오 가이드" class="w-full"/>
                         <div class="absolute top-[20px] md:top-[40px] left-[20px] md:left-[32px] md:max-w-[240px]">
                             <div class="overflow-hidden mb-[8px] md:mb-[12px]">
                                 <p class="font_body_regular_sm md:font_body_regular_lg text-white_opacity_80 line-clamp-1" style="color: rgb(255, 255, 255)">
@@ -337,7 +337,7 @@
                     <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events pl-[15px]" draggable="true" style="position: static">
                         <div class="popular-track swiper-wrapper" style="transform: translate3d(0px, 0px, 0px)">
                             <!--프로필 복붙 14개-->
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
+                            <!--<div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
                                 <div>
                                     <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
                                         <span style="
@@ -383,620 +383,7 @@
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-
-                            <!-- 두번째 프로필 -->
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
-                                <div>
-                                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
-                                        <span style="
-                                              box-sizing: border-box;
-                                              display: block;
-                                              overflow: hidden;
-                                              width: initial;
-                                              height: initial;
-                                              background: none;
-                                              opacity: 1;
-                                              border: 0px;
-                                              margin: 0px;
-                                              padding: 0px;
-                                              position: absolute;
-                                              inset: 0px;
-                                            ">
-                                            <img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="
-                                                position: absolute;
-                                                inset: 0px;
-                                                box-sizing: border-box;
-                                                padding: 0px;
-                                                border: none;
-                                                margin: auto;
-                                                display: block;
-                                                width: 0px;
-                                                height: 0px;
-                                                min-width: 100%;
-                                                max-width: 100%;
-                                                min-height: 100%;
-                                                max-height: 100%;
-                                                object-fit: cover;
-                                                object-position: center center;
-                                              " sizes="100vw"/>
-                                        </span>
-                                        <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
-                                    </button>
-                                    <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
-                                        <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            이름
-                                        </h2>
-                                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                                            글/그림, 형식
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
+                            </div>-->
                         </div>
                         <!--앞 뒤 버튼-->
                         <button type="button" class="popular-prev absolute z-[5] w-[32px] h-[32px] rounded-full surface_primary hidden mobile:flex items-center justify-center left-0 mobile:flex" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px, rgba(0, 0, 0, 0.1) 0px 4px 5px; top: 26px;">
@@ -1021,19 +408,19 @@
                 <h1 class="font_headline_bold_sm content_secondary">최근 주목받는 포스트</h1>
             </header>
             <div class="px-[16px]">
-                <ul class="mt-[20px] xl:mt-[24px] flex flex-col gap-x-9 gap-y-4 xl:place-content-center">
+                <ul class="post-track mt-[20px] xl:mt-[24px] flex flex-col gap-x-9 gap-y-4 xl:place-content-center">
                     <!--글 4개 복붙-->
-                   <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
+                   <!--<li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
                         <div>
                             <button type="button" class="block text-left w-full">
                                 <div class="flex gap-x-[16px]">
                                     <div class="w-full h-[73px] xl:h-auto break-all">
                                         <h2 class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
-                                            <!--제목-->
+                                            &lt;!&ndash;제목&ndash;&gt;
                                             제목
                                         </h2>
                                         <p class="mt-[4px] mb-[18px] xl:mt-[6px] overflow-hidden font_label_regular_lg content_quaternary text-ellipsis-1 xl:text-ellipsis-2">
-                                            <!--글-->
+                                            &lt;!&ndash;글&ndash;&gt;
                                             본문 내용 작성
                                         </p>
                                     </div>
@@ -1072,257 +459,35 @@
                                         </span>
                                     </div>
                                 </div>
-                                <!--프로필 닉네임 작성 일자 조회수-->
+                                &lt;!&ndash;프로필 닉네임 작성 일자 조회수&ndash;&gt;
                                 <div class="flex items-center mt-[12px]">
                                     <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px;height: 18px;">
                                         <img src="/image/profile_icon.png" alt="">
                                     </div>
                                     <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
-                                        <!--닉네임-->
+                                        &lt;!&ndash;닉네임&ndash;&gt;
                                         <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">
                                             배찬영
                                         </span>
                                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
                                             <circle cx="12" cy="12" r="4"></circle>
                                         </svg>
-                                        <!--작성 날짜-->
+                                        &lt;!&ndash;작성 날짜&ndash;&gt;
                                         <span class="shrink-0 content_quaternary">하루 전</span>
                                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
                                             <circle cx="12" cy="12" r="4"></circle>
                                         </svg>
-                                        <!--조회수-->
+                                        &lt;!&ndash;조회수&ndash;&gt;
                                         <span class="shrink-0 content_quaternary">조회수 252</span>
                                     </div>
                                 </div>
                             </button>
                         </div>
-                    </li>
-                   <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
-                        <div>
-                            <button type="button" class="block text-left w-full">
-                                <div class="flex gap-x-[16px]">
-                                    <div class="w-full h-[73px] xl:h-auto break-all">
-                                        <h2 class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
-                                            <!--제목-->
-                                            제목
-                                        </h2>
-                                        <p class="mt-[4px] mb-[18px] xl:mt-[6px] overflow-hidden font_label_regular_lg content_quaternary text-ellipsis-1 xl:text-ellipsis-2">
-                                            <!--글-->
-                                            본문 내용 작성
-                                        </p>
-                                    </div>
-                                    <div class="shrink-0 relative w-[72px] md:w-[102px] h-[72px] md:h-[102px] rounded-[8px]">
-                                        <span style="
-                                          box-sizing: border-box;
-                                          display: block;
-                                          overflow: hidden;
-                                          width: initial;
-                                          height: initial;
-                                          background: none;
-                                          opacity: 1;
-                                          border: 0px;
-                                          margin: 0px;
-                                          padding: 0px;
-                                          position: absolute;
-                                          inset: 0px;
-                                        ">
-                                            <img alt="" src="/image/img.png" class="rounded-[8px]" style="
-                                            position: absolute;
-                                            inset: 0px;
-                                            box-sizing: border-box;
-                                            padding: 0px;
-                                            border: none;
-                                            margin: auto;
-                                            display: block;
-                                            width: 0px;
-                                            height: 0px;
-                                            min-width: 100%;
-                                            max-width: 100%;
-                                            min-height: 100%;
-                                            max-height: 100%;
-                                            object-fit: cover;
-                                            object-position: center center;
-                                          "/>
-                                        </span>
-                                    </div>
-                                </div>
-                                <!--프로필 닉네임 작성 일자 조회수-->
-                                <div class="flex items-center mt-[12px]">
-                                    <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px;height: 18px;">
-                                        <img src="/image/profile_icon.png" alt="">
-                                    </div>
-                                    <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
-                                        <!--닉네임-->
-                                        <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">
-                                            배찬영
-                                        </span>
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                        </svg>
-                                        <!--작성 날짜-->
-                                        <span class="shrink-0 content_quaternary">하루 전</span>
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                        </svg>
-                                        <!--조회수-->
-                                        <span class="shrink-0 content_quaternary">조회수 252</span>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </li>
-                   <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
-                        <div>
-                            <button type="button" class="block text-left w-full">
-                                <div class="flex gap-x-[16px]">
-                                    <div class="w-full h-[73px] xl:h-auto break-all">
-                                        <h2 class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
-                                            <!--제목-->
-                                            제목
-                                        </h2>
-                                        <p class="mt-[4px] mb-[18px] xl:mt-[6px] overflow-hidden font_label_regular_lg content_quaternary text-ellipsis-1 xl:text-ellipsis-2">
-                                            <!--글-->
-                                            본문 내용 작성
-                                        </p>
-                                    </div>
-                                    <div class="shrink-0 relative w-[72px] md:w-[102px] h-[72px] md:h-[102px] rounded-[8px]">
-                                        <span style="
-                                          box-sizing: border-box;
-                                          display: block;
-                                          overflow: hidden;
-                                          width: initial;
-                                          height: initial;
-                                          background: none;
-                                          opacity: 1;
-                                          border: 0px;
-                                          margin: 0px;
-                                          padding: 0px;
-                                          position: absolute;
-                                          inset: 0px;
-                                        ">
-                                            <img alt="" src="/image/img.png" class="rounded-[8px]" style="
-                                            position: absolute;
-                                            inset: 0px;
-                                            box-sizing: border-box;
-                                            padding: 0px;
-                                            border: none;
-                                            margin: auto;
-                                            display: block;
-                                            width: 0px;
-                                            height: 0px;
-                                            min-width: 100%;
-                                            max-width: 100%;
-                                            min-height: 100%;
-                                            max-height: 100%;
-                                            object-fit: cover;
-                                            object-position: center center;
-                                          "/>
-                                        </span>
-                                    </div>
-                                </div>
-                                <!--프로필 닉네임 작성 일자 조회수-->
-                                <div class="flex items-center mt-[12px]">
-                                    <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px;height: 18px;">
-                                        <img src="/image/profile_icon.png" alt="">
-                                    </div>
-                                    <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
-                                        <!--닉네임-->
-                                        <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">
-                                            배찬영
-                                        </span>
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                        </svg>
-                                        <!--작성 날짜-->
-                                        <span class="shrink-0 content_quaternary">하루 전</span>
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                        </svg>
-                                        <!--조회수-->
-                                        <span class="shrink-0 content_quaternary">조회수 252</span>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </li>
-                   <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
-                        <div>
-                            <button type="button" class="block text-left w-full">
-                                <div class="flex gap-x-[16px]">
-                                    <div class="w-full h-[73px] xl:h-auto break-all">
-                                        <h2 class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
-                                            <!--제목-->
-                                            제목
-                                        </h2>
-                                        <p class="mt-[4px] mb-[18px] xl:mt-[6px] overflow-hidden font_label_regular_lg content_quaternary text-ellipsis-1 xl:text-ellipsis-2">
-                                            <!--글-->
-                                            본문 내용 작성
-                                        </p>
-                                    </div>
-                                    <div class="shrink-0 relative w-[72px] md:w-[102px] h-[72px] md:h-[102px] rounded-[8px]">
-                                        <span style="
-                                          box-sizing: border-box;
-                                          display: block;
-                                          overflow: hidden;
-                                          width: initial;
-                                          height: initial;
-                                          background: none;
-                                          opacity: 1;
-                                          border: 0px;
-                                          margin: 0px;
-                                          padding: 0px;
-                                          position: absolute;
-                                          inset: 0px;
-                                        ">
-                                            <img alt="" src="/image/img.png" class="rounded-[8px]" style="
-                                            position: absolute;
-                                            inset: 0px;
-                                            box-sizing: border-box;
-                                            padding: 0px;
-                                            border: none;
-                                            margin: auto;
-                                            display: block;
-                                            width: 0px;
-                                            height: 0px;
-                                            min-width: 100%;
-                                            max-width: 100%;
-                                            min-height: 100%;
-                                            max-height: 100%;
-                                            object-fit: cover;
-                                            object-position: center center;
-                                          "/>
-                                        </span>
-                                    </div>
-                                </div>
-                                <!--프로필 닉네임 작성 일자 조회수-->
-                                <div class="flex items-center mt-[12px]">
-                                    <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px;height: 18px;">
-                                        <img src="/image/profile_icon.png" alt="">
-                                    </div>
-                                    <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
-                                        <!--닉네임-->
-                                        <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">
-                                            배찬영
-                                        </span>
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                        </svg>
-                                        <!--작성 날짜-->
-                                        <span class="shrink-0 content_quaternary">하루 전</span>
-                                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
-                                            <circle cx="12" cy="12" r="4"></circle>
-                                        </svg>
-                                        <!--조회수-->
-                                        <span class="shrink-0 content_quaternary">조회수 252</span>
-                                    </div>
-                                </div>
-                            </button>
-                        </div>
-                    </li>
+                    </li>-->
                 </ul>
                 <!--더보기 버튼-->
                 <div class="mt-[24px] flex justify-center">
-                    <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] lg:w-[116px] w-full false disabled:content_disabled">
+                    <button type="button" class="paging relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] lg:w-[116px] w-full false disabled:content_disabled">
                         <svg viewBox="0 0 16 17" xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] content_accent">
                             <mask id="RefreshLine_svg__a" x="0" y="0" style="mask-type: alpha">
                                 <path d="M0 .4h16v16H0z"></path>
@@ -1332,7 +497,8 @@
                                 </path>
                             </g>
                         </svg>
-                        <span class="ml-[4px] content_secondary">더보기 1</span>
+                        <span class="ml-[4px] content_secondary">더보기</span>
+                        <span class="page ml-[4px] content_secondary" th:text="${pagination.page}"></span>
                         <span class="content_quaternary">/5</span>
                     </button>
                 </div>
@@ -1380,14 +546,12 @@
                         <div>
                             <strong class="font_label_bold_lg" style="color: rgb(126, 105, 254)">추천 포스트</strong>
                             <!--제목-->
-                            <h2 class="mt-[8px] font_headline_bold_md content_secondary keep-all">
-                                제목
+                            <h2 class="mt-[8px] font_headline_bold_md content_secondary keep-all" th:text="|${recommendPost1.postName},  ${recommendPost1.id}|">
                             </h2>
                         </div>
                         <div class="w-[40px] h-[2px] surface_secondary_inverse"></div>
                         <!--내용-->
-                        <p class="font_body_regular_lg content_tertiary">
-                            글 내용
+                        <p class="font_body_regular_lg content_tertiary" th:text="${recommendPost1.postContent}">
                         </p>
                     </section>
                 </button>
@@ -1409,15 +573,15 @@
             <div class="mt-[24px]">
                 <div class="relative mobile:px-[16px]">
                     <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events" draggable="true" style="position: static">
-                        <div class="swiper-wrapper new-track" style="transform: translate3d(0px, 0px, 0px)">
+                        <div class="new-track swiper-wrapper new-track" style="transform: translate3d(0px, 0px, 0px)">
                             <!--작가프로필 13개-->
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
+                            <!--<div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
                                 <div>
                                     <button type="button" class="block text-left w-full">
                                         <div class="relative">
                                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
                                                 <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
+                                                &lt;!&ndash;사진&ndash;&gt;
                                                 <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
                                                   position: absolute;
                                                   inset: 0px;
@@ -1438,7 +602,7 @@
                                             </span>
                                             <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
                                         </div>
-                                        <!--이름-->
+                                        &lt;!&ndash;이름&ndash;&gt;
                                         <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
                                             배찬영
                                         </h2>
@@ -1448,463 +612,7 @@
                                         </p>
                                     </button>
                                 </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
-                                <div>
-                                    <button type="button" class="block text-left w-full">
-                                        <div class="relative">
-                                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
-                                                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
-                                                <!--사진-->
-                                                <img alt="사진" src="/image/python_icon.png" class="rounded-[16px]" sizes="100vw" style="
-                                                  position: absolute;
-                                                  inset: 0px;
-                                                  box-sizing: border-box;
-                                                  padding: 0px;
-                                                  border: none;
-                                                  margin: auto;
-                                                  display: block;
-                                                  width: 0px;
-                                                  height: 0px;
-                                                  min-width: 100%;
-                                                  max-width: 100%;
-                                                  min-height: 100%;
-                                                  max-height: 100%;
-                                                  object-fit: cover;
-                                                  object-position: center center;
-                                                "/>
-                                            </span>
-                                            <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
-                                        </div>
-                                        <!--이름-->
-                                        <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                                            배찬영
-                                        </h2>
-                                        <p class="mt-[2px] font_label_regular_sm content_tertiary">글/그림, 형식</p>
-                                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                                            일상 속 일상을
-                                        </p>
-                                    </button>
-                                </div>
-                            </div>
+                            </div>-->
                         </div>
                         <!--앞 뒤 버튼-->
                         <button type="button" class="new-prev absolute z-[5] w-[32px] h-[32px] rounded-full surface_primary hidden mobile:flex items-center justify-center left-0 mobile:flex" style="box-shadow: rgba(0, 0, 0, 0.25) 0px 1px 4px, rgba(0, 0, 0, 0.1) 0px 4px 5px;top: 44px;">
@@ -1965,14 +673,12 @@
                         <div>
                             <strong class="font_label_bold_lg" style="color: rgb(126, 105, 254)">추천 포스트</strong>
                             <!--제목-->
-                            <h2 class="mt-[8px] font_headline_bold_md content_secondary keep-all">
-                                제목
+                            <h2 class="mt-[8px] font_headline_bold_md content_secondary keep-all" th:text="|${recommendPost2.postName},  ${recommendPost2.id}|">
                             </h2>
                         </div>
                         <div class="w-[40px] h-[2px] surface_secondary_inverse"></div>
                         <!--내용-->
-                        <p class="font_body_regular_lg content_tertiary">
-                            글 내용
+                        <p class="font_body_regular_lg content_tertiary" th:text="${recommendPost2.postContent}">
                         </p>
                     </section>
                 </button>
@@ -2001,12 +707,12 @@
                     </li>
                     <li class="shrink-0">
                         <button type="button" class="category-button category rounded-[33px]">
-                            웹툰 · 만화
+                            소설
                         </button>
                     </li>
                     <li class="shrink-0">
                         <button type="button" class="category-button category rounded-[33px]">
-                            글 · 저널리즘
+                            일러스트
                         </button>
                 </ul>
             </div>
@@ -2611,7 +1317,17 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script th:inline="javascript">
+    let popularMembers = [[${popularMembers}]];
+    let popularPosts = [[${popularPosts}]];
+    let recommendPost1 = [[${recommendPost1}]];
+    let recommendPost2 = [[${recommendPost2}]];
+    let newMembers = [[${newMembers}]];
+</script>
 <script src="/js/main/main.js"></script>
 <script src="/js/post/navigation-bar.js"></script>
+<script src="/js/main/popularMemberList.js"></script>
+<script src="/js/main/popularPostList.js"></script>
+<script src="/js/main/newMemberList.js"></script>
 </html>
 

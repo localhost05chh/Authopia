@@ -168,3 +168,4 @@ $category_buttons.each((i, category_button) => {
         $category_button.removeClass("category");
     })
 });
+
