@@ -1,9 +1,11 @@
 package com.app.authopia.service.post;
 
 
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,4 +43,7 @@ public interface PostService {
         postDTO.setPostIsBlinded(postVO.getPostIsBlinded());
         return postDTO;
     }
+
+    // 메인페이지에서 최신 인기 포스트 조회
+    public List<PostDTO> getListMain(Pagination pagination);
 }

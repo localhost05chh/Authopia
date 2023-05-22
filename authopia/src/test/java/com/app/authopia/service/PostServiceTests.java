@@ -1,5 +1,6 @@
 package com.app.authopia.service;
 
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.post.PostService;
@@ -36,6 +37,14 @@ public class PostServiceTests {
 
     //  게시글 수정
 
+
+    @Test
+    public void findPostMainTest(){
+        Pagination pagination = new Pagination();
+        pagination.setPage(1); //화면에서 전달받은 페이지
+//        assertThat(postMapper.selectMain(pagination)).hasSize(4);
+        postService.getListMain(pagination).stream().map(PostDTO::toString).forEach(log::info);
+    }
 
 
 
