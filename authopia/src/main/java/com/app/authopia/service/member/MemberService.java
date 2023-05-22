@@ -22,6 +22,9 @@ public interface MemberService {
     // 회원 조회
     public Optional<MemberVO> getMemberInfo(Long id);
 
+    // 회원 정보 수정
+    public void modifyMemberInfo(MemberVO memberVO);
+
     // 회원 탈퇴
     public void deleteMember(Long id);
 

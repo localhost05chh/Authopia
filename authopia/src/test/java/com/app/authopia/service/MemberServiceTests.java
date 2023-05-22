@@ -51,6 +51,18 @@ public class MemberServiceTests {
     }
 
     @Test
+    public void modifyMemberInfo(){
+        memberService.getMemberInfo(1L).ifPresent(memberVO -> {
+            memberVO.setMemberName("섭섭");
+            memberVO.setMemberCategory("글");
+            memberVO.setMemberBriefIntroduce("나도 작가할래");
+            memberVO.setMemberIntroduce("뭐든지 해보고 싶어서 가입했어요");
+            memberVO.setMemberUrl("dev-Sub");
+            memberService.modifyMemberInfo(memberVO);
+        });
+    }
+
+    @Test
     public void deleteMember(){
         memberService.deleteMember(1L);
     }
