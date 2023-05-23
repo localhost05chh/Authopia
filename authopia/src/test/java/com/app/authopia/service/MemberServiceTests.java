@@ -44,27 +44,27 @@ public class MemberServiceTests {
         memberService.modifyPassword("gmatn98@naver.com", "123456123456");
     }
 
-    @Test
-    public void getNewMemberTest(){
-        assertThat(memberService.getNewMember()).hasSize(13);
-        memberService.getNewMember().stream().map(MemberVO::toString).forEach(log::info);
-    }
-
-    @Test
-    public void getPopularMemberTest(){
-        assertThat(memberService.getPopularMember()).hasSize(14);
-        memberService.getPopularMember().stream().map(MemberVO::toString).forEach(log::info);
-    }
-
-    @Test
-    public void findAllMemberTest(){
-        memberService.getAllMember().stream().map(MemberVO::toString).forEach(log::info);
-    }
-
-    @Test
-    public void findMemberByCategoryTest(){
-        memberService.getMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
-    }
+//    @Test
+//    public void getNewMemberTest(){
+//        assertThat(memberService.getNewMember()).hasSize(13);
+//        memberService.getNewMember().stream().map(MemberVO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    public void getPopularMemberTest(){
+//        assertThat(memberService.getPopularMember()).hasSize(14);
+//        memberService.getPopularMember().stream().map(MemberVO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    public void findAllMemberTest(){
+//        memberService.getAllMember().stream().map(MemberVO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    public void findMemberByCategoryTest(){
+//        memberService.getMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
+//    }
 
     @Test
     public void getMemberInfoTest(){

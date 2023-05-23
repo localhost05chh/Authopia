@@ -1,6 +1,9 @@
 package com.app.authopia.service.member;
 
+import com.app.authopia.dao.FileDAO;
 import com.app.authopia.dao.MemberDAO;
+import com.app.authopia.domain.dto.MemberDTO;
+import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -12,6 +15,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
     private final MemberDAO memberDAO;
+    private final FileDAO fileDAO;
 
     @Override
     public Optional<MemberVO> checkEmail(String memberEmail) {
@@ -34,23 +38,31 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public List<MemberVO> getNewMember() {
-        return memberDAO.findAll();
+    public List<MemberDTO> getNewMember() {
+        final List<MemberDTO> datas = memberDAO.findAll();
+        datas.forEach(data -> data.setMemberProfileImage(fileDAO.findProfileImage(data.getId()).isPresent() ? fileDAO.findProfileImage(data.getId()).get() : null));
+        return datas;
     }
 
     @Override
-    public List<MemberVO> getPopularMember() {
-        return memberDAO.findPopular();
+    public List<MemberDTO> getPopularMember() {
+        final List<MemberDTO> datas = memberDAO.findPopular();
+        datas.forEach(data -> data.setMemberProfileImage(fileDAO.findProfileImage(data.getId()).isPresent() ? fileDAO.findProfileImage(data.getId()).get() : null));
+        return datas;
     }
 
     @Override
-    public List<MemberVO> getAllMember() {
-        return memberDAO.findAllMember();
+    public List<MemberDTO> getAllMember() {
+        final List<MemberDTO> datas = memberDAO.findAllMember();
+        datas.forEach(data -> data.setMemberProfileImage(fileDAO.findProfileImage(data.getId()).isPresent() ? fileDAO.findProfileImage(data.getId()).get() : null));
+        return datas;
     }
 
     @Override
-    public List<MemberVO> getMemberByCategory(String category) {
-        return memberDAO.findMemberByCategory(category);
+    public List<MemberDTO> getMemberByCategory(String category) {
+        final List<MemberDTO> datas = memberDAO.findMemberByCategory(category);
+        datas.forEach(data -> data.setMemberProfileImage(fileDAO.findProfileImage(data.getId()).isPresent() ? fileDAO.findProfileImage(data.getId()).get() : null));
+        return datas;
     }
 
     @Override

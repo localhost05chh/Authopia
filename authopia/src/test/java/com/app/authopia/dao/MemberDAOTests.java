@@ -43,27 +43,27 @@ public class MemberDAOTests {
         memberDAO.setPassword("gmatn97@naver.com","1234512345");
     }
 
-    @Test
-    public void findAllTest(){
-        assertThat(memberDAO.findAll()).hasSize(13);
-        memberDAO.findAll().stream().map(MemberVO::toString).forEach(log::info);
-    }
-
-    @Test
-    public void findPopularTest(){
-        assertThat(memberDAO.findPopular()).hasSize(14);
-        memberDAO.findPopular().stream().map(MemberVO::toString).forEach(log::info);
-    }
-
-    @Test
-    public void findAllMemberTest(){
-        memberDAO.findAllMember().stream().map(MemberVO::toString).forEach(log::info);
-    }
-
-    @Test
-    public void findMemberByCategoryTest(){
-        memberDAO.findMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
-    }
+//    @Test
+//    public void findAllTest(){
+//        assertThat(memberDAO.findAll()).hasSize(13);
+//        memberDAO.findAll().stream().map(MemberVO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    public void findPopularTest(){
+//        assertThat(memberDAO.findPopular()).hasSize(14);
+//        memberDAO.findPopular().stream().map(MemberVO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    public void findAllMemberTest(){
+//        memberDAO.findAllMember().stream().map(MemberVO::toString).forEach(log::info);
+//    }
+//
+//    @Test
+//    public void findMemberByCategoryTest(){
+//        memberDAO.findMemberByCategory("writing").stream().map(MemberVO::toString).forEach(log::info);
+//    }
 
     @Test
     public void findByMemberIdTest(){

@@ -1,5 +1,6 @@
 package com.app.authopia.controller;
 
+import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.vo.MemberVO;
@@ -55,13 +56,13 @@ public class MainController {
 
     @GetMapping("/main/category/{category}")
     @ResponseBody
-    public List<MemberVO> mainMember(@PathVariable String category){
+    public List<MemberDTO> mainMember(@PathVariable String category){
         return memberService.getMemberByCategory(category);
     }
 
     @GetMapping("/main/all")
     @ResponseBody
-    public List<MemberVO> mainallMember(){
+    public List<MemberDTO> mainallMember(){
         return memberService.getAllMember();
     }
 }
