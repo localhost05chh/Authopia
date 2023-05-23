@@ -4,6 +4,7 @@ import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.vo.MemberVO;
+import com.app.authopia.service.file.FileService;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
@@ -22,11 +23,17 @@ import java.util.List;
 public class MainController {
     private final MemberService memberService;
     private final PostService postService;
+    private final FileService fileService;
 
     @GetMapping("/main")
     public String goToMain(HttpSession session, Model model, Pagination pagination){
         Long memberId = (Long) session.getAttribute("id");
         model.addAttribute("memberId", memberId);
+        if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else {
+            model.addAttribute("memberProfileImage", null);
+        }
         pagination.setPage(1);
         model.addAttribute("popularMembers", memberService.getPopularMember());
         model.addAttribute("popularPosts", postService.getListMain(pagination));
