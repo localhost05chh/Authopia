@@ -1,9 +1,11 @@
 package com.app.authopia.controller;
 
 import com.app.authopia.domain.vo.MemberVO;
+import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
@@ -152,14 +154,37 @@ public class MemberController {
 
     // 회원 조회
     // 회원 정보 수정
-    
+    @GetMapping("member-info")
+    public String modifyMemberInfo(HttpSession session, Model model){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        return "mypage/mypage-info";
+    }
+
+
+    // 회원 페이지 수정
+    @GetMapping("member-page")
+    public String modifyMemberPage(HttpSession session, Model model){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        return "mypage/mypage-setting";
+    }
+
+    // 회원 정보 수정 완료
+    @PostMapping("info-modify")
+    public RedirectView modifyMemberInfo(MemberVO memberVO, RedirectAttributes redirectAttributes){
+        memberService.modifyMemberInfo(memberVO);
+        return new RedirectView("/mypage/mypage-info");
+    }
 
 
     // 회원 탈퇴
     @GetMapping("delete-member")
-    public RedirectView deleteMember(HttpSession session){
+    public RedirectView deleteMember(HttpSession session, Model model){
+        Long memberId = (Long)session.getAttribute("id");
+        memberService.deleteMember(memberId);
         session.invalidate();
-        return  new RedirectView("/member/login");
+        return new RedirectView("/member/login");
     }
 
 }
