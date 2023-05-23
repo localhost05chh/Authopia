@@ -51,7 +51,7 @@ public class PostServiceImpl implements PostService {
         if(foundPost.isPresent()){
             foundPost.get().setPostFiles(fileDAO.findAllFile(foundPost.get().getId()));
         }
-        return postDAO.findById(id);
+        return foundPost;
     }
 
     //      게시글 수정
