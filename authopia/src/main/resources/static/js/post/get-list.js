@@ -31,6 +31,7 @@ $(document).ready(function () {
     let text = "";
     posts.forEach(post => {
         text += `
+                <a href="/post/detail?id=${post.id}">
                     <li class="py-[20px] pb-[0px] border-t first:pt-[8px] first:border-0 border_secondary">
                         <div>
                             <button type="button" class="block text-left w-full">
@@ -82,6 +83,7 @@ $(document).ready(function () {
                             </button>
                         </div>
                     </li>
+                  </a>
         `
     });
 

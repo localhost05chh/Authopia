@@ -25,6 +25,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/post/*")
 public class PostController{
     private final PostService postService;
+    private final MemberService memberService;
 
     //      게시글 목록
     @GetMapping("list")
@@ -39,18 +40,22 @@ public class PostController{
 
     //      게시글 추가
     @GetMapping("write")
-    public void goToWrite(PostDTO postDTO, Model model){;}
+    public void goToWrite(PostVO postVO, Model model, HttpSession session){
+        model.addAttribute("memberName", memberService.getMemberInfo((Long)session.getAttribute("id")).get().getMemberName());
+    }
 
     @PostMapping("write")
-    public RedirectView write(PostDTO postDTO){
+    public RedirectView write(PostDTO postDTO, HttpSession session){
+        postDTO.setMemberId((Long)session.getAttribute("id"));
         postService.write(postDTO);
         return new RedirectView("/post/list");
     }
 
     //      게시글 조회, 수정
     @GetMapping(value = {"detail", "modify"})
-    public void read(Long id, Model model){
-//        model.addAttribute("post",postService.read(id));
+    public void read(@RequestParam(defaultValue = "")Long id, Model model){
+        System.out.println(id);
+        model.addAttribute("post", postService.read(id).get());
     }
 
     @PostMapping("modify")

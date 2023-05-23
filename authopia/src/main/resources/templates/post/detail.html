@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/post/view-post.css">
+    <link rel="stylesheet" href="/css/footer/footer.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <title>상세보기</title>
@@ -23,7 +24,7 @@
             <main
                     class="flex flex-col relative max-w-main min-w-screen min-w-[320px] w-full mx-auto surface_primary">
                 <!-- 상단 제목 -->
-                <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]" th:text="${posts.postName}"></h3>
+                <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]" th:text="${post.postName}"></h3>
 
                 <!-- 프로필 메뉴 -->
                 <div class="flex items-center justify-between">
@@ -37,13 +38,13 @@
                         </div>
                         <div>
                             <div>
-                                <a href="" class="font_label_bold_md content_secondary" th:text="${posts.memberName}"></a>
+                                <a href="" class="font_label_bold_md content_secondary" th:text="${post.memberName}"></a>
                             </div>
                             <div class="mt-[2px] flex items-center">
                                 <a href="" class="font_label_regular_sm content_quaternary flex items-center">
-                                    <span th:text="elapsedTime(post.postRegisterDate)"></span>
+                                    <span>시간</span>
                                     <span> ｜ </span>
-                                    <span>조회수 <th:block th:text="${posts.postViewCount}"></th:block></span>
+                                    <span>조회수 <th:block th:text="${post.postViewCount}"></th:block></span>
                                 </a>
                             </div>
                         </div>
@@ -53,7 +54,7 @@
                 <!-- 중간 내용 부분 -->
                 <div class="mt-[24px] pt-[32px] border-t border_secondary">
                     <div class="steadio-post steadio-post-detail">
-                        <p th:text="${posts.postContent}"></p>
+                        <p th:text="${post.postContent}"></p>
                     </div>
                     <div class="md:w-[380px]">
                         <div style="height: 32px;"></div>
@@ -74,7 +75,7 @@
                     </div>
                     <div>
                         <div class="flex flex-col gap-[4px] px-[40px]">
-                            <button class="font_title_bold_lg text-center">닉네임</button>
+                            <button class="font_title_bold_lg text-center" style="background: none" th:text="${post.memberName}"></button>
                             <p class="md:w-[404px] text-center font_label_regular_md content_quaternary break-all">
                                 프로필 소개 내용</p>
                         </div>
@@ -169,11 +170,11 @@
             </main>
         </div>
 
-        <footer th:replace="~{/footer/footer :: #post-footer}"></footer>
+        <!--<footer th:replace="~{/footer/footer :: #post-footer}"></footer>-->
     </div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="js/post/view-post.js"></script>
-<script src="js/"></script>
+<script src="/js/post/detail.js"></script>
+<script src="/js/post/time.js"></script>
 </html>

@@ -34,3 +34,10 @@ $(".type").on('click', function () {
     $(".type").children('div').children().children().css('display', 'none');
     $(this).children('div').children().children().css('display', 'block');
 })
+
+//게시 버튼 클릭 이벤트
+$ablebutton.on("click", function(){
+    $('.postType').attr('value', type);
+    $("#writeForm").submit();
+});
+
