@@ -6,6 +6,7 @@ function showPost(postList){
 
     let text = "";
     postList.forEach(post => {
+        console.log(post);
         text += `
             <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
                 <div>
@@ -21,7 +22,13 @@ function showPost(postList){
                             </div>
                             <div class="shrink-0 relative w-[72px] md:w-[102px] h-[72px] md:h-[102px] rounded-[8px]">
                                 <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                    <img alt="" src="/image/img.png" class="rounded-[8px]" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;"/>
+                `
+        post.postFiles.forEach(file => {
+            if (file.fileType == "REPRESENTATIVE") {
+                text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" class="rounded-[8px]" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
+            }
+        })
+        text += `
                                 </span>
                             </div>
                         </div>

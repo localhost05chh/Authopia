@@ -18,15 +18,15 @@ public class PostServiceTests {
     private PostService postService;
 
     //  게시글 추가
-    @Test
-    public void writeTest(){
-        PostVO postVO = new PostVO();
-        postVO.setMemberId(1L);
-        postVO.setPostType("작품");
-        postVO.setPostName("제목4");
-        postVO.setPostContent("되기만 해봐?");
-        postService.write(postVO);
-    }
+//    @Test
+//    public void writeTest(){
+//        PostVO postVO = new PostVO();
+//        postVO.setMemberId(1L);
+//        postVO.setPostType("작품");
+//        postVO.setPostName("제목4");
+//        postVO.setPostContent("되기만 해봐?");
+//        postService.write(postVO);
+//    }
 
     //  게시글 조회
     @Test
