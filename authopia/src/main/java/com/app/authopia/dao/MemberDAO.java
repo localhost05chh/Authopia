@@ -1,5 +1,6 @@
 package com.app.authopia.dao;
 
+import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
@@ -43,22 +44,22 @@ public class MemberDAO {
     };
 
     // 메인에서 최근 회원 목록 조회
-    public List<MemberVO> findAll(){
+    public List<MemberDTO> findAll(){
         return memberMapper.selectAll();
     }
 
     // 메인에서 인기 회원 목록 조회
-    public List<MemberVO> findPopular(){
+    public List<MemberDTO> findPopular(){
         return memberMapper.selectPopular();
     }
 
     // 메인에서 회원 전체 조회
-    public List<MemberVO> findAllMember(){
+    public List<MemberDTO> findAllMember(){
         return memberMapper.selectAllMember();
     }
 
     // 메인에서 회원 카테고리별 조회
-    public List<MemberVO> findMemberByCategory(String category){
+    public List<MemberDTO> findMemberByCategory(String category){
         return memberMapper.selectMemberByCategory(category);
     }
 

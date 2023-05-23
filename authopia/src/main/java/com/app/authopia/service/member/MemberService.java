@@ -1,6 +1,7 @@
 package com.app.authopia.service.member;
 
 
+import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -21,16 +22,16 @@ public interface MemberService {
     public void modifyPassword(String memberEmail, String memberPassword);
 
     // 메인에서 최근 회원 목록 조회
-    public List<MemberVO> getNewMember();
+    public List<MemberDTO> getNewMember();
 
     // 메인에서 인기 회원 목록 조회
-    public List<MemberVO> getPopularMember();
+    public List<MemberDTO> getPopularMember();
 
     // 메인에서 회원 전체 조회
-    public List<MemberVO> getAllMember();
+    public List<MemberDTO> getAllMember();
 
     // 메인에서 회원 카테고리별 조회
-    public List<MemberVO> getMemberByCategory(String category);
+    public List<MemberDTO> getMemberByCategory(String category);
 
     // 회원 조회
     public Optional<MemberVO> getMemberInfo(Long id);

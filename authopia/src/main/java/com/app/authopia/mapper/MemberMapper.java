@@ -1,5 +1,6 @@
 package com.app.authopia.mapper;
 
+import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -29,16 +30,16 @@ public interface MemberMapper {
     public void updatePassword(@Param("memberEmail") String memberEmail, @Param("memberPassword") String memberPassword);
 
     // 메인에서 최근 회원 목록 조회
-    public List<MemberVO> selectAll();
+    public List<MemberDTO> selectAll();
 
     // 메인에서 인기 회원 목록 조회
-    public List<MemberVO> selectPopular();
+    public List<MemberDTO> selectPopular();
 
     // 메인에서 회원 전체 조회
-    public List<MemberVO> selectAllMember();
+    public List<MemberDTO> selectAllMember();
 
     // 메인에서 회원 카테고리별 조회
-    public List<MemberVO> selectMemberByCategory(@Param("category") String category);
+    public List<MemberDTO> selectMemberByCategory(@Param("category") String category);
 
    // 회원 조회
     public Optional<MemberVO> selectMemberInfo(Long id);

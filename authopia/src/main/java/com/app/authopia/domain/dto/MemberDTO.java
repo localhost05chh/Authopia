@@ -4,8 +4,7 @@ import com.app.authopia.domain.vo.FileVO;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
 @Component
 @Data
@@ -21,5 +20,5 @@ public class MemberDTO {
     private String memberCategory;
     private String memberUrl;
     private String memberKakaoLogin;
-    private List<FileVO> memberFiles = new ArrayList<>();
+    private FileVO memberProfileImage;
 }
