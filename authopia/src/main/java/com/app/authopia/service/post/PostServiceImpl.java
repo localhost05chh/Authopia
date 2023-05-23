@@ -87,6 +87,7 @@ public class PostServiceImpl implements PostService {
     public List<PostDTO> getListMain(Pagination pagination) {
         final List<PostDTO> datas = postDAO.findPostMain(pagination);
         datas.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        datas.forEach(data -> data.setMemberProfileImage(fileDAO.findProfileImage(data.getMemberId()).isPresent() ? fileDAO.findProfileImage(data.getMemberId()).get() : null));
         return datas;
     }
 }

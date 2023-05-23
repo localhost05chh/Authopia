@@ -1,8 +1,8 @@
-$(document).ready(showPost(recommendPost1, $(".recommend-post1")));
-$(document).ready(showPost(recommendPost2, $(".recommend-post2")));
+$(document).ready(showRecommendPost(recommendPost1, $(".recommend-post1")));
+$(document).ready(showRecommendPost(recommendPost2, $(".recommend-post2")));
 
 /* 글 화면에 보이기 */
-function showPost(post, section){
+function showRecommendPost(post, section){
     let text = "";
     text += `
             <div>
@@ -13,6 +13,7 @@ function showPost(post, section){
                         <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
                             <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 63.75% 0px 0px;"></span>
             `
+    console.log(post);
     post.postFiles.forEach(file => {
         if (file.fileType == "REPRESENTATIVE") {
             text += `<img alt="사진" src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" class="rounded-[16px]" sizes="100vw" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
