@@ -28,7 +28,7 @@ public class FileMapperTests {
         fileVO.setFileUuid(UUID.randomUUID().toString());
         fileVO.setFilePath("2023/05/23");
         fileVO.setFileType(FileType.REPRESENTATIVE.name());
-        fileVO.setPostId(91L);
+        fileVO.setPostId(73L);
         fileMapper.insertFile(fileVO);
     }
 

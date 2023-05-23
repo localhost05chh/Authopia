@@ -6,7 +6,6 @@ function showPost(postList){
 
     let text = "";
     postList.forEach(post => {
-        console.log(post);
         text += `
             <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
                 <div>
