@@ -25,3 +25,12 @@ $button.on('mouseout', function(event){
         'background-color': '#ffffff'
     })
 })
+
+let type = "writing";
+
+//임시 체크박스 입니다!!
+$(".type").on('click', function () {
+    type = this.classList[0];
+    $(".type").children('div').children().children().css('display', 'none');
+    $(this).children('div').children().children().css('display', 'block');
+})

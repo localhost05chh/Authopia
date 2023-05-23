@@ -28,11 +28,12 @@ public class PostController{
 
     //      게시글 목록
     @GetMapping("list")
-    public void gotoList(Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+    public void gotoList(HttpSession session, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+        Long memberId = (Long) session.getAttribute("id");
+        model.addAttribute("memberId", memberId);
         postType.setType(type);
         postType.setOrder(order);
         postType.setKeyword(keyword);
-        System.out.println(postType.getKeyword());
         model.addAttribute("posts", postService.getList(postType));
     }
 
