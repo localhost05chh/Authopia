@@ -24,6 +24,6 @@ public class PostDTO {
     private Boolean postIsBlinded;
     private String memberName;
     private List<FileVO> postFiles = new ArrayList<>();
-    private FileVO memberFiles = new FileVO();
+    private FileVO memberProfileImage;
     private List<Long> fileIdsForDelete = new ArrayList<>();
 }

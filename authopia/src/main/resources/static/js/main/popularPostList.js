@@ -1,7 +1,7 @@
-$(document).ready(showPost(popularPosts));
+$(document).ready(showPopularPost(popularPosts));
 
 /* 글 화면에 보이기 */
-function showPost(postList){
+function showPopularPost(postList){
     const $ul = $(".post-track");
 
     let text = "";
@@ -33,7 +33,14 @@ function showPost(postList){
                         </div>
                         <div class="flex items-center mt-[12px]">
                             <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px;height: 18px;">
-                                <img class="rounded-full" src="/image/img.png" alt="">
+            `
+        if(post.memberProfileImage != null){
+            text += `<img class="rounded-full" src="/files/display?fileName=${post.memberProfileImage.filePath}/t_${post.memberProfileImage.fileUuid}_${post.memberProfileImage.fileName}" alt="">`;
+        } else {
+            text += `<img class="rounded-full" src="/image/profile_icon.png" alt="">`;
+        }
+
+        text += `
                             </div>
                             <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
                                 <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">
@@ -67,7 +74,7 @@ $("button.paging").on("click", function(){
     $.ajax({
         url: `/main/post/${page}`,
         success: function(result){
-            showPost(result);
+            showPopularPost(result);
         }
     });
 });

@@ -8,7 +8,13 @@ $(document).ready(function(){
                 <div>
                     <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
                         <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                            <img alt="사진" src="/image/img.png" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;" sizes="100vw" />
+            `
+        if(member.memberProfileImage != null){
+            text += `<img alt="사진" src="/files/display?fileName=${member.memberProfileImage.filePath}/t_${member.memberProfileImage.fileUuid}_${member.memberProfileImage.fileName}" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;" sizes="100vw">`;
+        } else {
+            text += `<img alt="사진" src="/image/profile_icon.png" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;" sizes="100vw">`;
+        }
+        text += `
                         </span>
                         <div class="absolute top-0 left-0 w-full h-full border border-gray-100 rounded-full"></div>
                     </button>
