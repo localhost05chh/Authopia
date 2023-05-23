@@ -171,10 +171,10 @@ public class MemberController {
     }
 
     // 회원 정보 수정 완료
-    @PostMapping("info")
+    @PostMapping("info-modify")
     public RedirectView modifyMemberInfo(MemberVO memberVO, RedirectAttributes redirectAttributes){
         memberService.modifyMemberInfo(memberVO);
-        return new RedirectView("/member/info");
+        return new RedirectView("/mypage/mypage-info");
     }
 
 
