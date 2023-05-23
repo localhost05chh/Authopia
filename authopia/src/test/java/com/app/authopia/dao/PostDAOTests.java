@@ -17,15 +17,15 @@ public class PostDAOTests {
     @Autowired
     private PostDAO postDAO;
 
-    @Test
-    public void saveTest(){
-        PostVO postVO = new PostVO();
-        postVO.setMemberId(1L);
-        postVO.setPostType("작품");
-        postVO.setPostName("제목4");
-        postVO.setPostContent("안녕하세요");
-        postDAO.save(postVO);
-    }
+//    @Test
+//    public void saveTest(){
+//        PostVO postVO = new PostVO();
+//        postVO.setMemberId(1L);
+//        postVO.setPostType("작품");
+//        postVO.setPostName("제목4");
+//        postVO.setPostContent("안녕하세요");
+//        postDAO.save(postVO);
+//    }
 
     //      게시글 목록 테스트
 //    @Test

@@ -512,7 +512,7 @@
         </section>
 
         <!--추천 포스트 1 -->
-        <section class="mx-[20px] mobile:mx-[16px]">
+        <section class="mx-[20px] mobile:mx-[16px]" th:unless="${recommendPost1 eq null}">
             <div>
                 <div class="lg:pt-[28px] lg:border-t lg:border_primary"></div>
                 <h1 class="hidden">추천포스트 </h1>
@@ -639,7 +639,7 @@
         </section>
 
         <!--추천 포스트 2 -->
-        <section class="mx-[20px] mobile:mx-[16px]">
+        <section class="mx-[20px] mobile:mx-[16px]" th:unless="${recommendPost2.postName eq null}">
             <div>
                 <div class="lg:pt-[28px] lg:border-t lg:border_primary"></div>
                 <h1 class="hidden">추천포스트 </h1>

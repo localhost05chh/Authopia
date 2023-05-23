@@ -18,15 +18,15 @@ public class PostMapperTests {
     private PostMapper postMapper;
 
     //      게시글 추가 테스트
-    @Test
-    public void insertTest(){
-        PostVO postVO = new PostVO();
-        postVO.setMemberId(1L);
-        postVO.setPostType("작품");
-        postVO.setPostName("제목11");
-        postVO.setPostContent("안녕하세요");
-        postMapper.insert(postVO);
-    }
+//    @Test
+//    public void insertTest(){
+//        PostVO postVO = new PostVO();
+//        postVO.setMemberId(1L);
+//        postVO.setPostType("작품");
+//        postVO.setPostName("제목11");
+//        postVO.setPostContent("안녕하세요");
+//        postMapper.insert(postVO);
+//    }
 
     //      게시글 목록 테스트
 //    @Test

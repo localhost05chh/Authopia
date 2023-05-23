@@ -29,8 +29,16 @@ public class MainController {
         pagination.setPage(1);
         model.addAttribute("popularMembers", memberService.getPopularMember());
         model.addAttribute("popularPosts", postService.getListMain(pagination));
-        model.addAttribute("recommendPost1", postService.read(72l).get());
-        model.addAttribute("recommendPost2", postService.read(73l).get());
+        if(postService.read(71l).isPresent()) {
+            model.addAttribute("recommendPost1", postService.read(71l).get());
+        } else {
+            model.addAttribute("recommendPost1", null);
+        }
+        if(postService.read(73l).isPresent()) {
+            model.addAttribute("recommendPost2", postService.read(73l).get());
+        } else {
+            model.addAttribute("recommendPost2", null);
+        }
         model.addAttribute("newMembers", memberService.getNewMember());
         model.addAttribute("allMembers", memberService.getAllMember());
 
