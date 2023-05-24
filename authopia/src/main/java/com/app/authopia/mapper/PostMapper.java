@@ -32,4 +32,7 @@ public interface PostMapper {
 
     // 메인페이지에서 최신 인기 포스트 조회
     public List<PostDTO> selectMain(@Param("pagination") Pagination pagination);
+
+    //      내 게시글 목록
+    public List<PostDTO> selectAllMyPost(Long memberId, PostType postType);
 }

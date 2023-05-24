@@ -43,7 +43,13 @@ public class PostDAO{
     }
 
     // 메인페이지에서 최신 인기 포스트 조회
+
     public List<PostDTO> findPostMain(Pagination pagination){
         return postMapper.selectMain(pagination);
+    }
+
+    //      내 게시글 목록
+    public List<PostDTO> findAllMyPost(Long memberId, PostType postType){
+        return postMapper.selectAllMyPost(memberId, postType);
     }
 }

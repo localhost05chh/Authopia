@@ -71,6 +71,9 @@ public class PostController{
         return new RedirectView("/post/list");
     }
 
+    // 내 게시글 목록
+//    @GetMapping("")
+
 //    복구는 필요한사람이 작성해주세용!!
 
 }

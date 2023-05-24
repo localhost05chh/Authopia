@@ -14,6 +14,7 @@ $buttonCategory.on("click", function(){
             $filterCategory.hide();
         });
     });
+    console.log(value);
 });
 
 $buttonCategory.on("focusout", function(){

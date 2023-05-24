@@ -2,6 +2,7 @@ package com.app.authopia.mapper;
 
 import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
+import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -28,7 +29,7 @@ public class PostMapperTests {
 //        postMapper.insert(postVO);
 //    }
 
-    //      게시글 목록 테스트
+//          게시글 목록 테스트
 //    @Test
 //    public void selectAllTest(){
 //        assertThat(postMapper.selectAll()).hasSize(3);
@@ -68,5 +69,13 @@ public class PostMapperTests {
 //        assertThat(postMapper.selectMain(pagination)).hasSize(4);
         postMapper.selectMain(pagination).stream().map(PostDTO::toString).forEach(log::info);
     }
+
+//          내 게시글 목록 테스트
+//    @Test
+//    public void selectAllMyPostTest(){
+//        postMapper.selectAllMyPost(1L, PostType ->())
+//
+//        }
+//    }
 
 }

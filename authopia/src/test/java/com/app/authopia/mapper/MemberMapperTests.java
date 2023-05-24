@@ -89,11 +89,11 @@ public class MemberMapperTests {
     @Test
     public void updateMemberInfo(){
         memberMapper.selectMemberInfo(1L).ifPresent(memberVO -> {
-            memberVO.setMemberName("섭섭");
-            memberVO.setMemberCategory("글");
-            memberVO.setMemberBriefIntroduce("나도 작가할래");
-            memberVO.setMemberIntroduce("뭐든지 해보고 싶어서 가입했어요");
-            memberVO.setMemberUrl("dev-Sub");
+            memberVO.setMemberName("신우섭섭");
+            memberVO.setMemberCategory("writing");
+//            memberVO.setMemberBriefIntroduce("나도 작가할래");
+//            memberVO.setMemberIntroduce("뭐든지 해보고 싶어서 가입했어요");
+            memberVO.setMemberUrl("devsub");
             memberMapper.updateMemberInfo(memberVO);
         });
     }

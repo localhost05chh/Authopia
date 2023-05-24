@@ -4,6 +4,7 @@ import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.mapper.MemberMapper;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
@@ -12,6 +13,7 @@ import java.util.Optional;
 
 @Repository
 @RequiredArgsConstructor
+@Slf4j
 public class MemberDAO {
     private final MemberMapper memberMapper;
 

@@ -49,9 +49,9 @@
                     <div class="flex flex-col items-center">
                         <div class="w-[68px] h-[68px] mb-[12px]">
                             <div class="relative w-full h-full rounded-full flex items-center justify-center">
-                                    <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                        <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
-                                    </span>
+                                <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+                                    <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                </span>
                                 <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
                             </div>
                         </div>
@@ -225,7 +225,7 @@
                     <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
                         <div>
                             <label id="label-intro" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                <input id="input-intro" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="한 줄 소개를 입력해주세요." th:value="${member.memberBriefIntroduce}">
+                                <input id="input-intro" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="한 줄 소개를 입력해주세요." th:field="${member.memberBriefIntroduce}">
                             </label>
                             <div class="flex mt-[8px] font_label_regular_sm content_quaternary">
                                 <div id="warn-intro" class="mr-auto flex items-center content_negative">
@@ -320,99 +320,100 @@
                     </div>
                     <hr class="w-full col-span-full border_secondary border-t-[1px]">
                     <!-- sns 계정 -->
-                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
-                        <div>
-                            <div class="mb-[7px] flex items-center">
-                                <strong class="font_title_bold_md content_primary mr-[6px]">SNS 계정</strong>
-                            </div>
-                            <span class="font_body_regular_md content_secondary">기존의 내 팔로워들이 공식 페이지임을 확인할 수 있도록 SNS 계정 주소를 입력해주세요.</span>
-                        </div>
-                    </div>
-                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
-                        <div class="flex flex-col justify-between gap-y-[16px]">
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Instagram</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Twitter</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Youtube</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                            <div>
-                                <p class="font_label_bold_md content_primary mb-[8px]">Facebook</p>
-                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
-                    <!-- 링크 -->
-                    <!-- <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
-                        <div>
-                            <div class="mb-[7px] flex items-center">
-                                <strong class="font_title_bold_md content_primary mr-[6px]">링크</strong>
-                            </div>
-                            <span class="font_body_regular_md content_secondary">나의 창작 활동과 연관된 링크를 아카이빙 해보세요.</span>
-                        </div>
-                    </div>
-                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
-                        <div class="border border_disabled rounded-[8px] surface_secondary p-[32px]">
-                            <div class="xl:flex">
-                                <div class="mb-[22px] xl:mb-0 flex xl:flex-col gap-x-[23px] xl:gap-x-0 items-center xl:mr-[32px] xl:w-[136px]">
-                                    <div id="no-link" class="xl:mb-[12px] relative border border_disabled rounded-[8px] w-[76px] h-[76px] flex shrink-0 items-center justify-center surface_primary">
-                                        <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[48px] h-[48px]"><path d="M27.782 19.785c1.154-2.172 4.29-2.108 5.354.11l6.68 13.917c1.275 2.655-.66 5.731-3.606 5.731H9.882c-1.506 0-2.472-1.6-1.77-2.932l4.998-9.486a3 3 0 0 1 4.765-.733l4.192 4.151 5.715-10.758ZM19.067 15.543a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="#C2B8FF"></path></svg>
-                                    </div>
-                                    <img class="xl:mb-[12px] relative border border_disabled rounded-[8px] w-[76px] h-[76px] flex shrink-0 items-center justify-center surface_primary" id="link-preview" src="" alt="">
-                                    <div class="shrink">
-                                        <div class="mb-[12px]">
-                                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
-                                                링크 썸네일 업로드
-                                                <input id="link" type="file" accept="image/png,image/jpeg,image/jpg" class="opacity-0 absolute block w-full h-full top-0 cursor-pointer">
-                                            </button>
-                                        </div>
-                                        <span class="font_body_regular_sm content_quaternary">파일 형식은 jpg 또는 png로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</span>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col flex-grow">
-                                    <div class="mb-[12px]">
-                                        <div>
-                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                                <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="링크 제목 입력">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="mb-[12px]">
-                                        <div>
-                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                                <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력">
-                                            </label>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-end">
-                                        <button type="button" disabled class="relative flex justify-center items-center content_primary_inverse surface_accent hover:surface_accent_active font_button_bold_md h-[32px] rounded-[16px] active:surface_accent_active disabled:surface_disabled px-[16px] false disabled:content_disabled">링크 만들기</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                </div>
+<!--                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">-->
+<!--                        <div>-->
+<!--                            <div class="mb-[7px] flex items-center">-->
+<!--                                <strong class="font_title_bold_md content_primary mr-[6px]">SNS 계정</strong>-->
+<!--                            </div>-->
+<!--                            <span class="font_body_regular_md content_secondary">기존의 내 팔로워들이 공식 페이지임을 확인할 수 있도록 SNS 계정 주소를 입력해주세요.</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">-->
+<!--                        <div class="flex flex-col justify-between gap-y-[16px]">-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Instagram</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Twitter</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Youtube</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                            <div>-->
+<!--                                <p class="font_label_bold_md content_primary mb-[8px]">Facebook</p>-->
+<!--                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력...">-->
+<!--                                </label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <hr class="w-full col-span-full border_secondary border-t-[1px]">-->
+<!--                    &lt;!&ndash; 링크 &ndash;&gt;-->
+<!--                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">-->
+<!--                        <div>-->
+<!--                            <div class="mb-[7px] flex items-center">-->
+<!--                                <strong class="font_title_bold_md content_primary mr-[6px]">링크</strong>-->
+<!--                            </div>-->
+<!--                            <span class="font_body_regular_md content_secondary">나의 창작 활동과 연관된 링크를 아카이빙 해보세요.</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">-->
+<!--                        <div class="border border_disabled rounded-[8px] surface_secondary p-[32px]">-->
+<!--                            <div class="xl:flex">-->
+<!--                                <div class="mb-[22px] xl:mb-0 flex xl:flex-col gap-x-[23px] xl:gap-x-0 items-center xl:mr-[32px] xl:w-[136px]">-->
+<!--                                    <div id="no-link" class="xl:mb-[12px] relative border border_disabled rounded-[8px] w-[76px] h-[76px] flex shrink-0 items-center justify-center surface_primary">-->
+<!--                                        <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[48px] h-[48px]"><path d="M27.782 19.785c1.154-2.172 4.29-2.108 5.354.11l6.68 13.917c1.275 2.655-.66 5.731-3.606 5.731H9.882c-1.506 0-2.472-1.6-1.77-2.932l4.998-9.486a3 3 0 0 1 4.765-.733l4.192 4.151 5.715-10.758ZM19.067 15.543a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="#C2B8FF"></path></svg>-->
+<!--                                    </div>-->
+<!--                                    <img class="xl:mb-[12px] relative border border_disabled rounded-[8px] w-[76px] h-[76px] flex shrink-0 items-center justify-center surface_primary" id="link-preview" src="" alt="">-->
+<!--                                    <div class="shrink">-->
+<!--                                        <div class="mb-[12px]">-->
+<!--                                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">-->
+<!--                                                링크 썸네일 업로드-->
+<!--                                                <input id="link" type="file" accept="image/png,image/jpeg,image/jpg" class="opacity-0 absolute block w-full h-full top-0 cursor-pointer">-->
+<!--                                            </button>-->
+<!--                                        </div>-->
+<!--                                        <span class="font_body_regular_sm content_quaternary">파일 형식은 jpg 또는 png로, 사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="flex flex-col flex-grow">-->
+<!--                                    <div class="mb-[12px]">-->
+<!--                                        <div>-->
+<!--                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                                <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="링크 제목 입력">-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="mb-[12px]">-->
+<!--                                        <div>-->
+<!--                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
+<!--                                                <input type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="URL 입력">-->
+<!--                                            </label>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="flex justify-end">-->
+<!--                                        <button type="button" disabled class="relative flex justify-center items-center content_primary_inverse surface_accent hover:surface_accent_active font_button_bold_md h-[32px] rounded-[16px] active:surface_accent_active disabled:surface_disabled px-[16px] false disabled:content_disabled">링크 만들기</button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>
     <div class="z-0"></div>
 </div>
+</div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/mypage/mypage-setting.js"></script>
+<script src="/js/mypage/mypage-setting"></script>
 </html>
