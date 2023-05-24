@@ -8,6 +8,7 @@
         <typeAlias type="com.app.authopia.domain.dto.PostDTO" alias="postDTO"/>
         <typeAlias type="com.app.authopia.domain.vo.CommentVO" alias="CommentVO"/>
         <typeAlias type="com.app.authopia.domain.dto.CommentDTO" alias="CommentDTO"/>
+        <typeAlias type="com.app.authopia.domain.dto.MessageDTO" alias="messageDTO"/>
         <typeAlias type="com.app.authopia.domain.vo.FileVO" alias="fileVO"/>
         <typeAlias type="com.app.authopia.domain.vo.SubscribeVO" alias="subscribeVO"/>
     </typeAliases>

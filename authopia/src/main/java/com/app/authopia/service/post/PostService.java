@@ -5,7 +5,6 @@ import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Optional;

@@ -3,7 +3,6 @@ package com.app.authopia.controller;
 import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
-import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.service.file.FileService;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
