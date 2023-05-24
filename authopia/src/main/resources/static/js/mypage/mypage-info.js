@@ -37,6 +37,12 @@ $("#input-url").on("change keyup paste", function(){
     }
 });
 
+// 카테고리 선택
+$("button.my-category").on("mousedown", function(){
+    category = $(this).attr("name");
+    console.log(category);
+});
+
 /* 중복확인을 클릭하면 DB에서 검사 후에 $("#check-complete").show();로 바꾸시면 됩니다. */
 
 function warn(label, message){
