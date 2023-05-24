@@ -18,6 +18,7 @@ public class FileServiceTests {
     @Autowired
     private FileService fileService;
 
+
     @Test
     public void getProfileImageTest(){
         Optional<FileVO> foundImage = fileService.getProfileImage(26l);
