@@ -9,7 +9,7 @@ function showPopularPost(postList){
         text += `
             <li class="py-[20px] pb-[0px] w-full border-t first:pt-[8px] first:border-0 border_secondary">
                 <div>
-                    <button type="button" class="block text-left w-full">
+                    <button type="button" class="block text-left w-full" onclick="location.href='/post/detail?id=${post.id}'">
                         <div class="flex gap-x-[16px]">
                             <div class="w-full h-[73px] xl:h-auto break-all">
                                 <h2 class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
