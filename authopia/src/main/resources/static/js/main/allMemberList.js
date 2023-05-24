@@ -26,10 +26,16 @@ function showMember(memberList){
                         <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
                             ${member.memberName}, ${member.id}
                         </h2>
-                        <p class="mt-[2px] font_label_regular_sm content_tertiary">${member.memberCategory}</p>
-                        <p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">
-                            ${member.memberBriefIntroduce}
-                        </p>
+                `
+        if(member.memberCategory == "writing"){
+            text += `<p class="mt-[2px] font_label_regular_sm content_tertiary">소설</p>`
+        } else {
+            text += `<p class="mt-[2px] font_label_regular_sm content_tertiary">일러스트</p>`
+        }
+        if(member.memberBriefIntroduce != null){
+            text += `<p class="mt-[4px] font_label_regular_md content_quaternary break-all line-clamp-2">${member.memberBriefIntroduce}</p>`
+        }
+        text += `
                     </button>
                 </div>
             </div>
