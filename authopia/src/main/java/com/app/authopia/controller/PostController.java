@@ -33,6 +33,7 @@ public class PostController{
         model.addAttribute("posts", postService.getList(postType));
     }
 
+
     //      게시글 추가
     @GetMapping("write")
     public void goToWrite(PostVO postVO, Model model){;}

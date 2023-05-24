@@ -69,4 +69,10 @@ public class PostMapperTests {
         postMapper.selectMain(pagination).stream().map(PostDTO::toString).forEach(log::info);
     }
 
+
+    @Test
+    public void selectManagerTest(){
+        assertThat(postMapper.selectManager()).hasSize(2);
+    }
+
 }

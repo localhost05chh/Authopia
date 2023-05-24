@@ -46,4 +46,7 @@ public interface PostService {
 
     // 메인페이지에서 최신 인기 포스트 조회
     public List<PostDTO> getListMain(Pagination pagination);
+
+    // 관리자페이지에서 조회
+    List<PostDTO> getListManager(Pagination pagination);
 }

@@ -3,7 +3,6 @@ package com.app.authopia.mapper;
 import com.app.authopia.domain.vo.MemberVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 import java.util.Optional;
@@ -42,4 +41,7 @@ public interface MemberMapper {
 
     // 회원 탈퇴
     public void updateMemberIsRemaining(Long id);
+
+    // 관리자페이지에서 회원 목록 조회
+    public List<MemberVO> selectMember();
 }

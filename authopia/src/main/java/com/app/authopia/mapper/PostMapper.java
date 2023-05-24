@@ -15,6 +15,7 @@ public interface PostMapper {
 //      게시글 목록
     public List<PostDTO> selectAll(PostType postType);
 
+
 //      게시글 추가
     public void insert(PostVO postVO);
 
@@ -32,4 +33,7 @@ public interface PostMapper {
 
     // 메인페이지에서 최신 인기 포스트 조회
     public List<PostDTO> selectMain(@Param("pagination") Pagination pagination);
+
+    //      관리자 페이지 게시글 목록
+    public List<PostDTO> selectManager();
 }

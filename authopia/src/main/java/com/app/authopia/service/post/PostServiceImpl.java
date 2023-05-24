@@ -56,6 +56,16 @@ public class PostServiceImpl implements PostService {
     // 메인페이지에서 최신 인기 포스트 조회
     @Override
     public List<PostDTO> getListMain(Pagination pagination) {
+
         return postDAO.findPostMain(pagination);
     }
+
+
+
+    // 관리자페이지에서 조회
+    @Override
+    public List<PostDTO> getListManager(Pagination pagination) {
+        return postDAO.findPostManager(pagination);
+    }
+
 }

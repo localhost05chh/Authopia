@@ -77,5 +77,22 @@
             ) P WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
         ]]>
     </select>
+<!--관리자 페이지 전체 조회-->
+    <select id="selectMember" resultType="PostDTO">
+        SELECT P.ID, MEMBER_ID, POST_TYPE, POST_NAME, POST_VIEW_COUNT, POST_RECOMMEND, POST_REGISTER_DATE,
+        POST_UPDATE_DATE, POST_CONTENT, POST_IS_BLINDED, MEMBER_NAME
+        FROM TBL_MEMBER M JOIN TBL_POST P
+        ON M.ID = p.MEMBER_ID AND POST_IS_BLINDED = 0
+        ORDER BY
+        <choose>
+            <when test="order == 'new'">
+                POST_REGISTER_DATE
+            </when>
+            <otherwise>
+                POST_VIEW_COUNT
+            </otherwise>
+        </choose>
+        DESC
+    </select>
 
 </mapper>
