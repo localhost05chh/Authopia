@@ -39,7 +39,7 @@ $("#input-url").on("change keyup paste", function(){
 
 // 카테고리 선택
 $("button.my-category").on("mousedown", function(){
-    category = $(this).attr("name");
+    category = $(this).attr("value");
     console.log(category);
 });
 

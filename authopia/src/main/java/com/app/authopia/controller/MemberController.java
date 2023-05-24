@@ -172,16 +172,9 @@ public class MemberController {
 
     // 회원 정보 수정 완료
     @PostMapping("info-modify")
-    public RedirectView modifyMemberInfo(MemberVO memberVO, HttpSession session){
-        Long memberId = (Long)session.getAttribute("id");
-        memberService.getMemberInfo(memberId).get();
-        memberVO.setMemberName(memberVO.getMemberName());
-        memberVO.setMemberUrl(memberVO.getMemberUrl());
-        memberVO.setMemberCategory(memberVO.getMemberCategory());
-//        memberVO.setMemberBriefIntroduce(memberVO.getMemberBriefIntroduce());
-//        memberVO.setMemberIntroduce(memberVO.getMemberIntroduce());
+    public RedirectView modifyMemberInfo(MemberVO memberVO){
         memberService.modifyMemberInfo(memberVO);
-        return new RedirectView("/mypage/mypage-info");
+        return new RedirectView("/member/member-info");
     }
 
 
