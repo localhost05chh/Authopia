@@ -22,9 +22,13 @@ $(document).ready(function(){
                         <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
                             ${member.memberName}, ${member.id}
                         </h2>
-                        <p class="text-[12px] font_label_regular_sm content_tertiary">
-                            ${member.memberCategory}
-                        </p>
+                `
+        if(member.memberCategory == "writing"){
+            text += `<p class="text-[12px] font_label_regular_sm content_tertiary">소설</p>`
+        } else {
+            text += `<p class="text-[12px] font_label_regular_sm content_tertiary">일러스트</p>`
+        }
+        text += `
                     </div>
                 </div>
             </div>
