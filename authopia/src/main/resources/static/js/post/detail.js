@@ -91,5 +91,8 @@ function showList(commentes) {
     $commentBox.append(text);
 }
 
+/*게시글 뿌리기*/
+
+
 
 

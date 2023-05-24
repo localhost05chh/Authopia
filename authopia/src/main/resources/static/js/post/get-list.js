@@ -27,7 +27,6 @@ function elapsedTime(date) {
 //게시판 li태그 뿌리기
 $(document).ready(function () {
     const $ul = $("#content-wrap");
-    console.log(posts);
     let text = "";
     posts.forEach(post => {
         text += `

@@ -49,10 +49,10 @@ $ablebutton.on("click", function(){
         let fileSize = sizes[i];
 
         text += `
-            <input type="hidden" name="files[${i}].filePath" value="${filePath}">
-            <input type="hidden" name="files[${i}].fileUuid" value="${fileUuid}">
-            <input type="hidden" name="files[${i}].fileName" value="${fileName}">
-            <input type="hidden" name="files[${i}].fileSize" value="${fileSize}">
+            <input type="hidden" name="postFiles[${i}].filePath" value="${filePath}">
+            <input type="hidden" name="postFiles[${i}].fileUuid" value="${fileUuid}">
+            <input type="hidden" name="postFiles[${i}].fileName" value="${fileName}">
+            <input type="hidden" name="postFiles[${i}].fileSize" value="${fileSize}">
         `
     });
     $("#writeForm").append(text);
