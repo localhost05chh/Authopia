@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public interface PostService {
     //      게시글 목록
-    public List<PostDTO> getList(PostType postType);
+    public List<PostDTO> getList(Pagination pagination, PostType postType);
 
     //      게시글 추가
     public void write(PostDTO postDTO);
@@ -28,6 +28,12 @@ public interface PostService {
 
     //      게시글 복구
     public void restore(Long id);
+
+    //    게시글 전체 개수 조회
+    public int getTotal(PostType postType);
+
+    //      게시글 조회수 증가
+    public void increaseViewCount(Long id);
 
     default PostDTO toDTO(PostVO postVO){
         PostDTO postDTO = new PostDTO();

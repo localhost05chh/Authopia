@@ -1,6 +1,7 @@
 package com.app.authopia.controller;
 
 import com.app.authopia.dao.PostDAO;
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
@@ -29,13 +30,15 @@ public class PostController{
 
     //      게시글 목록
     @GetMapping("list")
-    public void gotoList(HttpSession session, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+    public void gotoList(HttpSession session, Pagination pagination, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
         Long memberId = (Long) session.getAttribute("id");
         model.addAttribute("memberId", memberId);
         postType.setType(type);
         postType.setOrder(order);
         postType.setKeyword(keyword);
-        model.addAttribute("posts", postService.getList(postType));
+        pagination.setTotal(postService.getTotal(postType));
+        pagination.progress();
+        model.addAttribute("posts", postService.getList(pagination , postType));
     }
 
     //      게시글 추가
@@ -54,6 +57,7 @@ public class PostController{
     //      게시글 조회, 수정
     @GetMapping(value = {"detail", "modify"})
     public void read(@RequestParam(defaultValue = "")Long id, Model model){
+        postService.increaseViewCount(id);
         model.addAttribute("post", postService.read(id).get());
     }
 

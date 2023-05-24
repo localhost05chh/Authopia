@@ -8,7 +8,11 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 public class PostType {
-    private String type;
-    private String order;
-    private String keyword;
+    String type;
+    String order;
+    String keyword;
+
+    public String[] getTypes(){
+        return type.split("");
+    }
 }
