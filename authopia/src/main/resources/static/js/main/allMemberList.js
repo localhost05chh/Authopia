@@ -53,7 +53,6 @@ $("button.category").on("click", function(){
     $category_prev.css("display", "none");
     category_count = 0
     let category = $(this).attr("name");
-    console.log(category);
     $.ajax({
         url: `/main/category/${category}`,
         success: function(result){

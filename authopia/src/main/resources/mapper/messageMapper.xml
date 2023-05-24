@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.app.authopia.mapper.MessageMapper">
+
+    <!--  받은 쪽지 목록  -->
+    <select id="selectReceiveAll" resultType="messageDTO">
+    SELECT ID, MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+    FROM
+        (
+            SELECT ROWNUM R, ID, MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+            FROM
+            (
+                SELECT ME.ID, M.MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+                FROM TBL_MEMBER M JOIN TBL_MESSAGE ME
+                ON M.ID = ME.SEND_MEMBER_ID AND RECEIVE_MEMBER_ID = #{memberId}
+                ORDER BY ME.ID DESC
+            )
+            <![CDATA[
+                WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+            ]]>
+        )
+    <![CDATA[
+        WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
+    ]]>
+    </select>
+
+    <!--  보낸 쪽지 목록  -->
+    <select id="selectSendAll" resultType="messageDTO">
+    SELECT ID, MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+    FROM
+        (
+            SELECT ROWNUM R, ID, MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+            FROM
+            (
+                SELECT ME.ID, M.MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+                FROM TBL_MEMBER M JOIN TBL_MESSAGE ME
+                ON M.ID = ME.SEND_MEMBER_ID AND SEND_MEMBER_ID = #{memberId}
+                ORDER BY ME.ID DESC
+            )
+            <![CDATA[
+                WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+            ]]>
+        )
+    <![CDATA[
+        WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
+    ]]>
+    </select>
+
+    <!-- 받은 쪽지 총 개수 -->
+    <select id="selectCountOfReceiveMessage" resultType="_int">
+        SELECT COUNT(ID)
+        FROM TBL_MESSAGE
+        WHERE RECEIVE_MEMBER_ID = #{memberId}
+    </select>
+
+    <!-- 보낸 쪽지 총 개수 -->
+    <select id="selectCountOfSendMessage" resultType="_int">
+        SELECT COUNT(ID)
+        FROM TBL_MESSAGE
+        WHERE SEND_MEMBER_ID = #{memberId}
+    </select>
+
+    <!-- 쪽지 추가 -->
+    <insert id="insert">
+        INSERT INTO TBL_MESSAGE
+        (ID, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_CONTENT)
+        VALUES(SEQ_MESSAGE.NEXTVAL, #{sendMemberId}, #{receiveMemberId}, #{messageName}, #{messageContent})
+    </insert>
+
+    <!-- 이메일로 멤버 id 검색 -->
+    <select id="selectIdByEmail" resultType="long">
+        SELECT ID FROM TBL_MEMBER
+        WHERE MEMBER_EMAIL = #{memberEmail}
+    </select>
+
+    <!-- 받은 쪽지 상세보기 -->
+    <select id="selectReceive" resultType="messageDTO">
+        SELECT ME.ID, M.MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+        FROM TBL_MEMBER M JOIN TBL_MESSAGE ME
+        ON M.ID = ME.SEND_MEMBER_ID AND ME.ID = #{id}
+    </select>
+
+    <!-- 보낸 쪽지 상세보기 -->
+    <select id="selectSend" resultType="messageDTO">
+        SELECT ME.ID, M.MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
+        FROM TBL_MEMBER M JOIN TBL_MESSAGE ME
+        ON M.ID = ME.RECEIVE_MEMBER_ID AND ME.ID = #{id}
+    </select>
+
+    <!-- 쪽지 삭제 -->
+    <delete id="delete">
+        DELETE FROM TBL_MESSAGE
+        WHERE ID = #{id}
+    </delete>
+
+    <!-- 쪽지 읽음으로 표시 -->
+    <update id="update">
+        UPDATE TBL_MESSAGE
+        SET MESSAGE_VIEW = 1
+        WHERE ID = #{id}
+    </update>
+</mapper>
