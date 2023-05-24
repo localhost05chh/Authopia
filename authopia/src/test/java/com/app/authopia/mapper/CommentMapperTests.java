@@ -23,9 +23,9 @@ public class CommentMapperTests {
     @Test
     public void insertTest() {
         CommentVO commentVO = new CommentVO();
-        commentVO.setCommentContent("댓글 내용3");
+        commentVO.setCommentContent("댓글 내용1");
         commentVO.setMemberId(1L);
-        commentVO.setPostId(1L);
+        commentVO.setPostId(86L);
         commentMapper.insert(commentVO);
     }
 

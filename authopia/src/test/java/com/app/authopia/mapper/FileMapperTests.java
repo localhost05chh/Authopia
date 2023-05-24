@@ -23,12 +23,12 @@ public class FileMapperTests {
     @Test
     public void insertTest(){
         FileVO fileVO = new FileVO();
-        fileVO.setFileName("test-image.png");
+        fileVO.setFileName("신궁코강.png");
         fileVO.setFileSize(1234L);
         fileVO.setFileUuid(UUID.randomUUID().toString());
-        fileVO.setFilePath("2023/05/23");
+        fileVO.setFilePath("2023/05/24");
         fileVO.setFileType(FileType.REPRESENTATIVE.name());
-        fileVO.setPostId(73L);
+        fileVO.setPostId(1L);
         fileMapper.insertFile(fileVO);
     }
 

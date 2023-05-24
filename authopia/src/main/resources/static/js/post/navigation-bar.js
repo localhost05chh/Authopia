@@ -7,23 +7,6 @@ window.addEventListener("scroll", () => {
     }
 });
 
-//원본
-// $(".fAzCXd a").on("click", function() {
-//
-//     $(".fAzCXd a").removeClass("eWDpEZ").addClass("ehJwom");
-//     if ($(".eWDpEZ").is($(this))) {
-//         return
-//     }
-//     else {
-//         $(this).removeClass("ehJwom").addClass("eWDpEZ");
-//     }
-// });
-
-//진혁이가 만든거
-function searchParam(key) {
-    return new URLSearchParams(location.search).get(key);
-};
-
 $(document).ready(function () {
     let type = searchParam('type');
     let href = window.location.href
@@ -37,14 +20,19 @@ $(document).ready(function () {
             $("." + type).removeClass("ehJwom").addClass("eWDpEZ");
         }
     }
-})
 
-$(".fAzCXd a").on("click", function (e) {
-    e.preventDefault();
-    let type = this.classList[0];
-    if (type == "main") {
-        location.href = `/main`;
-    } else {
-        location.href = `/post/list?type=${type}`;
-    }
-});
+    //진혁이가 만든거
+    function searchParam(key) {
+        return new URLSearchParams(location.search).get(key);
+    };
+
+    $(".fAzCXd a").on("click", function (e) {
+        e.preventDefault();
+        let type = this.classList[0];
+        if (type == "main") {
+            location.href = `/main`;
+        } else {
+            location.href = `/post/list?type=${type}`;
+        }
+    });
+})

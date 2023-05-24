@@ -54,7 +54,6 @@ public class PostController{
     //      게시글 조회, 수정
     @GetMapping(value = {"detail", "modify"})
     public void read(@RequestParam(defaultValue = "")Long id, Model model){
-        System.out.println(id);
         model.addAttribute("post", postService.read(id).get());
     }
 

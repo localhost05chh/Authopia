@@ -37,10 +37,11 @@ public class PostServiceImpl implements PostService {
     @Transactional(rollbackFor = Exception.class)
     public void write(PostDTO postDTO){
         postDAO.save(postDTO);
-        postDTO.getPostFiles().forEach(file -> {
-            file.setPostId(postDTO.getId());
-            fileDAO.saveFile(file);
-        });
+        for(int i=0; i<postDTO.getPostFiles().size(); i++){
+            postDTO.getPostFiles().get(i).setPostId(postDTO.getId());
+            postDTO.getPostFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            fileDAO.saveFile(postDTO.getPostFiles().get(i));
+        }
     }
 
     //      게시글 조회
