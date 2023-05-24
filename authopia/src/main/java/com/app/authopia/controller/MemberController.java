@@ -4,7 +4,6 @@ import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,6 @@ import java.util.Properties;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/member/*")
-@Slf4j
 public class MemberController {
     private final MemberService memberService;
 
@@ -159,7 +157,6 @@ public class MemberController {
     @GetMapping("member-info")
     public String modifyMemberInfo(HttpSession session, Model model){
         Long memberId = (Long)session.getAttribute("id");
-        log.info("============={}" + memberId);
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         return "mypage/mypage-info";
     }
@@ -175,9 +172,16 @@ public class MemberController {
 
     // 회원 정보 수정 완료
     @PostMapping("info-modify")
-    public RedirectView modifyMemberInfo(MemberVO memberVO){
+    public RedirectView modifyMemberInfo(MemberVO memberVO, HttpSession session){
+        Long memberId = (Long)session.getAttribute("id");
+        memberService.getMemberInfo(memberId).get();
+        memberVO.setMemberName(memberVO.getMemberName());
+        memberVO.setMemberUrl(memberVO.getMemberUrl());
+        memberVO.setMemberCategory(memberVO.getMemberCategory());
+//        memberVO.setMemberBriefIntroduce(memberVO.getMemberBriefIntroduce());
+//        memberVO.setMemberIntroduce(memberVO.getMemberIntroduce());
         memberService.modifyMemberInfo(memberVO);
-        return new RedirectView("/member/member-info");
+        return new RedirectView("/mypage/mypage-info");
     }
 
 

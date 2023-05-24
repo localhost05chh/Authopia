@@ -116,7 +116,6 @@
             <!-- 내용 -->
                 <div class="basis-0 grow shrink-0 overflow-x-auto">
                     <form th:action="@{/member/info-modify}" method="post" th:object="${memberVO}">
-                        <input type="hidden" name="id" th:value="${session.id}">
                     <div class="grid grid-cols-12 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto pb-[64px]">
                         <!-- 제목 -->
                         <div class="pt-[41px] pb-[26px] border-b-[1px] border_black_opacity col-span-full">
@@ -203,42 +202,42 @@
                         </div>
                         <hr class="w-full col-span-full border_secondary border-t-[1px]">
                         <!-- 검색 태그 -->
-<!--                        <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">-->
-<!--                            <div>-->
-<!--                                <div class="mb-[7px] flex items-center">-->
-<!--                                    <strong class="font_title_bold_md content_primary mr-[6px]">검색 태그</strong>-->
-<!--                                </div>-->
-<!--                                <span class="font_body_regular_md content_secondary">태그는 2~10자로 20개까지 생성 가능합니다.</span>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">-->
-<!--                            <div>-->
-<!--                                <div class="mb-[16px] flex gap-x-[12px]">-->
-<!--                                    <div class="w-full">-->
-<!--                                        <div>-->
-<!--                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">-->
-<!--                                                <input id="input-search" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="예시) 웹툰, 에세이, 저널리즘">-->
-<!--                                            </label>-->
-<!--                                            <div id="warn-search" class="flex mt-[8px] font_label_regular_sm content_quaternary">-->
-<!--                                                <div class="mr-auto flex items-center">2자 이상 입력해주세요.</div>-->
-<!--                                            </div>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="w-[88px]">-->
-<!--                                        <button id="button-search" type="button" disabled class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_accent hover:surface_accent_active active:surface_accent_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled">등록</button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                                <ul class="flex flex-wrap">-->
-<!--                                    <li class="h-[48px] border border_black_opacity rounded-[8px] flex items-center pl-[20px] pr-[12px] mb-[16px] mr-[12px]">-->
-<!--                                        <span class="font_body_regular_md content_primary mr-[12px]">태그 예시</span>-->
-<!--                                        <button type="button">-->
-<!--                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] content_tertiary"><path d="M5.707 5.707a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 1 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414-1.414l-4.95-4.95 4.95-4.95a1 1 0 1 0-1.414-1.414l-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0Z"></path></svg>-->
-<!--                                        </button>-->
-<!--                                    </li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <hr class="w-full col-span-full border_secondary border-t-[1px]">-->
+                        <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
+                            <div>
+                                <div class="mb-[7px] flex items-center">
+                                    <strong class="font_title_bold_md content_primary mr-[6px]">검색 태그</strong>
+                                </div>
+                                <span class="font_body_regular_md content_secondary">태그는 2~10자로 20개까지 생성 가능합니다.</span>
+                            </div>
+                        </div>
+                        <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
+                            <div>
+                                <div class="mb-[16px] flex gap-x-[12px]">
+                                    <div class="w-full">
+                                        <div>
+                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                                <input id="input-search" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="예시) 웹툰, 에세이, 저널리즘">
+                                            </label>
+                                            <div id="warn-search" class="flex mt-[8px] font_label_regular_sm content_quaternary">
+                                                <div class="mr-auto flex items-center">2자 이상 입력해주세요.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="w-[88px]">
+                                        <button id="button-search" type="button" disabled class="relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[8px] content_primary_inverse surface_accent hover:surface_accent_active active:surface_accent_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled">등록</button>
+                                    </div>
+                                </div>
+                                <ul class="flex flex-wrap">
+                                    <li class="h-[48px] border border_black_opacity rounded-[8px] flex items-center pl-[20px] pr-[12px] mb-[16px] mr-[12px]">
+                                        <span class="font_body_regular_md content_primary mr-[12px]">태그 예시</span>
+                                        <button type="button">
+                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] content_tertiary"><path d="M5.707 5.707a1 1 0 0 0 0 1.414l4.95 4.95-4.95 4.95a1 1 0 1 0 1.414 1.414l4.95-4.95 4.95 4.95a1 1 0 0 0 1.414-1.414l-4.95-4.95 4.95-4.95a1 1 0 1 0-1.414-1.414l-4.95 4.95-4.95-4.95a1 1 0 0 0-1.414 0Z"></path></svg>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <hr class="w-full col-span-full border_secondary border-t-[1px]">
                         <!-- 이용자 이름 -->
                         <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
                             <div>
