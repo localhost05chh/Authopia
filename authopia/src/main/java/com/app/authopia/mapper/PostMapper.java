@@ -13,7 +13,7 @@ import java.util.Optional;
 @Mapper
 public interface PostMapper {
 //      게시글 목록
-    public List<PostDTO> selectAll(PostType postType);
+    public List<PostDTO> selectAll(Pagination pagination,PostType postType);
 
 //      게시글 추가
     public void insert(PostDTO postDTO);
@@ -32,4 +32,10 @@ public interface PostMapper {
 
     // 메인페이지에서 최신 인기 포스트 조회
     public List<PostDTO> selectMain(@Param("pagination") Pagination pagination);
+
+    //    게시글 총 개수
+    public int selectCountOfPost(PostType postType);
+
+    //      게시글 조회수 증가
+    public void updateViewCount(Long id);
 }

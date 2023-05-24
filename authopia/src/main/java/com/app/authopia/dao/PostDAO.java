@@ -18,8 +18,8 @@ public class PostDAO{
     private final PostMapper postMapper;
 
     //      게시글 목록
-    public List<PostDTO> findAll(PostType postType){
-        return postMapper.selectAll(postType);
+    public List<PostDTO> findAll(Pagination pagination , PostType postType){
+        return postMapper.selectAll(pagination, postType);
     }
     //      게시글 추가
     public void save(PostDTO postDTO){
@@ -40,6 +40,14 @@ public class PostDAO{
     //      게시글 복구
     public void restore(Long id){
         postMapper.restore(id);
+    }
+    //    게시글 총 개수
+    public int findCountOfPost(PostType postType){
+        return postMapper.selectCountOfPost(postType);
+    }
+    //      게시글 조회수 증가
+    public void setViewCount(Long id){
+        postMapper.updateViewCount(id);
     }
 
     // 메인페이지에서 최신 인기 포스트 조회
