@@ -25,11 +25,10 @@ public class PostServiceImpl implements PostService {
     //      게시글 목록
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<PostDTO> getList(PostType postType){
-        final List<PostDTO> datas = postDAO.findAll(postType);
-//        datas.forEach(data -> data.setMemberFiles(fileDAO.findProfileImage(data.getMemberId()).get()));
-        datas.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
-        return datas;
+    public List<PostDTO> getList(Pagination pagination, PostType postType){
+        final List<PostDTO> posts = postDAO.findAll(pagination, postType);
+        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        return posts;
     }
 
     //      게시글 추가
@@ -37,10 +36,11 @@ public class PostServiceImpl implements PostService {
     @Transactional(rollbackFor = Exception.class)
     public void write(PostDTO postDTO){
         postDAO.save(postDTO);
-        postDTO.getPostFiles().forEach(file -> {
-            file.setPostId(postDTO.getId());
-            fileDAO.saveFile(file);
-        });
+        for(int i=0; i<postDTO.getPostFiles().size(); i++){
+            postDTO.getPostFiles().get(i).setPostId(postDTO.getId());
+            postDTO.getPostFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            fileDAO.saveFile(postDTO.getPostFiles().get(i));
+        }
     }
 
     //      게시글 조회
@@ -80,6 +80,18 @@ public class PostServiceImpl implements PostService {
     @Override
     public void restore(Long id){
 
+    }
+
+    //    게시글 전체 개수 조회
+    @Override
+    public int getTotal(PostType postType) {
+        return postDAO.findCountOfPost(postType);
+    }
+
+    //      게시글 조회수 증가
+    @Override
+    public void increaseViewCount(Long id){
+        postDAO.setViewCount(id);
     }
 
     // 메인페이지에서 최신 인기 포스트 조회

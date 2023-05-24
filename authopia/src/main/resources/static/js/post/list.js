@@ -17,6 +17,11 @@ function searchParam(key) {
 
 $(document).ready(function () {
     let order = searchParam('order');
+    let keyword = searchParam('keyword');
+
+    if(keyword != ""){
+        $("#input_search").val(keyword);
+    }
     if (order == "trand") {
         $(".new label a").removeClass("font_label_bold_xl content_primary").addClass("font_label_regular_xl content_quaternary");
         $(".trand label a").removeClass("font_label_regular_xl content_quaternary").addClass("font_label_bold_xl content_primary");

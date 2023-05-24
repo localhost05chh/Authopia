@@ -8,7 +8,7 @@ function showRecommendPost(post, section){
             <div>
                 <div class="lg:pt-[28px] lg:border-t lg:border_primary"></div>
                 <h1 class="hidden">추천포스트 </h1>
-                <button type="button" class="text-left w-full lg:flex lg:flex-row">
+                <button type="button" class="text-left w-full lg:flex lg:flex-row" onclick="location.href='/post/detail?id=${post.id}'">
                     <div class="relative rounded-[16px] lg:w-1/2 lg:mt-[24px]">
                         <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
                             <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 63.75% 0px 0px;"></span>

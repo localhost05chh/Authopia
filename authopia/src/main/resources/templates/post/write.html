@@ -19,14 +19,14 @@
             <header class="h-[68px] border-b border_primary flex items-center surface_primary">
                 <div class="min-w-desktop-grid mx-auto flex items-center justify-between">
                     <div class="flex items-center content_primary">
-                        <button
+                        <a href="list"
                                 class="surface_tertiary w-[32px] h-[32px] mr-[16px] rounded-full flex items-center justify-center">
                             <svg viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" class="w-[16px] h-[16px] ">
                                 <path
                                         d="M13.833 8a.667.667 0 0 0-.666-.667H5.72L8.973 4.08a.667.667 0 1 0-.943-.943L3.167 8l4.863 4.863a.665.665 0 0 0 .94-.94L5.72 8.667h7.447A.667.667 0 0 0 13.833 8Z">
                                 </path>
                             </svg>
-                        </button>
+                        </a>
                         <h1 class="font_title_bold_lg">포스트 작성하기</h1>
                     </div>
                     <div class="flex items-center">
@@ -223,6 +223,7 @@
                                 </li>
                             </ul>
                         </div>
+                        <!-- 사진 첨부 설명 -->
                         <div
                                 class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
                             <div class="flex items-center">
@@ -240,15 +241,19 @@
                                     </svg>
                                 </button>
                             </div>
-                            <!-- 파일 첨부 공간 -->
-                            <button type="button"
-                                    class="button relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
-                                업로드
-                            </button>
                         </div>
+                        <!--사진 첨부 공간 -->
                         <div class="px-[20px]">
-                            <div class="h-[88px] flex justify-center items-center"><span
-                                    class="content_disabled font_body_regular_md">첨부된 파일이 없습니다.</span></div>
+                            <div class="h-[88px] flex justify-center items-center">
+                                <label for="upload1" class="attach" style="width: 50%; height: 100%;">
+                                    <img src="" class="thumbnail">
+                                </label>
+                                <label for="upload2" class="attach" style="width: 50%; height: 100%;">
+                                    <img src="" class="thumbnail">
+                                </label>
+                            </div>
+                            <input type="file" id="upload1" class="upload" style="display: none;">
+                            <input type="file" id="upload2" class="upload" style="display: none;">
                         </div>
                     </section>
                 </section>
