@@ -85,7 +85,7 @@ public class MemberDAO {
 
     // 관리자페이지에서 회원 목록 조회
     public List<MemberVO> findMember(){
-        return memberMapper.selectAll();
+        return memberMapper.selectMember();
     }
 
 }

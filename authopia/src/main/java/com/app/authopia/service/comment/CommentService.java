@@ -2,12 +2,13 @@ package com.app.authopia.service.comment;
 
 import com.app.authopia.domain.dto.CommentDTO;
 import com.app.authopia.domain.vo.CommentVO;
+import com.app.authopia.domain.dto.Pagination;
 
 import java.util.List;
 
 public interface CommentService {
     //      댓글 목록
-    public List<CommentDTO> getList(Long id);
+    public List<CommentDTO> getList(Long id, Pagination pagination);
 
     //      댓글 작성
     public void write(CommentVO commentVO);

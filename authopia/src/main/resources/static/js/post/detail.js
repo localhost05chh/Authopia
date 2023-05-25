@@ -4,6 +4,7 @@ const $cancel = $(".cancle")
 const $changecolor = $(".changcolor");
 const $textinput = $("#text-count");
 const $target = $("#target-button");
+let page = 1;
 
 $inputtext.show();
 $input.hide();
@@ -67,7 +68,7 @@ let commentService = (function () {
 
     function getList(callback) {
         $.ajax({
-            url: `/commentes/list/${postId}`,
+            url: `/commentes/list/${postId}/${page}`,
             success: function (commentes) {
                 if (callback) {
                     callback(commentes);
@@ -81,6 +82,15 @@ let commentService = (function () {
 })();
 
 commentService.getList(showList);
+
+/* 무한 스크롤 */
+$(window).scroll(function(){
+    //if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+    if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        page++;
+        commentService.getList(showList)
+    }
+});
 
 function showList(commentes) {
     let text = ``;
