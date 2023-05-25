@@ -62,9 +62,12 @@
 
     <!-- 쪽지 추가 -->
     <insert id="insert">
+        <selectKey keyProperty="id" order="BEFORE" resultType="long">
+            SELECT SEQ_MESSAGE.NEXTVAL FROM DUAL
+        </selectKey>
         INSERT INTO TBL_MESSAGE
         (ID, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_CONTENT)
-        VALUES(SEQ_MESSAGE.NEXTVAL, #{sendMemberId}, #{receiveMemberId}, #{messageName}, #{messageContent})
+        VALUES(#{id}, #{sendMemberId}, #{receiveMemberId}, #{messageName}, #{messageContent})
     </insert>
 
     <!-- 이메일로 멤버 id 검색 -->

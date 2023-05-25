@@ -61,5 +61,5 @@ $("button.ok-button").on("click", function(){
         `
     });
     $(writeForm).append(text);
-    // $(writeForm).submit();
+    $(writeForm).submit();
 });

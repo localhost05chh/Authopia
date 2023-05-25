@@ -52,10 +52,11 @@ public class MessageServiceImpl implements MessageService {
     @Transactional(rollbackFor = Exception.class)
     public void write(MessageDTO messageDTO) {
         messageDAO.save(messageDTO);
-        log.info(messageDTO.getMessageFiles().toString());
         for(int i=0; i<messageDTO.getMessageFiles().size(); i++){
+            log.info(String.valueOf(messageDTO.getId()));
             messageDTO.getMessageFiles().get(i).setMessageId(messageDTO.getId());
             messageDTO.getMessageFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            log.info(messageDTO.getMessageFiles().toString());
             fileDAO.saveMessageFile(messageDTO.getMessageFiles().get(i));
         }
     }
