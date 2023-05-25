@@ -76,6 +76,9 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
+    public void modifyMemberPage(MemberVO memberVO) { memberDAO.setMemberPage(memberVO); }
+
+    @Override
     public void deleteMember(Long id) {
         memberDAO.cancelMember(id);
     }
