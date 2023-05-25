@@ -124,7 +124,13 @@ function showMessage(messageList){
                     </button>
                     <div class="relative h-[36px] w-[36px] ml-[40px]">
                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                <img src="/image/python_icon.png" alt="">
+                    `
+            message.messageFiles.forEach(file => {
+                if (file.fileType == "REPRESENTATIVE") {
+                    text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" alt="">`;
+                }
+            })
+            text += `
                             </span>
                     </div>
                     <div class="ml-[100px] flex items-center gap-x-[40px]">

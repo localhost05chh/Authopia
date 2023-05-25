@@ -61,6 +61,7 @@ public class MessageServiceImpl implements MessageService {
         final Optional<MessageDTO> foundMessage = messageDAO.findReceiveById(id);
         if(foundMessage.isPresent()){
             foundMessage.get().setMessageFiles(fileDAO.findAllMessageFile(foundMessage.get().getId()));
+            foundMessage.get().setMemberProfileImage(fileDAO.findProfileImage(foundMessage.get().getSendMemberId()).isPresent() ? fileDAO.findProfileImage(foundMessage.get().getSendMemberId()).get() : null);
         }
         return foundMessage;
     }
@@ -71,6 +72,7 @@ public class MessageServiceImpl implements MessageService {
         final Optional<MessageDTO> foundMessage = messageDAO.findSendById(id);
         if(foundMessage.isPresent()){
             foundMessage.get().setMessageFiles(fileDAO.findAllMessageFile(foundMessage.get().getId()));
+            foundMessage.get().setMemberProfileImage(fileDAO.findProfileImage(foundMessage.get().getReceiveMemberId()).isPresent() ? fileDAO.findProfileImage(foundMessage.get().getReceiveMemberId()).get() : null);
         }
         return foundMessage;
     }
