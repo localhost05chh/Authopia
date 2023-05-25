@@ -73,6 +73,11 @@ public class MemberDAO {
         memberMapper.updateMemberInfo(memberVO);
     };
 
+    // 회원 페이지 수정
+    public void setMemberPage(MemberVO memberVO){
+        memberMapper.updateMemberPage(memberVO);
+    };
+
     // 회원 탈퇴
     public void cancelMember(Long id){
         memberMapper.updateMemberIsRemaining(id);

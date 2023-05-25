@@ -116,6 +116,8 @@
             </nav>
             <!-- 내용 -->
             <div class="basis-0 grow shrink-0 overflow-x-auto">
+                <form th:action="@{/member/page-modify}" method="post" name="writeForm" th:object="${memberVO}">
+                    <input type="hidden" name="id" th:value="${session.id}">
                 <div class="grid grid-cols-12 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto pb-[64px]">
                     <!-- 제목 -->
                     <div class="pt-[41px] pb-[26px] border-b-[1px] border_black_opacity col-span-full">
@@ -129,7 +131,7 @@
                                     </div>
                                 </button>
                                 <div class="w-[88px] ml-[12px]">
-                                    <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">수정</button>
+                                    <button type="submit" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">수정</button>
                                 </div>
                             </div>
                         </div>
@@ -143,100 +145,100 @@
                                 </picture>
                                 <div class="flex justify-end">
                                     <div class="mt-[32px] xl:mt-[24px] w-[88px]">
-                                        <button id="page-sample-OK" type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">확인</button>
+                                        <button id="page-sample-OK" type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disbuttond:surface_disabled px-[16px] w-full false disabled:content_disabled">확인</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <!-- 프로필 사진 -->
-                    <div class="col-span-3 pt-[48px] xl:pt-[56px] pb-[20px] xl:pb-[40px]">
-                        <div>
-                            <div class="mb-[7px] flex items-center">
-                                <strong class="font_title_bold_md content_primary mr-[6px]">프로필 사진</strong>
+                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                        <div class="col-span-3 pt-[48px] xl:pt-[56px] pb-[20px] xl:pb-[40px]">
+                            <div>
+                                <div class="mb-[7px] flex items-center">
+                                    <strong class="font_title_bold_md content_primary mr-[6px]">프로필 사진</strong>
+                                </div>
+                                <span class="font_body_regular_md content_secondary">크리에이터를 대표하는 프로필 사진을 등록 해주세요.</span>
                             </div>
-                            <span class="font_body_regular_md content_secondary">크리에이터를 대표하는 프로필 사진을 등록 해주세요.</span>
                         </div>
-                    </div>
-                    <div class="col-start-6 col-span-7 xl:pt-[56px] pb-[40px]">
-                        <div class="flex">
-                            <div class="relative min-w-[96px] h-[96px] mr-[32px] flex items-center justify-center">
+                        <div class="col-start-6 col-span-7 xl:pt-[56px] pb-[40px]">
+                            <div class="flex">
+                                <div class="relative min-w-[96px] h-[96px] mr-[32px] flex items-center justify-center">
                                     <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                        <img id="profile-preview" src="/image/profile_icon.png" alt="" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                        <img id="profile-preview" class="thumbnail" src="/image/profile_icon.png" alt="" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                                     </span>
-                            </div>
-                            <div class="flex flex-col">
-                                <div class="mb-[14px]">
-                                    <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
-                                        이미지 업로드
-                                        <input id="profile" type="file" accept="image/png,image/jpeg,image/jpg" class="opacity-0 absolute block w-full h-full top-0 cursor-pointer">
-                                    </button>
                                 </div>
-                                <p class="font_body_regular_md content_quaternary">
-                                    <span>파일 형식은 jpg 또는 png로,</span>
-                                    <br>
-                                    <span>사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
-                    <!-- 커버 사진 -->
-                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
-                        <div>
-                            <div class="mb-[7px] flex items-center">
-                                <strong class="font_title_bold_md content_primary mr-[6px]">커버 사진</strong>
-                            </div>
-                            <span class="font_body_regular_md content_secondary">페이지의 커버 사진을 등록 해주세요.</span>
-                        </div>
-                    </div>
-                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
-                        <div class="p-[24px] border border_primary rounded-[8px] surface_primary">
-                            <div id="no-cover" class="relative h-[196px] mb-[16px] border border-dashed border_primary surface_secondary flex items-center justify-center">
-                                <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[48px] h-[48px] border-2 rounded-[8px] border-accent_100"><path d="M27.782 19.785c1.154-2.172 4.29-2.108 5.354.11l6.68 13.917c1.275 2.655-.66 5.731-3.606 5.731H9.882c-1.506 0-2.472-1.6-1.77-2.932l4.998-9.486a3 3 0 0 1 4.765-.733l4.192 4.151 5.715-10.758ZM19.067 15.543a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="#C2B8FF"></path></svg>
-                            </div>
-                            <img class="relative h-[196px] mb-[16px] border border-dashed border_primary surface_secondary flex items-center justify-center" id="cover-preview"  src="" alt="" style="width: 100%; object-fit: cover">
-                            <div class="mb-[8px]">
-                                <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
-                                    이미지 업로드
-                                    <input id="cover" type="file" accept="image/png,image/jpeg,image/jpg" class="opacity-0 absolute block w-full h-full top-0 cursor-pointer">
-                                </button>
-                            </div>
-                            <p class="font_body_regular_md content_quaternary">
-                                <span>파일 형식은 jpg 또는 png로,</span>
-                                <br>
-                                <span>사이즈는 가로 800px, 세로 296px로 올려주세요.</span>
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
-                    <!-- 한줄 소개 -->
-                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
-                        <div>
-                            <div class="mb-[7px] flex items-center">
-                                <strong class="font_title_bold_md content_primary mr-[6px]">한 줄 소개</strong>
-                                <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="content_negative w-[8px] h-[8px]">
-                                    <circle cx="4" cy="4" r="4"></circle>
-                                </svg>
-                            </div>
-                            <span class="font_body_regular_md content_secondary">창작 분야 등의 간략한 소개글을 입력해주세요.</span>
-                        </div>
-                    </div>
-                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
-                        <div>
-                            <label id="label-intro" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                <input id="input-intro" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="한 줄 소개를 입력해주세요." th:value="${member.memberBriefIntroduce}">
-                            </label>
-                            <div class="flex mt-[8px] font_label_regular_sm content_quaternary">
-                                <div id="warn-intro" class="mr-auto flex items-center content_negative">
-                                    <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] mr-[4px]"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 22.05c5.523.023 10.019-4.436 10.042-9.959.023-5.523-4.436-10.018-9.959-10.041C6.568 2.027 2.073 6.485 2.05 12.008c-.023 5.523 4.435 10.019 9.958 10.042Zm1.527-6.494a1.5 1.5 0 1 1-3-.013 1.5 1.5 0 0 1 3 .013Zm-1.181-2.505a.5.5 0 0 0 .498-.436l.646-4.997a.5.5 0 0 0-.494-.564l-1.867-.008a.5.5 0 0 0-.499.56l.604 5.002a.5.5 0 0 0 .495.44l.617.003Z"></path></svg>
-                                    <span>필수 항목입니다.</span>
+                                <div class="flex flex-col">
+                                    <div class="mb-[14px]">
+                                        <button type="button" id="ablebutton" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
+                                            이미지 업로드
+                                            <input id="profile" type="file" accept="image/png,image/jpeg,image/jpg" class="upload opacity-0 absolute block w-full h-full top-0 cursor-pointer">
+                                        </button>
+                                    </div>
+                                    <p class="font_body_regular_md content_quaternary">
+                                        <span>파일 형식은 jpg 또는 png로,</span>
+                                        <br>
+                                        <span>사이즈는 가로 200px, 세로 200px 이상으로 올려주세요.</span>
+                                    </p>
                                 </div>
-                                <div id="letter-count" class="ml-auto">0/50</div>
                             </div>
                         </div>
-                    </div>
-                    <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                        <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                        <!-- 커버 사진 -->
+                        <!--                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">-->
+                        <!--                        <div>-->
+                        <!--                            <div class="mb-[7px] flex items-center">-->
+                        <!--                                <strong class="font_title_bold_md content_primary mr-[6px]">커버 사진</strong>-->
+                        <!--                            </div>-->
+                        <!--                            <span class="font_body_regular_md content_secondary">페이지의 커버 사진을 등록 해주세요.</span>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <!--                    <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">-->
+                        <!--                        <div class="p-[24px] border border_primary rounded-[8px] surface_primary">-->
+                        <!--                            <div id="no-cover" class="relative h-[196px] mb-[16px] border border-dashed border_primary surface_secondary flex items-center justify-center">-->
+                        <!--                                <svg viewBox="0 0 49 49" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-[48px] h-[48px] border-2 rounded-[8px] border-accent_100"><path d="M27.782 19.785c1.154-2.172 4.29-2.108 5.354.11l6.68 13.917c1.275 2.655-.66 5.731-3.606 5.731H9.882c-1.506 0-2.472-1.6-1.77-2.932l4.998-9.486a3 3 0 0 1 4.765-.733l4.192 4.151 5.715-10.758ZM19.067 15.543a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="#C2B8FF"></path></svg>-->
+                        <!--                            </div>-->
+                        <!--                            <img class="relative h-[196px] mb-[16px] border border-dashed border_primary surface_secondary flex items-center justify-center" id="cover-preview"  src="" alt="" style="width: 100%; object-fit: cover">-->
+                        <!--                            <div class="mb-[8px]">-->
+                        <!--                                <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">-->
+                        <!--                                    이미지 업로드-->
+                        <!--                                    <input id="cover" type="file" accept="image/png,image/jpeg,image/jpg" class="upload opacity-0 absolute block w-full h-full top-0 cursor-pointer">-->
+                        <!--                                </button>-->
+                        <!--                            </div>-->
+                        <!--                            <p class="font_body_regular_md content_quaternary">-->
+                        <!--                                <span>파일 형식은 jpg 또는 png로,</span>-->
+                        <!--                                <br>-->
+                        <!--                                <span>사이즈는 가로 800px, 세로 296px로 올려주세요.</span>-->
+                        <!--                            </p>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+                        <hr class="w-full col-span-full border_secondary border-t-[1px]">
+                        <!-- 한줄 소개 -->
+                        <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">
+                            <div>
+                                <div class="mb-[7px] flex items-center">
+                                    <strong class="font_title_bold_md content_primary mr-[6px]">한 줄 소개</strong>
+                                    <svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg" class="content_negative w-[8px] h-[8px]">
+                                        <circle cx="4" cy="4" r="4"></circle>
+                                    </svg>
+                                </div>
+                                <span class="font_body_regular_md content_secondary">창작 분야 등의 간략한 소개글을 입력해주세요.</span>
+                            </div>
+                        </div>
+                        <div class="col-start-6 col-span-7 xl:pt-[40px] pb-[40px]">
+                            <div>
+                                <label id="label-intro" class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                    <input id="input-intro" type="text" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="한 줄 소개를 입력해주세요." th:field="${member.memberBriefIntroduce}">
+                                </label>
+                                <div class="flex mt-[8px] font_label_regular_sm content_quaternary">
+                                    <div id="warn-intro" class="mr-auto flex items-center content_negative">
+                                        <svg viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] mr-[4px]"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.008 22.05c5.523.023 10.019-4.436 10.042-9.959.023-5.523-4.436-10.018-9.959-10.041C6.568 2.027 2.073 6.485 2.05 12.008c-.023 5.523 4.435 10.019 9.958 10.042Zm1.527-6.494a1.5 1.5 0 1 1-3-.013 1.5 1.5 0 0 1 3 .013Zm-1.181-2.505a.5.5 0 0 0 .498-.436l.646-4.997a.5.5 0 0 0-.494-.564l-1.867-.008a.5.5 0 0 0-.499.56l.604 5.002a.5.5 0 0 0 .495.44l.617.003Z"></path></svg>
+                                        <span>필수 항목입니다.</span>
+                                    </div>
+                                    <div id="letter-count" class="ml-auto">0/50</div>
+                                </div>
+                            </div>
+                        </div>
                     <!-- 크리에이터 소개 -->
 <!--                    <div class="col-span-3 pt-[40px] pb-[20px] xl:pb-[40px]">-->
 <!--                        <div>-->
@@ -407,6 +409,7 @@
                         </div>
                     </div> -->
                 </div>
+                </form>
             </div>
         </div>
     </div>

@@ -161,8 +161,7 @@ public class MemberController {
         return "mypage/mypage-info";
     }
 
-
-    // 회원 페이지 수정
+    // 회원 페이지 조회/수정
     @GetMapping("member-page")
     public String modifyMemberPage(HttpSession session, Model model){
         Long memberId = (Long)session.getAttribute("id");
@@ -177,6 +176,12 @@ public class MemberController {
         return new RedirectView("/member/member-info");
     }
 
+    // 회원 페이지 수정 완료
+    @PostMapping("page-modify")
+    public RedirectView modifyMemberPage(MemberVO memberVO){
+        memberService.modifyMemberPage(memberVO);
+        return new RedirectView("/member/member-page");
+    }
 
     // 회원 탈퇴
     @GetMapping("delete-member")
