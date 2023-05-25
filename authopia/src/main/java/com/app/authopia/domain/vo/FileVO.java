@@ -11,6 +11,7 @@ public class FileVO {
     private Long id;
     private Long memberId;
     private Long postId;
+    private Long messageId;
     private String fileType;
     private String filePath;
     private String fileUuid;
