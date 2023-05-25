@@ -1,3 +1,5 @@
+let page = 1;
+
 //작성시간 함수
 function elapsedTime(date) {
     const start = new Date(date);
@@ -24,8 +26,37 @@ function elapsedTime(date) {
 }
 
 
+//ajax로 가져오기
+let postService =  (function () {
+    function getList(callback) {
+        $.ajax({
+            url: `/post/list/${page}`,
+            type: 'post',
+            success: function (posts) {
+                if(callback){
+                    callback(posts);
+                }
+            }
+        })
+    }
+
+    return {getList: getList};
+})();
+
+/*처음한번 뿌리기*/
+postService.getList(showList);
+
+/*무한슬라이드*/
+$(window).scroll(function(){
+    if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        page++;
+        postService.getList(showList)
+    }
+});
+
+
 //게시판 li태그 뿌리기
-$(document).ready(function () {
+function showList(posts) {
     const $ul = $("#content-wrap");
     let text = "";
     posts.forEach(post => {
@@ -86,5 +117,5 @@ $(document).ready(function () {
         `
     });
 
-    $ul.html(text);
-});
+    $ul.append(text);
+};
