@@ -97,9 +97,19 @@ public class PostServiceImpl implements PostService {
     // 메인페이지에서 최신 인기 포스트 조회
     @Override
     public List<PostDTO> getListMain(Pagination pagination) {
+
         final List<PostDTO> datas = postDAO.findPostMain(pagination);
         datas.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
         datas.forEach(data -> data.setMemberProfileImage(fileDAO.findProfileImage(data.getMemberId()).isPresent() ? fileDAO.findProfileImage(data.getMemberId()).get() : null));
         return datas;
     }
+
+
+
+    // 관리자페이지에서 조회
+    @Override
+    public List<PostDTO> getListManager(Pagination pagination) {
+        return postDAO.findPostManager(pagination);
+    }
+
 }

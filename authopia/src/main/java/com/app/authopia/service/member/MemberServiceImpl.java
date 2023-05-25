@@ -79,4 +79,9 @@ public class MemberServiceImpl implements MemberService {
     public void deleteMember(Long id) {
         memberDAO.cancelMember(id);
     }
+
+    @Override
+    public List<MemberVO> getMember() {
+        return memberDAO.findMember();
+    }
 }
