@@ -1472,6 +1472,10 @@ img,video {
     height: 29px
 }
 
+.h-\[100px\] {
+    height: 100px
+}
+
 .h-\[80vh\] {
     height: 80vh
 }

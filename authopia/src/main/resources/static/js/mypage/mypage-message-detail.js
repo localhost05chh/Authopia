@@ -6,7 +6,7 @@ $(document).ready(function(){
                 <h3 class="font_headline_bold_lg content_primary">${message.messageName}</h3>
                 <div class="flex">
                     <div class="w-[88px]">
-                        <button onclick="location.href='/message/list'" type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[16px] w-full false disabled:content_disabled">목록 보기</button>
+                        <button onclick="history.back()" type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[16px] w-full false disabled:content_disabled">목록 보기</button>
                     </div>
                     <div class="w-[88px] ml-[12px]">
                         <button onclick="location.href='/message/write'" type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">답장</button>

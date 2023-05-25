@@ -80,12 +80,14 @@ public class MessageController {
     }
 
     @GetMapping("write")
-    public String goToWriteForm(){
+    public String goToWriteForm(MessageDTO messageDTO){
         return "mypage/mypage-message-write";
     }
 
     @PostMapping("write")
-    public RedirectView write(MessageDTO messageDTO){
+    public RedirectView write(MessageDTO messageDTO, HttpSession session, String memberEmail){
+        messageDTO.setSendMemberId((Long)session.getAttribute("id"));
+        messageDTO.setReceiveMemberId(messageService.checkIdByEmail(memberEmail));
         messageService.write(messageDTO);
         return new RedirectView("/message/list?type=send");
     }

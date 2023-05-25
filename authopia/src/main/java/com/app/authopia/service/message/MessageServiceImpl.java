@@ -4,7 +4,9 @@ import com.app.authopia.dao.FileDAO;
 import com.app.authopia.dao.MessageDAO;
 import com.app.authopia.domain.dto.MessageDTO;
 import com.app.authopia.domain.dto.PaginationMessage;
+import com.app.authopia.domain.type.FileType;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +15,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class MessageServiceImpl implements MessageService {
     private final MessageDAO messageDAO;
     private final FileDAO fileDAO;
@@ -46,8 +49,15 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public void write(MessageDTO messageDTO) {
         messageDAO.save(messageDTO);
+        log.info(messageDTO.getMessageFiles().toString());
+        for(int i=0; i<messageDTO.getMessageFiles().size(); i++){
+            messageDTO.getMessageFiles().get(i).setMessageId(messageDTO.getId());
+            messageDTO.getMessageFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            fileDAO.saveMessageFile(messageDTO.getMessageFiles().get(i));
+        }
     }
 
     @Override
