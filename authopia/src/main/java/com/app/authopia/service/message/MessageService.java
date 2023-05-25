@@ -27,10 +27,10 @@ public interface MessageService {
     public Long checkIdByEmail(String memberEmail);
 
     // 받은 쪽지 상세보기
-    public Optional<PostDTO> getReceive(Long id);
+    public Optional<MessageDTO> getReceive(Long id);
 
     // 보낸 쪽지 상세보기
-    public Optional<PostDTO> getSend(Long id);
+    public Optional<MessageDTO> getSend(Long id);
 
     // 쪽지 삭제
     public void remove(Long id);

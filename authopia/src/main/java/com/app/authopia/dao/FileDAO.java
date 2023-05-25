@@ -33,4 +33,19 @@ public class FileDAO {
     public Optional<FileVO> findProfileImage(Long memberId){
         return fileMapper.selectProfileImage(memberId);
     }
+
+    // 쪽지 파일 추가
+    public void saveMessageFile(FileVO fileVO){
+        fileMapper.insertMessageFile(fileVO);
+    }
+
+    // 쪽지 파일 조회
+    public List<FileVO> findAllMessageFile(Long messageId){
+        return fileMapper.selectAllMessageFile(messageId);
+    }
+
+    // 쪽지 파일 전체 삭제
+    public void deleteAllMessageFile(Long messageId){
+        fileMapper.deleteAllMessageFile(messageId);
+    }
 }

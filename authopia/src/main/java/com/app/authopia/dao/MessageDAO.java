@@ -46,12 +46,12 @@ public class MessageDAO {
     }
 
     // 받은 쪽지 상세보기
-    public Optional<PostDTO> findReceiveById(Long id){
+    public Optional<MessageDTO> findReceiveById(Long id){
         return messageMapper.selectReceive(id);
     }
 
     // 보낸 쪽지 상세보기
-    public Optional<PostDTO> findSendById(Long id){
+    public Optional<MessageDTO> findSendById(Long id){
         return messageMapper.selectSend(id);
     }
 

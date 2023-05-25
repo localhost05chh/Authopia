@@ -22,4 +22,13 @@ public interface FileMapper {
 
     // 프로필 사진 조회
     public Optional<FileVO> selectProfileImage(Long memberId);
+
+    // 쪽지 파일 추가
+    public void insertMessageFile(FileVO fileVO);
+
+    // 쪽지 파일 조회
+    public List<FileVO> selectAllMessageFile(Long messageId);
+
+    // 쪽지 파일 전체 삭제
+    public void deleteAllMessageFile(Long messageId);
 }
