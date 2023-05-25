@@ -18,7 +18,7 @@ public class MessageDTO {
     private String messageRegisterDate;
     private String messageContent;
     private String memberName;
-    private List<FileVO> postFiles = new ArrayList<>();
+    private List<FileVO> messageFiles = new ArrayList<>();
     private FileVO memberProfileImage;
     private List<Long> fileIdsForDelete = new ArrayList<>();
 }

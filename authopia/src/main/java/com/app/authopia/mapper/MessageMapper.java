@@ -30,10 +30,10 @@ public interface MessageMapper {
     public Long selectIdByEmail(@Param("memberEmail") String memberEmail);
 
     // 받은 쪽지 상세보기
-    public Optional<PostDTO> selectReceive(Long id);
+    public Optional<MessageDTO> selectReceive(Long id);
 
     // 보낸 쪽지 상세보기
-    public Optional<PostDTO> selectSend(Long id);
+    public Optional<MessageDTO> selectSend(Long id);
 
     // 쪽지 삭제
     public void delete(Long id);

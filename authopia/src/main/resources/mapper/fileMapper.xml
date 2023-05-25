@@ -32,4 +32,23 @@
         FROM TBL_FILE
         WHERE MEMBER_ID = #{memberId} AND FILE_TYPE = 'profile'
     </select>
+
+    <!--  파일 추가  -->
+    <insert id="insertMessageFile">
+        INSERT INTO TBL_FILE
+        (ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, MESSAGE_ID, FILE_TYPE)
+        VALUES(SEQ_FILE.NEXTVAL, #{filePath}, #{fileUuid}, #{fileName}, #{fileSize}, #{messageId}, #{fileType})
+    </insert>
+
+    <!-- 쪽지 파일  조회 -->
+    <select id="selectAllMessageFile" resultType="fileVO">
+        SELECT ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, MESSAGE_ID, FILE_TYPE
+        FROM TBL_FILE
+        WHERE MESSAGE_ID = #{messageId}
+    </select>
+
+    <!-- 쪽지 파일 전체 삭제 -->
+    <delete id="deleteAllMessageFile">
+        DELETE FROM TBL_FILE WHERE MESSAGE_ID = #{messageId}
+    </delete>
 </mapper>

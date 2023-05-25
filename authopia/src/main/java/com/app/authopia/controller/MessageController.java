@@ -80,8 +80,14 @@ public class MessageController {
     }
 
     @GetMapping("write")
-    public String write(){
+    public String goToWriteForm(){
         return "mypage/mypage-message-write";
+    }
+
+    @PostMapping("write")
+    public RedirectView write(MessageDTO messageDTO){
+        messageService.write(messageDTO);
+        return new RedirectView("/message/list?type=send");
     }
 
     @GetMapping("remove")

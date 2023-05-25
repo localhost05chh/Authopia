@@ -58,4 +58,30 @@ public class FileMapperTests {
         Optional<FileVO> foundImage = fileMapper.selectProfileImage(26L);
         assertThat(foundImage.isPresent()).isEqualTo(true);
     }
+
+    // 쪽지 파일 추가
+    @Test
+    public void insertMessageFileTest(){
+        FileVO fileVO = new FileVO();
+        fileVO.setFileName("test-image.png");
+        fileVO.setFileSize(1234L);
+        fileVO.setFileUuid(UUID.randomUUID().toString());
+        fileVO.setFilePath("2023/05/23");
+        fileVO.setFileType(FileType.REPRESENTATIVE.name());
+        fileVO.setMessageId(37L);
+        fileMapper.insertMessageFile(fileVO);
+    }
+
+    // 쪽지 파일 조회
+    @Test
+    public void selectAllMessageFileTest(){
+        fileMapper.selectAllMessageFile(37L).stream().map(FileVO::toString).forEach(log::info);
+    }
+
+    // 쪽지 파일 전체 삭제
+    @Test
+    public void deleteAllMessageFileTest(){
+        fileMapper.deleteAllMessageFile(37L);
+        assertThat(fileMapper.selectAllMessageFile(37L)).hasSize(0);
+    }
 }
