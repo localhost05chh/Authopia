@@ -18,7 +18,14 @@ $(document).ready(function(){
                     <div>
                         <a href="">
                             <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 34px; height: 34px; background : rgb(255, 255, 255);">
-                                <img src="/image/profile_icon.png" alt="">
+            `
+        if(message.memberProfileImage != null){
+            text += `<img class="rounded-full" src="/files/display?fileName=${message.memberProfileImage.filePath}/t_${message.memberProfileImage.fileUuid}_${message.memberProfileImage.fileName}" alt="">`;
+        } else {
+            text += `<img class="rounded-full" src="/image/profile_icon.png" alt="">`;
+        }
+
+        text += `
                             </div>
                         </a>
                     </div>
@@ -46,9 +53,13 @@ $(document).ready(function(){
         <div class="border-b">
             <div class="mt-[24px] mb-[24px] pt-[32px] pb-[32px]">
                 <div class="steadio-post steadio-post-detail">
-                    <p>${message.messageContent}</p>
+                    <p class="mb-[15px]">${message.messageContent}</p>
                     <div class="image-wrapper">
-                        <img src="/image/python_icon.png" alt="">
+        `
+    message.messageFiles.forEach(file => {
+        text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" alt="">`;
+    });
+    text += `    
                     </div>
                 </div>
             </div>
