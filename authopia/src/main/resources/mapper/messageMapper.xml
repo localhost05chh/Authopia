@@ -34,7 +34,7 @@
             (
                 SELECT ME.ID, M.MEMBER_NAME, SEND_MEMBER_ID, RECEIVE_MEMBER_ID, MESSAGE_NAME, MESSAGE_VIEW, MESSAGE_REGISTER_DATE, MESSAGE_CONTENT
                 FROM TBL_MEMBER M JOIN TBL_MESSAGE ME
-                ON M.ID = ME.SEND_MEMBER_ID AND SEND_MEMBER_ID = #{memberId}
+                ON M.ID = ME.RECEIVE_MEMBER_ID AND SEND_MEMBER_ID = #{memberId}
                 ORDER BY ME.ID DESC
             )
             <![CDATA[
