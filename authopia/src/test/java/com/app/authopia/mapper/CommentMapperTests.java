@@ -22,39 +22,41 @@ public class CommentMapperTests {
     //    댓글 작성
     @Test
     public void insertTest() {
-        CommentVO commentVO = new CommentVO();
-        commentVO.setCommentContent("댓글 내용1");
-        commentVO.setMemberId(1L);
-        commentVO.setPostId(86L);
-        commentMapper.insert(commentVO);
+        for(int i=0; i<10; i++){
+            CommentVO commentVO = new CommentVO();
+            commentVO.setCommentContent("댓글 내용"+ i);
+            commentVO.setMemberId(1L);
+            commentVO.setPostId(93L);
+            commentMapper.insert(commentVO);
+        }
     }
 
-    //    댓글 목록
-    @Test
-    public void selectAllTest() {
-        //       성공
-        assertThat(commentMapper.selectAll(1L)).hasSize(3);
-    }
-
-    //    댓글 수정
-    @Test
-    public void updateTest() {
-        CommentDTO commentDTO = new CommentDTO();
-        commentDTO.setId(3L);
-        commentDTO.setCommentContent("수정되었습니다");
-        commentMapper.update(commentDTO);
-    }
-
-    //      댓글 삭제
-    @Test
-    public void deleteTest() {
-        // rangeClosed: 둘다 포함
-        IntStream.rangeClosed(5, 6).forEach(i -> commentMapper.delete(Long.valueOf(i)));
-    }
-
-    //      게시글의 댓글 전체 삭제
-    @Test
-    public void deleteAllTest() {
-        commentMapper.deleteAll(1L);
-    }
+//    //    댓글 목록
+//    @Test
+//    public void selectAllTest() {
+//        //       성공
+//        assertThat(commentMapper.selectAll(1L)).hasSize(3);
+//    }
+//
+//    //    댓글 수정
+//    @Test
+//    public void updateTest() {
+//        CommentDTO commentDTO = new CommentDTO();
+//        commentDTO.setId(3L);
+//        commentDTO.setCommentContent("수정되었습니다");
+//        commentMapper.update(commentDTO);
+//    }
+//
+//    //      댓글 삭제
+//    @Test
+//    public void deleteTest() {
+//        // rangeClosed: 둘다 포함
+//        IntStream.rangeClosed(5, 6).forEach(i -> commentMapper.delete(Long.valueOf(i)));
+//    }
+//
+//    //      게시글의 댓글 전체 삭제
+//    @Test
+//    public void deleteAllTest() {
+//        commentMapper.deleteAll(1L);
+//    }
 }

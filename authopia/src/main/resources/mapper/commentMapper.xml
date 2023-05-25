@@ -3,9 +3,25 @@
 <mapper namespace="com.app.authopia.mapper.CommentMapper">
     <!-- 댓글 목록 -->
     <select id="selectAll" resultType="CommentDTO">
-        SELECT C.ID, MEMBER_ID, POST_ID, COMMENT_CONTENT, COMMENT_REGISTER_DATE, COMMENT_UPDATE_DATE, MEMBER_NAME
-        FROM TBL_MEMBER M JOIN TBL_COMMENT C
-        ON M.ID = C.MEMBER_ID AND POST_ID = #{id}
+        SELECT ID, COMMENT_CONTENT, COMMENT_REGISTER_DATE, COMMENT_UPDATE_DATE, MEMBER_ID, MEMBER_NAME, POST_ID
+        FROM
+        (
+            SELECT ROWNUM R, RE.ID, COMMENT_CONTENT, COMMENT_REGISTER_DATE, COMMENT_UPDATE_DATE, RE.MEMBER_ID, MEMBER_NAME, POST_ID
+            FROM
+            (
+                SELECT RE.ID, COMMENT_CONTENT, COMMENT_REGISTER_DATE, COMMENT_UPDATE_DATE, RE.MEMBER_ID, MEMBER_NAME, POST_ID
+                FROM TBL_MEMBER M JOIN TBL_COMMENT RE
+                ON POST_ID = #{id} AND M.ID = RE.MEMBER_ID
+                ORDER BY RE.ID DESC
+            ) RE
+            WHERE
+            <![CDATA[
+                ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+            ]]>
+        )
+        <![CDATA[
+        WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
+        ]]>
     </select>
 
     <!-- 댓글 작성 -->

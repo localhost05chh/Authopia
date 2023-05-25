@@ -2,6 +2,7 @@ package com.app.authopia.mapper;
 
 import com.app.authopia.domain.dto.CommentDTO;
 import com.app.authopia.domain.vo.CommentVO;
+import com.app.authopia.domain.dto.Pagination;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
 @Mapper
 public interface CommentMapper {
 //      댓글 목록
-    public List<CommentDTO> selectAll(Long id);
+    public List<CommentDTO> selectAll(Long id, Pagination pagination);
 
 //      댓글 작성
     public void insert(CommentVO commentVO);

@@ -2,6 +2,7 @@ package com.app.authopia.dao;
 
 import com.app.authopia.domain.dto.CommentDTO;
 import com.app.authopia.domain.vo.CommentVO;
+import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.mapper.CommentMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -14,8 +15,8 @@ public class CommentDAO {
     private final CommentMapper commentMapper;
 
     //      댓글 목록
-    public List<CommentDTO> findAll(Long id){
-        return commentMapper.selectAll(id);
+    public List<CommentDTO> findAll(Long id, Pagination pagination){
+        return commentMapper.selectAll(id, pagination);
     }
 
     //      댓글 작성
