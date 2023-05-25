@@ -1,9 +1,11 @@
 package com.app.authopia.controller;
 
+import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +25,7 @@ import java.util.Properties;
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/member/*")
+@Slf4j
 public class MemberController {
     private final MemberService memberService;
 
@@ -178,8 +181,9 @@ public class MemberController {
 
     // 회원 페이지 수정 완료
     @PostMapping("page-modify")
-    public RedirectView modifyMemberPage(MemberVO memberVO){
-        memberService.modifyMemberPage(memberVO);
+    public RedirectView modifyMemberPage(MemberDTO memberDTO){
+        log.info(memberDTO.toString());
+        memberService.modifyMemberPage(memberDTO);
         return new RedirectView("/member/member-page");
     }
 

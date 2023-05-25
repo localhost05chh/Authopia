@@ -51,4 +51,11 @@
     <delete id="deleteAllMessageFile">
         DELETE FROM TBL_FILE WHERE MESSAGE_ID = #{messageId}
     </delete>
+
+    <!-- 프로필 사진 업로드 -->
+    <insert id="insertProfileImage">
+        INSERT INTO TBL_FILE
+        (ID, FILE_PATH, FILE_UUID, FILE_NAME, FILE_SIZE, MEMBER_ID, FILE_TYPE)
+        VALUES(SEQ_FILE.NEXTVAL, #{filePath}, #{fileUuid}, #{fileName}, #{fileSize}, #{memberId}, #{fileType})
+    </insert>
 </mapper>

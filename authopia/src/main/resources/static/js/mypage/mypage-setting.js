@@ -1,4 +1,3 @@
-const $ablebutton = $("#ablebutton");
 /* 페이지 샘플 */
 let sampleCheck = false;
 $("#page-sample").hide();
@@ -30,8 +29,9 @@ $("#profile").on("change", function(event) {
 });
 
 // 이미지 업로드 버튼 클릭 이벤트
-$ablebutton.on("click", function(){
+$("button.ok-button").on("click", function(){
     const imgs = $("img.thumbnail").filter((i, img) => $(img).attr("src"));
+    console.log(imgs);
     let text = ``;
     imgs.each((i, img) => {
         let fullPath = $(img).attr("src");
@@ -42,14 +42,14 @@ $ablebutton.on("click", function(){
         let fileSize = sizes[i];
 
         text += `
-            <input type="hidden" name="postFiles[${i}].filePath" value="${filePath}">
-            <input type="hidden" name="postFiles[${i}].fileUuid" value="${fileUuid}">
-            <input type="hidden" name="postFiles[${i}].fileName" value="${fileName}">
-            <input type="hidden" name="postFiles[${i}].fileSize" value="${fileSize}">
+            <input type="hidden" name="files[${i}].filePath" value="${filePath}">
+            <input type="hidden" name="files[${i}].fileUuid" value="${fileUuid}">
+            <input type="hidden" name="files[${i}].fileName" value="${fileName}">
+            <input type="hidden" name="files[${i}].fileSize" value="${fileSize}">
         `
     });
-    $("#writeForm").append(text);
-    $("#writeForm").submit();
+    $(writeForm).append(text);
+    $(writeForm).submit();
 });
 
 // 파일 업로드
