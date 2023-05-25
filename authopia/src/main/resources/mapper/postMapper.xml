@@ -78,7 +78,7 @@
         ]]>
     </select>
 <!--관리자 페이지 전체 조회-->
-    <select id="selectMember" resultType="PostDTO">
+    <select id="selectManager" resultType="PostDTO">
         SELECT P.ID, MEMBER_ID, POST_TYPE, POST_NAME, POST_VIEW_COUNT, POST_RECOMMEND, POST_REGISTER_DATE,
         POST_UPDATE_DATE, POST_CONTENT, POST_IS_BLINDED, MEMBER_NAME
         FROM TBL_MEMBER M JOIN TBL_POST P
