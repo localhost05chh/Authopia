@@ -52,4 +52,8 @@ public class PostDAO{
     public List<PostDTO> findPostMain(Pagination pagination){
         return postMapper.selectMain(pagination);
     }
+//    관리자페이지에서 게시글 목록
+    public List<PostDTO> findPostManager(Pagination pagination){
+        return postMapper.selectManager();
+    }
 }

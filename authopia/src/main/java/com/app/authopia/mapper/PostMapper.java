@@ -14,6 +14,7 @@ public interface PostMapper {
 //      게시글 목록
     public List<PostDTO> selectAll(Pagination pagination,PostType postType);
 
+
 //      게시글 추가
     public void insert(PostDTO postDTO);
 
@@ -37,4 +38,8 @@ public interface PostMapper {
 
     //      게시글 조회수 증가
     public void updateViewCount(Long id);
+
+    //      관리자 페이지 게시글 목록
+    public List<PostDTO> selectManager();
+
 }

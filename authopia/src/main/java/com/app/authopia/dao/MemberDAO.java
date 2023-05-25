@@ -83,4 +83,9 @@ public class MemberDAO {
         memberMapper.updateMemberIsRemaining(id);
     };
 
+    // 관리자페이지에서 회원 목록 조회
+    public List<MemberVO> findMember(){
+        return memberMapper.selectAll();
+    }
+
 }

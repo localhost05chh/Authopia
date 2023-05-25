@@ -45,4 +45,7 @@ public interface MemberService {
    // 회원 탈퇴
     public void deleteMember(Long id);
 
+    // 관리자페이지에서 회원 목록 조회
+    public List<MemberVO> getMember();
+
 }
