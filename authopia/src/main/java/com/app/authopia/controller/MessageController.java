@@ -41,33 +41,6 @@ public class MessageController {
         return "mypage/mypage-message";
     }
 
-//    @GetMapping("list/send")
-//    public String listSend(PaginationMessage paginationMessage, Model model, HttpSession session){
-//        Long memberId = (Long)session.getAttribute("id");
-//        paginationMessage.setTotal(messageService.getSendTotal(memberId));
-//        paginationMessage.progress();
-//        model.addAttribute("messages", messageService.getSendList(paginationMessage, memberId));
-//        model.addAttribute("countReceive", messageService.getReceiveTotal(memberId));
-//        model.addAttribute("countSend", messageService.getSendTotal(memberId));
-//        model.addAttribute("count", messageService.getSendTotal(memberId));
-//        return "mypage/mypage-message";
-//    }
-
-//    @GetMapping("list/{type}")
-//    @ResponseBody
-//    public List<MessageDTO> messageType(@PathVariable String type, PaginationMessage paginationMessage, HttpSession session){
-//        Long memberId = (Long)session.getAttribute("id");
-//        if(type.equals("receive")){
-//            paginationMessage.setTotal(messageService.getReceiveTotal(memberId));
-//            paginationMessage.progress();
-//            return messageService.getReceiveList(paginationMessage, memberId);
-//        } else {
-//            paginationMessage.setTotal(messageService.getSendTotal(memberId));
-//            paginationMessage.progress();
-//            return messageService.getSendList(paginationMessage, memberId);
-//        }
-//    }
-
     @GetMapping("read")
     public String read(Long id, Model model, @RequestParam(defaultValue = "receive")String type){
         if(type.equals("receive")) {

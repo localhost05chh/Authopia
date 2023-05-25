@@ -91,8 +91,8 @@ public class MessageServiceImpl implements MessageService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void remove(Long id) {
-        messageDAO.delete(id);
         fileDAO.deleteAllMessageFile(id);
+        messageDAO.delete(id);
     }
 
     @Override
