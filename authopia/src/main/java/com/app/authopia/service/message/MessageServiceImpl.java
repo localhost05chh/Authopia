@@ -91,12 +91,17 @@ public class MessageServiceImpl implements MessageService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void remove(Long id) {
-        messageDAO.delete(id);
         fileDAO.deleteAllMessageFile(id);
+        messageDAO.delete(id);
     }
 
     @Override
     public void modify(Long id) {
         messageDAO.modify(id);
+    }
+
+    @Override
+    public int getAlarm(Long memberId) {
+        return messageDAO.findCountOfReceiveMessageUnRead(memberId);
     }
 }

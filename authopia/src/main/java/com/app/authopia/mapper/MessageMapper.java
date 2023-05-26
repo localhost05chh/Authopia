@@ -40,4 +40,7 @@ public interface MessageMapper {
 
     // 쪽지 읽음으로 표시
     public void update(Long id);
+
+    // 안 읽은 쪽지 총 개수
+    public int selectCountOfReceiveMessageUnRead(Long memberId);
 }

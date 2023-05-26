@@ -102,4 +102,11 @@
         SET MESSAGE_VIEW = 1
         WHERE ID = #{id}
     </update>
+
+    <!-- 안 읽은 쪽지 총 개수 -->
+    <select id="selectCountOfReceiveMessageUnRead" resultType="_int">
+        SELECT COUNT(ID)
+        FROM TBL_MESSAGE
+        WHERE RECEIVE_MEMBER_ID = #{memberId} AND MESSAGE_VIEW = 0
+    </select>
 </mapper>

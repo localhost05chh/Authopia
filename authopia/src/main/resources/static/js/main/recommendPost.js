@@ -15,7 +15,7 @@ function showRecommendPost(post, section){
             `
     post.postFiles.forEach(file => {
         if (file.fileType == "REPRESENTATIVE") {
-            text += `<img alt="사진" src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" class="rounded-[16px]" sizes="100vw" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
+            text += `<img alt="사진" src="/files/display?fileName=${file.filePath}/${file.fileUuid}_${file.fileName}" class="rounded-[16px]" sizes="100vw" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
         }
     })
     text += `

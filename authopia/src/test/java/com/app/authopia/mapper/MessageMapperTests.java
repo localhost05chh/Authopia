@@ -68,4 +68,9 @@ public class MessageMapperTests {
     public void updateTest(){
         messageMapper.update(37l);
     }
+
+    @Test
+    public void selectCountOfReceiveMessageUnRead(){
+        assertThat(messageMapper.selectCountOfReceiveMessageUnRead(61l)).isEqualTo(2);
+    }
 }
