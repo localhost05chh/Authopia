@@ -12,7 +12,7 @@ $(document).ready(function(){
                                 <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
             `
         if(member.memberProfileImage != null){
-            text += `<img alt="사진" src="/files/display?fileName=${member.memberProfileImage.filePath}/t_${member.memberProfileImage.fileUuid}_${member.memberProfileImage.fileName}" class="rounded-[16px]" sizes="100vw" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
+            text += `<img alt="사진" src="/files/display?fileName=${member.memberProfileImage.filePath}/${member.memberProfileImage.fileUuid}_${member.memberProfileImage.fileName}" class="rounded-[16px]" sizes="100vw" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
         } else {
             text += `<img alt="사진" src="/image/profile_icon.png" class="rounded-[16px]" sizes="100vw" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
         }
