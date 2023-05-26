@@ -52,4 +52,14 @@ public class PostDAO{
     public List<PostDTO> findPostMain(Pagination pagination){
         return postMapper.selectMain(pagination);
     }
+
+    //      내 게시글 목록
+    public List<PostDTO> findAllMyPost(Long memberId, Pagination pagination , PostType postType){
+        return postMapper.selectAllMyPost(memberId, pagination, postType);
+    }
+
+    //      내 게시글 총 개수
+    public int findCountOfMyPost(PostType postType){
+        return postMapper.selectCountOfMyPost(postType);
+    }
 }

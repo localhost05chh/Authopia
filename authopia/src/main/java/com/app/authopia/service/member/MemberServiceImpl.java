@@ -88,6 +88,7 @@ public class MemberServiceImpl implements MemberService {
             memberDTO.getMemberProfileImageList().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
             fileDAO.saveProfileImage(memberDTO.getMemberProfileImageList().get(i));
         }
+        memberDAO.setMemberPage(memberDTO);
     }
 
     @Override

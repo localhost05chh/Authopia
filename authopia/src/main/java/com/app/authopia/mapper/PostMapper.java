@@ -37,4 +37,10 @@ public interface PostMapper {
 
     //      게시글 조회수 증가
     public void updateViewCount(Long id);
+
+    //  내 게시글 목록
+    public List<PostDTO> selectAllMyPost(Long memberId, Pagination pagination,PostType postType);
+
+    //    게시글 총 개수
+    public int selectCountOfMyPost(PostType postType);
 }

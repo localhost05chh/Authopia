@@ -1,9 +1,13 @@
 package com.app.authopia.controller;
 
 import com.app.authopia.domain.dto.MemberDTO;
+import com.app.authopia.domain.dto.Pagination;
+import com.app.authopia.domain.dto.PostType;
+import com.app.authopia.domain.vo.FileVO;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.member.MemberService;
+import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -18,6 +22,7 @@ import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.servlet.http.HttpSession;
+import javax.swing.*;
 import java.util.Date;
 import java.util.Optional;
 import java.util.Properties;
@@ -28,6 +33,7 @@ import java.util.Properties;
 @Slf4j
 public class MemberController {
     private final MemberService memberService;
+    private final PostService postService;
 
     // 이메일 중복검사
     @GetMapping("check-email/{memberEmail}")
@@ -181,7 +187,8 @@ public class MemberController {
 
     // 회원 페이지 수정 완료
     @PostMapping("page-modify")
-    public RedirectView modifyMemberPage(MemberDTO memberDTO){
+    public RedirectView modifyMemberPage(HttpSession session, MemberDTO memberDTO){
+        memberDTO.getMemberProfileImageList().stream().forEach(m -> m.setMemberId((Long)session.getAttribute("id")));
         log.info(memberDTO.toString());
         memberService.modifyMemberPage(memberDTO);
         return new RedirectView("/member/member-page");
@@ -194,6 +201,20 @@ public class MemberController {
         memberService.deleteMember(memberId);
         session.invalidate();
         return new RedirectView("/member/login");
+    }
+
+    // 내 게시글 목록
+    @GetMapping("mypost")
+    public String gotoMyList(HttpSession session, Pagination pagination, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+        Long memberId = (Long) session.getAttribute("id");
+        model.addAttribute("memberId", memberId);
+        postType.setType(type);
+        postType.setOrder(order);
+        postType.setKeyword(keyword);
+        pagination.setTotal(postService.getTotalMyPost(postType));
+        pagination.progress();
+        model.addAttribute("posts", postService.getListMyPost(memberId, pagination , postType));
+        return "mypage/mypost";
     }
 
 }
