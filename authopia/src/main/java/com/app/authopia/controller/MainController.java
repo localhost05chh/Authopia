@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class MainController {
     private final FileService fileService;
 
     @GetMapping("/main")
-    public String goToMain(HttpSession session, Model model, Pagination pagination){
+    public String goToMain(HttpSession session, Model model, Pagination pagination, HttpServletRequest req){
         Long memberId = (Long) session.getAttribute("id");
         model.addAttribute("memberId", memberId);
         if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
@@ -33,6 +34,7 @@ public class MainController {
             model.addAttribute("memberProfileImage", null);
         }
         pagination.setPage(1);
+        req.getAttribute("countMessage");
         model.addAttribute("popularMembers", memberService.getPopularMember());
         model.addAttribute("popularPosts", postService.getListMain(pagination));
         if(postService.read(71l).isPresent()) {

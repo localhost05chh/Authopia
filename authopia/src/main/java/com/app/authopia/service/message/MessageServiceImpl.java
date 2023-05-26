@@ -99,4 +99,9 @@ public class MessageServiceImpl implements MessageService {
     public void modify(Long id) {
         messageDAO.modify(id);
     }
+
+    @Override
+    public int getAlarm(Long memberId) {
+        return messageDAO.findCountOfReceiveMessageUnRead(memberId);
+    }
 }

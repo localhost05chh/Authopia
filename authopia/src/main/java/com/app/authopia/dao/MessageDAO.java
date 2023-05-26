@@ -64,4 +64,9 @@ public class MessageDAO {
     public void modify(Long id){
         messageMapper.update(id);
     }
+
+    // 안 읽은 쪽지 총 개수
+    public int findCountOfReceiveMessageUnRead(Long memberId){
+        return messageMapper.selectCountOfReceiveMessageUnRead(memberId);
+    }
 }
