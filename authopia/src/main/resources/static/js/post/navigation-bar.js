@@ -7,6 +7,8 @@ window.addEventListener("scroll", () => {
     }
 });
 
+
+/*카테고리 타입 변경*/
 $(document).ready(function () {
     let type = searchParam('type');
     let href = window.location.href
