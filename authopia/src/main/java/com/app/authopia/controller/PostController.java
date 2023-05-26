@@ -28,7 +28,9 @@ public class PostController{
 
     //      게시글 목록
     @GetMapping("list")
-    public void gotoList(HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+    public void gotoList(Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+        Long memberId = (Long) session.getAttribute("id");
+        model.addAttribute("memberId", memberId);
         postType.setType(type);
         postType.setOrder(order);
         postType.setKeyword(keyword);
@@ -62,7 +64,13 @@ public class PostController{
 
     //      게시글 조회, 수정
     @GetMapping(value = {"detail", "modify"})
-    public void read(@RequestParam(defaultValue = "")Long id, Model model){
+    public void read(@RequestParam(defaultValue = "")Long id, Model model, HttpSession session){
+        Long memberId = (Long) session.getAttribute("id");
+        if(memberId != null){
+            model.addAttribute("memberName",memberService.getMemberInfo((Long)session.getAttribute("id")).get().getMemberName());
+        }
+        System.out.println(model.getAttribute("memberName"));
+        model.addAttribute("memberId", memberId);
         postService.increaseViewCount(id);
         model.addAttribute("post", postService.read(id).get());
     }
