@@ -12,4 +12,10 @@ public class SubscribeDAO {
 
     // 구독 추가
     public void subscribeTo(SubscribeVO subscribeVO){subscribeMapper.insert(subscribeVO);}
+
+    //  구독 여부 검사
+    public void subscribeOk(SubscribeVO subscribeVO){subscribeMapper.selectId(subscribeVO);}
+
+    //    구독 해지
+    public void subscribeOut(Long id){subscribeMapper.delete(id);}
 }
