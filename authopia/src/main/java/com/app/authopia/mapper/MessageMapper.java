@@ -2,7 +2,6 @@ package com.app.authopia.mapper;
 
 import com.app.authopia.domain.dto.MessageDTO;
 import com.app.authopia.domain.dto.PaginationMessage;
-import com.app.authopia.domain.dto.PostDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -12,16 +11,16 @@ import java.util.Optional;
 @Mapper
 public interface MessageMapper {
     // 받은 쪽지 목록
-    public List<MessageDTO> selectReceiveAll(@Param("pagination") PaginationMessage pagination, @Param("memberId") Long memberId);
+    public List<MessageDTO> selectReceiveAll(@Param("pagination") PaginationMessage pagination, @Param("memberId") Long memberId, @Param("keyword") String keyword);
 
     // 보낸 쪽지 목록
-    public List<MessageDTO> selectSendAll(@Param("pagination") PaginationMessage pagination, @Param("memberId") Long memberId);
+    public List<MessageDTO> selectSendAll(@Param("pagination") PaginationMessage pagination, @Param("memberId") Long memberId, @Param("keyword") String keyword);
 
     // 받은 쪽지 총 개수
-    public int selectCountOfReceiveMessage(Long memberId);
+    public int selectCountOfReceiveMessage(@Param("memberId") Long memberId, @Param("keyword") String keyword);
 
     // 보낸 쪽지 총 개수
-    public int selectCountOfSendMessage(Long memberId);
+    public int selectCountOfSendMessage(@Param("memberId") Long memberId, @Param("keyword") String keyword);
 
     // 쪽지 추가
     public void insert(MessageDTO messageDTO);
