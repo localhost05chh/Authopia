@@ -28,7 +28,7 @@ public class MessageController {
     private final FileService fileService;
 
     @GetMapping("list")
-    public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "") String keyword, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session, HttpServletRequest req){
+    public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "") String keyword, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         model.addAttribute("keyword", keyword);
@@ -50,12 +50,11 @@ public class MessageController {
         } else{
             model.addAttribute("memberProfileImage", null);
         }
-        req.getAttribute("countMessage");
         return "mypage/mypage-message";
     }
 
     @GetMapping("read")
-    public String read(HttpSession session, Long id, Model model, @RequestParam(defaultValue = "receive")String type, HttpServletRequest req){
+    public String read(HttpSession session, Long id, Model model, @RequestParam(defaultValue = "receive")String type){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(type.equals("receive")) {
@@ -69,12 +68,11 @@ public class MessageController {
         } else{
             model.addAttribute("memberProfileImage", null);
         }
-        req.getAttribute("countMessage");
         return "mypage/mypage-message-detail";
     }
 
     @GetMapping("write")
-    public String goToWriteForm(MessageDTO messageDTO, HttpSession session, Model model, HttpServletRequest req){
+    public String goToWriteForm(MessageDTO messageDTO, HttpSession session, Model model){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(fileService.getProfileImage(memberId).isPresent()) {
@@ -82,12 +80,11 @@ public class MessageController {
         } else{
             model.addAttribute("memberProfileImage", null);
         }
-        req.getAttribute("countMessage");
         return "mypage/mypage-message-write";
     }
 
     @PostMapping("write")
-    public RedirectView write(MessageDTO messageDTO, HttpSession session, String memberEmail, Model model, HttpServletRequest req){
+    public RedirectView write(MessageDTO messageDTO, HttpSession session, String memberEmail, Model model){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         messageDTO.setSendMemberId(memberId);
@@ -98,12 +95,11 @@ public class MessageController {
         } else{
             model.addAttribute("memberProfileImage", null);
         }
-        req.getAttribute("countMessage");
         return new RedirectView("/message/list?type=send");
     }
 
     @GetMapping("remove")
-    public RedirectView remove(Long id, String type, HttpSession session, Model model, HttpServletRequest req){
+    public RedirectView remove(Long id, String type, HttpSession session, Model model){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(fileService.getProfileImage(memberId).isPresent()) {
@@ -111,7 +107,6 @@ public class MessageController {
         } else{
             model.addAttribute("memberProfileImage", null);
         }
-        req.getAttribute("countMessage");
         messageService.remove(id);
         return type.equals("send") ? new RedirectView("/message/list?type=send") : new RedirectView("/message/list?type=receive");
     }
