@@ -19,7 +19,7 @@ $(document).ready(function () {
     let order = searchParam('order');
     let keyword = searchParam('keyword');
 
-    if(keyword != ""){
+    if (keyword != "") {
         $("#input_search").val(keyword);
     }
     if (order == "trand") {
@@ -33,32 +33,32 @@ $(document).ready(function () {
 
 $(".new").click(function () {
     let type = searchParam('type');
-    if(type==null){
+    if (type == null) {
         location.href = `/post/list?&type=writing&order=new`;
-    }else{
+    } else {
         location.href = `/post/list?&type=${type}&order=new`;
     }
 });
 
 $(".trand").click(function () {
     let type = searchParam('type');
-    if(type==null){
+    if (type == null) {
         location.href = `/post/list?&type=writing&order=trand`;
-    }else{
+    } else {
         location.href = `/post/list?&type=${type}&order=trand`;
     }
 });
 
-function addFunc(){
+function addFunc() {
     let keyword = $("#input_search").val();
     let type = searchParam('type');
     let order = searchParam('order');
-    if(type == null){
+    if (type == null) {
         location.href = `/post/list?&type=writing&order=new&keyword=${keyword}`;
-    }else{
-        if(order == null){
+    } else {
+        if (order == null) {
             location.href = `/post/list?&type=${type}&order=new&keyword=${keyword}`;
-        }else{
+        } else {
             location.href = `/post/list?&type=${type}&order=${order}&keyword=${keyword}`;
         }
     }

@@ -103,7 +103,6 @@
                     class="flex flex-col relative max-w-main min-w-screen min-w-[320px] w-full mx-auto surface_primary">
                 <!-- 상단 제목 -->
                 <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]" th:text="${post.postName}"></h3>
-
                 <!-- 프로필 메뉴 -->
                 <div class="flex items-center justify-between">
                     <div class="flex items-center gap-x-[10px] whitespace-nowrap">
@@ -126,6 +125,9 @@
                                     <span> ｜ </span>
                                     <span>조회수 <th:block th:text="${post.postViewCount}"></th:block></span>
                                 </a>
+                                <span id="post-modify">수정 </span>
+                                <span> | </span>
+                                <span id="post-remove"> 삭제</span>
                             </div>
                         </div>
                     </div>
@@ -133,6 +135,10 @@
 
                 <!-- 중간 내용 부분 -->
                 <div class="mt-[24px] pt-[32px] border-t border_secondary">
+                    <!-- 이미지 들어가는 부분 -->
+                    <div id="img-box" style="height: 102px; width: 234px;">
+
+                    </div>
                     <div class="steadio-post steadio-post-detail">
                         <p th:text="${post.postContent}"></p>
                     </div>
@@ -264,6 +270,7 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script th:inline="javascript">
+    let files = [[${post.postFiles}]];
     let memberId = [[${session.id}]];
     let postId = [[${post.id}]];
 </script>

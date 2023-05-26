@@ -6,6 +6,14 @@ const $textinput = $("#text-count");
 const $target = $("#target-button");
 let page = 1;
 
+$("#post-remove").on("click", function () {
+    location.href = `remove?id=${postId}`;
+})
+
+// $("#post-modify").on("click", function () {
+//     location.href = `modify?id=${postId}`;
+// })
+
 $inputtext.show();
 $input.hide();
 
@@ -233,6 +241,20 @@ $("#target-button").on("click", function(){
         $("#text-count").val("");
     });
 });
+
+/* 이미지 파일 뿌리기 */
+$(document).ready(function () {
+    let $imgBox = $("#img-box");
+    let text = "";
+    files.forEach(file => {
+        text += `
+                    <div style="height: 102px; width: 102px; margin-right:15px;  float:right;">
+                        <img src="/files/display?fileName=${file.filePath}/${file.fileUuid}_${file.fileName}" style="height: 102px; width: 102px;">
+                    </div>
+                `;
+    })
+    $imgBox.html(text);
+})
 
 
 

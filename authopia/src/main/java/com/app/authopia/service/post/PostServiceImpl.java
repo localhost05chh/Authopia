@@ -24,7 +24,10 @@ public class PostServiceImpl implements PostService {
     @Transactional(rollbackFor = Exception.class)
     public List<PostDTO> getList(Pagination pagination, PostType postType){
         final List<PostDTO> posts = postDAO.findAll(pagination, postType);
-        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        posts.forEach(data -> {
+            data.setPostFiles(fileDAO.findAllFile(data.getId()));
+//            data.setMemberProfileImage(fileDAO.findProfileImage(data.getMemberId()).get());
+        });
         return posts;
     }
 
@@ -47,6 +50,7 @@ public class PostServiceImpl implements PostService {
         final Optional<PostDTO> foundPost = postDAO.findById(id);
         if(foundPost.isPresent()){
             foundPost.get().setPostFiles(fileDAO.findAllFile(foundPost.get().getId()));
+//            foundPost.get().setMemberProfileImage(fileDAO.findProfileImage(foundPost.get().getMemberId()).get());
         }
         return foundPost;
     }
