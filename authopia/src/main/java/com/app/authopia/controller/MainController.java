@@ -30,8 +30,6 @@ public class MainController {
         model.addAttribute("memberId", memberId);
         if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
-        } else {
-            model.addAttribute("memberProfileImage", null);
         }
         pagination.setPage(1);
         req.getAttribute("countMessage");
@@ -39,13 +37,9 @@ public class MainController {
         model.addAttribute("popularPosts", postService.getListMain(pagination));
         if(postService.read(71l).isPresent()) {
             model.addAttribute("recommendPost1", postService.read(71l).get());
-        } else {
-            model.addAttribute("recommendPost1", null);
         }
         if(postService.read(73l).isPresent()) {
             model.addAttribute("recommendPost2", postService.read(73l).get());
-        } else {
-            model.addAttribute("recommendPost2", null);
         }
         model.addAttribute("newMembers", memberService.getNewMember());
         model.addAttribute("allMembers", memberService.getAllMember());
