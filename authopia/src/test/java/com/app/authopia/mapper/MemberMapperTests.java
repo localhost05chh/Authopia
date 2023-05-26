@@ -1,5 +1,6 @@
 package com.app.authopia.mapper;
 
+import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.vo.MemberVO;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
@@ -64,11 +65,11 @@ public class MemberMapperTests {
 //        memberMapper.selectAll().stream().map(MemberVO::toString).forEach(log::info);
 //    }
 //
-//    @Test
-//    public void selectPopularTest(){
-//        assertThat(memberMapper.selectPopular()).hasSize(14);
-//        memberMapper.selectPopular().stream().map(MemberVO::toString).forEach(log::info);
-//    }
+    @Test
+    public void selectPopularTest(){
+        assertThat(memberMapper.selectPopular()).hasSize(14);
+        memberMapper.selectPopular().stream().map(MemberDTO::toString).forEach(log::info);
+    }
 //
 //    @Test
 //    public void selectAllMemberTest(){

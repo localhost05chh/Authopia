@@ -47,6 +47,8 @@ public class MessageController {
         model.addAttribute("countSend", messageService.getSendTotal(memberId,""));
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
         }
         req.getAttribute("countMessage");
         return "mypage/mypage-message";
@@ -64,6 +66,8 @@ public class MessageController {
         }
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
         }
         req.getAttribute("countMessage");
         return "mypage/mypage-message-detail";
@@ -75,6 +79,8 @@ public class MessageController {
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
         }
         req.getAttribute("countMessage");
         return "mypage/mypage-message-write";
@@ -89,6 +95,8 @@ public class MessageController {
         messageService.write(messageDTO);
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
         }
         req.getAttribute("countMessage");
         return new RedirectView("/message/list?type=send");
@@ -100,6 +108,8 @@ public class MessageController {
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
         }
         req.getAttribute("countMessage");
         messageService.remove(id);

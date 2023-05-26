@@ -30,16 +30,18 @@ public class MainController {
         model.addAttribute("memberId", memberId);
         if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else {
+            model.addAttribute("memberProfileImage", null);
         }
         pagination.setPage(1);
         req.getAttribute("countMessage");
         model.addAttribute("popularMembers", memberService.getPopularMember());
         model.addAttribute("popularPosts", postService.getListMain(pagination));
-        if(postService.read(71l).isPresent()) {
-            model.addAttribute("recommendPost1", postService.read(71l).get());
+        if(postService.read(22l).isPresent()) {
+            model.addAttribute("recommendPost1", postService.read(22l).get());
         }
-        if(postService.read(73l).isPresent()) {
-            model.addAttribute("recommendPost2", postService.read(73l).get());
+        if(postService.read(21l).isPresent()) {
+            model.addAttribute("recommendPost2", postService.read(21l).get());
         }
         model.addAttribute("newMembers", memberService.getNewMember());
         model.addAttribute("allMembers", memberService.getAllMember());
