@@ -5,6 +5,7 @@ import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
+import com.app.authopia.service.comment.CommentService;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +26,7 @@ import java.util.List;
 public class PostController{
     private final PostService postService;
     private final MemberService memberService;
+    private final CommentService commentService;
 
     //      게시글 목록
     @GetMapping("list")
@@ -82,8 +84,9 @@ public class PostController{
         return new RedirectView("/post/detail");
     }
 
-    @PostMapping("remove")
+    @RequestMapping(value = "/remove", method = RequestMethod.GET)
     public RedirectView remove(Long id){
+        commentService.removeAll(postService.read(id).get().getId());
         postService.remove(id);
         return new RedirectView("/post/list");
     }
