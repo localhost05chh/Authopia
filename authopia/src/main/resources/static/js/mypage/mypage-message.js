@@ -71,24 +71,22 @@ if(searchParam('type')=="receive" || searchParam('type')==null){
 }
 
 /* 페이징 */
-// const $pages = $(".page");
-//
-// $pages.each((i, page)=>{
-//     $(page).on("click", () => {
-//         $pages.removeClass("surface_tertiary");
-//         $(page).addClass("surface_tertiary");
-//     });
-// });
-
 $("a.change-page").on("click", function(e){
     e.preventDefault();
     let page = $(this).attr("href");
-    if(searchParam('type') == null){
-        location.href=`/message/list?page=${page}`;
-    } else {
-        location.href = `/message/list?type=${searchParam('type')}&page=${page}`;
-    }
+    let type = searchParam('type') == null ? "receive" : searchParam('type');
+    let keyword = searchParam('keyword') == null ? "" : searchParam('keyword');
+    location.href = `/message/list?type=${type}&page=${page}&keyword=${keyword}`;
 });
+
+/* 검색 */
+$("button.search-button").on("click", function(){
+    let page = searchParam('page') == null ? "1" : searchParam('page');
+    let type = searchParam('type') == null ? "receive" : searchParam('type');
+    let keyword = $(this).prev().val();
+    location.href = `/message/list?type=${type}&page=${page}&keyword=${keyword}`;
+});
+
 
 function searchParam(key) {
     return new URLSearchParams(location.search).get(key);

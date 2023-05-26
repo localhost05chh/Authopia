@@ -167,8 +167,8 @@
                                     <div>
                                         <div class="w-[240px]">
                                             <label class="w-full px-[20px] py-[10px] h-[40px] border border_black_opacity focus-within:border-2 focus-within:border_accent focus-within:px-[19px] rounded-[20px] flex items-center justify-between">
-                                                <input type="search" class="outline-none content_secondary font_body_regular_md content-none w-full" placeholder="쪽지 검색">
-                                                <button type="button" class="ml-[10px]">
+                                                <input name="keyword" type="search" class="outline-none content_secondary font_body_regular_md content-none w-full" placeholder="쪽지 검색" th:value="${keyword}">
+                                                <button type="button" class="search-button ml-[10px]">
                                                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[20px] h-[20px] content_primary"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.83 16.561a7.8 7.8 0 1 1 1.233-1.312l3.465 3.465a.9.9 0 1 1-1.272 1.273L15.83 16.56Zm1.13-5.961a6.16 6.16 0 1 1-12.32 0 6.16 6.16 0 0 1 12.32 0Z"></path></svg>
                                                 </button>
                                             </label>

@@ -28,22 +28,23 @@ public class MessageController {
     private final FileService fileService;
 
     @GetMapping("list")
-    public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session, HttpServletRequest req){
+    public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "") String keyword, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session, HttpServletRequest req){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        model.addAttribute("keyword", keyword);
         if(type.equals("receive")){
-            paginationMessage.setTotal(messageService.getReceiveTotal(memberId));
+            paginationMessage.setTotal(messageService.getReceiveTotal(memberId, keyword));
             paginationMessage.progress();
-            model.addAttribute("messages", messageService.getReceiveList(paginationMessage, memberId));
-            model.addAttribute("count", messageService.getReceiveTotal(memberId));
+            model.addAttribute("messages", messageService.getReceiveList(paginationMessage, memberId, keyword));
+            model.addAttribute("count", messageService.getReceiveTotal(memberId, keyword));
         } else{
-            paginationMessage.setTotal(messageService.getSendTotal(memberId));
+            paginationMessage.setTotal(messageService.getSendTotal(memberId, keyword));
             paginationMessage.progress();
-            model.addAttribute("messages", messageService.getSendList(paginationMessage, memberId));
-            model.addAttribute("count", messageService.getSendTotal(memberId));
+            model.addAttribute("messages", messageService.getSendList(paginationMessage, memberId, keyword));
+            model.addAttribute("count", messageService.getSendTotal(memberId, keyword));
         }
-        model.addAttribute("countReceive", messageService.getReceiveTotal(memberId));
-        model.addAttribute("countSend", messageService.getSendTotal(memberId));
+        model.addAttribute("countReceive", messageService.getReceiveTotal(memberId, ""));
+        model.addAttribute("countSend", messageService.getSendTotal(memberId,""));
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
         }
