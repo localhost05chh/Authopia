@@ -7,6 +7,8 @@
     <title>쪽지</title>
     <link rel="stylesheet" href="/css/mypage/mypage.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="shortcut icon"
+          href="/image/logo-short-cut.png">
 </head>
 <body class="h-full">
 <div id="__next">
@@ -33,12 +35,10 @@
             <div class="flex items-center justify-end">
                 <div class="relative">
                     <!--프로필 이미지-->
-                    <button class="relative w-[32px] h-[32px] rounded-full surface_primary_active">
-                        <img th:unless="${memberProfileImage eq null}" alt="프로필 이미지" sizes="100vw" src=`/files/display?fileName=${memberProfileImage.filePath}/t_${memberProfileImage.fileUuid}_${memberProfileImage.fileName}` class="profile-image rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
-                        <img th:if="${memberProfileImage eq null}" alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" class="profile-image rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                    <button onclick="location.href='/message/list'" class="input-profile-image relative w-[32px] h-[32px] rounded-full surface_primary_active">
                     </button>
                     <!--메세지 알람-->
-                    <button type="button" class="bottom-[20px] left-[20px] absolute z-[5] w-[20px] h-[20px] rounded-full flex items-center justify-center " style="background: red;">
+                    <button onclick="location.href='/message/list'" type="button" class="bottom-[20px] left-[20px] absolute z-[5] w-[20px] h-[20px] rounded-full flex items-center justify-center " style="background: red;">
                         <span th:text="${countMessage}" style="color: white"></span>
                     </button>
                 </div>
@@ -53,13 +53,12 @@
                     <div class="flex flex-col items-center">
                         <div class="w-[68px] h-[68px] mb-[12px]">
                             <div class="relative w-full h-full rounded-full flex items-center justify-center">
-                                    <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                        <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                    <span class="input-profile-image" style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                     </span>
                                 <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
                             </div>
                         </div>
-                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center">임희수</h2>
+                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center" th:text="${member.memberName}"></h2>
                         <a href="" target="_blank">
                             <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
                                 <div class="flex items-center justify-center">
@@ -304,7 +303,8 @@
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script th:inline="javascript">
     let messages = [[${messages}]];
-    console.log([[${memberProfileImage}]]);
+    let memberProfileImage = [[${memberProfileImage}]];
 </script>
 <script src="/js/mypage/mypage-message.js"></script>
+<script src="/js/mypage/mypage-profile-image.js"></script>
 </html>

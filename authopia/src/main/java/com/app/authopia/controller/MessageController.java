@@ -5,6 +5,7 @@ import com.app.authopia.domain.dto.MessageDTO;
 import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PaginationMessage;
 import com.app.authopia.service.file.FileService;
+import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.message.MessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,11 +24,13 @@ import java.util.List;
 @Slf4j
 public class MessageController {
     private final MessageService messageService;
+    private final MemberService memberService;
     private final FileService fileService;
 
     @GetMapping("list")
     public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session, HttpServletRequest req){
         Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(type.equals("receive")){
             paginationMessage.setTotal(messageService.getReceiveTotal(memberId));
             paginationMessage.progress();
@@ -49,31 +52,55 @@ public class MessageController {
     }
 
     @GetMapping("read")
-    public String read(Long id, Model model, @RequestParam(defaultValue = "receive")String type){
+    public String read(HttpSession session, Long id, Model model, @RequestParam(defaultValue = "receive")String type, HttpServletRequest req){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         if(type.equals("receive")) {
             messageService.modify(id);
             model.addAttribute("message", messageService.getReceive(id).get());
         } else {
             model.addAttribute("message", messageService.getSend(id).get());
         }
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
+        req.getAttribute("countMessage");
         return "mypage/mypage-message-detail";
     }
 
     @GetMapping("write")
-    public String goToWriteForm(MessageDTO messageDTO){
+    public String goToWriteForm(MessageDTO messageDTO, HttpSession session, Model model, HttpServletRequest req){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
+        req.getAttribute("countMessage");
         return "mypage/mypage-message-write";
     }
 
     @PostMapping("write")
-    public RedirectView write(MessageDTO messageDTO, HttpSession session, String memberEmail){
-        messageDTO.setSendMemberId((Long)session.getAttribute("id"));
+    public RedirectView write(MessageDTO messageDTO, HttpSession session, String memberEmail, Model model, HttpServletRequest req){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        messageDTO.setSendMemberId(memberId);
         messageDTO.setReceiveMemberId(messageService.checkIdByEmail(memberEmail));
         messageService.write(messageDTO);
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
+        req.getAttribute("countMessage");
         return new RedirectView("/message/list?type=send");
     }
 
     @GetMapping("remove")
-    public RedirectView remove(Long id, String type){
+    public RedirectView remove(Long id, String type, HttpSession session, Model model, HttpServletRequest req){
+        Long memberId = (Long)session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
+        req.getAttribute("countMessage");
         messageService.remove(id);
         return type.equals("send") ? new RedirectView("/message/list?type=send") : new RedirectView("/message/list?type=receive");
     }
