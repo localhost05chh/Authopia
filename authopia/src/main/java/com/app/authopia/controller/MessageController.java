@@ -4,6 +4,7 @@ import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.dto.MessageDTO;
 import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PaginationMessage;
+import com.app.authopia.service.file.FileService;
 import com.app.authopia.service.message.MessageService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -21,9 +23,10 @@ import java.util.List;
 @Slf4j
 public class MessageController {
     private final MessageService messageService;
+    private final FileService fileService;
 
     @GetMapping("list")
-    public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session){
+    public String listReceive(PaginationMessage paginationMessage, @RequestParam(defaultValue = "receive")String type, Model model, HttpSession session, HttpServletRequest req){
         Long memberId = (Long)session.getAttribute("id");
         if(type.equals("receive")){
             paginationMessage.setTotal(messageService.getReceiveTotal(memberId));
@@ -38,6 +41,10 @@ public class MessageController {
         }
         model.addAttribute("countReceive", messageService.getReceiveTotal(memberId));
         model.addAttribute("countSend", messageService.getSendTotal(memberId));
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
+        req.getAttribute("countMessage");
         return "mypage/mypage-message";
     }
 
