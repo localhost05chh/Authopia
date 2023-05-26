@@ -3,7 +3,7 @@ $(document).ready(showRecommendPost(recommendPost2, $(".recommend-post2")));
 
 /* 글 화면에 보이기 */
 function showRecommendPost(post, section){
-    if(recommendPost1 != null) {
+    if(post != null) {
         let text = "";
         text += `
                 <div>
