@@ -6,6 +6,7 @@ import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
 import com.app.authopia.service.comment.CommentService;
+import com.app.authopia.service.file.FileService;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,7 @@ public class PostController {
     private final PostService postService;
     private final MemberService memberService;
     private final CommentService commentService;
+    private final FileService fileService;
 
     //      게시글 목록
     @GetMapping("list")
@@ -75,6 +77,10 @@ public class PostController {
         session.setAttribute("postId", id);
         model.addAttribute("memberId", memberId);
         model.addAttribute("post", postService.read(id).get());
+        model.addAttribute("memberIntroduce", memberService.getMemberInfo(postService.read(id).get().getMemberId()).get().getMemberIntroduce());
+        if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
     }
 
 

@@ -108,8 +108,7 @@
                     <div class="flex items-center gap-x-[10px] whitespace-nowrap">
                         <div>
                             <a href="">
-                                <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 34px; height: 34px;">
-
+                                <div id="member-profileImage" class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 34px; height: 34px;">
                                 </div>
                             </a>
                         </div>
@@ -156,9 +155,7 @@
                     <div>
                         <button
                                 class="border_black_opacity box-border border-[0.8px] w-[60px] h-[60px] rounded-full overflow-hidden shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] relative">
-                                <span class="profile-image">
-                                    <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2F304fb2f4-e314-4074-bdf4-e18d2ddbdee4%2FprofileImage%2F315cd6ee-37ca-4d83-b71b-ff6f3d8279e3.jpeg%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=1920&q=75"
-                                         style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                <span id="member-profileImage2" class="profile-image">
                                 </span>
                         </button>
                     </div>
@@ -166,8 +163,8 @@
                         <div class="flex flex-col gap-[4px] px-[40px]">
                             <button class="font_title_bold_lg text-center" style="background: none"
                                     th:text="${post.memberName}"></button>
-                            <p class="md:w-[404px] text-center font_label_regular_md content_quaternary break-all">
-                                프로필 소개 내용</p>
+                            <p th:text="${memberIntroduce}" class="md:w-[404px] text-center font_label_regular_md content_quaternary break-all">
+                                </p>
                         </div>
                     </div>
                     <div class="flex flex-row gap-[8px] items-center whitespace-nowrap">
@@ -180,7 +177,7 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                               d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path>
                                     </svg>
-                                    <div>관심</div>
+                                    <div>구독</div>
                                 </div>
                             </button>
                         </div>
@@ -202,8 +199,6 @@
                                 <div class="w-[32px] h-[32px]">
                                     <div class="relative w-full h-full rounded-full flex items-center justify-center">
                                         <span class="my-profil-image">
-                                            <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2F4ce0f981-f4ed-448b-a5d3-e8ac754fcd26%2FprofileImage%2F354c3731-9609-43f5-b3d2-dbe0be835849.jpg%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=1920&q=75"
-                                                 class="my-profil-image-shape rounded-full" alt="">
                                         </span>
                                         <div></div>
                                     </div>
@@ -217,9 +212,8 @@
                                     <div class="w-[32px] h-[32px]">
                                         <div
                                                 class="relative w-full h-full rounded-full flex items-center justify-center">
-                                            <span class="profile-image-background-style">
-                                                <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2F4ce0f981-f4ed-448b-a5d3-e8ac754fcd26%2FprofileImage%2F354c3731-9609-43f5-b3d2-dbe0be835849.jpg%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=1920&q=75"
-                                                     alt="" class="profile-image-input rounded-full">
+                                            <span class="my-profil-image">
+
                                             </span>
                                         </div>
                                     </div>
@@ -276,6 +270,8 @@
     let files = [[${post.postFiles}]];
     let memberId = [[${session.id}]];
     let postId = [[${post.id}]];
+    let memberProfileImage = [[${post.memberProfileImage}]];
+    let myProfileImage = [[${memberProfileImage}]];
 </script>
 <script src="/js/post/detail.js"></script>
 <script src="/js/post/time.js"></script>
