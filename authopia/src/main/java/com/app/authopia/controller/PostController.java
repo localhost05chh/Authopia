@@ -35,6 +35,9 @@ public class PostController {
     public void gotoList(Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing") String type, @RequestParam(defaultValue = "new") String order, @RequestParam(defaultValue = "") String keyword) {
         Long memberId = (Long) session.getAttribute("id");
         model.addAttribute("memberId", memberId);
+        if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
         postType.setType(type);
         postType.setOrder(order);
         postType.setKeyword(keyword);
@@ -56,7 +59,12 @@ public class PostController {
     //      게시글 추가
     @GetMapping("write")
     public void goToWrite(PostVO postVO, Model model, HttpSession session) {
+        Long memberId = (Long) session.getAttribute("id");
+        model.addAttribute("memberId", memberId);
         model.addAttribute("memberName", memberService.getMemberInfo((Long) session.getAttribute("id")).get().getMemberName());
+        if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
     }
 
     @PostMapping("write")
