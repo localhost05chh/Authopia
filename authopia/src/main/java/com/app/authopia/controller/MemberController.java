@@ -209,6 +209,7 @@ public class MemberController {
     @GetMapping("member-mypost")
     public String gotoMyList(HttpSession session, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
         Long memberId = (Long) session.getAttribute("id");
+        log.info(keyword);
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         model.addAttribute("memberId", memberId);
         postType.setType(type);
@@ -221,11 +222,12 @@ public class MemberController {
     @PostMapping("member-mypost/{page}")
     @ResponseBody
     public List<PostDTO> gotoMyList(HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
+        Long memberId = (Long) session.getAttribute("id");
         postType = (PostType) session.getAttribute("postType");
-        pagination.setTotal(postService.getTotalMyPost(postType));
+        pagination.setTotal(postService.getTotalMyPost(postType, memberId));
         pagination.setPage(page);
         pagination.progress();
-        return postService.getList(pagination , postType);
+        return postService.getListMyPost(pagination , postType);
     }
 
 }

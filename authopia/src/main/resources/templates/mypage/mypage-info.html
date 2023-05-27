@@ -273,8 +273,10 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/mypage/mypage-info.js"></script>
 <script th:inline="javascript">
     var category = [[${member.memberCategory}]];
+    let memberProfileImage = [[${memberProfileImage}]];
 </script>
+<script src="/js/mypage/mypage-info.js"></script>
+<script src="/js/mypage/mypage-profile-image.js"></script>
 </html>
