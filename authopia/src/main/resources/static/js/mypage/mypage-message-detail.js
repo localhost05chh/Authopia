@@ -57,7 +57,7 @@ $(document).ready(function(){
                     <div class="image-wrapper">
         `
     message.messageFiles.forEach(file => {
-        text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" alt="">`;
+        text += `<img src="/files/display?fileName=${file.filePath}/${file.fileUuid}_${file.fileName}" alt="">`;
     });
     text += `    
                     </div>

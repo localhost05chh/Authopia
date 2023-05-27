@@ -52,10 +52,14 @@
                     </button>
                 </div>
                 <div class="relative login-profile" th:unless="${memberId eq null}">
-                    <button class="relative block w-[32px] h-[32px] rounded-full">
+                    <button class="relative block w-[32px] h-[32px] rounded-full" onclick="location.href='/message/list'">
                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                 <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" class="profile-image rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                             </span>
+                            <!--메세지 알람-->
+                            <button onclick="location.href='/message/list'" type="button" class="bottom-[20px] left-[20px] absolute z-[5] w-[20px] h-[20px] rounded-full flex items-center justify-center " style="background: red;">
+                                <span th:text="${countMessage}" style="color: white"></span>
+                            </button>
                     </button>
                 </div>
 
@@ -68,7 +72,7 @@
                 <!--마이페이지-->
                 <div class="hidden lg:block" th:unless="${memberId eq null}">
                     <button onclick="location.href='/member/member-info'" type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] false disabled:content_disabled">
-                        크리에이터 페이지
+                        크리에이터 스튜디오
                     </button>
                 </div>
             </div>

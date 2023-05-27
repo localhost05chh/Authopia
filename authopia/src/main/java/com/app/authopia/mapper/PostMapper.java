@@ -14,6 +14,7 @@ public interface PostMapper {
 //      게시글 목록
     public List<PostDTO> selectAll(Pagination pagination,PostType postType);
 
+
 //      게시글 추가
     public void insert(PostDTO postDTO);
 
@@ -43,4 +44,8 @@ public interface PostMapper {
 
     //    게시글 총 개수
     public int selectCountOfMyPost(PostType postType);
+
+    //      관리자 페이지 게시글 목록
+    public List<PostDTO> selectManager();
+
 }

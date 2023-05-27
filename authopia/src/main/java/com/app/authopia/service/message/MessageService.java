@@ -9,16 +9,16 @@ import java.util.Optional;
 
 public interface MessageService {
     // 받은 쪽지 목록
-    public List<MessageDTO> getReceiveList(PaginationMessage pagination, Long memberId);
+    public List<MessageDTO> getReceiveList(PaginationMessage pagination, Long memberId, String keyword);
 
     // 보낸 쪽지 목록
-    public List<MessageDTO> getSendList(PaginationMessage pagination, Long memberId);
+    public List<MessageDTO> getSendList(PaginationMessage pagination, Long memberId, String keyword);
 
     // 받은 쪽지 총 개수
-    public int getReceiveTotal(Long memberId);
+    public int getReceiveTotal(Long memberId, String keyword);
 
     // 보낸 쪽지 총 개수
-    public int getSendTotal(Long memberId);
+    public int getSendTotal(Long memberId, String keyword);
 
     // 쪽지 추가
     public void write(MessageDTO messageDTO);
@@ -37,4 +37,7 @@ public interface MessageService {
 
     // 쪽지 읽음으로 표시
     public void modify(Long id);
+
+    // 안 읽은 쪽지 총 개수
+    public int getAlarm(Long memberId);
 }

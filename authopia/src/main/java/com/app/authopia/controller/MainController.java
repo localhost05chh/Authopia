@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -35,15 +36,11 @@ public class MainController {
         pagination.setPage(1);
         model.addAttribute("popularMembers", memberService.getPopularMember());
         model.addAttribute("popularPosts", postService.getListMain(pagination));
-        if(postService.read(71l).isPresent()) {
-            model.addAttribute("recommendPost1", postService.read(71l).get());
-        } else {
-            model.addAttribute("recommendPost1", null);
+        if(postService.read(22l).isPresent()) {
+            model.addAttribute("recommendPost1", postService.read(22l).get());
         }
-        if(postService.read(73l).isPresent()) {
-            model.addAttribute("recommendPost2", postService.read(73l).get());
-        } else {
-            model.addAttribute("recommendPost2", null);
+        if(postService.read(21l).isPresent()) {
+            model.addAttribute("recommendPost2", postService.read(21l).get());
         }
         model.addAttribute("newMembers", memberService.getNewMember());
         model.addAttribute("allMembers", memberService.getAllMember());

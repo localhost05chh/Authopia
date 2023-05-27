@@ -16,23 +16,23 @@ public class MessageDAO {
     private final MessageMapper messageMapper;
 
     // 받은 쪽지 목록
-    public List<MessageDTO> findReceiveAll(PaginationMessage pagination, Long memberId){
-        return messageMapper.selectReceiveAll(pagination, memberId);
+    public List<MessageDTO> findReceiveAll(PaginationMessage pagination, Long memberId, String keyword){
+        return messageMapper.selectReceiveAll(pagination, memberId, keyword);
     }
 
     // 보낸 쪽지 목록
-    public List<MessageDTO> findSendAll(PaginationMessage pagination, Long memberId){
-        return messageMapper.selectSendAll(pagination, memberId);
+    public List<MessageDTO> findSendAll(PaginationMessage pagination, Long memberId, String keyword){
+        return messageMapper.selectSendAll(pagination, memberId, keyword);
     }
 
     // 받은 쪽지 총 개수
-    public int findCountOfReceiveMessage(Long memberId){
-        return messageMapper.selectCountOfReceiveMessage(memberId);
+    public int findCountOfReceiveMessage(Long memberId, String keyword){
+        return messageMapper.selectCountOfReceiveMessage(memberId, keyword);
     }
 
     // 보낸 쪽지 총 개수
-    public int findCountOfSendMessage(Long memberId){
-        return messageMapper.selectCountOfSendMessage(memberId);
+    public int findCountOfSendMessage(Long memberId, String keyword){
+        return messageMapper.selectCountOfSendMessage(memberId, keyword);
     }
 
     // 쪽지 추가
@@ -63,5 +63,10 @@ public class MessageDAO {
     // 쪽지 읽음으로 표시
     public void modify(Long id){
         messageMapper.update(id);
+    }
+
+    // 안 읽은 쪽지 총 개수
+    public int findCountOfReceiveMessageUnRead(Long memberId){
+        return messageMapper.selectCountOfReceiveMessageUnRead(memberId);
     }
 }

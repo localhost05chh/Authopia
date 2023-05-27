@@ -98,4 +98,8 @@ public class MemberServiceImpl implements MemberService {
 
     // 프로필 사진 추가
 
+    @Override
+    public List<MemberVO> getMember() {
+        return memberDAO.findMember();
+    }
 }

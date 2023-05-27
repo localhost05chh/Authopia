@@ -7,6 +7,8 @@
     <title>쪽지 쓰기</title>
     <link rel="stylesheet" href="/css/mypage/mypage.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+    <link rel="shortcut icon"
+          href="/image/logo-short-cut.png">
 </head>
 <body class="h-full">
 <div id="__next">
@@ -16,7 +18,7 @@
             <!-- 로고 -->
             <div>
                 <div class="flex items-center">
-                    <a href="/">
+                    <a href="/main">
                         <!-- 아마 반응형이라 display none -->
                         <svg viewBox="0 0 32 16" xmlns="http://www.w3.org/2000/svg" class="lg:hidden w-[31px] content_primary_inverse"><path d="M21.96 15.796h9.232A15.592 15.592 0 0 0 .059 14.55c-.011.116-.019.234-.027.351v.105c-.013.21-.022.423-.022.637v.154h9.957c0-2.987-2.228-5.412-4.978-5.412a4.755 4.755 0 0 0-3.41 1.473c1.051-1.346 2.63-2.203 4.395-2.203 3.165 0 5.725 2.75 5.725 6.142h7.562v-.154c0-5.7-4.31-10.321-9.629-10.321a9.085 9.085 0 0 0-4.62 1.266 10.976 10.976 0 0 1 16.949 9.21v-.003Z"></path></svg>
                         <!-- 이게 보여지는 로고 -->
@@ -32,10 +34,12 @@
             <!-- 프사 -->
             <div class="flex items-center justify-end">
                 <div class="relative">
-                    <button class="relative w-[32px] h-[32px] rounded-full surface_primary_active">
-                            <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
-                            </span>
+                    <!--프로필 이미지-->
+                    <button onclick="location.href='/message/list'" class="input-profile-image relative w-[32px] h-[32px] rounded-full surface_primary_active">
+                    </button>
+                    <!--메세지 알람-->
+                    <button onclick="location.href='/message/list'" type="button" class="bottom-[20px] left-[20px] absolute z-[5] w-[20px] h-[20px] rounded-full flex items-center justify-center " style="background: red;">
+                        <span th:text="${countMessage}" style="color: white"></span>
                     </button>
                 </div>
             </div>
@@ -49,13 +53,12 @@
                     <div class="flex flex-col items-center">
                         <div class="w-[68px] h-[68px] mb-[12px]">
                             <div class="relative w-full h-full rounded-full flex items-center justify-center">
-                                    <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                        <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                    <span class="input-profile-image" style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
                                     </span>
                                 <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-full"></div>
                             </div>
                         </div>
-                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center">임희수</h2>
+                        <h2 class="content_primary mb-[12px] font_title_bold_md text-center" th:text="${member.memberName}"></h2>
                         <a href="" target="_blank">
                             <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
                                 <div class="flex items-center justify-center">
@@ -128,64 +131,80 @@
                                             <button onclick="history.back()" type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[16px] w-full false disabled:content_disabled">취소</button>
                                         </div>
                                         <div class="w-[88px] ml-[12px]">
-                                            <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">보내기</button>
+                                            <button type="button" class="ok-button relative flex justify-center items-center font_button_bold_md h-[40px] rounded-[20px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] w-full false disabled:content_disabled">보내기</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <main class="mt-[48px]">
-                                <div class="grid grid-cols-15 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto">
-                                    <section class="col-span-9">
-                                        <div class="mb-[14px]">
+                                <form action="/message/write" method="post" name="writeForm" th:object="${messageDTO}">
+                                    <div class="grid grid-cols-15 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto">
+                                        <section class="col-span-9">
+                                            <div class="mb-[14px]">
+                                                <div>
+                                                    <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                                        <input th:field="*{messageName}" type="text" class="px-[20px] w-full h-[48px] outline-none font_title_bold_md placeholder:font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="제목을 입력해주세요.">
+                                                    </label>
+                                                </div>
+                                            </div>
                                             <div>
-                                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                                    <input type="text" class="px-[20px] w-full h-[48px] outline-none font_title_bold_md placeholder:font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="제목을 입력해주세요.">
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <div class="mb-[48px]">
-                                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                                    <textarea type="text" style="resize: none;" class="px-[20px] w-full h-[400px] outline-none font_title_bold_md placeholder:font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity pt-[20px]" placeholder="내용을 입력해주세요."></textarea>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <section class="col-start-11 col-span-5">
-                                        <section class="border border_primary rounded-[12px] flex flex-col">
-                                            <div class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
-                                                <div class="flex items-center">
-                                                    <strong class="font_label_bold_xl content_primary">받는 사람</strong>
-                                                </div>
-                                            </div>
-                                            <div class="px-[20px]">
-                                                <div class="mb-[16px] flex gap-x-[12px]">
-                                                    <div class="w-full mt-[24px]">
-                                                        <div>
-                                                            <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                                                <input type="email" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="받는 분의 이메일을 입력하세요.">
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
-                                                <div class="flex items-center">
-                                                    <strong class="font_label_bold_xl content_primary">이미지 첨부</strong>
-                                                </div>
-                                                <button tpye="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
-                                                    업로드
-                                                    <input type="file" accept="image/png,image/jpeg,image/jpg,image/gif" multiple class="opacity-0 absolute block w-full h-full top-0 cursor-pointer">
-                                                </button>
-                                            </div>
-                                            <div class="px-[20px]">
-                                                <div class="h-[88px] flex justify-center items-center">
-                                                    <span class="content_disabled font_body_regular_md">파일 형식 : jpg, jpeg, png, gif</span>
+                                                <div class="mb-[48px]">
+                                                    <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                                        <textarea th:field="*{messageContent}" type="text" style="resize: none;" class="px-[20px] w-full h-[400px] outline-none font_title_bold_md placeholder:font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity pt-[20px]" placeholder="내용을 입력해주세요."></textarea>
+                                                    </label>
                                                 </div>
                                             </div>
                                         </section>
-                                    </section>
-                                </div>
+                                        <section class="col-start-11 col-span-5">
+                                            <section class="border border_primary rounded-[12px] flex flex-col">
+                                                <div class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
+                                                    <div class="flex items-center">
+                                                        <strong class="font_label_bold_xl content_primary">받는 사람</strong>
+                                                    </div>
+                                                </div>
+                                                <div class="px-[20px]">
+                                                    <div class="mb-[16px] flex gap-x-[12px]">
+                                                        <div class="w-full mt-[24px]">
+                                                            <div>
+                                                                <label class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
+                                                                    <input name="memberEmail" type="email" class="px-[20px] w-full h-[48px] outline-none font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity" placeholder="받는 분의 이메일을 입력하세요.">
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="h-[54px] surface_secondary px-[16px] first:rounded-t-[12px] border-y first:border-t-0 border_primary flex items-center justify-between">
+                                                    <div class="flex items-center">
+                                                        <strong class="font_label_bold_xl content_primary">이미지 첨부</strong>
+                                                    </div>
+                                                    <button tpye="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px]  false disabled:content_disabled">
+                                                        업로드
+                                                        <input type="file" id="upload" accept="image/png,image/jpeg,image/jpg,image/gif" multiple class="opacity-0 absolute block w-full h-full top-0 cursor-pointer">
+                                                    </button>
+                                                </div>
+                                                <div class="px-[20px]">
+                                                    <div id="info" class="h-[88px] flex justify-center items-center">
+                                                        <span class="content_disabled font_body_regular_md">파일 형식 : jpg, jpeg, png, gif<br>파일은 최대 3개까지 첨부 가능합니다.</ㅠㄱ></span>
+                                                    </div>
+                                                    <!--사진 첨부 공간 -->
+                                                    <div id="attach" class="h-[88px] flex justify-center items-center" style="display: none;">
+                                                        <label for="upload" class="attach" style="width: 30%; height: 100%;">
+                                                            <img src="" class="thumbnail">
+                                                        </label>
+                                                        <label for="upload" class="attach" style="width: 30%; height: 100%;">
+                                                            <img src="" class="thumbnail">
+                                                        </label>
+                                                        <label for="upload" class="attach" style="width: 30%; height: 100%;">
+                                                            <img src="" class="thumbnail">
+                                                        </label>
+                                                    </div>
+                                                    <!--<input type="file" id="upload1" class="upload" style="display: none;">
+                                                    <input type="file" id="upload2" class="upload" style="display: none;">-->
+                                                </div>
+                                            </section>
+                                        </section>
+                                    </div>
+                                </form>
                             </main>
                         </div>
                     </div>
@@ -197,4 +216,9 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script th:inline="javascript">
+    let memberProfileImage = [[${memberProfileImage}]];
+</script>
+<script src="/js/mypage/mypage-message-write.js"></script>
+<script src="/js/mypage/mypage-profile-image.js"></script>
 </html>

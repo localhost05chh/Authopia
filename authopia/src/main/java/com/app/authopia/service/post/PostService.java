@@ -57,4 +57,7 @@ public interface PostService {
 
     //  내 게시글 전체 개수 조회
     public int getTotalMyPost(PostType postType);
+
+    // 관리자페이지에서 조회
+    List<PostDTO> getListManager(Pagination pagination);
 }

@@ -22,3 +22,4 @@ function elapsedTime(date) {
     }
     return '방금 전';
 }
+

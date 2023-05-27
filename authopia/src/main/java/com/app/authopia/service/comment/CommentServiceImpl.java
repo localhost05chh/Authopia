@@ -3,6 +3,7 @@ package com.app.authopia.service.comment;
 import com.app.authopia.dao.CommentDAO;
 import com.app.authopia.domain.dto.CommentDTO;
 import com.app.authopia.domain.vo.CommentVO;
+import com.app.authopia.domain.dto.Pagination;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +16,9 @@ public class CommentServiceImpl implements CommentService{
 
     //      댓글 목록
     @Override
-    public List<CommentDTO> getList(Long id){
-        return commentDAO.findAll(id);
+    public List<CommentDTO> getList(Long id, Pagination pagination){
+
+         return commentDAO.findAll(id, pagination);
     }
 
     //      댓글 작성
