@@ -86,7 +86,7 @@ function showList(posts) {
             if(post.memberProfileImage ==null){
                 text += `<img src="/image/profile_icon.png" style="width: 18px; height: 18px;">`
             }else{
-                text += `<img src="/files/display?fileName=${post.memberProfileImage.filePath}/t_${post.memberProfileImage.fileUuid}_${post.memberProfileImage.fileName}" style="width: 18px; height: 18px;">`
+                text += `<img src="/files/display?fileName=${post.memberProfileImage.filePath}/t_${post.memberProfileImage.fileUuid}_${post.memberProfileImage.fileName}" style="width: 18px; height: 18px; border-radius: 9999px;">`
             }
             text += `           </div>
                                     <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
