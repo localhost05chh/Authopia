@@ -48,4 +48,7 @@ public class FileDAO {
     public void deleteAllMessageFile(Long messageId){
         fileMapper.deleteAllMessageFile(messageId);
     }
+
+    // 프로필 사진 추가
+    public void saveProfileImage(FileVO fileVO){ fileMapper.insertProfileImage(fileVO);}
 }

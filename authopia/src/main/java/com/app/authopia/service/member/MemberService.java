@@ -40,7 +40,7 @@ public interface MemberService {
     public void modifyMemberInfo(MemberVO memberVO);
 
     // 회원 페이지 수정
-    public void modifyMemberPage(MemberVO memberVO);
+    public void modifyMemberPage(MemberDTO memberDTO);
 
    // 회원 탈퇴
     public void deleteMember(Long id);

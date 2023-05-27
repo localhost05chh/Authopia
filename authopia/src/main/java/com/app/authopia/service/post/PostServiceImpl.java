@@ -115,6 +115,19 @@ public class PostServiceImpl implements PostService {
         return datas;
     }
 
+//        내 게시글 목록
+    @Override
+    public List<PostDTO> getListMyPost(Long memberId, Pagination pagination, PostType postType) {
+        final List<PostDTO> posts = postDAO.findAllMyPost(memberId, pagination, postType);
+        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        return posts;
+    }
+
+//      내 게시글 총 개수
+    @Override
+    public int getTotalMyPost(PostType postType) {
+        return postDAO.findCountOfMyPost(postType);
+    }
 
     // 관리자페이지에서 조회
     @Override

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../static/css/post/subscribe.css">
+    <link rel="stylesheet" href="/css/post/subscribe.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
     <title>구독 / 결제</title>
@@ -61,7 +61,7 @@
                 </div>
 
                 <!-- 졀제수단 -->
-                <div class="mt-[16px]">
+                <!--<div class="mt-[16px]">
                     <div class="py-[20px] border border_black_opacity rounded-[8px]">
                         <div class="px-[20px]">
                             <h5 class="mb-[16px] content_secondary font_label_bold_xl">
@@ -69,7 +69,7 @@
                             </h5>
                             <div class="mb-[12px]">
 
-                                <!-- 네이버 페이 -->
+                                &lt;!&ndash; 네이버 페이 &ndash;&gt;
                                 <label class="hidrelative flex items-center">
                                     <input type="radio" name="pay-items" class="absolute opacity-0 w-0 h-0"
                                            value="NAVER_PAY">
@@ -86,7 +86,7 @@
                                 </label>
                                 <div style="height: 16px;"></div>
 
-                                <!-- 신용카드 -->
+                                &lt;!&ndash; 신용카드 &ndash;&gt;
                                 <label class="hidrelative flex items-center">
                                     <input
                                             type="radio" name="pay-items" class="absolute opacity-0 w-0 h-0"
@@ -105,7 +105,7 @@
                             </div>
                         </div>
 
-                        <!-- 카드등록 메뉴 -->
+                        &lt;!&ndash; 카드등록 메뉴 &ndash;&gt;
                         <div class="mx-auto" id="card">
                             <div
                                     class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
@@ -129,7 +129,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
 
                 <!-- 안내 문구 -->
@@ -224,6 +224,7 @@
                     </div>
                 </dl><button type="button"
                              class="able relative flex justify-center items-center font_button_bold_md h-[48px] rounded-[24px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[20px] w-full min-w-[88px] disabled:content_disabled"
+                             onclick=""
                              disabled="">모든 정보를 확인해주세요.</button>
             </footer>
         </div>
@@ -231,5 +232,10 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="../../static/js/post/subscribe.js"></script>
+<script src="https://cdn.bootpay.co.kr/js/bootpay-3.3.6.min.js" type="application/javascript"></script>
+<script th:inline="javascript">
+
+</script>
+<script src="/js/post/subscribe.js"></script>
+<script src="/js/post/bootPay.js"></script>
 </html>
