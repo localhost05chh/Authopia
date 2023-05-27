@@ -209,6 +209,7 @@ public class MemberController {
     @GetMapping("member-mypost")
     public String gotoMyList(HttpSession session, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
         Long memberId = (Long) session.getAttribute("id");
+        model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         model.addAttribute("memberId", memberId);
         postType.setType(type);
         postType.setOrder(order);
