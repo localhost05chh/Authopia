@@ -13,7 +13,7 @@ function showPopularPost(postList){
                         <div class="flex gap-x-[16px]">
                             <div class="w-full h-[73px] xl:h-auto break-all">
                                 <h2 class="overflow-hidden font_title_bold_md xl:font_title_bold_lg content_secondary text-ellipsis-1">
-                                    ${post.postName}, ${post.id}
+                                    ${post.postName}
                                 </h2>
                                 <p class="mt-[4px] mb-[18px] xl:mt-[6px] overflow-hidden font_label_regular_lg content_quaternary text-ellipsis-1 xl:text-ellipsis-2">
                                     ${post.postContent}

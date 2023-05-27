@@ -29,7 +29,7 @@ function showRecommendPost(post, section){
                             <div>
                                 <strong class="font_label_bold_lg" style="color: rgb(126, 105, 254)">추천 포스트</strong>
                                 <!--제목-->
-                                <h2 class="mt-[8px] font_headline_bold_md content_secondary keep-all">${post.postName},  ${post.id}</h2>
+                                <h2 class="mt-[8px] font_headline_bold_md content_secondary keep-all">${post.postName}</h2>
                             </div>
                             <div class="w-[40px] h-[2px] surface_secondary_inverse"></div>
                             <!--내용-->

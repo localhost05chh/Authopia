@@ -20,7 +20,7 @@ $(document).ready(function(){
                     </button>
                     <div class="mt-[12px] mr-[4px] z-[1] flex flex-col items-center">
                         <h2 class="text-[14px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                            ${member.memberName}, ${member.id}
+                            ${member.memberName}
                         </h2>
                 `
         if(member.memberCategory == "writing"){
