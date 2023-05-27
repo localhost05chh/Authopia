@@ -90,14 +90,16 @@
                 SELECT ROWNUM, ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT
                 FROM
                     (
-                    SELECT ROWNUM, ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT
+                    SELECT ID, MEMBER_ID, POST_NAME, POST_VIEW_COUNT, POST_REGISTER_DATE, POST_UPDATE_DATE, POST_CONTENT
                     FROM TBL_POST
-        <![CDATA[
-                    WHERE POST_TYPE = 'writing' AND ROWNUM <= 20 AND POST_IS_BLINDED = 0
+                    WHERE POST_TYPE = 'writing' AND POST_IS_BLINDED = 0
                     ORDER BY ID DESC
                     )
+        <![CDATA[
+                WHERE ROWNUM <= 50
                 ORDER BY POST_VIEW_COUNT DESC
                 ) P ON M.ID = P.MEMBER_ID AND ROWNUM <= #{pagination.page} * #{pagination.rowCount}
+                ORDER BY POST_VIEW_COUNT DESC
             ) P WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
 
         ]]>
