@@ -109,7 +109,6 @@ public class PostServiceImpl implements PostService {
         return datas;
     }
 
-<<<<<<< HEAD
 //        내 게시글 목록
     @Override
     public List<PostDTO> getListMyPost(Long memberId, Pagination pagination, PostType postType) {
@@ -123,7 +122,6 @@ public class PostServiceImpl implements PostService {
     public int getTotalMyPost(PostType postType) {
         return postDAO.findCountOfMyPost(postType);
     }
-=======
 
     // 관리자페이지에서 조회
     @Override
@@ -131,5 +129,4 @@ public class PostServiceImpl implements PostService {
         return postDAO.findPostManager(pagination);
     }
 
->>>>>>> d43057289f3d3ab13693099b79f28b7a5061104f
 }
