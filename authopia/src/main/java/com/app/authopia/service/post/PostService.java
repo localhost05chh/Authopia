@@ -52,6 +52,12 @@ public interface PostService {
     // 메인페이지에서 최신 인기 포스트 조회
     public List<PostDTO> getListMain(Pagination pagination);
 
+    //  내 게시글 목록
+    public List<PostDTO> getListMyPost(Long memberId, Pagination pagination, PostType postType);
+
+    //  내 게시글 전체 개수 조회
+    public int getTotalMyPost(PostType postType);
+
     // 관리자페이지에서 조회
     List<PostDTO> getListManager(Pagination pagination);
 }
