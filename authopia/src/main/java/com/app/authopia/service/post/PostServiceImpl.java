@@ -40,7 +40,9 @@ public class PostServiceImpl implements PostService {
         postDAO.save(postDTO);
         for (int i = 0; i < postDTO.getPostFiles().size(); i++) {
             postDTO.getPostFiles().get(i).setPostId(postDTO.getId());
-            postDTO.getPostFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            if(postDTO.getPostFiles().get(i).getFileType() == null){
+                postDTO.getPostFiles().get(i).setFileType(FileType.NON_REPRESENTATIVE.name());
+            }
             fileDAO.saveFile(postDTO.getPostFiles().get(i));
         }
     }
@@ -56,6 +58,7 @@ public class PostServiceImpl implements PostService {
                 foundPost.get().setMemberProfileImage(fileDAO.findProfileImage(foundPost.get().getMemberId()).get());
             }
         }
+        postDAO.setViewCount(id);
         return foundPost;
     }
 
@@ -66,6 +69,9 @@ public class PostServiceImpl implements PostService {
         postDAO.setPostDTO(postDTO);
 //      추가
         postDTO.getPostFiles().forEach(file -> {
+            if(file.getFileType() == null) {
+                file.setFileType(FileType.NON_REPRESENTATIVE.name());
+            }
             file.setPostId(postDTO.getId());
             fileDAO.saveFile(file);
         });

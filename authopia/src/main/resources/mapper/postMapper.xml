@@ -61,7 +61,7 @@
     <!-- 게시글 수정 -->
     <update id="update">
         update TBL_POST
-        SET POST_NAME = #{postName}, POST_CONTENT = #{postContent}, POST_UPDATE_DATE= SYSDATE
+        SET POST_NAME = #{postName}, POST_CONTENT = #{postContent}, POST_TYPE=#{postType}, POST_UPDATE_DATE= SYSDATE
         WHERE ID = #{id}
     </update>
 

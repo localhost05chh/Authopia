@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="/css/post/write-copy.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
-    <title>글 작성</title>
+    <title>글 수정</title>
 </head>
 <body class="h-full">
 <div id="__next">
-    <form th:action="@{/post/write}" method="post" id="writeForm" th:object="${postVO}">
+<!--    1-->
+    <form th:action="@{/post/modify}" method="post" id="writeForm" th:object="${post}">
         <div class="sticky top-0 z-10">
             <!-- 해더 -->
             <!-- <nav></nav> -->
@@ -27,7 +28,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <h1 class="font_title_bold_lg">포스트 작성하기</h1>
+                        <h1 class="font_title_bold_lg">포스트 수정하기</h1>
                     </div>
                     <div class="flex items-center">
                         <div class="mr-[12px]">
@@ -55,7 +56,7 @@
                         <div>
                             <label
                                     class="relative overflow-hidden flex rounded-[8px] border-solid border-[1px] border_black_opacity surface_primary focus:border-[2px] focus:border_accent_active disabled:content_disabled">
-                                <!--        제목 입력칸          -->
+                                <!--        2제목 입력칸          -->
                                 <input th:field="*{postName}" type="text" id="input"
                                        class="change-button input px-[20px] w-full h-[48px] outline-none font_title_bold_md placeholder:font_body_regular_md content_primary placeholder:content_disabled disabled:surface_tertiary disabled:border_black_opacity"
                                        placeholder="제목을 입력해주세요.">
@@ -66,7 +67,7 @@
                         <div class="mb-[48px]">
                             <div role="application" class="tox tox-tinymce" aria-disabled="false"
                                  style="visibility: hidden; height: 474px;">
-                                <!--        내용 입력 칸           -->
+                                <!--       3 내용 입력 칸           -->
                                 <textarea th:field="*{postContent}" id="textarea" style="resize: none;"
                                           class="change-button steadio-post outline-none font_title_bold_md px-[20px] pt-[10px] textarea-type"
                                           placeholder="내용을 입력해주세요."></textarea>
@@ -154,8 +155,8 @@
                             </div>
                         </div>
                         <div class="px-[20px]">
-                            <!-- postType 입력받는 칸 -->
-                            <input th:field="*{postType}" type="hidden" class="postType">
+                            <!-- 4postType 입력받는 칸 -->
+                            <input th:field=="*{postType}" type="hidden" class="postType">
                             <ul>
                                 <li class=" py-[26px] border-t border_secondary first:border-t-0">
                                     <label class="writing type hidrelative flex items-center">
@@ -263,5 +264,8 @@
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-<script src="/js/post/write.js"></script>
+<script th:inline="javascript">
+    let files = [[${post.postFiles}]]
+</script>
+<script src="/js/post/modify.js"></script>
 </html>

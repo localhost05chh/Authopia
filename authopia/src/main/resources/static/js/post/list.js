@@ -82,7 +82,13 @@ function showList(posts) {
                                 </div>
                                 <!-- 프로필 -->
                                 <div class="flex items-center mt-[12px]">
-                                    <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px; height: 18px; background : url(https://steadio.imgix.net/profiles/81babe73-f3d3-4c5b-9ef8-1f101e6af53b/profileImage/a5134490-09e0-464c-800a-6f118c3b3d1f.jpeg?auto=format%2Ccompress&h=300&lossless=true&w=300) center center / cover no-repeat, rgb(255, 255, 255);"></div>
+                                    <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px; height: 18px;">`
+            if(post.memberProfileImage ==null){
+                text += `<img src="/image/profile_icon.png" style="width: 18px; height: 18px;">`
+            }else{
+                text += `<img src="/files/display?fileName=${post.memberProfileImage.filePath}/t_${post.memberProfileImage.fileUuid}_${post.memberProfileImage.fileName}" style="width: 18px; height: 18px;">`
+            }
+            text += `           </div>
                                     <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
                                         <!-- 작성자 정보 -->
                                         <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">${post.memberName}</span>

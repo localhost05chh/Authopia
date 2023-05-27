@@ -10,9 +10,9 @@ $("#post-remove").on("click", function () {
     location.href = `remove?id=${postId}`;
 })
 
-// $("#post-modify").on("click", function () {
-//     location.href = `modify?id=${postId}`;
-// })
+$("#post-modify").on("click", function () {
+    location.href = `modify?id=${postId}`;
+})
 
 $inputtext.show();
 $input.hide();

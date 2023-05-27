@@ -108,8 +108,8 @@
                     <div class="flex items-center gap-x-[10px] whitespace-nowrap">
                         <div>
                             <a href="">
-                                <div
-                                        class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] main-profile">
+                                <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 34px; height: 34px;">
+
                                 </div>
                             </a>
                         </div>
@@ -125,9 +125,12 @@
                                     <span> ｜ </span>
                                     <span>조회수 <th:block th:text="${post.postViewCount}"></th:block></span>
                                 </a>
-                                <span id="post-modify">수정 </span>
-                                <span> | </span>
-                                <span id="post-remove"> 삭제</span>
+                                <!-- 수정  삭제 -->
+                                <div th:if="!${memberId eq null} and ${memberId}==${post.memberId}">
+                                    <span id="post-modify"> 수정 </span>
+                                    <span> | </span>
+                                    <span id="post-remove"> 삭제</span>
+                                </div>
                             </div>
                         </div>
                     </div>
