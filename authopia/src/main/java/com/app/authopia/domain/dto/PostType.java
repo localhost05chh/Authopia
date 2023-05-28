@@ -11,6 +11,7 @@ public class PostType {
     String type;
     String order;
     String keyword;
+    Long memberId;
 
     public String[] getTypes(){
         return type.split("");
