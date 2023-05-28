@@ -153,7 +153,7 @@
         SELECT P.ID, MEMBER_ID, POST_TYPE, POST_NAME, POST_VIEW_COUNT, POST_RECOMMEND, POST_REGISTER_DATE,
         POST_UPDATE_DATE, POST_CONTENT, POST_IS_BLINDED, MEMBER_NAME
         FROM TBL_MEMBER M JOIN TBL_POST P
-        ON M.ID = p.MEMBER_ID AND POST_IS_BLINDED = 0 AND p.MEMBER_ID = #{memberId}
+        ON M.ID = p.MEMBER_ID AND POST_IS_BLINDED = 0 AND p.MEMBER_ID = #{postType.memberId}
         ORDER BY
         <choose>
             <when test="postType.order == 'new'">
@@ -168,12 +168,6 @@
         <![CDATA[
                 WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
             ]]> AND POST_TYPE = #{postType.type}
-        <choose>
-            <when test="!postType.keyword.equals('')">
-                AND (POST_NAME LIKE '%'||#{postType.keyword}||'%' OR POST_CONTENT LIKE '%'||#{postType.keyword}||'%' OR
-                MEMBER_NAME LIKE '%'||#{postType.keyword}||'%')
-            </when>
-        </choose>
         <![CDATA[
         ) P WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
         ]]>
@@ -182,12 +176,7 @@
     <select id="selectCountOfMyPost" resultType="_int">
         SELECT COUNT(P.ID)
         FROM TBL_MEMBER M JOIN TBL_POST P
-        ON M.ID = P.MEMBER_ID AND POST_TYPE = #{type} AND p.MEMBER_ID = #{memberId}
-        <choose>
-            <when test="!keyword.equals('')">
-                AND (POST_NAME LIKE '%'||#{keyword}||'%' OR POST_CONTENT LIKE '%'||#{keyword}||'%' OR MEMBER_NAME LIKE '%'||#{keyword}||'%')
-            </when>
-        </choose>
+        ON M.ID = P.MEMBER_ID AND POST_TYPE = #{postType.type} AND P.MEMBER_ID = #{memberId}
     </select>
 
 </mapper>

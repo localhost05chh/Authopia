@@ -103,6 +103,42 @@ $pages.each((i, page)=>{
     });
 });
 
+// 카테고리 선택
+$(document).ready(function () {
+    let type = searchParam('type');
+    let href = window.location.href
+
+    function searchParam(key) {
+        return new URLSearchParams(location.search).get(key);
+    };
+
+    $(".fAzCXd a").on("click", function (e) {
+        e.preventDefault();
+        let type = this.classList[0];
+        if (type == "main") {
+            location.href = `/main`;
+        } else {
+            location.href = `/member/member-mypost?type=${type}`;
+        }
+    });
+})
+
+/*keyword 값 주소에 전달하기*/
+function addFunc() {
+    let keyword = $("#input_search").val();
+    let type = searchParam('type');
+    let order = searchParam('order');
+    if (type == null) {
+        location.href = `/member/member-mypost?&type=writing&order=new&keyword=${keyword}`;
+    } else {
+        if (order == null) {
+            location.href = `/member/member-mypost?&type=${type}&order=new&keyword=${keyword}`;
+        } else {
+            location.href = `/member/member-mypost?&type=${type}&order=${order}&keyword=${keyword}`;
+        }
+    }
+}
+
 /* 글이 없을 때 */
 function noPost(){
     $(".post").hide();

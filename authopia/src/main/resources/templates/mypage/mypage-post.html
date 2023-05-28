@@ -113,6 +113,7 @@
                     <svg viewBox="0 0 11 12" xmlns="http://www.w3.org/2000/svg" class="h-[16px] w-[16px] content_quaternary"><path d="M4.834 2.667A.667.667 0 0 0 4.167 2h-4v9.333H9.5v-4a.667.667 0 0 0-1.333 0V10H1.5V3.333h2.667a.667.667 0 0 0 .667-.666Z"></path><path d="M10.173.552h.66V4.99a.667.667 0 0 1-1.333 0V2.828L5.972 6.357a.667.667 0 0 1-.943-.943l3.528-3.528H6.396a.667.667 0 0 1 0-1.334h3.777Z"></path></svg>
                 </a>
             </nav>
+            <input type="hidden" onkeypress="if( event.keyCode==13 ){addFunc();}" placeholder="검색어를 입력해주세요." id="input_search" class="style__SearchInput-zxsodr-16 jPMsmJ">
             <!-- 내용 -->
             <div class="basis-0 grow shrink-0 overflow-x-auto">
                 <div class="grid grid-cols-12 gap-x-[16px] gap-y-0 w-desktop-grid mx-auto pb-[64px]">
@@ -128,50 +129,58 @@
                                 </div>
                             </div>
                             <!-- tab들 -->
-                            <div class="mt-[26px]">
+                            <div class="mt-[26px] fAzCXd">
                                 <ul class="h-[36px] border-b border_black_opacity flex gap-x-[20px]">
                                     <li class="relative">
-                                        <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_primary">
-                                            <div class="flex">
-                                                <p class="font_label_bold_xl">소설</p>
-                                                <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_tertiary">
-                                                    <p class="font_label_bold_sm">5</p>
+                                        <a class = "writing">
+                                            <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_primary">
+                                                <div class="flex">
+                                                    <p class="font_label_bold_xl">소설</p>
+                                                    <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_tertiary">
+                                                        <p class="font_label_bold_sm">5</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
+                                            </button>
+                                        </a>
                                         <div class="button-line absolute -bottom-[1.5px] w-full h-[2px] surface_primary_inverse"></div>
                                     </li>
                                     <li class="relative">
-                                        <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_disabled">
-                                            <div class="flex">
-                                                <p class="font_label_bold_xl">일러스트</p>
-                                                <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
-                                                    <p class="font_label_bold_sm">0</p>
+                                        <a class="drawing">
+                                            <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_disabled">
+                                                <div class="flex">
+                                                    <p class="font_label_bold_xl">일러스트</p>
+                                                    <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
+                                                        <p class="font_label_bold_sm">0</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
+                                            </button>
+                                        </a>
                                         <div class="button-line absolute -bottom-[1.5px] w-full h-[2px] surface_primary_inverse"></div>
                                     </li>
                                     <li class="relative">
-                                        <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_disabled">
-                                            <div class="flex">
-                                                <p class="font_label_bold_xl">자유글</p>
-                                                <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
-                                                    <p class="font_label_bold_sm">0</p>
+                                        <a class="free">
+                                            <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_disabled">
+                                                <div class="flex">
+                                                    <p class="font_label_bold_xl">자유글</p>
+                                                    <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
+                                                        <p class="font_label_bold_sm">0</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
+                                            </button>
+                                        </a>
                                         <div class="button-line absolute -bottom-[1.5px] w-full h-[2px] surface_primary_inverse"></div>
                                     </li>
                                     <li class="relative">
-                                        <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_disabled">
-                                            <div class="flex">
-                                                <p class="font_label_bold_xl">모집글</p>
-                                                <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
-                                                    <p class="font_label_bold_sm">0</p>
+                                        <a class="recruit">
+                                            <button type="button" class="button-tab block h-full pb-[16px] text-left font_label_bold_xl relative content_disabled">
+                                                <div class="flex">
+                                                    <p class="font_label_bold_xl">모집글</p>
+                                                    <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
+                                                        <p class="font_label_bold_sm">0</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </button>
+                                            </button>
+                                        </a>
                                         <div class=" button-line absolute -bottom-[1.5px] w-full h-[2px] surface_primary_inverse"></div>
                                     </li>
                                 </ul>

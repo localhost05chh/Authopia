@@ -40,10 +40,10 @@ public interface PostMapper {
     public void updateViewCount(Long id);
 
     //  내 게시글 목록
-    public List<PostDTO> selectAllMyPost(Long memberId, Pagination pagination, PostType postType);
+    public List<PostDTO> selectAllMyPost(Pagination pagination, PostType postType);
 
     //    게시글 총 개수
-    public int selectCountOfMyPost(PostType postType);
+    public int selectCountOfMyPost(PostType postType, Long memberId);
 
     //      관리자 페이지 게시글 목록
     public List<PostDTO> selectManager();

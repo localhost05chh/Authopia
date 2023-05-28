@@ -96,3 +96,11 @@ $("#input-name").on("change keyup paste", function(){
         check($("#label-name"),$("#warn-name"));
     }
 });
+
+// 프로필 사진 불러오기
+console.log(memberProfileImage);
+if(memberProfileImage != null){
+    $("img.profile-image").attr("src", `/files/display?fileName=${memberProfileImage.filePath}/t_${memberProfileImage.fileUuid}_${memberProfileImage.fileName}`);
+} else {
+    $("img.profile-image").attr("src", "/image/profile_icon.png");
+}

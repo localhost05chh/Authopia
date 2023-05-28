@@ -117,16 +117,22 @@ public class PostServiceImpl implements PostService {
 
 //        내 게시글 목록
     @Override
-    public List<PostDTO> getListMyPost(Long memberId, Pagination pagination, PostType postType) {
-        final List<PostDTO> posts = postDAO.findAllMyPost(memberId, pagination, postType);
-        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+    @Transactional(rollbackFor = Exception.class)
+    public List<PostDTO> getListMyPost(Pagination pagination, PostType postType) {
+        final List<PostDTO> posts = postDAO.findAllMyPost(pagination, postType);
+        posts.forEach(data -> {
+            data.setPostFiles(fileDAO.findAllFile(data.getId()));
+            if (fileDAO.findProfileImage(data.getMemberId()).isPresent()) {
+                data.setMemberProfileImage(fileDAO.findProfileImage(data.getMemberId()).get());
+            }
+        });
         return posts;
     }
 
 //      내 게시글 총 개수
     @Override
-    public int getTotalMyPost(PostType postType) {
-        return postDAO.findCountOfMyPost(postType);
+    public int getTotalMyPost(PostType postType, Long memberId) {
+        return postDAO.findCountOfMyPost(postType, memberId);
     }
 
     // 관리자페이지에서 조회
