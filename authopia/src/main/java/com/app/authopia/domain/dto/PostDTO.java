@@ -19,7 +19,7 @@ public class PostDTO {
     private Long postViewCount;
     private Long postRecommend;
     private String postRegisterDate;
-    private String updateDate;
+    private String postUpdateDate;
     private String postContent;
     private Boolean postIsBlinded;
     private String memberName;

@@ -43,7 +43,7 @@ public interface PostService {
         postDTO.setPostViewCount(postVO.getPostViewCount());
         postDTO.setPostRecommend(postVO.getPostRecommend());
         postDTO.setPostRegisterDate(postVO.getPostRegisterDate());
-        postDTO.setUpdateDate(postVO.getUpdateDate());
+        postDTO.setPostUpdateDate(postVO.getPostUpdateDate());
         postDTO.setPostContent(postVO.getPostContent());
         postDTO.setPostIsBlinded(postVO.getPostIsBlinded());
         return postDTO;

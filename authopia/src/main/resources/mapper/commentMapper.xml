@@ -12,7 +12,7 @@
                 SELECT RE.ID, COMMENT_CONTENT, COMMENT_REGISTER_DATE, COMMENT_UPDATE_DATE, RE.MEMBER_ID, MEMBER_NAME, POST_ID
                 FROM TBL_MEMBER M JOIN TBL_COMMENT RE
                 ON POST_ID = #{id} AND M.ID = RE.MEMBER_ID
-                ORDER BY RE.ID DESC
+                ORDER BY COMMENT_UPDATE_DATE DESC
             ) RE
             WHERE
             <![CDATA[
