@@ -36,7 +36,7 @@
                                 class="w-[88px] h-[88px] mb-[16px] border-[4px] absolute top-0 border_white box-border rounded-[50%] drop-shadow-[0px_4px_10px_rgba(0,0,0,0.08)] profile-image">
                         </div>
                         <div class="flex flex-col max-w-[404px]">
-                            <p class="font_headline_bold_sm mb-[6px] text-center" th:text="${post.memberName}"></p>
+                            <p class="font_headline_bold_sm mb-[6px] text-center">작가 이름</p>
                             <div class="flex justify-center items-center mb-[12px]">
                                     <span class="font_label_regular_md text-center">
                                         <strong class="font_label_bold_lg">1</strong> 관심
@@ -113,7 +113,6 @@
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script th:inline="javascript">
-    let memberId = [[${memberId}]]
 </script>
 <script src="/js/post/author-profile.js"></script>
 </html>

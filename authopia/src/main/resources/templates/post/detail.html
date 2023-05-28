@@ -106,8 +106,8 @@
                 <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]" th:text="${post.postName}"></h3>
                 <!-- 프로필 메뉴 -->
 
-                <div class="flex items-center justify-between">
-                    <a href="/post/author-profile?memberId=${post.memberId}">
+                <div class="flex items-center">
+                    <a th:href="@{/post/author-profile(memberId = ${post.memberId})}">
                     <div class="flex items-center gap-x-[10px] whitespace-nowrap">
                         <div>
                             <a href="">
