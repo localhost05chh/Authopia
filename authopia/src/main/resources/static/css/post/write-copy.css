@@ -224,6 +224,11 @@ menu, ol, ul {
     margin-bottom: 14px;
 }
 
+.lg\:px-\[32px\] {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
 .border-solid {
     border-style: solid;
 }

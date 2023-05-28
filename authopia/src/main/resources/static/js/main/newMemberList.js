@@ -22,7 +22,7 @@ $(document).ready(function(){
                             <div class="absolute top-0 left-0 w-full h-full border border_black_opacity rounded-[16px]"></div>
                         </div>
                         <h2 class="mt-[12px] font_label_bold_xl content_secondary break-all line-clamp-1">
-                            ${member.memberName}, ${member.id}
+                            ${member.memberName}
                         </h2>
                 `
         if(member.memberCategory == "writing"){
