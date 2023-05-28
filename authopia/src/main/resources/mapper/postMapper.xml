@@ -19,7 +19,7 @@
         ORDER BY
         <choose>
             <when test="postType.order == 'new'">
-                POST_REGISTER_DATE
+                POST_UPDATE_DATE
             </when>
             <otherwise>
                 POST_VIEW_COUNT

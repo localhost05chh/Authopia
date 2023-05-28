@@ -96,7 +96,7 @@ function showList(posts) {
                                             <circle cx="12" cy="12" r="4"></circle>
                                         </svg>
                                         <!-- 작성 시간 -->
-                                        <span class="shrink-0 content_quaternary">` + elapsedTime(post.postRegisterDate) + ` </span>
+                                        <span class="shrink-0 content_quaternary">` + elapsedTime(post.postUpdateDate) + ` </span>
                                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[8px] h-[8px] content_disabled">
                                             <circle cx="12" cy="12" r="4"></circle>
                                         </svg>
