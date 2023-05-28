@@ -20,7 +20,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/authopia" />
+    <property name="last_opened_file_path" value="D:/web_1900_chh/spring/workspace/app" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Less" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -38,6 +39,7 @@
       <workItem from="1684244692712" duration="10000" />
       <workItem from="1684316769624" duration="90000" />
       <workItem from="1684477252726" duration="27000" />
+      <workItem from="1685097127467" duration="80000" />
     </task>
     <servers />
   </component>
@@ -45,12 +47,17 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="555" y="226" key="FileChooserDialogImpl" timestamp="1684477278029">
-      <screen x="0" y="0" width="1440" height="852" />
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1685097207825">
+      <screen x="0" y="0" width="1920" height="1032" />
     </state>
     <state x="555" y="226" key="FileChooserDialogImpl/0.0.1440.852/0.1800.2304.691@0.0.1440.852" timestamp="1684477278029" />
     <state x="479" y="-807" key="FileChooserDialogImpl/0.0.1920.1032/-261.-1080.1920.1032@-261.-1080.1920.1032" timestamp="1684145090462" />
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1032/-261.-1080.1920.1032@0.0.1920.1032" timestamp="1685097207825" />
     <state x="2660" y="286" key="FileChooserDialogImpl/0.0.1920.1032/1920.0.1920.1080@1920.0.1920.1080" timestamp="1684244701522" />
     <state x="740" y="275" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1684123946344" />
+    <state x="461" y="160" key="SettingsEditor" timestamp="1685097187594">
+      <screen x="0" y="0" width="1920" height="1032" />
+    </state>
+    <state x="461" y="160" key="SettingsEditor/0.0.1920.1032/-261.-1080.1920.1032@0.0.1920.1032" timestamp="1685097187594" />
   </component>
 </project>

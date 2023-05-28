@@ -88,6 +88,28 @@ public class PostController{
         return new RedirectView("/post/list");
     }
 
+    //   작가  게시글 목록
+    @GetMapping("author-profile")
+    public void gotoListAuthor(@RequestParam(defaultValue = "")Long postId,PostDTO postDTO,Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+        session.setAttribute("postId", postId);
+        postType.setType(type);
+        postType.setOrder(order);
+        postType.setKeyword(keyword);
+        session.setAttribute("postType", postType);
+    }
+
+
+    @PostMapping("author-profile/{page}")
+    @ResponseBody
+    public List<PostDTO> gotoListAuthor(Long memberId, HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
+        postType = (PostType) session.getAttribute("postType");
+        memberId = postService.read((Long) session.getAttribute("postId")).get().getMemberId();
+        pagination.setTotal(postService.getTotal(postType));
+        pagination.setPage(page);
+        pagination.progress();
+        return postService.getListAuthor(pagination , postType, memberId);
+    }
+
 //    복구는 필요한사람이 작성해주세용!!
 
 }
