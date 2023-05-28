@@ -22,20 +22,27 @@ public class PostServiceImpl implements PostService {
     //      게시글 목록
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<PostDTO> getList(Pagination pagination, PostType postType){
+    public List<PostDTO> getList(Pagination pagination, PostType postType) {
         final List<PostDTO> posts = postDAO.findAll(pagination, postType);
-        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        posts.forEach(data -> {
+            data.setPostFiles(fileDAO.findAllFile(data.getId()));
+            if (fileDAO.findProfileImage(data.getMemberId()).isPresent()) {
+                data.setMemberProfileImage(fileDAO.findProfileImage(data.getMemberId()).get());
+            }
+        });
         return posts;
     }
 
     //      게시글 추가
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void write(PostDTO postDTO){
+    public void write(PostDTO postDTO) {
         postDAO.save(postDTO);
-        for(int i=0; i<postDTO.getPostFiles().size(); i++){
+        for (int i = 0; i < postDTO.getPostFiles().size(); i++) {
             postDTO.getPostFiles().get(i).setPostId(postDTO.getId());
-            postDTO.getPostFiles().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            if(postDTO.getPostFiles().get(i).getFileType() == null){
+                postDTO.getPostFiles().get(i).setFileType(FileType.NON_REPRESENTATIVE.name());
+            }
             fileDAO.saveFile(postDTO.getPostFiles().get(i));
         }
     }
@@ -43,21 +50,28 @@ public class PostServiceImpl implements PostService {
     //      게시글 조회
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Optional<PostDTO> read(Long id){
+    public Optional<PostDTO> read(Long id) {
         final Optional<PostDTO> foundPost = postDAO.findById(id);
-        if(foundPost.isPresent()){
+        if (foundPost.isPresent()) {
             foundPost.get().setPostFiles(fileDAO.findAllFile(foundPost.get().getId()));
+            if (fileDAO.findProfileImage(foundPost.get().getMemberId()).isPresent()) {
+                foundPost.get().setMemberProfileImage(fileDAO.findProfileImage(foundPost.get().getMemberId()).get());
+            }
         }
+        postDAO.setViewCount(id);
         return foundPost;
     }
 
     //      게시글 수정
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void modify(PostDTO postDTO){
+    public void modify(PostDTO postDTO) {
         postDAO.setPostDTO(postDTO);
 //      추가
         postDTO.getPostFiles().forEach(file -> {
+            if(file.getFileType() == null) {
+                file.setFileType(FileType.NON_REPRESENTATIVE.name());
+            }
             file.setPostId(postDTO.getId());
             fileDAO.saveFile(file);
         });
@@ -68,14 +82,14 @@ public class PostServiceImpl implements PostService {
     //      게시글 삭제
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void remove(Long id){
+    public void remove(Long id) {
         postDAO.delete(id);
         fileDAO.deleteAllFile(id);
     }
 
     //      게시글 복구
     @Override
-    public void restore(Long id){
+    public void restore(Long id) {
 
     }
 
@@ -87,7 +101,7 @@ public class PostServiceImpl implements PostService {
 
     //      게시글 조회수 증가
     @Override
-    public void increaseViewCount(Long id){
+    public void increaseViewCount(Long id) {
         postDAO.setViewCount(id);
     }
 
@@ -101,7 +115,19 @@ public class PostServiceImpl implements PostService {
         return datas;
     }
 
+//        내 게시글 목록
+    @Override
+    public List<PostDTO> getListMyPost(Long memberId, Pagination pagination, PostType postType) {
+        final List<PostDTO> posts = postDAO.findAllMyPost(memberId, pagination, postType);
+        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        return posts;
+    }
 
+//      내 게시글 총 개수
+    @Override
+    public int getTotalMyPost(PostType postType) {
+        return postDAO.findCountOfMyPost(postType);
+    }
 
     // 관리자페이지에서 조회
     @Override

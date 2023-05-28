@@ -31,4 +31,7 @@ public interface FileMapper {
 
     // 쪽지 파일 전체 삭제
     public void deleteAllMessageFile(Long messageId);
+
+    //    프로필 사진 추가
+    public void insertProfileImage(FileVO fileVO);
 }

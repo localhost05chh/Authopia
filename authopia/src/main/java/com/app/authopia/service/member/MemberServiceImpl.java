@@ -4,15 +4,19 @@ import com.app.authopia.dao.FileDAO;
 import com.app.authopia.dao.MemberDAO;
 import com.app.authopia.domain.dto.MemberDTO;
 import com.app.authopia.domain.dto.PostDTO;
+import com.app.authopia.domain.type.FileType;
 import com.app.authopia.domain.vo.MemberVO;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class MemberServiceImpl implements MemberService {
     private final MemberDAO memberDAO;
     private final FileDAO fileDAO;
@@ -76,12 +80,23 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public void modifyMemberPage(MemberVO memberVO) { memberDAO.setMemberPage(memberVO); }
+    @Transactional(rollbackFor = Exception.class)
+    public void modifyMemberPage(MemberDTO memberDTO) {
+        log.info(memberDTO.toString());
+        for(int i=0; i<memberDTO.getMemberProfileImageList().size(); i++) {
+            memberDTO.getMemberProfileImageList().get(i).setMemberId(memberDTO.getId());
+            memberDTO.getMemberProfileImageList().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            fileDAO.saveProfileImage(memberDTO.getMemberProfileImageList().get(i));
+        }
+        memberDAO.setMemberPage(memberDTO);
+    }
 
     @Override
     public void deleteMember(Long id) {
         memberDAO.cancelMember(id);
     }
+
+    // 프로필 사진 추가
 
     @Override
     public List<MemberVO> getMember() {

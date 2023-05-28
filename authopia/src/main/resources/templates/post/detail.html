@@ -8,8 +8,11 @@
     <link rel="stylesheet" href="/css/post/view-post.css">
     <link rel="stylesheet" href="/css/main/header.css">
     <link rel="stylesheet" href="/css/footer/footer.css">
+    <link rel="stylesheet" href="/css/main/main.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css"/>
+    <link rel="shortcut icon"
+          href="/image/logo-short-cut.png">
     <title>상세보기</title>
 </head>
 
@@ -41,40 +44,38 @@
                     <!--<a class="font_label_bold_lg content_secondary hover:content_accent" href="/plans">요금제</a>-->
                     <!--로그인-->
                     <div th:if="${memberId eq null}">
-                        <button type="button"
-                                class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] false disabled:content_disabled">
+                        <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] false disabled:content_disabled">
                             <a href="/member/login">로그인</a>
                         </button>
                     </div>
                     <!--로그아웃-->
                     <div th:unless="${memberId eq null}">
-                        <button type="button"
-                                class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] false disabled:content_disabled">
+                        <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_secondary surface_primary border border-solid border_black_opacity hover:surface_tertiary hover:border_secondary active:surface_tertiary active:border_secondary disabled:surface_primary disabled:border_black_opacity disabled:border disabled:border-solid px-[15px] false disabled:content_disabled">
                             <a href="/logout">로그아웃</a>
                         </button>
                     </div>
                     <div class="relative login-profile" th:unless="${memberId eq null}">
-                        <button class="relative block w-[32px] h-[32px] rounded-full">
+                        <button class="relative block w-[32px] h-[32px] rounded-full" onclick="location.href='/message/list'">
                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                <img alt="프로필 이미지" sizes="100vw" srcset="/image/img.png"
-                                     decoding="async" data-nimg="fill" class="rounded-full"
-                                     style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                <img alt="프로필 이미지" sizes="100vw" src="" class="profile-image rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                             </span>
+                            <!--메세지 알람-->
+                            <button onclick="location.href='/message/list'" type="button" class="bottom-[20px] left-[20px] absolute z-[5] w-[20px] h-[20px] rounded-full flex items-center justify-center " style="background: red;">
+                                <span th:text="${countMessage}" style="color: white"></span>
+                            </button>
                         </button>
                     </div>
 
                     <!--크리에이터 시작하기-->
                     <div class="hidden lg:block" th:if="${memberId eq null}">
-                        <button onclick="location.href='/member/join'" type="button"
-                                class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] false disabled:content_disabled">
+                        <button onclick="location.href='/member/join'" type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] false disabled:content_disabled">
                             크리에이터 시작하기
                         </button>
                     </div>
                     <!--마이페이지-->
                     <div class="hidden lg:block" th:unless="${memberId eq null}">
-                        <button onclick="location.href='/member/member-info'" type="button"
-                                class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] false disabled:content_disabled">
-                            크리에이터 페이지
+                        <button onclick="location.href='/member/member-info'" type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_primary_inverse surface_primary_inverse hover:surface_primary_inverse_active active:surface_primary_inverse_active disabled:surface_disabled px-[16px] false disabled:content_disabled">
+                            크리에이터 스튜디오
                         </button>
                     </div>
                 </div>
@@ -103,7 +104,6 @@
                     class="flex flex-col relative max-w-main min-w-screen min-w-[320px] w-full mx-auto surface_primary">
                 <!-- 상단 제목 -->
                 <h3 class="font_headline_bold_md content_primary mt-[12px] mb-[18px]" th:text="${post.postName}"></h3>
-
                 <!-- 프로필 메뉴 -->
 
                 <div class="flex items-center justify-between">
@@ -111,8 +111,7 @@
                     <div class="flex items-center gap-x-[10px] whitespace-nowrap">
                         <div>
                             <a href="">
-                                <div
-                                        class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] main-profile">
+                                <div id="member-profileImage" class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 34px; height: 34px;">
                                 </div>
                             </a>
                         </div>
@@ -123,11 +122,17 @@
                             </div>
                             <div class="mt-[2px] flex items-center">
                                 <a href="" class="font_label_regular_sm content_quaternary flex items-center">
-                                    <input class="post-register-date" type="text" th:value="${post.postRegisterDate}" style="display: none;">
+                                    <input class="post-register-date" type="text" th:value="${post.postUpdateDate}" style="display: none;">
                                     <span>시간 전</span>
                                     <span> ｜ </span>
                                     <span>조회수 <th:block th:text="${post.postViewCount}"></th:block></span>
                                 </a>
+                                <!-- 수정  삭제 -->
+                                <div th:if="!${memberId eq null} and ${memberId}==${post.memberId}">
+                                    <span id="post-modify"> 수정 </span>
+                                    <span> | </span>
+                                    <span id="post-remove"> 삭제</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -137,6 +142,10 @@
 
                 <!-- 중간 내용 부분 -->
                 <div class="mt-[24px] pt-[32px] border-t border_secondary">
+                    <!-- 이미지 들어가는 부분 -->
+                    <div id="img-box" style="height: 102px; width: 234px;">
+
+                    </div>
                     <div class="steadio-post steadio-post-detail">
                         <p th:text="${post.postContent}"></p>
                     </div>
@@ -151,9 +160,7 @@
                     <div>
                         <button
                                 class="border_black_opacity box-border border-[0.8px] w-[60px] h-[60px] rounded-full overflow-hidden shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] relative">
-                                <span class="profile-image">
-                                    <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2F304fb2f4-e314-4074-bdf4-e18d2ddbdee4%2FprofileImage%2F315cd6ee-37ca-4d83-b71b-ff6f3d8279e3.jpeg%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=1920&q=75"
-                                         style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                <span id="member-profileImage2" class="profile-image">
                                 </span>
                         </button>
                     </div>
@@ -161,8 +168,8 @@
                         <div class="flex flex-col gap-[4px] px-[40px]">
                             <button class="font_title_bold_lg text-center" style="background: none"
                                     th:text="${post.memberName}"></button>
-                            <p class="md:w-[404px] text-center font_label_regular_md content_quaternary break-all">
-                                프로필 소개 내용</p>
+                            <p th:text="${memberIntroduce}" class="md:w-[404px] text-center font_label_regular_md content_quaternary break-all">
+                                </p>
                         </div>
                     </div>
                     <div class="flex flex-row gap-[8px] items-center whitespace-nowrap">
@@ -175,7 +182,7 @@
                                         <path fill-rule="evenodd" clip-rule="evenodd"
                                               d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path>
                                     </svg>
-                                    <div>관심</div>
+                                    <div>구독</div>
                                 </div>
                             </button>
                         </div>
@@ -197,8 +204,6 @@
                                 <div class="w-[32px] h-[32px]">
                                     <div class="relative w-full h-full rounded-full flex items-center justify-center">
                                         <span class="my-profil-image">
-                                            <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2F4ce0f981-f4ed-448b-a5d3-e8ac754fcd26%2FprofileImage%2F354c3731-9609-43f5-b3d2-dbe0be835849.jpg%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=1920&q=75"
-                                                 class="my-profil-image-shape rounded-full" alt="">
                                         </span>
                                         <div></div>
                                     </div>
@@ -212,9 +217,8 @@
                                     <div class="w-[32px] h-[32px]">
                                         <div
                                                 class="relative w-full h-full rounded-full flex items-center justify-center">
-                                            <span class="profile-image-background-style">
-                                                <img src="https://steadio.co/_next/image?url=https%3A%2F%2Fsteadio.imgix.net%2Fprofiles%2F4ce0f981-f4ed-448b-a5d3-e8ac754fcd26%2FprofileImage%2F354c3731-9609-43f5-b3d2-dbe0be835849.jpg%3Fauto%3Dformat%252Ccompress%26h%3D300%26lossless%3Dtrue%26w%3D300&w=1920&q=75"
-                                                     alt="" class="profile-image-input rounded-full">
+                                            <span class="my-profil-image">
+
                                             </span>
                                         </div>
                                     </div>
@@ -262,15 +266,102 @@
                 </div>
             </main>
         </div>
-        <footer th:replace="~{/footer/footer :: #post-footer}"></footer>
+        <footer class="sticky top-[100vh] w-full surface_secondary">
+            <div class="mx-auto max-w-desktop-grid">
+                <div class="hidden lg:block">
+                    <div class="pt-[40px] pb-[45px]">
+                        <div class="pb-[28px] border-b border_primary flex justify-between">
+                            <img src="/image/logo.png" alt="" class="w-[128px] h-[30px] content_secondary">
+                            <div class="flex gap-x-[52px]">
+                                <div class="flex flex-col content_secondary">
+                                    <h5 class="font_label_bold_xl mb-[8px]">Authopia</h5>
+                                    <!-- 뭐 넣을지 회의 필요 -->
+                                    <!-- 아래에 회원가입 주소 넣으면 될 것 같아요 -->
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="/member/login">작가 시작하기</a>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="/post/list">작품 보기</a>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="/post/list">작품 보기</a>
+                                </div>
+                                <div class="flex flex-col content_secondary">
+                                    <h5 class="font_label_bold_xl mb-[8px]">이용안내</h5>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="">헬프센터</a>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="">작가 가이드</a>
+                                </div>
+                                <div class="flex flex-col content_secondary">
+                                    <h5 class="font_label_bold_xl mb-[8px]">정책</h5>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="">이용 약관</a>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="">개인정보 처리방침</a>
+                                    <a target="_blank" class="mt-[8px] font_label_regular_lg" href="">커뮤니티 운영방침</a>
+                                </div>
+                                <div class="flex flex-col content_secondary">
+                                    <h5 class="font_label_bold_xl mb-[8px]">고객지원</h5>
+                                    <p class="mt-[8px] font_label_regular_lg">평일 10:00~17:00 (13:00~15:00 제외)</p>
+                                    <a target="_blank" class="mt-[12px]" href="">
+                                        <button type="button" class="relative flex"></button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-[20px] content_quaternary">
+                            <p>
+                                <span class="font_label_bold_md ml-[12px] first:m-0">회사명</span>
+                                <span class="ml-[8px] font_label_regular_md">어토피아(주)</span>
+                                <span class="font_label_bold_md ml-[12px] first:m-0">주소</span>
+                                <span class="ml-[8px] font_label_regular_md">서울특별시 강남구 역삼동 736-56, 13층</span>
+                                <span class="font_label_bold_md ml-[12px] first:m-0">팀</span>
+                                <span class="ml-[8px] font_label_regular_md">Authopia</span>
+                            </p>
+                        </div>
+                        <div class="mt-[20px] flex justify-between items-center">
+                            <p class="font_label_regular_lg content_tertiary">* 2023 Authopia Inc.</p>
+                            <div class="flex">
+                                <!-- 카카오 주소 넣기 -->
+                                <a target="_blank" class="ml-[20px] first:m-0" href="">
+                                    <svg viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] content_secondary">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5 2C4.803 2 1.833 4.306 1.833 7.128a5.026 5.026 0 0 0 3.091 4.339l-.636 2.306c-.03.06 0 .151.06.181.061.061.182.061.243 0l2.697-1.79c.394.061.788.091 1.212.091 3.667 0 6.667-2.306 6.667-5.127C15.167 4.306 12.197 2 8.5 2Z"></path>
+                                    </svg>
+                                </a>
+                                <!-- 트위터 -->
+                                <a target="_blank" class="ml-[20px] first:m-0" href="">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] content_secondary">
+                                        <path d="M8.66 19.333c-2.158 0-4.168-.627-5.86-1.71 1.437.094 3.972-.129 5.549-1.633-2.372-.109-3.442-1.928-3.582-2.706.202.078 1.163.171 1.706-.047-2.73-.684-3.148-3.079-3.055-3.81.512.358 1.38.482 1.721.451-2.542-1.82-1.628-4.556-1.178-5.147 1.825 2.528 4.56 3.948 7.943 4.027a3.91 3.91 0 0 1-.097-.87A3.882 3.882 0 0 1 15.683 4a3.86 3.86 0 0 1 2.834 1.235c.748-.175 1.873-.585 2.422-.94-.277.996-1.14 1.826-1.662 2.134.005.01-.004-.01 0 0 .459-.07 1.7-.308 2.19-.64-.243.559-1.158 1.488-1.909 2.009.14 6.16-4.574 11.535-10.899 11.535Z"></path>
+                                    </svg>
+                                </a>
+                                <!-- 인스타 -->
+                                <a target="_blank" class="ml-[20px] first:m-0" href="">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="w-[24px] h-[24px] content_secondary">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M12.005 16.875c2.763 0 5.003-2.22 5.003-4.958 0-2.739-2.24-4.959-5.002-4.959-2.763 0-5.003 2.22-5.003 4.959 0 2.738 2.24 4.958 5.002 4.958Zm0-1.983c1.658 0 3.002-1.332 3.002-2.975s-1.344-2.975-3.002-2.975c-1.657 0-3.001 1.332-3.001 2.975s1.344 2.975 3.002 2.975Z"></path>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2 11.52c0-3.332 0-4.998.654-6.271a5.977 5.977 0 0 1 2.624-2.6C6.562 2 8.243 2 11.605 2h.8c3.363 0 5.044 0 6.328.649a5.977 5.977 0 0 1 2.624 2.6c.654 1.273.654 2.939.654 6.271v.793c0 3.333 0 4.999-.654 6.272a5.977 5.977 0 0 1-2.624 2.6c-1.284.648-2.965.648-6.327.648h-.8c-3.363 0-5.044 0-6.328-.648a5.977 5.977 0 0 1-2.624-2.6C2 17.312 2 15.645 2 12.313v-.793Zm9.605-7.537h.8c1.715 0 2.88.002 3.78.075.878.07 1.327.2 1.64.358.753.38 1.365.987 1.749 1.733.16.31.289.755.36 1.625.074.892.076 2.047.076 3.746v.793c0 1.7-.002 2.854-.075 3.747-.072.87-.202 1.314-.361 1.624a3.985 3.985 0 0 1-1.75 1.734c-.312.158-.761.287-1.638.358-.901.073-2.066.074-3.78.074h-.8c-1.715 0-2.88-.002-3.78-.075-.878-.07-1.327-.2-1.64-.357a3.985 3.985 0 0 1-1.749-1.734c-.16-.31-.29-.755-.36-1.624C4.002 15.167 4 14.012 4 12.313v-.793c0-1.699.002-2.854.075-3.746.072-.87.202-1.315.361-1.625a3.985 3.985 0 0 1 1.75-1.733c.312-.158.76-.287 1.638-.358.9-.073 2.066-.075 3.78-.075Z"></path>
+                                        <path d="M18.059 6.916c0 .552-.452 1-1.009 1a1.005 1.005 0 0 1-1.009-1c0-.552.452-1 1.01-1 .556 0 1.008.448 1.008 1Z"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:hidden">
+                    <div class="pt-[32px] pb-[24px] px-[16px]">
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script th:inline="javascript">
+    let files = [[${post.postFiles}]];
     let memberId = [[${session.id}]];
     let postId = [[${post.id}]];
+    let memberProfileImage = [[${post.memberProfileImage}]];
+    let myProfileImage = [[${memberProfileImage}]];
 </script>
 <script src="/js/post/detail.js"></script>
 <script src="/js/post/time.js"></script>
+<script>
+    if(myProfileImage != null){
+        $("img.profile-image").attr("src", `/files/display?fileName=${myProfileImage.filePath}/t_${myProfileImage.fileUuid}_${myProfileImage.fileName}`);
+    } else {
+        $("img.profile-image").attr("src", "/image/profile_icon.png");
+    }
+</script>
 </html>

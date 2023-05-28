@@ -6,6 +6,14 @@ const $textinput = $("#text-count");
 const $target = $("#target-button");
 let page = 1;
 
+$("#post-remove").on("click", function () {
+    location.href = `remove?id=${postId}`;
+})
+
+$("#post-modify").on("click", function () {
+    location.href = `modify?id=${postId}`;
+})
+
 $inputtext.show();
 $input.hide();
 
@@ -60,6 +68,7 @@ $cancel.on('mouseout', function (event) {
         'background-color': '#ffffff'
     })
 })
+
 
 //작성시간 함수
 function elapsedTime(date) {
@@ -159,6 +168,8 @@ $(window).scroll(function(){
     }
 });
 
+
+
 /* 댓글 목록 */
 function showList(commentes) {
     let text = ``;
@@ -234,6 +245,47 @@ $("#target-button").on("click", function(){
     });
 });
 
+/* 이미지 파일 뿌리기 */
+$(document).ready(function () {
+    let $imgBox = $("#img-box");
+    let text = "";
+    files.forEach(file => {
+        text += `
+                    <div style="height: 102px; width: 102px; margin-right:15px;  float:right;">
+                        <img src="/files/display?fileName=${file.filePath}/${file.fileUuid}_${file.fileName}" style="height: 102px; width: 102px;">
+                    </div>
+                `;
+    })
+    $imgBox.html(text);
+
+    let $profileImage1 = $("#member-profileImage");
+    let text2 = "";
+    if(memberProfileImage ==null){
+        text2 += `<img src="/image/profile_icon.png" style="width: 34px; height: 34px; border-radius: 9999px;">`
+    }else{
+        text2 += `<img src="/files/display?fileName=${memberProfileImage.filePath}/t_${memberProfileImage.fileUuid}_${memberProfileImage.fileName}" style="width: 34px; height: 34px; border-radius: 9999px;">`
+    }
+    $profileImage1.html(text2);
+
+    let $profileImage2 = $("#member-profileImage2");
+    let text3 = "";
+    if(memberProfileImage ==null){
+        text3 += `<img src="/image/profile_icon.png" style="width: 58px; height: 58px; border-radius: 9999px;">`
+    }else{
+        text3 += `<img src="/files/display?fileName=${memberProfileImage.filePath}/t_${memberProfileImage.fileUuid}_${memberProfileImage.fileName}" style="width: 58px; height: 58px; border-radius: 9999px;">`
+    }
+    $profileImage2.html(text3);
+
+    let $myProfileImage = $("span.my-profil-image");
+    let text4 ="";
+    if(myProfileImage ==null){
+        text4 += `<img src="/image/profile_icon.png" style="width: 32px; height: 32px; border-radius: 9999px;">`
+    }else{
+        text4 += `<img src="/files/display?fileName=${myProfileImage.filePath}/t_${myProfileImage.fileUuid}_${myProfileImage.fileName}" style="width: 32px; height: 32px; border-radius: 9999px;">`
+    }
+    $myProfileImage.eq(0).html(text4);
+    $myProfileImage.eq(1).html(text4);
+})
 
 
 

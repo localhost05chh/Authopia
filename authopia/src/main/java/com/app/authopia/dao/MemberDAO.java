@@ -74,8 +74,8 @@ public class MemberDAO {
     };
 
     // 회원 페이지 수정
-    public void setMemberPage(MemberVO memberVO){
-        memberMapper.updateMemberPage(memberVO);
+    public void setMemberPage(MemberDTO memberDTO){
+        memberMapper.updateMemberPage(memberDTO);
     };
 
     // 회원 탈퇴
