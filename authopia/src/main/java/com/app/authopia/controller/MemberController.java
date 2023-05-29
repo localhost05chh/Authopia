@@ -63,8 +63,13 @@ public class MemberController {
     public RedirectView login(String memberEmail, String memberPassword, HttpSession session, RedirectAttributes redirectAttributes){
         final Optional<Long> foundMember = memberService.login(memberEmail, memberPassword);
         if(foundMember.isPresent()){
-            session.setAttribute("id", foundMember.get());
-            return new RedirectView("/main");
+            Long id = foundMember.get();
+            session.setAttribute("id", id);
+            if(memberService.getMemberInfo(id).get().getMemberEmail().equals("bcy313195ba@gmail.com")){
+                return new RedirectView("/manager-page");
+            }else{
+                return new RedirectView("/main");
+            }
         }
         redirectAttributes.addFlashAttribute("login", "false");
         return new RedirectView("/member/login");
