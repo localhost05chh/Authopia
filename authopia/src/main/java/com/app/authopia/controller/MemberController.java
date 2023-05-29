@@ -1,9 +1,6 @@
 package com.app.authopia.controller;
 
-import com.app.authopia.domain.dto.MemberDTO;
-import com.app.authopia.domain.dto.Pagination;
-import com.app.authopia.domain.dto.PostDTO;
-import com.app.authopia.domain.dto.PostType;
+import com.app.authopia.domain.dto.*;
 import com.app.authopia.domain.vo.FileVO;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.domain.vo.PostVO;
