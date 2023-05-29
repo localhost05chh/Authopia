@@ -143,6 +143,7 @@ public class PostController {
 
         //구독 관련
         SubscribeVO subscribeVO = new SubscribeVO();
+        model.addAttribute("count", subscribeService.selectCountOfSubscribe(memberId));
         if(session.getAttribute("id") == null){
             model.addAttribute("isSubscribe", false);
         }else{
@@ -165,7 +166,6 @@ public class PostController {
         pagination.setTotal(postService.getTotalMyPost(postType, memberId));
         pagination.setPage(page);
         pagination.progress();
-        System.out.println(postService.getListAuthor(pagination , postType, memberId).size());
         return postService.getListAuthor(pagination , postType, memberId);
     }
 
