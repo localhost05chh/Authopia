@@ -22,7 +22,7 @@ public class SubscribeController {
     private final SubscribeService subscribeService;
 
     //    구독 등록
-    @PostMapping ("subscribe")
+    @GetMapping ("subscribe")
     public RedirectView subscribeTo(SubscribeVO subscribeVO, @RequestParam Long memberId, HttpSession session){
         subscribeVO.setSubscribeCreaterId(memberId);
         if(session.getAttribute("id") == null){
@@ -30,7 +30,7 @@ public class SubscribeController {
         }
         subscribeVO.setMemberId((Long) session.getAttribute("id"));
         subscribeService.subscribe(subscribeVO);
-        return new RedirectView("/post/author-profile");
+        return new RedirectView("/post/author-profile?&memberId="+memberId);
     }
     //    구독 취소
     @GetMapping("subscribeDelete")
