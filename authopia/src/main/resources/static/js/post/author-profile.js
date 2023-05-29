@@ -124,14 +124,6 @@ function searchParam(key) {
 $(".writing").click(function () {
 
     location.href = `/post/author-profile?type=writing&memberId=${memberId}`;
-    myHref = location.href.split('/')[4].split('=')[1].split('&')[0];
-    if(myHref == 'writing'){
-        alert(myHref);
-        $(".writing").removeClass("content_disabled");
-        $(".writing").addClass("content_primary");
-        $(".writing").append("<span class='flex absolute bottom-[-1px] left-[0] w-full h-[1.6px] transform surface_secondary_inverse'></span>")
-        $(".drawing span").remove();
-    }
     // let type = searchParam('type');
     // if (type == null) {
     //     location.href = `/post/author-profile?type=writing&memberId=${memberId}`;
@@ -140,17 +132,25 @@ $(".writing").click(function () {
     // }
 });
 
-$(".drawing").click(function () {
-    location.href = `/post/author-profile?type=drawing&memberId=${memberId}`;
+$(document).ready(function () {
     myHref = location.href.split('/')[4].split('=')[1].split('&')[0];
-
-    if(myHref == 'drawing'){
-        alert(myHref);
+    if(myHref == 'writing'){
+        $(".writing").removeClass("content_disabled");
+        $(".writing").addClass("content_primary");
+        $(".writing").append("<span class='flex absolute bottom-[-1px] left-[0] w-full h-[1.6px] transform surface_secondary_inverse'></span>")
+        $(".drawing span").remove();
+    } else if(myHref == 'drawing'){
         $(".drawing").removeClass("content_disabled");
         $(".drawing").addClass("content_primary");
         $(".drawing").append("<span class='flex absolute bottom-[-1px] left-[0] w-full h-[1.6px] transform surface_secondary_inverse'></span>")
         $(".writing span").remove();
     }
+})
+
+$(".drawing").click(function () {
+    location.href = `/post/author-profile?type=drawing&memberId=${memberId}`;
+    myHref = location.href.split('/')[4].split('=')[1].split('&')[0];
+
     // let type = searchParam('type');
     // if (type == null) {
     //     location.href = `/post/author-profile?type=writing&memberId=${memberId}`;
