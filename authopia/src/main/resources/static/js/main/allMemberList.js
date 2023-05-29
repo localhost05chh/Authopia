@@ -27,7 +27,7 @@ function showMember(memberList){
                             ${member.memberName}
                         </h2>
                 `
-        if(member.memberCategory == "writing"){
+        if(member.memberCategory == "소설"){
             text += `<p class="mt-[2px] font_label_regular_sm content_tertiary">소설</p>`
         } else {
             text += `<p class="mt-[2px] font_label_regular_sm content_tertiary">일러스트</p>`
@@ -51,7 +51,7 @@ $("button.category").on("click", function(){
     $category_track.css("transition", "0s");
     $category_next.css("display", "flex");
     $category_prev.css("display", "none");
-    category_count = 0
+    category_count = 0;
     let category = $(this).attr("name");
     $.ajax({
         url: `/main/category/${category}`,
