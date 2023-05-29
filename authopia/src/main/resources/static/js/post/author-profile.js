@@ -30,7 +30,7 @@ function elapsedTime(date) {
 let postService =  (function () {
     function getList(callback) {
         $.ajax({
-            url: `/post/list/${page}`,
+            url: `/post/author-profile/${page}`,
             type: 'post',
             success: function (posts) {
                 if(callback){

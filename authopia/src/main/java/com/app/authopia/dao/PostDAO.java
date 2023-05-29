@@ -69,7 +69,8 @@ public class PostDAO{
     }
 
 //    작가 게시글 목록
-    public  List<PostDTO> findAllAuthor(Pagination pagination ,PostType postType,Long memberId){
+    public  List<PostDTO> findAllAuthor(Pagination pagination ,PostType postType, Long memberId){
+
         return postMapper.selectAllAuthor(pagination, postType, memberId);
     };
 }

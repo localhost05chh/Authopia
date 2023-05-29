@@ -141,13 +141,12 @@ public class PostServiceImpl implements PostService {
         return postDAO.findPostManager(pagination);
     }
 
-    //      게시글 목록
+    //작가게시글 목록
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<PostDTO> getListAuthor(Pagination pagination, PostType postType,Long memberId){
+    public List<PostDTO> getListAuthor(Pagination pagination, PostType postType, Long memberId){
         final List<PostDTO> posts = postDAO.findAllAuthor(pagination, postType, memberId);
         posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
-
         return posts;
     }
 
