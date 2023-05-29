@@ -8,7 +8,7 @@ function showMember(memberList){
         text += `
             <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 128px; margin-right: 12px">
                 <div>
-                    <button type="button" class="block text-left w-full">
+                    <button type="button" class="block text-left w-full" onclick="location.href='/post/author-profile?&memberId=${member.id}'">
                         <div class="relative">
                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;">
                                 <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px;"></span>
@@ -27,7 +27,9 @@ function showMember(memberList){
                             ${member.memberName}
                         </h2>
                 `
-        if(member.memberCategory == "소설"){
+        if(member.memberCategory == null){
+            text += `<p class="mt-[2px] font_label_regular_sm content_tertiary"></p>`
+        } else if (member.memberCategory == "소설"){
             text += `<p class="mt-[2px] font_label_regular_sm content_tertiary">소설</p>`
         } else {
             text += `<p class="mt-[2px] font_label_regular_sm content_tertiary">일러스트</p>`

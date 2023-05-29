@@ -6,7 +6,7 @@ $(document).ready(function(){
         text += `
             <div class="swiper-slide swiper-slide-active first:ml-[16px] mobile:first:ml-0" style="width: 92px; margin-right: 22.66px">
                 <div>
-                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center">
+                    <button type="button" class="relative shrink-0 text-left w-[86px] h-[86px] rounded-full flex flex-col justify-end items-center" onclick="location.href='/post/author-profile?&memberId=${member.id}'">
                         <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
             `
         if(member.memberProfileImage != null){
@@ -23,7 +23,9 @@ $(document).ready(function(){
                             ${member.memberName}
                         </h2>
                 `
-        if(member.memberCategory == "writing"){
+        if(member.memberCategory == null){
+            text += `<p class="mt-[2px] font_label_regular_sm content_tertiary"></p>`
+        } else if(member.memberCategory == "소설"){
             text += `<p class="text-[12px] font_label_regular_sm content_tertiary">소설</p>`
         } else {
             text += `<p class="text-[12px] font_label_regular_sm content_tertiary">일러스트</p>`
