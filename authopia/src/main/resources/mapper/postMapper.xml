@@ -197,18 +197,12 @@
         SELECT P.ID, MEMBER_ID, POST_TYPE, POST_NAME, POST_VIEW_COUNT, POST_RECOMMEND, POST_REGISTER_DATE,
         POST_UPDATE_DATE, POST_CONTENT, POST_IS_BLINDED, MEMBER_NAME, MEMBER_INTRODUCE
         FROM TBL_MEMBER M JOIN TBL_POST P
-        ON p.MEMBER_ID = #{memberId} AND POST_IS_BLINDED = 0
+        ON M.ID = p.MEMBER_ID AND p.MEMBER_ID = #{memberId} AND POST_IS_BLINDED = 0
         ORDER BY POST_UPDATE_DATE DESC
         ) P
         <![CDATA[
                 WHERE ROWNUM <= #{pagination.page} * #{pagination.rowCount}
             ]]> AND POST_TYPE = #{postType.type}
-        <choose>
-            <when test="!postType.keyword.equals('')">
-                AND (POST_NAME LIKE '%'||#{postType.keyword}||'%' OR POST_CONTENT LIKE '%'||#{postType.keyword}||'%' OR
-                MEMBER_NAME LIKE '%'||#{postType.keyword}||'%')
-            </when>
-        </choose>
         <![CDATA[
         ) P WHERE R > (#{pagination.page} - 1) * #{pagination.rowCount}
         ]]>
