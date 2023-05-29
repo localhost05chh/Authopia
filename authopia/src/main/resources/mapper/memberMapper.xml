@@ -77,11 +77,11 @@
         FROM TBL_MEMBER
         WHERE MEMBER_CATEGORY =
         <choose>
-            <when test="category == 'writing'">
-                'writing'
+            <when test="category == '소설'">
+                '소설'
             </when>
             <otherwise>
-                'drawing'
+                '일러스트'
             </otherwise>
         </choose>
     </select>
