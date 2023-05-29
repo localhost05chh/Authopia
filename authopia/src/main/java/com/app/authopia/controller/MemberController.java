@@ -207,13 +207,13 @@ public class MemberController {
 
     // 내 게시글 목록
     @GetMapping("member-mypost")
-    public String gotoMyList(HttpSession session, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+    public String gotoMyList(HttpSession session, Model model, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order){
         Long memberId = (Long) session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
         model.addAttribute("memberId", memberId);
+        postType.setMemberId(memberId);
         postType.setType(type);
         postType.setOrder(order);
-        postType.setKeyword(keyword);
         session.setAttribute("postType", postType);
         return "mypage/mypage-post";
     }
@@ -221,11 +221,12 @@ public class MemberController {
     @PostMapping("member-mypost/{page}")
     @ResponseBody
     public List<PostDTO> gotoMyList(HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
+        Long memberId = (Long) session.getAttribute("id");
         postType = (PostType) session.getAttribute("postType");
-        pagination.setTotal(postService.getTotalMyPost(postType));
+        pagination.setTotal(postService.getTotalMyPost(postType, 1L));
         pagination.setPage(page);
         pagination.progress();
-        return postService.getList(pagination , postType);
+        return postService.getListMyPost(pagination , postType);
     }
 
 }
