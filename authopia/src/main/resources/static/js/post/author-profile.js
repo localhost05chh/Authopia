@@ -76,19 +76,38 @@ function showList(posts) {
                                                 ${post.postContent}
                                             </p>
                                         </div>
+                                        
+                                        <div class="shrink-0 relative w-[72px] md:w-[102px] h-[72px] md:h-[102px] rounded-[8px]">
+                                        <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
+`
+        post.postFiles.forEach(file => {
+            if (file.fileType == "REPRESENTATIVE") {
+                text += `<img src="/files/display?fileName=${file.filePath}/t_${file.fileUuid}_${file.fileName}" class="rounded-[8px]" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">`;
+            }
+        })
+        text += `
+                                        </span>
+                                    </div>
+                                        
                                     </div>
                                     <div class="flex items-center mt-[12px]">
-                                        <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] profile-image-style"></div>
+                                        <div class="relative shrink-0 rounded-full shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)]" style="width: 18px; height: 18px;">`
+            if(post.memberProfileImage ==null){
+                text += `<img src="/image/profile_icon.png" style="width: 18px; height: 18px;">`
+            }else{
+                text += `<img src="/files/display?fileName=${post.memberProfileImage.filePath}/t_${post.memberProfileImage.fileUuid}_${post.memberProfileImage.fileName}" style="width: 18px; height: 18px; border-radius: 9999px;">`
+            }
+            text +=  `                </div>
                                         <div class="ml-[6px] font_label_regular_md flex items-center gap-x-[2px]">
                                             <span class="content_secondary break-all line-clamp-1 lg:max-w-full max-w-[115px]">${post.memberName}</span>
-                                            <span class="shrink-0 content_quaternary">｜ ` + elapsedTime(post.postRegisterDate) + ` ｜ 조회수 ${post.viewCount}</span>
+                                            <span class="shrink-0 content_quaternary">｜ ` + elapsedTime(post.postRegisterDate) + ` ｜ 조회수 ${post.postViewCount}</span>
     
                                         </div>
                                     </div>
                                 </button>
                             </div>
                         </li>
-                    </ul>
+                    </ul>   
                 </a>
         `
     });

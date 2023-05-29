@@ -110,9 +110,14 @@ public class PostController {
 
     //   작가  게시글 목록
     @GetMapping("author-profile")
-    public void gotoListAuthor(@RequestParam(defaultValue = "")Long id,PostDTO postDTO,Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
-        session.setAttribute("authorId", id);
-        model.addAttribute("authorId", id);
+    public void gotoListAuthor(@RequestParam(defaultValue = "")Long memberId,PostDTO postDTO,Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+        session.setAttribute("memberId", memberId);
+        model.addAttribute("memberId", memberId);
+        model.addAttribute("memberName", memberService.getMemberInfo((Long)session.getAttribute("memberId")).get().getMemberName());
+        model.addAttribute("memberIntroduce", memberService.getMemberInfo((Long)session.getAttribute("memberId")).get().getMemberIntroduce());
+        if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        }
         postType.setType(type);
         postType.setOrder(order);
         postType.setKeyword(keyword);
@@ -124,7 +129,7 @@ public class PostController {
     @ResponseBody
     public List<PostDTO> gotoListAuthor(Long memberId, HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
         postType = (PostType) session.getAttribute("postType");
-        memberId = postService.read((Long) session.getAttribute("authorId")).get().getMemberId();
+        memberId = postService.read((Long) session.getAttribute("memberId")).get().getMemberId();
         pagination.setTotal(postService.getTotal(postType));
         pagination.setPage(page);
         pagination.progress();
