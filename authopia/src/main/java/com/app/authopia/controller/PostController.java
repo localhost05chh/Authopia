@@ -162,9 +162,10 @@ public class PostController {
     public List<PostDTO> gotoListAuthor(Long memberId, HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
         postType = (PostType) session.getAttribute("postType");
         memberId = (Long) session.getAttribute("memberId");
-        pagination.setTotal(postService.getTotal(postType));
+        pagination.setTotal(postService.getTotalMyPost(postType, memberId));
         pagination.setPage(page);
         pagination.progress();
+        System.out.println(postService.getListAuthor(pagination , postType, memberId).size());
         return postService.getListAuthor(pagination , postType, memberId);
     }
 
