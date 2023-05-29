@@ -84,7 +84,7 @@ $("button.search-button").on("click", function(){
     let page = searchParam('page') == null ? "1" : searchParam('page');
     let type = searchParam('type') == null ? "receive" : searchParam('type');
     let keyword = $(this).prev().val();
-    location.href = `/message/list?type=${type}&page=${page}&keyword=${keyword}`;
+    location.href = `/message/list?type=${type}&page=1&keyword=${keyword}`;
 });
 
 
