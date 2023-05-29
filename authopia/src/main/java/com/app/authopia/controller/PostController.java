@@ -160,7 +160,7 @@ public class PostController {
     @ResponseBody
     public List<PostDTO> gotoListAuthor(Long memberId, HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
         postType = (PostType) session.getAttribute("postType");
-        memberId = postService.read((Long) session.getAttribute("memberId")).get().getMemberId();
+        memberId = (Long) session.getAttribute("memberId");
         pagination.setTotal(postService.getTotal(postType));
         pagination.setPage(page);
         pagination.progress();
