@@ -94,20 +94,22 @@ function modalHide(modal, button){
 }
 
 /* 페이징 */
-const $pages = $(".page");
+// const $pages = $(".page");
+//
+// $pages.each((i, page)=>{
+//     $(page).on("click", () => {
+//         $pages.removeClass("surface_tertiary");
+//         $(page).addClass("surface_tertiary");
+//     });
+// });
 
-$pages.each((i, page)=>{
-    $(page).on("click", () => {
-        $pages.removeClass("surface_tertiary");
-        $(page).addClass("surface_tertiary");
-    });
+$("a.change-page").on("click", function(e){
+    e.preventDefault();
+    let page = $(this).attr("href");
+    let type = searchParam('type') == null ? "writing" : searchParam('type');
+    location.href = `/member/member-mypost?type=${type}&page=${page}`;
 });
 
-// $("a.change-page").on("click", function(e){
-//     e.preventDefault();
-//     let page = $(this).attr("href");
-//     location.href = `/member/member-mypost?type=${type}&page=${page}`;
-// });
 
 // 카테고리 선택
 $(document).ready(function () {
@@ -129,20 +131,74 @@ $(document).ready(function () {
     });
 
     // 장르 강조 효과
-    $(".fAzCXd a").removeClass("content_primary").addClass("content_disabled");
-    if(href.split('/')[3]=='member'){
-        if (type == null) {
-            $(".writing").removeClass("content_disabled").addClass("content_primary");
-        } else {
-            $("." + type).removeClass("content_disabled").addClass("content_primary");
-        }
+    // $(".fAzCXd a").removeClass("content_primary").addClass("content_disabled");
+    // if(href.split('/')[3]=='member'){
+    //     if (type == null) {
+    //         $(".writing").removeClass("content_disabled").addClass("content_primary");
+    //     } else {
+    //         $("." + type).removeClass("content_disabled").addClass("content_primary");
+    //     }
+    // }
+    // // 라인 제발 바껴라
+    // $(".fAzCXd a").on("click", function() {
+    //     var index = $(this).index();
+    //     $lines.hide();
+    //     $lines.eq(index).show();
+    // });
+
+    if(searchParam('type')=="writing" || searchParam('type')==null){
+        $(".fAzCXd a").eq(1).removeClass("content_primary");
+        $(".fAzCXd a").eq(1).addClass("content_disabled");
+        $(".fAzCXd a").eq(2).removeClass("content_primary");
+        $(".fAzCXd a").eq(2).addClass("content_disabled");
+        $(".fAzCXd a").eq(3).removeClass("content_primary");
+        $(".fAzCXd a").eq(3).addClass("content_disabled");
+        $(".fAzCXd a").eq(0).addClass("content_primary");
+        $(".fAzCXd a").eq(0).removeClass("content_disabled");
+        $lines.eq(1).hide();
+        $lines.eq(2).hide();
+        $lines.eq(3).hide();
+        $lines.eq(0).show();
+    } else if(searchParam('type')=="drawing") {
+        $(".fAzCXd a").eq(0).removeClass("content_primary");
+        $(".fAzCXd a").eq(0).addClass("content_disabled");
+        $(".fAzCXd a").eq(2).removeClass("content_primary");
+        $(".fAzCXd a").eq(2).addClass("content_disabled");
+        $(".fAzCXd a").eq(3).removeClass("content_primary");
+        $(".fAzCXd a").eq(3).addClass("content_disabled");
+        $(".fAzCXd a").eq(1).addClass("content_primary");
+        $(".fAzCXd a").eq(1).removeClass("content_disabled");
+        $lines.eq(0).hide();
+        $lines.eq(2).hide();
+        $lines.eq(3).hide();
+        $lines.eq(1).show();
+    } else if(searchParam('type')=="free") {
+        $(".fAzCXd a").eq(0).removeClass("content_primary");
+        $(".fAzCXd a").eq(0).addClass("content_disabled");
+        $(".fAzCXd a").eq(1).removeClass("content_primary");
+        $(".fAzCXd a").eq(1).addClass("content_disabled");
+        $(".fAzCXd a").eq(3).removeClass("content_primary");
+        $(".fAzCXd a").eq(3).addClass("content_disabled");
+        $(".fAzCXd a").eq(2).addClass("content_primary");
+        $(".fAzCXd a").eq(2).removeClass("content_disabled");
+        $lines.eq(0).hide();
+        $lines.eq(1).hide();
+        $lines.eq(3).hide();
+        $lines.eq(2).show();
+    } else if(searchParam('type')=="recruit") {
+        $(".fAzCXd a").eq(0).removeClass("content_primary");
+        $(".fAzCXd a").eq(0).addClass("content_disabled");
+        $(".fAzCXd a").eq(1).removeClass("content_primary");
+        $(".fAzCXd a").eq(1).addClass("content_disabled");
+        $(".fAzCXd a").eq(2).removeClass("content_primary");
+        $(".fAzCXd a").eq(2).addClass("content_disabled");
+        $(".fAzCXd a").eq(3).addClass("content_primary");
+        $(".fAzCXd a").eq(3).removeClass("content_disabled");
+        $lines.eq(0).hide();
+        $lines.eq(1).hide();
+        $lines.eq(2).hide();
+        $lines.eq(3).show();
     }
-    // 라인 제발 바껴라
-    $(".fAzCXd a").on("click", function() {
-        var index = $(this).index();
-        $lines.hide();
-        $lines.eq(index).show();
-    });
 
 })
 
@@ -286,5 +342,14 @@ $(".trand").click(function () {
         location.href = `/member/member-mypost?&type=writing&order=trand`;
     } else {
         location.href = `/member/member-mypost?&type=${type}&order=trand`;
+    }
+});
+
+
+// 무한 스크롤
+$(window).scroll(function(){
+    if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+        page++;
+        postService.getListMyPost(showList)
     }
 });

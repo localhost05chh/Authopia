@@ -1,6 +1,7 @@
 package com.app.authopia.mapper;
 
 import com.app.authopia.domain.dto.Pagination;
+import com.app.authopia.domain.dto.PaginationMessage;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import org.apache.ibatis.annotations.Mapper;
