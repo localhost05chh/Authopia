@@ -223,7 +223,8 @@ public class MemberController {
     public List<PostDTO> gotoMyList(HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
         Long memberId = (Long) session.getAttribute("id");
         postType = (PostType) session.getAttribute("postType");
-        pagination.setTotal(postService.getTotalMyPost(postType, 1L));
+        pagination.setTotal(postService.getTotalMyPost(postType, memberId));
+        System.out.println(pagination.getTotal());
         pagination.setPage(page);
         pagination.progress();
         return postService.getListMyPost(pagination , postType);

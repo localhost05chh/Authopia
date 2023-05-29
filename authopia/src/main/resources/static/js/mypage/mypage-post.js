@@ -19,16 +19,16 @@ const $lines = $(".button-line");
 
 $lines.not(":first").hide();
 
-$buttonTabs.each((i, tab)=>{
-    $(tab).on("click", () => {
-        $buttonTabs.removeClass("content_primary");
-        $buttonTabs.addClass("content_disabled");
-        $(tab).addClass("content_primary");
-        $(tab).removeClass("content_disabled");
-        $lines.hide();
-        $lines.eq(i).show();
-    });
-});
+// $buttonTabs.each((i, tab)=>{
+//     $(tab).on("click", () => {
+//         $buttonTabs.removeClass("content_primary");
+//         $buttonTabs.addClass("content_disabled");
+//         $(tab).addClass("content_primary");
+//         $(tab).removeClass("content_disabled");
+//         $lines.hide();
+//         $lines.eq(i).show();
+//     });
+// });
 
 /* 필터 동작 */
 const $filterAll = $("#filter-all");
@@ -103,6 +103,12 @@ $pages.each((i, page)=>{
     });
 });
 
+// $("a.change-page").on("click", function(e){
+//     e.preventDefault();
+//     let page = $(this).attr("href");
+//     location.href = `/member/member-mypost?type=${type}&page=${page}`;
+// });
+
 // 카테고리 선택
 $(document).ready(function () {
     let type = searchParam('type');
@@ -121,6 +127,23 @@ $(document).ready(function () {
             location.href = `/member/member-mypost?type=${type}`;
         }
     });
+
+    // 장르 강조 효과
+    $(".fAzCXd a").removeClass("content_primary").addClass("content_disabled");
+    if(href.split('/')[3]=='member'){
+        if (type == null) {
+            $(".writing").removeClass("content_disabled").addClass("content_primary");
+        } else {
+            $("." + type).removeClass("content_disabled").addClass("content_primary");
+        }
+    }
+    // 라인 제발 바껴라
+    $(".fAzCXd a").on("click", function() {
+        var index = $(this).index();
+        $lines.hide();
+        $lines.eq(index).show();
+    });
+
 })
 
 /*keyword 값 주소에 전달하기*/
@@ -139,11 +162,6 @@ function addFunc() {
     }
 }
 
-/* 글이 없을 때 */
-function noPost(){
-    $(".post").hide();
-    $(".no-post").show();
-};
 
 function post(){
     $(".post").show();
@@ -174,8 +192,21 @@ postService.getListMyPost(showList);
 function showList(posts) {
     const $ul = $("#content-wrap");
     let text = "";
-    posts.forEach(post => {
+    /* 글이 없을 때 */
+    if(posts.length == 0){
         text += `
+            <div class="no-post col-span-full mt-[88px] flex flex-col items-center justify-center">
+                <svg width="101" height="97" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.617 63.243c.462-.167 1.355-.362 2.03.311.933.93 1.125 2.136 1.092 3.153-.03.917-.252 1.848-.416 2.534l-.043.184c-.313 1.33-.79 2.55-1.57 3.582a6.838 6.838 0 0 1-.73.819c.88.089 1.763.138 2.636.136.238-.73.731-1.365 1.221-1.865a10.708 10.708 0 0 1 1.916-1.517c.624-.391 1.268-.714 1.76-.861.607-.18 1.732-.417 2.727-.315.489.05 1.127.198 1.62.657.566.529.733 1.265.6 2.022-.128.724-.537 1.266-.95 1.648-.41.38-.884.66-1.275.858-1.21.615-2.512 1.028-3.857 1.283.576.145 1.25.222 1.998.238 1.47.032 3.005-.172 4.201-.35.177-.026.36-.055.547-.084.904-.144 1.904-.303 2.807-.23 1.225.101 2.351.619 3.241 1.901.354.509.23 1.21-.275 1.565a1.112 1.112 0 0 1-1.555-.278c-.477-.686-.97-.896-1.593-.947-.612-.05-1.281.054-2.172.193l-.674.104c-1.202.178-2.901.41-4.575.373-1.631-.035-3.476-.326-4.791-1.402a3.126 3.126 0 0 1-.673-.748c-2.071.026-4.146-.216-6.059-.577-1.963.712-3.965 1.247-5.914 1.77-.087.022-.173.045-.26.069-2.273.609-4.477 1.21-6.598 2.067a1.114 1.114 0 0 1-1.452-.624c-.23-.576.048-1.23.62-1.461 2.265-.915 4.595-1.548 6.856-2.154l.22-.058c1.02-.274 2.026-.543 3.017-.833a2.453 2.453 0 0 1-.433-.603c-.354-.694-.344-1.463-.209-2.137.268-1.331 1.13-2.815 2.091-4.096.98-1.305 2.171-2.54 3.247-3.368.529-.408 1.09-.765 1.627-.959Zm-2.999 10.06.061-.023c1.024-.395 1.733-.947 2.253-1.634.53-.701.906-1.598 1.175-2.74l.037-.154c.17-.725.34-1.441.363-2.12.017-.54-.064-.938-.238-1.232-.221.098-.534.287-.922.586-.888.684-1.94 1.765-2.822 2.939-.9 1.198-1.517 2.355-1.683 3.186-.082.407-.028.599.006.666.014.028.072.14.408.222.446.108.901.21 1.362.305Zm3.878-7.98s-.01.004-.026.005c.018-.005.026-.004.026-.004Zm4.84 8.446c1.387-.204 2.705-.582 3.892-1.185.306-.156.575-.325.77-.505.192-.179.248-.309.262-.389l.001-.006a1.401 1.401 0 0 0-.247-.045c-.578-.059-1.382.09-1.866.234-.217.065-.667.271-1.213.614-.531.333-1.08.75-1.508 1.187a4.88 4.88 0 0 0-.09.095Z" fill="#020202"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M50.13 70.441a2.817 2.817 0 0 1 1.25 3.768 25.557 25.557 0 0 1-1.167 2.083l-.078.128a21.613 21.613 0 0 0-1.1 2 2.784 2.784 0 0 1-3.731 1.296 2.817 2.817 0 0 1-1.288-3.755 27.19 27.19 0 0 1 1.356-2.471c.023-.039.046-.077.07-.114.337-.556.61-1.005.944-1.677a2.784 2.784 0 0 1 3.744-1.258Z" fill="#000"></path><path d="M80.91 12.434a3.337 3.337 0 0 1 4.481-.943l10.498 6.42a3.383 3.383 0 0 1 1.002 4.818L65.06 68.332c-.342.49-.808.879-1.349 1.128l-11.67 5.367a3.332 3.332 0 0 1-3.132-.185l-.66-.403a3.378 3.378 0 0 1-1.577-3.347l1.517-10.936c.074-.53.271-1.034.577-1.471L80.91 12.434Z" fill="#9D8DFF"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M86.885 21.214c-2.262-1.284-4.427-2.611-6.39-4.195a1.112 1.112 0 0 0-1.57.174 1.128 1.128 0 0 0 .173 1.579c2.106 1.699 4.396 3.097 6.69 4.4.78.443 1.555.872 2.324 1.297 1.519.842 3.015 1.67 4.488 2.57a1.113 1.113 0 0 0 1.534-.376c.32-.53.153-1.221-.374-1.544-1.513-.924-3.084-1.794-4.629-2.65-.758-.42-1.51-.837-2.246-1.255ZM65.758 68.348c-.3.542-.98.737-1.518.435-2.071-1.16-4.11-2.4-6.13-3.626l-1.32-.802c-2.462-1.49-4.907-2.938-7.416-4.22a1.127 1.127 0 0 1-.49-1.51c.279-.554.951-.775 1.501-.494 2.585 1.321 5.09 2.805 7.556 4.298l1.336.811c2.018 1.227 4.016 2.441 6.049 3.58.539.301.732.986.433 1.528Z" fill="#000"></path></svg>
+                <p class="mt-[24px] font_headline_bold_sm content_primary">포스트가 없습니다.</p>
+                <p class="mt-[4px] font_body_regular_lg content_quaternary">지금 첫 포스트를 작성해보세요.</p>
+                <div class="mt-[24px]">
+                    <button type="button" class="relative flex justify-center items-center font_button_bold_md h-[32px] rounded-[16px] content_primary_inverse surface_accent hover:surface_accent_active active:surface_accent_active disabled:surface_disabled px-[16px]  false disabled:content_disabled">포스트 작성하기</button>
+                </div>
+            </div>
+        `
+    } else {
+        posts.forEach(post => {
+            text += `
             <li class="px-[8px] py-[16px] flex items-center border-b border_secondary hover:surface_secondary">
                 <button class="text-left w-[280px] block">
                     <div class="content_secondary flex flex-col gap-y-[2px]">
@@ -231,7 +262,29 @@ function showList(posts) {
                 </div>
             </li>
         `
-    });
+        });
+    }
 
     $ul.append(text);
 };
+
+
+
+/*order 값 주소에 전달하기 */
+$(".new").click(function () {
+    let type = searchParam('type');
+    if (type == null) {
+        location.href = `/member/member-mypost?&type=writing&order=new`;
+    } else {
+        location.href = `/member/member-mypost?&type=${type}&order=new`;
+    }
+});
+
+$(".trand").click(function () {
+    let type = searchParam('type');
+    if (type == null) {
+        location.href = `/member/member-mypost?&type=writing&order=trand`;
+    } else {
+        location.href = `/member/member-mypost?&type=${type}&order=trand`;
+    }
+});
