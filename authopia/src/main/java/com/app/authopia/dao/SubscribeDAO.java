@@ -5,6 +5,8 @@ import com.app.authopia.mapper.SubscribeMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 @RequiredArgsConstructor
 public class SubscribeDAO {
@@ -14,7 +16,7 @@ public class SubscribeDAO {
     public void subscribeTo(SubscribeVO subscribeVO){subscribeMapper.insert(subscribeVO);}
 
     //  구독 여부 검사
-    public void subscribeOk(SubscribeVO subscribeVO){subscribeMapper.selectId(subscribeVO);}
+    public Optional<Long> subscribeOk(SubscribeVO subscribeVO){ return subscribeMapper.selectId(subscribeVO);}
 
     //    구독 해지
     public void subscribeOut(Long id){subscribeMapper.delete(id);}

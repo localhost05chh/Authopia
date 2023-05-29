@@ -12,7 +12,7 @@ public interface SubscribeMapper {
     public void insert(SubscribeVO subscribeVO);
 
     // 구독 여부 검사
-    public Optional<SubscribeVO> selectId(SubscribeVO subscribeVO);
+    public Optional<Long> selectId(SubscribeVO subscribeVO);
 
     //    구독 해지
     public void delete(Long Id);

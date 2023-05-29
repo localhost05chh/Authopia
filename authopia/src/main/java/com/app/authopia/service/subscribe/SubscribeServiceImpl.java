@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class SubscribeServiceImpl implements SubscribeService{
@@ -21,7 +23,7 @@ public class SubscribeServiceImpl implements SubscribeService{
     //    구독 여부 검사
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void isSubscribe(SubscribeVO subscribeVO) {subscribeDAO.subscribeOk(subscribeVO);}
+    public Optional<Long> isSubscribe(SubscribeVO subscribeVO) {return subscribeDAO.subscribeOk(subscribeVO);}
 
 
     //    구독 해지

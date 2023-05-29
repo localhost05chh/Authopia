@@ -5,6 +5,7 @@ import com.app.authopia.service.subscribe.SubscribeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,7 +22,7 @@ public class SubscribeController {
 
     private final SubscribeService subscribeService;
 
-    //    구독 등록
+    //    구독 등록/취소
     @GetMapping ("subscribe")
     public RedirectView subscribeTo(SubscribeVO subscribeVO, @RequestParam Long memberId, HttpSession session){
         subscribeVO.setSubscribeCreaterId(memberId);
@@ -29,14 +30,14 @@ public class SubscribeController {
             return new RedirectView("/member/login");
         }
         subscribeVO.setMemberId((Long) session.getAttribute("id"));
-        subscribeService.subscribe(subscribeVO);
+        if(subscribeService.isSubscribe(subscribeVO).isPresent()){
+            subscribeService.subscribeDelete(subscribeService.isSubscribe(subscribeVO).get());
+
+        }
+        else{
+            subscribeService.subscribe(subscribeVO);
+        }
         return new RedirectView("/post/author-profile?&memberId="+memberId);
-    }
-    //    구독 취소
-    @GetMapping("subscribeDelete")
-    public RedirectView subscribeRevoke(Long id){
-        subscribeService.subscribeDelete(id);
-        return new RedirectView("/post/author-profile");
     }
 
     // 결제창으로 이동

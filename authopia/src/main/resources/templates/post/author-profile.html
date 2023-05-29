@@ -52,10 +52,13 @@
                             <div class="relative flex font_label_bold_lg h-[40px] mx-auto">
                                     <button id="subscribe" type="button"
                                             class="flex justify-center items-center w-full h-full font-bold rounded-full px-[16px] surface_primary border-[1px] border_black_opacity">
-                                        <div class="flex items-center justify-center">
-                                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="mr-[4px] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path></svg>
-                                            <div>구독</div>
-                                        </div>
+                                            <div th:if="${isSubscribe eq false}" class="flex items-center justify-center">
+                                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="mr-[4px] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path></svg>
+                                                <div>구독</div>
+                                            </div>
+                                            <div th:unless="${isSubscribe eq false}" class="flex items-center justify-center">
+                                                <div>구독중</div>
+                                            </div>
                                     </button>
                             </div>
                         </div>

@@ -186,15 +186,14 @@
                     </div>
                     <div class="flex flex-row gap-[8px] items-center whitespace-nowrap">
                         <div class="relative flex font_label_bold_lg h-[32px] mx-auto">
-                            <button type="button"
+                            <button type="button" id="subscribe"
                                     class="flex justify-center items-center w-full h-full font-bold rounded-full px-[16px] surface_primary border-[1px] border_black_opacity">
-                                <div class="flex items-center justify-center">
-                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px"
-                                         width="16px" class="mr-[4px] shrink-0">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                              d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path>
-                                    </svg>
+                                <div th:if="${isSubscribe eq false}" class="flex items-center justify-center">
+                                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" class="mr-[4px] shrink-0"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3a1 1 0 0 0-1 1v7H4a1 1 0 1 0 0 2h7v7a1 1 0 1 0 2 0v-7h7a1 1 0 1 0 0-2h-7V4a1 1 0 0 0-1-1Z"></path></svg>
                                     <div>구독</div>
+                                </div>
+                                <div th:unless="${isSubscribe eq false}" class="flex items-center justify-center">
+                                    <div>구독중</div>
                                 </div>
                             </button>
                         </div>
@@ -372,6 +371,7 @@
 <script th:inline="javascript">
     let files = [[${post.postFiles}]];
     let memberId = [[${session.id}]];
+    let postMemberId = [[${post.memberId}]];
     let postId = [[${post.id}]];
     let memberProfileImage = [[${post.memberProfileImage}]];
     let myProfileImage = [[${memberProfileImage}]];
