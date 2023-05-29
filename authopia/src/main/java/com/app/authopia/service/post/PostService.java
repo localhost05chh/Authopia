@@ -59,5 +59,8 @@ public interface PostService {
     public int getTotalMyPost(PostType postType, Long memberId);
 
     // 관리자페이지에서 조회
-    List<PostDTO> getListManager(Pagination pagination);
+    public List<PostDTO> getListManager(Pagination pagination);
+
+    //      게시글 목록
+    public List<PostDTO> getListAuthor(Pagination pagination, PostType postType,Long memberId);
 }

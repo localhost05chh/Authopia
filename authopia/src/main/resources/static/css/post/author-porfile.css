@@ -437,10 +437,6 @@ li {
     max-width: 720px;
 }
 
-.border-b-\[1px\] {
-    border-bottom-width: 1px;
-}
-
 .border_primary {
     border-color: #e6e6e7;
 }

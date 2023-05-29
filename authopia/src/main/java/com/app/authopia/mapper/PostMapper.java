@@ -48,4 +48,7 @@ public interface PostMapper {
     //      관리자 페이지 게시글 목록
     public List<PostDTO> selectManager();
 
+    //      게시글 목록
+    public List<PostDTO> selectAllAuthor(Pagination pagination,PostType postType,Long memberId);
+
 }
