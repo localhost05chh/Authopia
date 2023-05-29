@@ -169,6 +169,11 @@ $(window).scroll(function(){
 });
 
 
+/* 구독 */
+$("#subscribe").on("click", function () {
+    location.href= "/subscribe/subscribe?memberId=" + postMemberId;
+})
+
 
 /* 댓글 목록 */
 function showList(commentes) {

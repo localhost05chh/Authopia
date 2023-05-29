@@ -5,10 +5,12 @@ import com.app.authopia.domain.dto.Pagination;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
+import com.app.authopia.domain.vo.SubscribeVO;
 import com.app.authopia.service.comment.CommentService;
 import com.app.authopia.service.file.FileService;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
+import com.app.authopia.service.subscribe.SubscribeService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -29,6 +31,7 @@ public class PostController {
     private final MemberService memberService;
     private final CommentService commentService;
     private final FileService fileService;
+    private final SubscribeService subscribeService;
 
     //      게시글 목록
     @GetMapping("list")
@@ -89,6 +92,20 @@ public class PostController {
         if(memberId != null && fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
         }
+
+        //구독 관련
+        SubscribeVO subscribeVO = new SubscribeVO();
+        if(session.getAttribute("id") == null){
+            model.addAttribute("isSubscribe", false);
+        }else{
+            subscribeVO.setMemberId((Long) session.getAttribute("id"));
+            subscribeVO.setSubscribeCreaterId(postService.read((Long) model.getAttribute("postId")).get().getMemberId());
+            if(subscribeService.isSubscribe(subscribeVO).isPresent()){
+                model.addAttribute("isSubscribe", true);
+            } else{
+                model.addAttribute("isSubscribe", false);
+            }
+        }
     }
 
 
@@ -110,7 +127,7 @@ public class PostController {
 
     //   작가  게시글 목록
     @GetMapping("author-profile")
-    public void gotoListAuthor(@RequestParam(defaultValue = "")Long memberId,PostDTO postDTO,Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
+    public void gotoListAuthor(@RequestParam(defaultValue = "")Long memberId, PostDTO postDTO,Model model, HttpSession session, PostType postType, @RequestParam(defaultValue = "writing")String type, @RequestParam(defaultValue = "new")String order, @RequestParam(defaultValue ="")String keyword){
         session.setAttribute("memberId", memberId);
         model.addAttribute("memberId", memberId);
         model.addAttribute("memberName", memberService.getMemberInfo((Long)session.getAttribute("memberId")).get().getMemberName());
@@ -122,6 +139,20 @@ public class PostController {
         postType.setOrder(order);
         postType.setKeyword(keyword);
         session.setAttribute("postType", postType);
+
+        //구독 관련
+        SubscribeVO subscribeVO = new SubscribeVO();
+        if(session.getAttribute("id") == null){
+            model.addAttribute("isSubscribe", false);
+        }else{
+            subscribeVO.setMemberId((Long) session.getAttribute("id"));
+            subscribeVO.setSubscribeCreaterId((Long)session.getAttribute("memberId"));
+            if(subscribeService.isSubscribe(subscribeVO).isPresent()){
+                model.addAttribute("isSubscribe", true);
+            } else{
+                model.addAttribute("isSubscribe", false);
+            }
+        }
     }
 
 

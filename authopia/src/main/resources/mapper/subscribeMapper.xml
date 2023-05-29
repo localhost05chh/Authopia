@@ -9,16 +9,15 @@
     VALUES(SEQ_SUBSCRIBE.NEXTVAL, #{subscribeCreaterId}, #{memberId})
     </insert>
 
-<!--    <!—  구독 여부 검  —>-->
-    <select id="selectId">
-    SELECT ID, SUBSCRIBE_CREATER_ID, MEMBER_ID
+<!--    <!—  구독 여부 검사  —>-->
+    <select id="selectId" resultType="long">
+    SELECT ID
     FROM TBL_SUBSCRIBE
     WHERE SUBSCRIBE_CREATER_ID = #{subscribeCreaterId} AND MEMBER_ID = #{memberId}
     </select>
-<!--    <!—    구독 해지—>-->
+<!--    <!—    구독 해지 —>-->
     <select id="delete">
-        update TBL_SUBSCRIBE
-        SET SUBSCRIB_ENDED = 0
+        DELETE TBL_SUBSCRIBE
         WHERE ID = #{id}
     </select>
 
