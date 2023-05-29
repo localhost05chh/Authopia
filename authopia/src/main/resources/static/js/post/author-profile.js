@@ -165,3 +165,7 @@ if(memberProfileImage != null){
 } else {
     $("img.profile-image-author").attr("src", "/image/profile_icon.png");
 }
+
+$("#subscribe").on("click", function () {
+    location.href= "/subscribe/subscribe?memberId=" + memberId;
+})
