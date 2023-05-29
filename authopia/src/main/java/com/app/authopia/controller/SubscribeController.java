@@ -37,8 +37,10 @@ public class SubscribeController {
         else{
             subscribeService.subscribe(subscribeVO);
         }
-        return new RedirectView("/post/author-profile?&memberId="+memberId);
+        Long postId = (Long)session.getAttribute("postId");
+        return new RedirectView("/post/detail?id="+ postId);
     }
+
 
     // 결제창으로 이동
     @GetMapping("pay")

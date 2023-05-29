@@ -40,7 +40,7 @@ public class PostServiceImpl implements PostService {
         postDAO.save(postDTO);
         for (int i = 0; i < postDTO.getPostFiles().size(); i++) {
             postDTO.getPostFiles().get(i).setPostId(postDTO.getId());
-            if(postDTO.getPostFiles().get(i).getFileType() == null){
+            if (postDTO.getPostFiles().get(i).getFileType() == null) {
                 postDTO.getPostFiles().get(i).setFileType(FileType.NON_REPRESENTATIVE.name());
             }
             fileDAO.saveFile(postDTO.getPostFiles().get(i));
@@ -58,7 +58,6 @@ public class PostServiceImpl implements PostService {
                 foundPost.get().setMemberProfileImage(fileDAO.findProfileImage(foundPost.get().getMemberId()).get());
             }
         }
-        postDAO.setViewCount(id);
         return foundPost;
     }
 
@@ -69,7 +68,7 @@ public class PostServiceImpl implements PostService {
         postDAO.setPostDTO(postDTO);
 //      추가
         postDTO.getPostFiles().forEach(file -> {
-            if(file.getFileType() == null) {
+            if (file.getFileType() == null) {
                 file.setFileType(FileType.NON_REPRESENTATIVE.name());
             }
             file.setPostId(postDTO.getId());
@@ -77,6 +76,11 @@ public class PostServiceImpl implements PostService {
         });
 //      삭제
         postDTO.getFileIdsForDelete().forEach(fileDAO::deleteFile);
+    }
+
+    @Override
+    public void increaseViewCount(Long id){
+        postDAO.setViewCount(id);
     }
 
     //      게시글 삭제
@@ -99,12 +103,6 @@ public class PostServiceImpl implements PostService {
         return postDAO.findCountOfPost(postType);
     }
 
-    //      게시글 조회수 증가
-    @Override
-    public void increaseViewCount(Long id) {
-        postDAO.setViewCount(id);
-    }
-
     // 메인페이지에서 최신 인기 포스트 조회
     @Override
     public List<PostDTO> getListMain(Pagination pagination) {
@@ -115,7 +113,7 @@ public class PostServiceImpl implements PostService {
         return datas;
     }
 
-//        내 게시글 목록
+    //        내 게시글 목록
     @Override
     @Transactional(rollbackFor = Exception.class)
     public List<PostDTO> getListMyPost(Pagination pagination, PostType postType) {
@@ -129,7 +127,7 @@ public class PostServiceImpl implements PostService {
         return posts;
     }
 
-//      내 게시글 총 개수
+    //      내 게시글 총 개수
     @Override
     public int getTotalMyPost(PostType postType, Long memberId) {
         return postDAO.findCountOfMyPost(postType, memberId);
@@ -144,7 +142,7 @@ public class PostServiceImpl implements PostService {
     //작가게시글 목록
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public List<PostDTO> getListAuthor(Pagination pagination, PostType postType, Long memberId){
+    public List<PostDTO> getListAuthor(Pagination pagination, PostType postType, Long memberId) {
         final List<PostDTO> posts = postDAO.findAllAuthor(pagination, postType, memberId);
         posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
         return posts;

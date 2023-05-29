@@ -80,6 +80,7 @@ public class PostController {
     //      게시글 조회, 수정
     @GetMapping(value = {"detail", "modify"})
     public void read(@RequestParam(defaultValue = "")Long id, Model model, HttpSession session) {
+        postService.increaseViewCount(id);
         Long memberId = (Long) session.getAttribute("id");
         if (memberId != null) {
             model.addAttribute("memberName", memberService.getMemberInfo((Long)session.getAttribute("id")).get().getMemberName());
