@@ -38,6 +38,7 @@ $("button.ok-button").on("click", function(){
         let datas = fullPath.split("_");
         let filePath = datas[0].split("=")[1].replace("/t", "");
         let fileUuid = datas[1];
+        let fileType = $(img).hasClass("profile");
         let fileName = datas[2];
         let fileSize = sizes[i];
 
@@ -47,6 +48,9 @@ $("button.ok-button").on("click", function(){
             <input type="hidden" name="memberProfileImageList[${i}].fileName" value="${fileName}">
             <input type="hidden" name="memberProfileImageList[${i}].fileSize" value="${fileSize}">
         `
+        if(fileType){
+            text += `<input type="hidden" name="memberProfileImageList[${i}].fileType" value="profile">`;
+        }
     });
     $(writeForm).append(text);
     $(writeForm).submit();

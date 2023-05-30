@@ -85,7 +85,7 @@ public class MemberServiceImpl implements MemberService {
         log.info(memberDTO.toString());
         for(int i=0; i<memberDTO.getMemberProfileImageList().size(); i++) {
             memberDTO.getMemberProfileImageList().get(i).setMemberId(memberDTO.getId());
-            memberDTO.getMemberProfileImageList().get(i).setFileType(i == 0 ? FileType.REPRESENTATIVE.name() : FileType.NON_REPRESENTATIVE.name());
+            memberDTO.getMemberProfileImageList().get(i).setFileType(i == 0 ? FileType.profile.name() : FileType.NON_REPRESENTATIVE.name());
             fileDAO.saveProfileImage(memberDTO.getMemberProfileImageList().get(i));
         }
         memberDAO.setMemberPage(memberDTO);
