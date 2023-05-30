@@ -2,6 +2,7 @@ package com.app.authopia.service.post;
 
 
 import com.app.authopia.domain.dto.Pagination;
+import com.app.authopia.domain.dto.PaginationMessage;
 import com.app.authopia.domain.dto.PostDTO;
 import com.app.authopia.domain.dto.PostType;
 import com.app.authopia.domain.vo.PostVO;
