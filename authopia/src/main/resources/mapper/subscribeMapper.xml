@@ -21,4 +21,11 @@
         WHERE ID = #{id}
     </select>
 
+    <!-- 구독자 수-->
+    <select id="selectCountOfSubscribe" resultType="_int">
+        SELECT COUNT(ID)
+        FROM TBL_SUBSCRIBE
+        WHERE SUBSCRIBE_CREATER_ID = #{id}
+    </select>
+
 </mapper>

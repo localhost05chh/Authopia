@@ -20,4 +20,9 @@ public class SubscribeDAO {
 
     //    구독 해지
     public void subscribeOut(Long id){subscribeMapper.delete(id);}
+
+    // 구독자 수 조회
+    public int selectCountOfSubscribe(Long id){
+        return subscribeMapper.selectCountOfSubscribe(id);
+    }
 }
