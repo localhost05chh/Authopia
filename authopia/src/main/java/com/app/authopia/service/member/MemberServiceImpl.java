@@ -102,4 +102,9 @@ public class MemberServiceImpl implements MemberService {
     public List<MemberVO> getMember() {
         return memberDAO.findMember();
     }
+
+    @Override
+    public Optional<MemberVO> checkMemberUrl(String memberUrl) {
+        return memberDAO.findByMemberUrl(memberUrl);
+    }
 }

@@ -54,4 +54,7 @@ public interface MemberMapper {
 
     // 관리자페이지에서 회원 목록 조회
     public List<MemberVO> selectMember();
+
+    // URL 중복 검사
+    public Optional<MemberVO> selectByMemberUrl(String memberUrl);
 }

@@ -2,6 +2,19 @@ post();
 /* noPost(); */
 let page = 1;
 
+// 무한 스크롤
+$(window).scroll(function(){
+    console.log("hi")
+    console.log(Math.ceil(window.innerHeight + window.scrollY));
+    console.log(document.body.scrollHeight);
+    if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
+
+        page++;
+        console.log(page)
+        postService.getListMyPost(showList)
+    }
+});
+
 /* 삭제 모달 */
 $(".delete-modal").hide();
 const deletes = $(".delete");
@@ -346,10 +359,3 @@ $(".trand").click(function () {
 });
 
 
-// 무한 스크롤
-$(window).scroll(function(){
-    if (Math.ceil(window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-        page++;
-        postService.getListMyPost(showList)
-    }
-});

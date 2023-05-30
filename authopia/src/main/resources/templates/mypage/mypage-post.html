@@ -33,7 +33,7 @@
                 <div class="relative">
                     <button class="relative w-[32px] h-[32px] rounded-full surface_primary_active">
                             <span style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;">
-                                <img alt="프로필 이미지" sizes="100vw" src="../../static/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
+                                <img alt="프로필 이미지" sizes="100vw" src="/image/profile_icon.png" decoding="async" data-nimg="fill" class="rounded-full" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center center;">
                             </span>
                     </button>
                 </div>
@@ -137,7 +137,7 @@
                                                 <div class="flex">
                                                     <p class="font_label_bold_xl">소설</p>
                                                     <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_tertiary">
-                                                        <p class="font_label_bold_sm">5</p>
+                                                        <p class="font_label_bold_sm" th:text="${count}"></p>
                                                     </div>
                                                 </div>
                                             </button>
@@ -150,7 +150,7 @@
                                                 <div class="flex">
                                                     <p class="font_label_bold_xl">일러스트</p>
                                                     <div class="ml-[8px] px-[8px] py-[2px] rounded-[25px] surface_disabled">
-                                                        <p class="font_label_bold_sm">0</p>
+                                                        <p class="font_label_bold_sm" th:text="${count}"></p>
                                                     </div>
                                                 </div>
                                             </button>
@@ -188,7 +188,7 @@
                             <!-- 글 개수, 필터 -->
                             <div class="py-[12px] flex items-center justify-between">
                                 <div>
-                                    <span class="font_button_bold_md content_primary">전체</span><span class="ml-[4px] font_button_bold_md content_accent">5</span>
+                                    <span class="font_button_bold_md content_primary">전체</span><span class="ml-[4px] font_button_bold_md content_accent" th:text="${count}"></span>
                                 </div>
                                 <div class="flex gap-x-[12px]">
 <!--                                    <div class="relative">-->
