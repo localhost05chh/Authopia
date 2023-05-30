@@ -48,4 +48,7 @@ public interface MemberService {
     // 관리자페이지에서 회원 목록 조회
     public List<MemberVO> getMember();
 
+    //    이메일 중복검사
+    public Optional<MemberVO> checkMemberUrl(String memberUrl);
+
 }

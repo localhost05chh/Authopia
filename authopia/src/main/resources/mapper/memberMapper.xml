@@ -123,4 +123,11 @@
         ]]>
         ORDER BY ID DESC
     </select>
+
+    <!--URL 중복 검사-->
+    <select id="selectByMemberUrl" resultType="memberVO">
+        SELECT ID, MEMBER_NAME, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_REGISTER_DATE, MEMBER_IS_REMAINING, MEMBER_BRIEF_INTRODUCE, MEMBER_INTRODUCE, MEMBER_CATEGORY, MEMBER_URL
+        FROM TBL_MEMBER
+        WHERE MEMBER_URL = #{memberUrl}
+    </select>
 </mapper>

@@ -88,4 +88,9 @@ public class MemberDAO {
         return memberMapper.selectMember();
     }
 
+    // URL 중복 검사
+    public Optional<MemberVO> findByMemberUrl(String memberUrl){
+        return memberMapper.selectByMemberUrl(memberUrl);
+    };
+
 }

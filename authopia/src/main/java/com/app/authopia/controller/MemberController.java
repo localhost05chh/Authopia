@@ -229,6 +229,7 @@ public class MemberController {
         postType.setType(type);
         postType.setOrder(order);
         session.setAttribute("postType", postType);
+        model.addAttribute("count", postService.getTotalMyPost(postType, memberId));
         if(fileService.getProfileImage(memberId).isPresent()) {
             model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
         } else{
@@ -240,6 +241,7 @@ public class MemberController {
     @PostMapping("member-mypost/{page}")
     @ResponseBody
     public List<PostDTO> gotoMyList(HttpSession session, @PathVariable int page, Pagination pagination, PostType postType){
+        System.out.println(page);
         Long memberId = (Long) session.getAttribute("id");
         postType = (PostType) session.getAttribute("postType");
         pagination.setTotal(postService.getTotalMyPost(postType, memberId));
@@ -247,6 +249,13 @@ public class MemberController {
         pagination.setPage(page);
         pagination.progress();
         return postService.getListMyPost(pagination , postType);
+    }
+
+    // URL 중복 검사
+    @GetMapping("check-url/{memberUrl}")
+    @ResponseBody
+    public boolean checkMemberUrl(@PathVariable String memberUrl){
+        return memberService.checkMemberUrl(memberUrl).isPresent();
     }
 
 }

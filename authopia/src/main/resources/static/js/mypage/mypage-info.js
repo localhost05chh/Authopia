@@ -104,3 +104,23 @@ if(memberProfileImage != null){
 } else {
     $("img.profile-image").attr("src", "/image/profile_icon.png");
 }
+
+function checkUrl(){
+    var url = $('#input-url').val(); //id값이 "id"인 입력란의 값을 저장
+    $.ajax({
+        url:`/member/check-url/${url}`, //Controller에서 요청 받을 주소
+        type:'post', //POST 방식으로 전달
+        success:function(result){ //컨트롤러에서 넘어온 cnt값을 받는다
+            if(result){ //cnt가 1이 아니면(=0일 경우) -> 사용 가능한 아이디
+                $('.url_ok').css("display", "none");
+                alert("URL을 다시 입력해주세요");
+                $('#input-url').val('');
+            } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
+                $('.url_ok').css("display","inline-block");
+            }
+        },
+        error:function(){
+            alert("에러입니다");
+        }
+    });
+};
