@@ -32,4 +32,9 @@ public class SubscribeServiceImpl implements SubscribeService{
     public void subscribeDelete(Long id) {
         subscribeDAO.subscribeOut(id);
     }
+
+    @Override
+    public int selectCountOfSubscribe(Long id){
+        return subscribeDAO.selectCountOfSubscribe(id);
+    }
 }

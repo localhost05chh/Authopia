@@ -14,4 +14,6 @@ public interface SubscribeService {
 
     //    구독 해지
     public void subscribeDelete(Long id);
+
+    public int selectCountOfSubscribe(Long id);
 }

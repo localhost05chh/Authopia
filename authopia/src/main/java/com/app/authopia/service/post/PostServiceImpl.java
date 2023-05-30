@@ -145,7 +145,12 @@ public class PostServiceImpl implements PostService {
     @Transactional(rollbackFor = Exception.class)
     public List<PostDTO> getListAuthor(Pagination pagination, PostType postType, Long memberId) {
         final List<PostDTO> posts = postDAO.findAllAuthor(pagination, postType, memberId);
-        posts.forEach(data -> data.setPostFiles(fileDAO.findAllFile(data.getId())));
+        posts.forEach(data -> {
+            data.setPostFiles(fileDAO.findAllFile(data.getId()));
+            if (fileDAO.findProfileImage(data.getMemberId()).isPresent()) {
+                data.setMemberProfileImage(fileDAO.findProfileImage(data.getMemberId()).get());
+            }
+        });
         return posts;
     }
 

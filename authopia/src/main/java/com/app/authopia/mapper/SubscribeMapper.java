@@ -17,5 +17,6 @@ public interface SubscribeMapper {
     //    구독 해지
     public void delete(Long Id);
 
-
+    //  구독자 수
+    public int selectCountOfSubscribe(Long id);
 }

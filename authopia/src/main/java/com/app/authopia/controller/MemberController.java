@@ -4,6 +4,7 @@ import com.app.authopia.domain.dto.*;
 import com.app.authopia.domain.vo.FileVO;
 import com.app.authopia.domain.vo.MemberVO;
 import com.app.authopia.domain.vo.PostVO;
+import com.app.authopia.service.file.FileService;
 import com.app.authopia.service.member.MemberService;
 import com.app.authopia.service.post.PostService;
 import lombok.RequiredArgsConstructor;
@@ -33,6 +34,7 @@ import java.util.Properties;
 public class MemberController {
     private final MemberService memberService;
     private final PostService postService;
+    private final FileService fileService;
 
     // 이메일 중복검사
     @GetMapping("check-email/{memberEmail}")
@@ -171,6 +173,11 @@ public class MemberController {
     public String modifyMemberInfo(HttpSession session, Model model){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
+        }
         return "mypage/mypage-info";
     }
 
@@ -179,6 +186,11 @@ public class MemberController {
     public String modifyMemberPage(HttpSession session, Model model){
         Long memberId = (Long)session.getAttribute("id");
         model.addAttribute("member", memberService.getMemberInfo(memberId).get());
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
+        }
         return "mypage/mypage-setting";
     }
 
@@ -218,6 +230,11 @@ public class MemberController {
         postType.setOrder(order);
         session.setAttribute("postType", postType);
         model.addAttribute("count", postService.getTotalMyPost(postType, memberId));
+        if(fileService.getProfileImage(memberId).isPresent()) {
+            model.addAttribute("memberProfileImage", fileService.getProfileImage(memberId).get());
+        } else{
+            model.addAttribute("memberProfileImage", null);
+        }
         return "mypage/mypage-post";
     }
 
