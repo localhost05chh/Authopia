@@ -36,27 +36,10 @@
 <h2>5. 담당 업무</h2>
 5-1 프론트엔드<br>
 <img src="https://i.esdrop.com/d/f/TPDhJgaOpy/S77m4Hs6g4.png">
-
-▶ 문화공간 정보
-- 문화공간 정보 출력
-- 카카오맵 API 활용 지도 출력
-
-▶ 모집 게시판
-- 모집 게시판 작성
-- 모집 게시판 수정
-- 모집 게시판 상세
-- 모집 게시판 목록
-
-▶ 이벤트 게시판
-- 이벤트 게시판 작성
-- 이벤트 게시판 수정
-- 이벤트 게시판 상세
--  게시판 목록
-
 <br>
 5-2 백엔드<br>
-<img src="https://github.com/dev-sein/dev-sein/assets/122762143/fe6adb96-e884-49a1-a8e8-a1baec2352fa">
-<img src="https://github.com/dev-sein/dev-sein/assets/122762143/b61f98f8-b23a-46c3-bf3d-0b0983e4213b">
+<img src="https://i.esdrop.com/d/f/TPDhJgaOpy/0dvsCbCC4H.png">
+
 
 
 ▶ 메인
