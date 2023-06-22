@@ -7,14 +7,7 @@
 <img src="https://i.esdrop.com/d/f/TPDhJgaOpy/QDg5AG5A5b.png">
 
 <h2>2. 기대 효과</h2>
-<img src="https://github.com/dev-sein/study-jpa/assets/122762143/213261a1-31e2-4e81-9330-a3449b83a311">
-
-청년층 문화생활 독려를 통하여 청년들의 삶의 질, 자존감 향상들을 이끌어낸다.<br><Br>
-
-서울시 공공데이터광장의 서울시 문화공간 정보 공공데이터를 활용하여 문화공간을 소개한다. 홈페이지 내에서 쉽게 접근하여 청년들이 보다 더 문화공간에 쉽게 접근할 수 있도록 한다.<br>
-도담 모집 게시판을 통하여 청년들이 혼자여서 도전하지 못했던 취미 생활등을 즐길 수 있도록 한다. <Br><br><br>
-
-
+<img src="https://i.esdrop.com/d/f/TPDhJgaOpy/kVoCfWpq6y.png">
 
 <h2>3. 프로젝트 사용 툴</h2>
 - Java<br>
@@ -32,7 +25,6 @@
 - JSON<br>
 - Ajax<br>
 - JDK 11.0.15<br>
-- Naver DEVELOPER API<br>
 - Kakao DEVELOPER API<br>
 - SMTP Gmail API<br>
 - Slack<br>
